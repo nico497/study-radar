@@ -94,7 +94,13 @@ Pick companies that publish their **own data**: tool vendors with big datasets, 
 
 **Official sources** (like Google) announce changes rather than publish studies. Mark them `kind: official`: triage then keeps real changes (ranking updates, new features, documentation changes) and drops events and community posts, and the cards show "Official update" instead of a confidence rating.
 
-The starter list covers SEO and GEO. It has two official Google sources (Search Central blog, Search Status Dashboard) plus research from Ahrefs, Semrush, Growth Memo, Seer Interactive, Profound, Orbit Media and BrightEdge. Swap them for your own niche.
+Busy official sources can take a `focus` so only posts on that topic get through. For example, the OpenAI source only keeps posts about ChatGPT search, crawlers and citations, not model launches or customer stories.
+
+The starter list covers SEO and GEO:
+- **Official:** Google Search Central, Google Search Status, Bing Webmaster, OpenAI (search-related only)
+- **Research:** Ahrefs, Semrush, Growth Memo, Seer Interactive, Profound, Orbit Media, Peec AI, AirOps, BrightEdge
+
+Swap them for your own niche.
 
 ## Cost
 

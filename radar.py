@@ -323,6 +323,8 @@ Include: ranking/core/spam updates, new or changed features and reports (e.g. in
 
 Exclude: events and conferences, community spotlights, recaps of talks, hiring, consumer tips and seasonal features, general marketing.
 
+If an item says [only keep: ...], keep it only if it fits that focus.
+
 If unsure, include it."""
 
 
@@ -330,7 +332,8 @@ def triage(cands: list[dict], cfg: dict, official: bool = False) -> set[int]:
     lines = []
     for i, c in enumerate(cands):
         snip = f" | {c['snippet'][:280]}" if c.get("snippet") else ""
-        lines.append(f"[{i}] ({c['source']}) {c['title']}{snip}\n    {c['url']}")
+        focus = f" [only keep: {c['focus']}]" if c.get("focus") else ""
+        lines.append(f"[{i}] ({c['source']}){focus} {c['title']}{snip}\n    {c['url']}")
     user = (f"Niche: {cfg['niche']}\n\nItems:\n" + "\n".join(lines) +
             "\n\nReturn the indices of the original-research items.")
     system = OFFICIAL_TRIAGE_SYSTEM if official else TRIAGE_SYSTEM
@@ -556,7 +559,7 @@ def run(cfg: dict) -> dict:
                     mark(it["url"], name, "baseline")
                     continue
             new.append({**it, "source": name, "all_studies": bool(src.get("all_studies")),
-                        "official": src.get("kind") == "official"})
+                        "official": src.get("kind") == "official", "focus": src.get("focus", "")})
         new = new[: int(cfg["max_new_per_source"])]
         h["new"] = len(new)
         cands += new

@@ -33,6 +33,7 @@ models:
 #   link_pattern: /x/      only keep URLs matching this regex
 #   exclude_pattern: /y/   drop URLs matching this regex
 #   first_run_keep: 3      for undated pages: how many to brief on the first run
+#   focus: "..."           official sources: only keep posts about this topic
 # ------------------------------------------------------------------
 sources:
   # --- Official: changes straight from Google (kind: official) ---
@@ -44,6 +45,15 @@ sources:
     feed: https://status.search.google.com/en/feed.atom
     kind: official
     all_studies: true    # every entry is a ranking/spam/core update
+
+  - name: Bing Webmaster
+    feed: https://blogs.bing.com/webmaster/feed
+    kind: official
+
+  - name: OpenAI
+    feed: https://openai.com/news/rss.xml
+    kind: official
+    focus: ChatGPT search, how ChatGPT finds and cites sources, OpenAI crawlers (OAI-SearchBot, GPTBot), shopping and ads in ChatGPT, publisher programs
 
   # --- Research: companies that publish their own data ---
   - name: Ahrefs
@@ -65,6 +75,16 @@ sources:
     page: https://www.orbitmedia.com/blog/
     link_pattern: orbitmedia\.com/blog/[a-z0-9-]+/?$
     first_run_keep: 8
+
+  - name: Peec AI
+    page: https://peec.ai/blog
+    link_pattern: peec\.ai/blog/[^/]+/?$
+    first_run_keep: 6
+
+  - name: AirOps
+    page: https://www.airops.com/blog
+    link_pattern: airops\.com/blog/[^/]+/?$
+    first_run_keep: 6
 
   - name: BrightEdge
     page: https://www.brightedge.com/resources/research-reports
