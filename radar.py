@@ -273,27 +273,52 @@ def read_article(url: str, f: Fetcher, max_chars: int) -> dict:
 
 # ---------------------------------------------------------------- Claude
 
+_NO_FORCED_TOOL: set[str] = set()   # models that reject tool_choice "tool"
+
+
+def _api_error(r: requests.Response) -> str:
+    try:
+        return f"Anthropic API {r.status_code}: {r.json()['error']['message']}"
+    except Exception:  # noqa: BLE001
+        return f"Anthropic API {r.status_code}: {r.text[:200]}"
+
+
 def call_claude(model: str, system: str, user: str, tool: dict, max_tokens: int = 1500) -> dict:
-    key = os.environ.get("ANTHROPIC_API_KEY", "")
-    body = {
-        "model": model, "max_tokens": max_tokens, "system": system,
-        "messages": [{"role": "user", "content": user}],
-        "tools": [tool], "tool_choice": {"type": "tool", "name": tool["name"]},
-    }
-    headers = {"x-api-key": key, "anthropic-version": "2023-06-01",
-               "content-type": "application/json"}
-    for attempt in range(5):
+    """One structured call: the model answers by calling `tool`. Returns the tool input."""
+    headers = {"x-api-key": os.environ.get("ANTHROPIC_API_KEY", ""),
+               "anthropic-version": "2023-06-01", "content-type": "application/json"}
+    messages = [{"role": "user", "content": user}]
+    nudged = False
+    attempt = 0
+    while attempt < 6:
+        attempt += 1
+        forced = model not in _NO_FORCED_TOOL
+        body = {
+            "model": model, "max_tokens": max_tokens, "messages": messages, "tools": [tool],
+            "system": system if forced else f"{system}\n\nRespond only by calling the {tool['name']} tool.",
+            "tool_choice": {"type": "tool", "name": tool["name"]} if forced else {"type": "auto"},
+        }
         r = requests.post(API_URL, headers=headers, json=body, timeout=180)
         if r.status_code in (429, 500, 502, 503, 529):
-            wait = int(r.headers.get("retry-after", 0)) or 10 * (attempt + 1)
+            wait = int(r.headers.get("retry-after", 0) or 0) or 10 * attempt
             log(f"    API busy ({r.status_code}), retrying in {wait}s")
             time.sleep(wait)
             continue
+        if r.status_code == 400 and forced and "tool_choice" in r.text:
+            # Some models don't support forcing a tool. Ask for it in the prompt instead.
+            _NO_FORCED_TOOL.add(model)
+            continue
         if r.status_code >= 400:
-            raise RuntimeError(f"Anthropic API {r.status_code}: {r.text[:300]}")
-        for block in r.json().get("content", []):
+            raise RuntimeError(_api_error(r))
+        content = r.json().get("content", [])
+        for block in content:
             if block.get("type") == "tool_use":
                 return block["input"]
+        if not nudged:
+            nudged = True
+            messages = messages + [{"role": "assistant", "content": content or "..."},
+                                   {"role": "user", "content": f"Please answer by calling the {tool['name']} tool."}]
+            continue
         raise RuntimeError("model returned no structured output")
     raise RuntimeError("Anthropic API kept failing, try again later")
 
