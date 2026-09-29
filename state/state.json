@@ -2244,60 +2244,160 @@
    "source": "Profound",
    "status": "briefed",
    "at": "2026-09-29T09:25:24+00:00"
+  },
+  "openai.com/index/jalapeno-first-results": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-09-29T09:28:17+00:00"
+  },
+  "openai.com/index/disrupting-malicious-uses-of-ai-influence-campaign-russia": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-09-29T09:28:17+00:00"
+  },
+  "openai.com/index/introducing-admin-plugin": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-09-29T09:28:17+00:00"
+  },
+  "openai.com/index/gpt-5-6-in-kiro": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-09-29T09:28:17+00:00"
+  },
+  "openai.com/index/introducing-intelligence-age": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-09-29T09:28:17+00:00"
+  },
+  "openai.com/index/stampli": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-09-29T09:28:17+00:00"
+  },
+  "openai.com/index/offering-zero-data-retention-for-frontier-models": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-09-29T09:28:17+00:00"
+  },
+  "openai.com/index/replit": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-09-29T09:28:17+00:00"
+  },
+  "openai.com/index/strengthening-democratic-oversight-in-national-security": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-09-29T09:28:17+00:00"
+  },
+  "openai.com/index/partnering-with-codeai": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-09-29T09:28:17+00:00"
+  },
+  "openai.com/index/pacing-model-development-cyber-capabilities": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-09-29T09:28:17+00:00"
+  },
+  "openai.com/index/chatgpt-for-teens": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-09-29T09:28:17+00:00"
+  },
+  "openai.com/index/nvidia/chatgpt-work": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-09-29T09:28:17+00:00"
+  },
+  "openai.com/index/asana": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-09-29T09:28:17+00:00"
+  },
+  "openai.com/index/the-defenders-window": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-09-29T09:28:17+00:00"
+  },
+  "openai.com/index/openai-joins-ports-pike-project": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-09-29T09:28:17+00:00"
+  },
+  "openai.com/index/new-policy-ideas-for-the-intelligence-age": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-09-29T09:28:17+00:00"
+  },
+  "developers.google.com/search/blog/2026/09/web-multimodal-in-sc": {
+   "source": "Google Search Central",
+   "status": "briefed",
+   "at": "2026-09-29T09:28:17+00:00"
+  },
+  "growth-memo.com/p/has-google-demoted-listicles": {
+   "source": "Growth Memo",
+   "status": "unreadable",
+   "at": "2026-09-29T09:28:17+00:00"
+  },
+  "openai.com/index/chatgpt-ads-expands-across-europe": {
+   "source": "OpenAI",
+   "status": "briefed",
+   "at": "2026-09-29T09:28:17+00:00"
   }
  },
  "sources": {
   "Google Search Central": {
    "initialized": true,
-   "last_ok": "2026-09-29T09:25:24+00:00"
+   "last_ok": "2026-09-29T09:28:17+00:00"
   },
   "Google Search Status": {
    "initialized": true,
-   "last_ok": "2026-09-29T09:25:24+00:00"
+   "last_ok": "2026-09-29T09:28:17+00:00"
   },
   "Bing Webmaster": {
    "initialized": true,
-   "last_ok": "2026-09-29T09:25:24+00:00"
+   "last_ok": "2026-09-29T09:28:17+00:00"
   },
   "OpenAI": {
    "initialized": true,
-   "last_ok": "2026-09-29T09:25:24+00:00"
+   "last_ok": "2026-09-29T09:28:17+00:00"
   },
   "Ahrefs": {
    "initialized": true,
-   "last_ok": "2026-09-29T09:25:24+00:00"
+   "last_ok": "2026-09-29T09:28:17+00:00"
   },
   "Semrush": {
    "initialized": true,
-   "last_ok": "2026-09-29T09:25:24+00:00"
+   "last_ok": "2026-09-29T09:28:17+00:00"
   },
   "Growth Memo": {
    "initialized": true,
-   "last_ok": "2026-09-29T09:25:24+00:00"
+   "last_ok": "2026-09-29T09:28:17+00:00"
   },
   "Seer Interactive": {
    "initialized": true,
-   "last_ok": "2026-09-29T09:25:24+00:00"
+   "last_ok": "2026-09-29T09:28:17+00:00"
   },
   "Profound": {
    "initialized": true,
-   "last_ok": "2026-09-29T09:25:24+00:00"
+   "last_ok": "2026-09-29T09:28:17+00:00"
   },
   "Orbit Media": {
    "initialized": true,
-   "last_ok": "2026-09-29T09:25:24+00:00"
+   "last_ok": "2026-09-29T09:28:17+00:00"
   },
   "Peec AI": {
    "initialized": true,
-   "last_ok": "2026-09-29T09:25:24+00:00"
+   "last_ok": "2026-09-29T09:28:17+00:00"
   },
   "AirOps": {
    "initialized": true,
-   "last_ok": "2026-09-29T09:25:24+00:00"
+   "last_ok": "2026-09-29T09:28:17+00:00"
   },
   "BrightEdge": {
    "initialized": true,
-   "last_ok": "2026-09-29T09:25:24+00:00"
+   "last_ok": "2026-09-29T09:28:17+00:00"
   }
  },
  "repo": "nico497/study-radar"

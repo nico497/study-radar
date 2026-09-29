@@ -2,35 +2,35 @@
  "meta": {
   "niche": "SEO and generative engine optimization (GEO) for B2B SaaS",
   "audience": "the content and SEO lead at a B2B SaaS company",
-  "updated": "2026-09-29T09:25:24+00:00",
+  "updated": "2026-09-29T09:28:17+00:00",
   "title": "Study Radar",
   "repo": "nico497/study-radar",
   "run": {
    "sources": 13,
-   "new_items": 32,
-   "studies": 11,
+   "new_items": 20,
+   "studies": 3,
    "deferred": 0,
-   "briefed": 9,
+   "briefed": 2,
    "unreadable": 1,
-   "rejected": 1,
+   "rejected": 0,
    "errors": []
   }
  },
  "health": [
   {
    "name": "Google Search Central",
-   "checked": "2026-09-29T09:25:24+00:00",
+   "checked": "2026-09-29T09:28:17+00:00",
    "ok": true,
    "found": 10,
-   "new": 0,
+   "new": 1,
    "error": null,
    "url": "https://developers.google.com/search/blog/feed.xml",
    "method": "feed",
-   "posts_new": 2
+   "posts_new": 1
   },
   {
    "name": "Google Search Status",
-   "checked": "2026-09-29T09:25:24+00:00",
+   "checked": "2026-09-29T09:28:17+00:00",
    "ok": true,
    "found": 1,
    "new": 1,
@@ -41,7 +41,7 @@
   },
   {
    "name": "Bing Webmaster",
-   "checked": "2026-09-29T09:25:24+00:00",
+   "checked": "2026-09-29T09:28:17+00:00",
    "ok": true,
    "found": 10,
    "new": 0,
@@ -52,40 +52,40 @@
   },
   {
    "name": "OpenAI",
-   "checked": "2026-09-29T09:25:24+00:00",
+   "checked": "2026-09-29T09:28:17+00:00",
    "ok": true,
    "found": 1235,
    "new": 1,
    "error": null,
    "url": "https://openai.com/news/rss.xml",
    "method": "feed",
-   "posts_new": 20
+   "posts_new": 18
   },
   {
    "name": "Ahrefs",
-   "checked": "2026-09-29T09:25:24+00:00",
+   "checked": "2026-09-29T09:28:17+00:00",
    "ok": true,
    "found": 10,
    "new": 2,
    "error": null,
    "url": "https://ahrefs.com/blog/feed/",
    "method": "feed",
-   "posts_new": 1
+   "posts_new": 0
   },
   {
    "name": "Semrush",
-   "checked": "2026-09-29T09:25:24+00:00",
+   "checked": "2026-09-29T09:28:17+00:00",
    "ok": true,
    "found": 20,
    "new": 2,
    "error": null,
    "url": "https://www.semrush.com/blog/feed/",
    "method": "feed",
-   "posts_new": 2
+   "posts_new": 0
   },
   {
    "name": "Growth Memo",
-   "checked": "2026-09-29T09:25:24+00:00",
+   "checked": "2026-09-29T09:28:17+00:00",
    "ok": true,
    "found": 20,
    "new": 0,
@@ -96,29 +96,29 @@
   },
   {
    "name": "Seer Interactive",
-   "checked": "2026-09-29T09:25:24+00:00",
+   "checked": "2026-09-29T09:28:17+00:00",
    "ok": true,
    "found": 20,
    "new": 2,
    "error": null,
    "url": "https://www.seerinteractive.com/insights/rss.xml",
    "method": "feed",
-   "posts_new": 2
+   "posts_new": 0
   },
   {
    "name": "Profound",
-   "checked": "2026-09-29T09:25:24+00:00",
+   "checked": "2026-09-29T09:28:17+00:00",
    "ok": true,
    "found": 180,
    "new": 4,
    "error": null,
    "url": "https://www.tryprofound.com/rss/blog.xml",
    "method": "feed",
-   "posts_new": 4
+   "posts_new": 0
   },
   {
    "name": "Orbit Media",
-   "checked": "2026-09-29T09:25:24+00:00",
+   "checked": "2026-09-29T09:28:17+00:00",
    "ok": true,
    "found": 26,
    "new": 3,
@@ -129,7 +129,7 @@
   },
   {
    "name": "Peec AI",
-   "checked": "2026-09-29T09:25:24+00:00",
+   "checked": "2026-09-29T09:28:17+00:00",
    "ok": true,
    "found": 42,
    "new": 1,
@@ -140,7 +140,7 @@
   },
   {
    "name": "AirOps",
-   "checked": "2026-09-29T09:25:24+00:00",
+   "checked": "2026-09-29T09:28:17+00:00",
    "ok": true,
    "found": 202,
    "new": 0,
@@ -151,7 +151,7 @@
   },
   {
    "name": "BrightEdge",
-   "checked": "2026-09-29T09:25:24+00:00",
+   "checked": "2026-09-29T09:28:17+00:00",
    "ok": true,
    "found": 31,
    "new": 3,
@@ -162,6 +162,32 @@
   }
  ],
  "pulses": [
+  {
+   "date": "2026-09-29T09:28:17+00:00",
+   "summary": "Mostly vendor studies of medium or low confidence, and few used B2B SaaS data. The only firm news is Google's September spam update (rolling out now) and ChatGPT Ads opening to self-service in Europe.",
+   "points": [
+    {
+     "text": "Google's September 2026 spam update started on 24 Sep and can take up to two weeks to roll out. Log traffic changes against that window and hold off on big content changes until it ends. Google hasn't said which spam types it targets, so don't diagnose drops yet.",
+     "ids": [
+      "status.search.google.com/incidents/XhUDXP7A67iHCD2kmbVu"
+     ]
+    },
+    {
+     "text": "AI referrals convert well but are tiny. Orbit's 29M-visit dataset shows AI visitors are 3x more likely to become leads, yet AI is only 0.5% of traffic. This is medium confidence, and AI traffic is undercounted because AI Overviews and AI Mode land in Organic Search. Track AI referrals as a high-intent channel, but don't move budget away from organic search. Semrush's manufacturing study adds that mentions, citations and referral traffic don't move together, so measure them separately.",
+     "ids": [
+      "orbitmedia.com/blog/conversion-rates-ai-search",
+      "semrush.com/blog/manufacturing-seo-ai-search"
+     ]
+    },
+    {
+     "text": "Single-run AI visibility numbers are unreliable. Orbit's sample is very small (three brands, low confidence) and found the four LLMs almost never cited the same domain. Profound's persona tests were consumer-only and medium confidence, but they also showed answers shifting a lot. Use repeated runs across engines, and test your key prompts with buyer role context, before trusting any score.",
+     "ids": [
+      "orbitmedia.com/blog/ai-citation-sources",
+      "tryprofound.com/blog/do-answer-engines-customize-responses-to-different-personas"
+     ]
+    }
+   ]
+  },
   {
    "date": "2026-09-29T09:25:24+00:00",
    "summary": "Google's September spam update is the one firm, time-sensitive item this week. The rest is mostly medium-confidence vendor data on AI search, and it says the same thing: AI visibility is unstable and still sends little traffic.",
@@ -184,6 +210,91 @@
   }
  ],
  "briefs": [
+  {
+   "id": "developers.google.com/search/blog/2026/09/web-multimodal-in-sc",
+   "url": "https://developers.google.com/search/blog/2026/09/web-multimodal-in-sc",
+   "source": "Google Search Central",
+   "title": "Announcing web multimodal Search performance reporting in Search Console  |  Google Search Central Blog  |  Google for Developers",
+   "published": "2026-09-24T00:00:00+00:00",
+   "found": "2026-09-29T09:28:17+00:00",
+   "gated": false,
+   "unreadable": null,
+   "pdf_links": [],
+   "brief": {
+    "is_study": true,
+    "headline": "Google added a \"multimodal\" search type filter to Search Console's Performance and Generative AI features reports, covering image-based searches such as Lens and Circle to Search.",
+    "study_type": "official update",
+    "key_stats": [
+     "Covers searches with Lens, Circle to Search on Android, image uploads to Google Search, and Chrome right-click \"Search this image\"",
+     "Appears in both the Search results performance report and the Generative AI features report, via a new multimodal search type filter",
+     "Rolling out globally starting September 24, 2026; data can be exported"
+    ],
+    "method": {
+     "sample": "n/a (official announcement)",
+     "data_source": "n/a (official announcement)",
+     "timeframe": "Rolling out globally starting 2026-09-24. Metrics appear if a site receives traffic from these queries.",
+     "conflict": "Google does not say how much multimodal traffic exists, how it is counted, or how impressions and clicks are attributed. It also gives no optimization guidance and does not say whether the Generative AI report is separate from standard Web data.",
+     "confidence": "high",
+     "caveat": "The post has no volume figures, metric definitions or historical backfill details. It also doesn't say whether B2B SaaS sites will see meaningful multimodal traffic."
+    },
+    "why_it_matters": "You can now measure image-initiated search visibility, including in the AI features report. Check the filter for your site before deciding whether visual content deserves any investment.",
+    "importance": 2,
+    "tags": [
+     "analytics",
+     "ai search",
+     "ctr & serps"
+    ]
+   },
+   "words": 319
+  },
+  {
+   "id": "growth-memo.com/p/has-google-demoted-listicles",
+   "url": "https://www.growth-memo.com/p/has-google-demoted-listicles",
+   "source": "Growth Memo",
+   "title": "Has Google demoted listicles?",
+   "published": "2026-08-24T19:18:49+00:00",
+   "found": "2026-09-29T09:28:17+00:00",
+   "gated": false,
+   "unreadable": "page has almost no readable text (likely built with JavaScript)",
+   "pdf_links": [],
+   "brief": null
+  },
+  {
+   "id": "openai.com/index/chatgpt-ads-expands-across-europe",
+   "url": "https://openai.com/index/chatgpt-ads-expands-across-europe",
+   "source": "OpenAI",
+   "title": "ChatGPT Ads expands across Europe",
+   "published": "2026-08-18T22:00:00+00:00",
+   "found": "2026-09-29T09:28:17+00:00",
+   "gated": false,
+   "unreadable": null,
+   "pdf_links": [],
+   "brief": {
+    "is_study": true,
+    "headline": "OpenAI is bringing ChatGPT Ads to 31 European markets, including Germany, France, Spain and Italy, with self-service access via Ads Manager now live.",
+    "study_type": "official update",
+    "key_stats": [
+     "Expansion to 31 European markets; largest to date, after a U.S. pilot in February and eight additional markets",
+     "Ads shown only to Free and Go plan users; Plus, Pro and Enterprise stay ad-free",
+     "Tens of thousands of marketers have advertised; new bidding beyond CPM/CPC (conversion optimization), geo-targeting, custom audiences, OpenAI Pixel and Conversions API"
+    ],
+    "method": {
+     "sample": "n/a (official announcement)",
+     "data_source": "n/a (official announcement)",
+     "timeframe": "Announced August 18, 2026; rollout the following week via OpenAI Ads Solutions team, agencies and tech partners. Update of August 31, 2026: self-service via Ads Manager available in all 31 markets.",
+     "conflict": "OpenAI does not publish any performance data (CTR, conversion, CPM/CPC pricing), ad formats, placement rules or how ads are matched to conversations. It also does not name all 31 markets, and its claim that ads do not influence answers is unverified.",
+     "confidence": "high",
+     "caveat": "The rollout facts are specific and dated, but the post gives no results, pricing, formats or targeting detail, so it cannot show whether the ads work for B2B SaaS."
+    },
+    "why_it_matters": "Paid placement in ChatGPT is now open to self-service in Europe, so you can test it for software-comparison queries. Organic GEO work still cannot buy answer placement, since OpenAI says ads do not influence answers.",
+    "importance": 2,
+    "tags": [
+     "ai search",
+     "ctr & serps"
+    ]
+   },
+   "words": 671
+  },
   {
    "id": "tryprofound.com/blog/do-answer-engines-customize-responses-to-different-personas",
    "url": "https://www.tryprofound.com/blog/do-answer-engines-customize-responses-to-different-personas",
