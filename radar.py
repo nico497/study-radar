@@ -491,7 +491,7 @@ PULSE_TOOL = {
             "summary": {"type": "string", "description": "Two sentences max: the overall picture this week. Say plainly if little of note was published."},
             "points": {
                 "type": "array", "maxItems": 3, "items": {"type": "string"},
-                "description": "Up to 3 takeaways, one or two sentences each, saying how far to trust it. End each with the numbers of the studies it draws on in square brackets, e.g. 'Zero-click keeps rising. [0, 3]'",
+                "description": "Up to 3 takeaways, max 35 words each, saying how far to trust it. End each with the numbers of the studies it draws on in square brackets, e.g. 'Zero-click keeps rising. [0, 3]'",
             },
         },
         "required": ["summary", "points"],
@@ -503,6 +503,7 @@ PULSE_SYSTEM = """You write the top-of-page summary for a weekly research digest
 Rules:
 - Use only the briefs provided. Don't add outside facts or numbers.
 - Pick at most 3 points, ranked by what matters most to the audience. Fewer is fine. Skip minor studies.
+- Each point: max 35 words, at most two short sentences. The summary: max 40 words. The reader can open the cards for detail.
 - Weigh confidence: don't present a low-confidence finding as fact. If a widely-quotable number is weak, a point can be a warning not to rely on it.
 - Plain, direct language. No hype."""
 
@@ -698,7 +699,7 @@ def run(cfg: dict) -> dict:
             art["text"] = f"Feed summary: {c['snippet']}\n\nPage text:\n{art['text']}"
             art["words"] += len(c["snippet"].split())
         if art["words"] < (8 if c.get("official") else 25 if art["gated"] else 120):
-            record["unreadable"] = "page has almost no readable text (likely built with JavaScript)"
+            record["unreadable"] = ("page has almost no readable text (paywalled, blocked, or built with JavaScript)")
             record["title"] = art["title"] or c["title"]
             briefs.insert(0, record)
             mark(c["url"], c["source"], "unreadable")
