@@ -1,0 +1,63 @@
+# ------------------------------------------------------------------
+# Study Radar config
+# Edit the niche, audience and sources. That's all most people need.
+# Test your sources any time with:  python radar.py --check
+# ------------------------------------------------------------------
+
+title: Study Radar
+
+# Used to tailor every brief's "so what" and post angle.
+niche: SEO and generative engine optimization (GEO) for B2B SaaS
+audience: the content and SEO lead at a B2B SaaS company
+
+# Optional. If set, briefs can only use these tags (keeps filters tidy).
+tags: [ai search, ctr & serps, links, content, technical seo, brand, analytics]
+
+lookback_days: 45        # ignore anything published before this (matters on the first run)
+max_briefs_per_run: 12   # spend cap: extra studies wait for the next run
+
+# Triage uses a cheap model to spot studies. Briefs use a stronger one.
+models:
+  triage: claude-haiku-4-5-20251001
+  brief: claude-sonnet-5-5
+
+# ------------------------------------------------------------------
+# Sources. Each one needs a name and ONE of:
+#   feed:    an RSS/Atom URL (best: gives dates and summaries)
+#   page:    a listing page + link_pattern (a regex the post URLs match)
+#   sitemap: a sitemap URL + link_pattern
+# Optional per source:
+#   all_studies: true      everything here is research, skip triage
+#   link_pattern: /x/      only keep URLs matching this regex
+#   exclude_pattern: /y/   drop URLs matching this regex
+#   first_run_keep: 3      for undated pages: how many to brief on the first run
+# ------------------------------------------------------------------
+sources:
+  - name: Ahrefs
+    feed: https://ahrefs.com/blog/feed/
+
+  - name: Semrush
+    feed: https://www.semrush.com/blog/feed/
+
+  - name: SparkToro
+    feed: https://sparktoro.com/blog/feed/
+
+  - name: Growth Memo
+    feed: https://www.growth-memo.com/feed
+
+  - name: iPullRank
+    feed: https://ipullrank.com/feed
+
+  - name: Seer Interactive
+    feed: https://www.seerinteractive.com/insights/rss.xml
+
+  - name: Profound
+    feed: https://www.tryprofound.com/rss/blog.xml
+
+  - name: Backlinko
+    feed: https://backlinko.com/feed
+
+  - name: BrightEdge
+    page: https://www.brightedge.com/resources/research-reports
+    link_pattern: /resources/research-reports/[a-z0-9-]+/?$
+    all_studies: true

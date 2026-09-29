@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Study Radar</title>
+<meta name="description" content="Weekly briefs on the original research published in your niche.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='none' stroke='%23c2410c' stroke-width='3'/%3E%3Ccircle cx='16' cy='16' r='7' fill='none' stroke='%23c2410c' stroke-width='3'/%3E%3Ccircle cx='16' cy='16' r='2.5' fill='%23c2410c'/%3E%3C/svg%3E">
+<style>
+:root {
+  --bg: #f6f4ef; --surface: #ffffff; --surface-2: #faf8f4; --ink: #1c1b19; --ink-2: #57534e;
+  --ink-3: #8a847c; --line: #e6e1d8; --accent: #c2410c; --accent-soft: #fdf0e8;
+  --hi: #15803d; --hi-bg: #e9f6ee; --md: #a16207; --md-bg: #fbf3dc; --lo: #b91c1c; --lo-bg: #fcebea;
+  --shadow: 0 1px 2px rgba(28,27,25,.05), 0 4px 16px rgba(28,27,25,.04);
+  --serif: ui-serif, "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #151412; --surface: #1d1c19; --surface-2: #232220; --ink: #f1eee8; --ink-2: #b9b3a9;
+    --ink-3: #857f76; --line: #33312d; --accent: #fb923c; --accent-soft: #2c1d13;
+    --hi: #4ade80; --hi-bg: #15291c; --md: #fbbf24; --md-bg: #2b2412; --lo: #f87171; --lo-bg: #2e1615;
+    --shadow: none; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #151412; --surface: #1d1c19; --surface-2: #232220; --ink: #f1eee8; --ink-2: #b9b3a9;
+  --ink-3: #857f76; --line: #33312d; --accent: #fb923c; --accent-soft: #2c1d13;
+  --hi: #4ade80; --hi-bg: #15291c; --md: #fbbf24; --md-bg: #2b2412; --lo: #f87171; --lo-bg: #2e1615;
+  --shadow: none; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.55 var(--sans); }
+a { color: inherit; }
+button { font: inherit; color: inherit; cursor: pointer; }
+.wrap { max-width: 880px; margin: 0 auto; padding: 0 16px; }
+
+header.top { padding: 28px 0 8px; display: flex; gap: 16px; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; }
+.brand { display: flex; gap: 12px; align-items: center; }
+.brand svg { flex: none; }
+.brand h1 { font: 600 26px/1.1 var(--serif); margin: 0; letter-spacing: -.01em; }
+.brand p { margin: 2px 0 0; color: var(--ink-2); font-size: 14px; }
+.updated { color: var(--ink-3); font-size: 13px; text-align: right; }
+
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 20px 0 18px; }
+.stat { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; }
+.stat b { display: block; font: 600 24px/1.1 var(--serif); font-variant-numeric: tabular-nums; }
+.stat span { color: var(--ink-2); font-size: 12.5px; }
+
+.bar { position: sticky; top: 0; z-index: 5; background: var(--bg); padding: 10px 0; border-bottom: 1px solid var(--line); }
+.tabs { display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none; }
+.tabs button { border: 0; background: none; padding: 7px 12px; border-radius: 999px; color: var(--ink-2); white-space: nowrap; font-size: 14px; }
+.tabs button[aria-selected="true"] { background: var(--ink); color: var(--bg); }
+.tabs .n { opacity: .7; margin-left: 4px; font-variant-numeric: tabular-nums; }
+.filters { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+.filters input, .filters select { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 7px 10px; font: inherit; font-size: 14px; color: var(--ink); min-width: 0; }
+.filters input { flex: 1 1 200px; }
+.filters .spacer { flex: 1; }
+.ghost { border: 1px solid var(--line); background: var(--surface); border-radius: 8px; padding: 7px 12px; font-size: 14px; }
+.ghost:hover { border-color: var(--ink-3); }
+
+main { padding: 18px 0 40px; display: flex; flex-direction: column; gap: 14px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px; box-shadow: var(--shadow); outline: none; }
+.card:focus-visible, .card.focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+.meta { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; font-size: 12.5px; color: var(--ink-3); }
+.meta .src { color: var(--accent); font-weight: 600; letter-spacing: .02em; text-transform: uppercase; font-size: 12px; }
+.pill { display: inline-block; padding: 1px 8px; border-radius: 999px; font-size: 12px; background: var(--surface-2); border: 1px solid var(--line); color: var(--ink-2); }
+.pill.new { background: var(--accent); color: #fff; border-color: transparent; }
+.pill.warn { background: var(--md-bg); color: var(--md); border-color: transparent; }
+.title { display: block; margin: 6px 0 2px; font-size: 13.5px; color: var(--ink-2); text-decoration: none; }
+.title:hover { text-decoration: underline; }
+.headline { font: 600 20px/1.35 var(--serif); margin: 4px 0 10px; letter-spacing: -.005em; }
+.stats-list { margin: 0 0 14px; padding: 0; list-style: none; display: grid; gap: 6px; }
+.stats-list li { padding-left: 18px; position: relative; }
+.stats-list li::before { content: ""; position: absolute; left: 3px; top: .62em; width: 6px; height: 6px; border-radius: 2px; background: var(--accent); }
+.method { background: var(--surface-2); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; font-size: 13.5px; }
+.method-top { display: flex; gap: 8px; align-items: center; margin-bottom: 6px; flex-wrap: wrap; }
+.method-top strong { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--ink-3); }
+.conf { font-size: 12px; font-weight: 600; padding: 1px 9px; border-radius: 999px; }
+.conf.high { background: var(--hi-bg); color: var(--hi); }
+.conf.medium { background: var(--md-bg); color: var(--md); }
+.conf.low { background: var(--lo-bg); color: var(--lo); }
+.mgrid { display: grid; grid-template-columns: auto 1fr; gap: 3px 12px; }
+.mgrid dt { color: var(--ink-3); }
+.mgrid dd { margin: 0; }
+.caveat { margin: 8px 0 0; color: var(--ink-2); }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px; }
+.block h4 { margin: 0 0 3px; font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--ink-3); font-weight: 600; }
+.block p { margin: 0; }
+.angle { background: var(--accent-soft); border-radius: 10px; padding: 10px 12px; }
+.angle h4 { color: var(--accent); }
+.foot { display: flex; gap: 8px; align-items: center; justify-content: space-between; flex-wrap: wrap; margin-top: 14px; }
+.tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.actions { display: flex; gap: 6px; flex-wrap: wrap; }
+.actions button { border: 1px solid var(--line); background: var(--surface); padding: 5px 11px; border-radius: 8px; font-size: 13px; }
+.actions button:hover { border-color: var(--ink-3); }
+.actions button.on { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.actions kbd { font: 11px var(--sans); color: var(--ink-3); margin-left: 4px; }
+.actions button.on kbd { color: inherit; opacity: .6; }
+.note { color: var(--ink-2); margin: 8px 0 0; font-size: 14px; }
+.pdfs { margin-top: 8px; font-size: 13px; }
+
+.empty { text-align: center; padding: 56px 16px; color: var(--ink-2); background: var(--surface); border: 1px dashed var(--line); border-radius: 12px; }
+.empty h2 { font: 600 20px var(--serif); color: var(--ink); margin: 0 0 6px; }
+.empty code { background: var(--surface-2); padding: 1px 6px; border-radius: 4px; }
+
+details.health { margin: 0 0 40px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 12px 16px; }
+details.health summary { cursor: pointer; font-weight: 600; font-size: 14px; }
+details.health summary .sub { font-weight: 400; color: var(--ink-3); margin-left: 6px; }
+.htable { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 13.5px; }
+.htable th { text-align: left; font-weight: 600; color: var(--ink-3); font-size: 12px; text-transform: uppercase; letter-spacing: .05em; padding: 6px 8px 6px 0; border-bottom: 1px solid var(--line); }
+.htable td { padding: 7px 8px 7px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+.htable td.num { font-variant-numeric: tabular-nums; }
+.dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; background: var(--hi); }
+.dot.bad { background: var(--lo); }
+.hint { color: var(--ink-3); font-size: 12.5px; text-align: center; padding-bottom: 28px; }
+.toast { position: fixed; left: 50%; bottom: 20px; transform: translateX(-50%) translateY(20px); background: var(--ink); color: var(--bg); padding: 8px 14px; border-radius: 8px; font-size: 14px; opacity: 0; transition: .2s; pointer-events: none; }
+.toast.show { opacity: 1; transform: translateX(-50%); }
+
+@media (max-width: 640px) {
+  .stats { grid-template-columns: repeat(2, 1fr); }
+  .bar { position: static; }
+  .two { grid-template-columns: 1fr; }
+  .headline { font-size: 18px; }
+  .card { padding: 16px; }
+  .updated { text-align: left; }
+  .actions kbd, .hint { display: none; }
+  .htable .hide-sm { display: none; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="brand">
+      <svg width="34" height="34" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="14" fill="none" stroke="var(--accent)" stroke-width="2.5"/><circle cx="16" cy="16" r="7.5" fill="none" stroke="var(--accent)" stroke-width="2.5"/><circle cx="16" cy="16" r="2.5" fill="var(--accent)"/><path d="M16 16 L27 7" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round"/></svg>
+      <div>
+        <h1 id="title">Study Radar</h1>
+        <p id="niche">New research in your niche, briefed weekly</p>
+      </div>
+    </div>
+    <div class="updated" id="updated"></div>
+  </header>
+
+  <section class="stats" id="stats" aria-label="Summary"></section>
+
+  <div class="bar">
+    <nav class="tabs" role="tablist" id="tabs"></nav>
+    <div class="filters">
+      <input id="q" type="search" placeholder="Search briefs" aria-label="Search briefs">
+      <select id="source" aria-label="Source"><option value="">All sources</option></select>
+      <select id="conf" aria-label="Confidence">
+        <option value="">Any confidence</option>
+        <option value="high">High confidence</option>
+        <option value="medium">Medium</option>
+        <option value="low">Low</option>
+      </select>
+      <select id="tag" aria-label="Tag"><option value="">All tags</option></select>
+      <button class="ghost" id="copyAll" hidden>Copy these as Markdown</button>
+    </div>
+  </div>
+
+  <main id="list" aria-live="polite"></main>
+
+  <details class="health" id="health"></details>
+  <p class="hint">Keys: <b>j</b>/<b>k</b> move · <b>s</b> save · <b>i</b> post idea · <b>x</b> skip · <b>o</b> open · <b>c</b> copy</p>
+</div>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+(() => {
+  const KEY = "study-radar:review:v1";
+  const TABS = [
+    ["inbox", "Inbox"], ["idea", "Post ideas"], ["saved", "Saved"], ["skipped", "Skipped"], ["all", "All"]
+  ];
+  const $ = (s) => document.querySelector(s);
+  const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const fmtDate = (s) => s ? new Date(s).toLocaleDateString(undefined, { day: "numeric", month: "short", year: "numeric" }) : "";
+
+  let data = { meta: {}, briefs: [], health: [] };
+  let review = {};
+  let tab = "inbox";
+  let focusIdx = -1;
+  let visible = [];
+
+  try { review = JSON.parse(localStorage.getItem(KEY) || "{}") || {}; } catch (e) { review = {}; }
+  const saveReview = () => { try { localStorage.setItem(KEY, JSON.stringify(review)); } catch (e) {} };
+  const statusOf = (b) => review[b.id] || "inbox";
+
+  function toast(msg) {
+    const t = $("#toast"); t.textContent = msg; t.classList.add("show");
+    clearTimeout(toast._t); toast._t = setTimeout(() => t.classList.remove("show"), 1600);
+  }
+
+  function isNew(b) {
+    return !!data.meta.updated && b.found === data.meta.updated;
+  }
+
+  function markdown(b) {
+    const x = b.brief;
+    if (!x) return `${b.title}\n${b.source}. Could not be read: ${b.unreadable}\n${b.url}`;
+    const m = x.method || {};
+    return [
+      `**${x.headline}**`,
+      `${b.title} (${b.source}${b.published ? ", " + fmtDate(b.published) : ""})`,
+      ...(x.key_stats || []).map((s) => `- ${s}`),
+      `Method: ${m.sample}. ${m.data_source}. Confidence: ${m.confidence}. ${m.caveat}`,
+      `So what: ${x.so_what}`,
+      `Post angle: ${x.post_angle}`,
+      b.url,
+    ].join("\n");
+  }
+
+  async function copy(text, msg) {
+    try { await navigator.clipboard.writeText(text); toast(msg); }
+    catch (e) { toast("Copy blocked by the browser"); }
+  }
+
+  function setStatus(id, s) {
+    if (review[id] === s || s === "inbox") delete review[id]; else review[id] = s;
+    saveReview(); render(true);
+  }
+
+  function renderStats() {
+    const b = data.briefs.filter((x) => x.brief);
+    const counts = { inbox: 0, idea: 0, saved: 0, skipped: 0 };
+    data.briefs.forEach((x) => counts[statusOf(x)]++);
+    const fresh = data.briefs.filter(isNew).length;
+    $("#stats").innerHTML = [
+      [fresh, "New this run"], [counts.inbox, "To review"], [counts.idea, "Post ideas"],
+      [b.filter((x) => x.brief.method?.confidence === "high").length, "High-confidence studies"],
+    ].map(([n, l]) => `<div class="stat"><b>${n}</b><span>${l}</span></div>`).join("");
+    $("#tabs").innerHTML = TABS.map(([k, l]) => {
+      const n = k === "all" ? data.briefs.length : counts[k];
+      return `<button role="tab" data-tab="${k}" aria-selected="${k === tab}">${l}<span class="n">${n}</span></button>`;
+    }).join("");
+  }
+
+  function filtered() {
+    const q = $("#q").value.trim().toLowerCase();
+    const src = $("#source").value, conf = $("#conf").value, tag = $("#tag").value;
+    return data.briefs.filter((b) => {
+      if (tab !== "all" && statusOf(b) !== tab) return false;
+      if (src && b.source !== src) return false;
+      if (conf && b.brief?.method?.confidence !== conf) return false;
+      if (tag && !(b.brief?.tags || []).includes(tag)) return false;
+      if (q) {
+        const hay = (b.title + " " + b.source + " " + JSON.stringify(b.brief || {})).toLowerCase();
+        if (!hay.includes(q)) return false;
+      }
+      return true;
+    });
+  }
+
+  function card(b, i) {
+    const s = statusOf(b);
+    const date = b.published ? fmtDate(b.published) : `found ${fmtDate(b.found)}`;
+    const btn = (st, label, k) => `<button data-act="${st}" data-id="${esc(b.id)}" class="${s === st ? "on" : ""}">${label}<kbd>${k}</kbd></button>`;
+    const actions = `<div class="actions">
+      ${btn("saved", s === "saved" ? "Saved" : "Save", "s")}
+      ${btn("idea", "Post idea", "i")}
+      ${btn("skipped", s === "skipped" ? "Skipped" : "Skip", "x")}
+      <button data-act="copy" data-id="${esc(b.id)}">Copy<kbd>c</kbd></button>
+    </div>`;
+    const meta = `<div class="meta"><span class="src">${esc(b.source)}</span><span>${esc(date)}</span>
+      ${b.brief ? `<span>${esc(b.brief.study_type)}</span>` : ""}
+      ${isNew(b) ? '<span class="pill new">New</span>' : ""}
+      ${b.gated ? '<span class="pill warn" title="Full report is behind a form. Brief covers the visible summary only.">Gated: summary only</span>' : ""}</div>`;
+
+    if (!b.brief) {
+      return `<article class="card" tabindex="-1" data-i="${i}">${meta}
+        <a class="title" href="${esc(b.url)}" target="_blank" rel="noopener">${esc(b.title)} ↗</a>
+        <p class="note">Couldn't read this page: ${esc(b.unreadable)}. It passed the study check, so it may be worth opening.</p>
+        <div class="foot"><div></div>${actions}</div></article>`;
+    }
+    const x = b.brief, m = x.method || {};
+    const row = (k, v) => v ? `<dt>${k}</dt><dd>${esc(v)}</dd>` : "";
+    const pdfs = (b.pdf_links || []).length ? `<div class="pdfs">PDF: ${b.pdf_links.map((p, n) => `<a href="${esc(p)}" target="_blank" rel="noopener">file ${n + 1}</a>`).join(" · ")}</div>` : "";
+    return `<article class="card" tabindex="-1" data-i="${i}">${meta}
+      <a class="title" href="${esc(b.url)}" target="_blank" rel="noopener">${esc(b.title)} ↗</a>
+      <h2 class="headline">${esc(x.headline)}</h2>
+      <ul class="stats-list">${(x.key_stats || []).map((t) => `<li>${esc(t)}</li>`).join("")}</ul>
+      <div class="method">
+        <div class="method-top"><strong>Method check</strong><span class="conf ${esc(m.confidence)}">${esc(m.confidence || "?")} confidence</span></div>
+        <dl class="mgrid">${row("Sample", m.sample)}${row("Data", m.data_source)}${row("When", m.timeframe)}${row("Bias", m.conflict)}</dl>
+        ${m.caveat ? `<p class="caveat">${esc(m.caveat)}</p>` : ""}
+        ${pdfs}
+      </div>
+      <div class="two">
+        <div class="block"><h4>So what</h4><p>${esc(x.so_what)}</p></div>
+        <div class="block angle"><h4>Post angle</h4><p>${esc(x.post_angle)}</p></div>
+      </div>
+      <div class="foot"><div class="tags">${(x.tags || []).map((t) => `<span class="pill">${esc(t)}</span>`).join("")}</div>${actions}</div>
+    </article>`;
+  }
+
+  function emptyState() {
+    if (!data.briefs.length) {
+      return `<div class="empty"><h2>No briefs yet</h2><p>Run the workflow once: <b>Actions → Study Radar → Run workflow</b>.<br>The first run takes a few minutes, then refresh this page.</p></div>`;
+    }
+    const msg = { inbox: "Inbox zero. New studies land here after the next run.", idea: "No post ideas yet. Press <b>i</b> on a brief to add one.", saved: "Nothing saved yet.", skipped: "Nothing skipped." }[tab] || "No briefs match these filters.";
+    return `<div class="empty"><h2>Nothing here</h2><p>${msg}</p></div>`;
+  }
+
+  function render(keepFocus) {
+    renderStats();
+    visible = filtered();
+    $("#list").innerHTML = visible.length ? visible.map(card).join("") : emptyState();
+    $("#copyAll").hidden = !(tab === "idea" || tab === "saved") || !visible.length;
+    if (!keepFocus) focusIdx = -1;
+    focusIdx = Math.min(focusIdx, visible.length - 1);
+    if (focusIdx >= 0) setFocus(focusIdx, false);
+  }
+
+  function setFocus(i, scroll = true) {
+    const cards = document.querySelectorAll(".card");
+    cards.forEach((c) => c.classList.remove("focus"));
+    if (!cards[i]) return;
+    focusIdx = i; cards[i].classList.add("focus");
+    if (scroll) cards[i].scrollIntoView({ block: "center", behavior: "smooth" });
+  }
+
+  function renderHealth() {
+    const h = data.health || [];
+    if (!h.length) { $("#health").hidden = true; return; }
+    const bad = h.filter((x) => !x.ok).length;
+    $("#health").innerHTML = `<summary>Source health<span class="sub">${h.length - bad} of ${h.length} OK${bad ? ` · ${bad} failing` : ""}</span></summary>
+      <table class="htable"><thead><tr><th>Source</th><th class="hide-sm">Method</th><th>Status</th><th class="num">Items</th><th class="num">New</th></tr></thead><tbody>
+      ${h.map((x) => `<tr><td><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.name)}</a></td>
+        <td class="hide-sm">${esc(x.method || "")}</td>
+        <td><span class="dot ${x.ok ? "" : "bad"}"></span>${x.ok ? "OK" : esc(x.error)}</td>
+        <td class="num">${x.found ?? ""}</td><td class="num">${x.new ?? ""}</td></tr>`).join("")}
+      </tbody></table>`;
+    if (bad) $("#health").open = true;
+  }
+
+  function fillSelect(sel, values) {
+    const el = $(sel);
+    [...new Set(values)].filter(Boolean).sort().forEach((v) => {
+      const o = document.createElement("option"); o.value = v; o.textContent = v; el.appendChild(o);
+    });
+  }
+
+  function hydrate() {
+    const m = data.meta || {};
+    if (m.title) { $("#title").textContent = m.title; document.title = m.title; }
+    if (m.niche) $("#niche").textContent = m.niche;
+    if (m.updated) {
+      const r = m.run || {};
+      $("#updated").innerHTML = `Updated ${esc(fmtDate(m.updated))}<br>${r.sources ?? ""} sources · ${r.briefed ?? 0} new briefs${r.deferred ? ` · ${r.deferred} queued` : ""}`;
+    }
+    fillSelect("#source", data.briefs.map((b) => b.source));
+    fillSelect("#tag", data.briefs.flatMap((b) => b.brief?.tags || []));
+    renderHealth();
+    render();
+  }
+
+  // Events
+  $("#tabs").addEventListener("click", (e) => {
+    const t = e.target.closest("[data-tab]"); if (!t) return;
+    tab = t.dataset.tab; render();
+  });
+  ["#q", "#source", "#conf", "#tag"].forEach((s) => $(s).addEventListener("input", () => render()));
+  $("#list").addEventListener("click", (e) => {
+    const b = e.target.closest("[data-act]"); if (!b) return;
+    const item = data.briefs.find((x) => x.id === b.dataset.id); if (!item) return;
+    const card = b.closest(".card"); if (card) focusIdx = +card.dataset.i;
+    if (b.dataset.act === "copy") return copy(markdown(item), "Brief copied");
+    setStatus(item.id, b.dataset.act);
+  });
+  $("#copyAll").addEventListener("click", () => copy(visible.map(markdown).join("\n\n---\n\n"), `${visible.length} briefs copied`));
+  document.addEventListener("keydown", (e) => {
+    if (e.target.matches("input, select, textarea") || e.metaKey || e.ctrlKey || e.altKey) return;
+    const k = e.key.toLowerCase();
+    if (k === "j") return setFocus(Math.min(focusIdx + 1, visible.length - 1));
+    if (k === "k") return setFocus(Math.max(focusIdx - 1, 0));
+    const item = visible[focusIdx]; if (!item) return;
+    if (k === "s") setStatus(item.id, "saved");
+    else if (k === "i") setStatus(item.id, "idea");
+    else if (k === "x") setStatus(item.id, "skipped");
+    else if (k === "o") window.open(item.url, "_blank", "noopener");
+    else if (k === "c") copy(markdown(item), "Brief copied");
+  });
+
+  fetch("data.json", { cache: "no-store" })
+    .then((r) => r.ok ? r.json() : Promise.reject(r.status))
+    .then((d) => { data = { meta: {}, health: [], briefs: [], ...d }; hydrate(); })
+    .catch(() => { hydrate(); });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+# Study Radar
+
+**Stop reading every blog in your niche. Read the studies, briefed.**
+
+Study Radar watches the companies in your niche that publish original research. Each week it finds the new studies, surveys and data analyses, then writes a 30-second brief for each one:
+
+- **Headline finding**, with the number
+- **3 key stats**, quoted exactly as published
+- **Method check**: sample, data source, timeframe, bias, and a high/medium/low confidence rating
+- **So what** for your audience
+- **A post angle** you can turn into a LinkedIn post
+
+You review everything on a private dashboard: save it, flag it as a post idea, or skip it.
+
+It runs free on GitHub, with no server and nothing to host. You only pay for your own Claude API usage.
+
+<!-- After your first run, add a screenshot: ![Study Radar dashboard](docs/screenshot.png) -->
+
+---
+
+## How it works
+
+```
+Every Monday (GitHub Actions)
+  1. Discover   check each source's RSS feed, listing page or sitemap for new posts
+  2. Triage     a cheap model separates studies from how-tos, news and product updates
+  3. Brief      a stronger model reads each study and writes the brief + method check
+  4. Publish    results are committed to the repo; the dashboard (GitHub Pages) updates
+```
+
+It has three details that make the output trustworthy:
+
+- **It won't invent numbers.** If the method isn't disclosed, the brief says "Not disclosed". A missing method counts as a finding.
+- **It flags gated reports.** If the full report sits behind an email form, the card is marked "Gated: summary only" and links any PDFs it found.
+- **It fails loudly.** When a site blocks it or a page won't render, the dashboard shows that in the source health table and on the card. Nothing gets dropped silently.
+
+## Setup (about 10 minutes)
+
+1. **Copy the repo.** Click **Use this template** (or fork it). Public or private both work. GitHub Pages on a private repo needs a paid GitHub plan.
+2. **Add your API key.** Get a key at [console.anthropic.com](https://console.anthropic.com). In your repo, go to **Settings → Secrets and variables → Actions → New repository secret**, name it `ANTHROPIC_API_KEY`, and paste the key.
+3. **Turn on the dashboard.** Go to **Settings → Pages**, set Source to *Deploy from a branch*, choose branch `main` and folder `/docs`, then click Save.
+4. **Pick your niche.** Edit `config.yaml`: set `niche`, `audience` and your `sources` (see below).
+5. **Run it.** Go to **Actions → Study Radar → Run workflow**. When it finishes (a few minutes), open `https://<you>.github.io/<repo>/`.
+
+After that it runs every Monday on its own. To change the day or time, edit the `cron` line in `.github/workflows/radar.yml`.
+
+## Adding sources
+
+Each source needs a `name` and one way to find new posts:
+
+```yaml
+sources:
+  # Best: an RSS feed. Gives dates and summaries. Try /feed, /rss or /blog/feed
+  - name: Ahrefs
+    feed: https://ahrefs.com/blog/feed/
+
+  # No feed? Point at a listing page and give a regex the post URLs match
+  - name: BrightEdge
+    page: https://www.brightedge.com/resources/research-reports
+    link_pattern: /resources/research-reports/[a-z0-9-]+/?$
+    all_studies: true        # everything here is research, so skip triage
+
+  # Or use a sitemap
+  - name: Example
+    sitemap: https://example.com/sitemap.xml
+    link_pattern: /research/
+```
+
+Optional per source:
+
+| Option | What it does |
+|---|---|
+| `all_studies: true` | Skip triage. Use this for pages that only list research. |
+| `link_pattern` | Only keep URLs that match this regex. |
+| `exclude_pattern` | Drop URLs that match this regex (e.g. `/webinars/`). |
+| `first_run_keep` | Listing pages have no dates, so on the first run only the top N (default 3) get briefed. |
+
+**Test sources before committing** (no API key needed):
+
+```bash
+pip install -r requirements.txt
+python radar.py --check
+```
+
+```
+OK   Ahrefs                 feed      20 items
+       2026-09-25  How to Optimize for AI Search...
+FAIL SomeSite               blocked by the site (403)
+```
+
+### What makes a good source
+
+Pick companies that publish their **own data**: tool vendors with big datasets, agencies that run experiments, and analysts who survey. A blog that mixes studies with how-tos is fine, because triage filters out the how-tos. News sites are a poor fit because they mostly report other people's research.
+
+The starter list covers SEO and GEO: Ahrefs, Semrush, SparkToro, Growth Memo, iPullRank, Seer Interactive, Profound, Backlinko and BrightEdge. Swap them for your own niche.
+
+## Cost
+
+Each run makes one small triage call per 30 new posts, plus one brief call per study. A brief call reads the article text, usually 5k–20k tokens. `max_briefs_per_run` (default 12) caps spend, and any extra studies wait for the next run. For current per-token rates, see [anthropic.com/pricing](https://www.anthropic.com/pricing). You can change both models in `config.yaml`.
+
+## Using the dashboard
+
+- **Tabs:** Inbox → Post ideas / Saved / Skipped.
+- **Keyboard:** `j`/`k` move, `s` save, `i` post idea, `x` skip, `o` open, `c` copy brief.
+- **Copy these as Markdown** (on Post ideas and Saved) copies every brief in the tab, ready for a doc or a content calendar.
+- **Filter** by source, confidence or tag, or search everything.
+
+Review status is stored in your browser, so it doesn't sync between devices.
+
+## Limits
+
+- **JavaScript-only pages** can't be read. They show up as "couldn't read" cards with a link.
+- **Gated reports:** only the landing page is briefed.
+- **Bot blocking:** some sites (often behind Cloudflare) block automated requests. Source health shows it. Use a different URL for that company, like its feed, or drop it.
+- **Web-only:** research published only on LinkedIn, in newsletters or in PDFs sent by email isn't covered.
+- **AI briefs can be wrong.** The method check is there so you know how much to trust each study, and every card links to the source. Check the numbers before you quote them.
+
+## Files
+
+```
+radar.py                     the whole pipeline (one file)
+config.yaml                  your niche and sources
+docs/index.html              the dashboard (static, no build step)
+docs/data.json               briefs (written by the workflow)
+state/state.json             what's been seen, so nothing is briefed twice
+.github/workflows/radar.yml  weekly schedule
+```
+
+Run it locally: `ANTHROPIC_API_KEY=... python radar.py`, then `cd docs && python -m http.server` and open http://localhost:8000.
+
+## License
+
+MIT

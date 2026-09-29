@@ -1,0 +1,606 @@
+#!/usr/bin/env python3
+"""
+Study Radar
+-----------
+Watches the companies in your niche for new original research (studies,
+surveys, data analyses, benchmarks) and writes a review-ready brief for each:
+the headline finding, the key stats, a method check, and what it means for you.
+
+Usage
+  python radar.py            # full run: discover -> triage -> brief -> save
+  python radar.py --check    # test your sources only (no API key, no writes)
+
+Environment
+  ANTHROPIC_API_KEY   required for a full run
+  RADAR_CONFIG        optional path to config (default: config.yaml)
+"""
+from __future__ import annotations
+
+import argparse
+import json
+import os
+import re
+import sys
+import time
+import xml.etree.ElementTree as ET
+from datetime import datetime, timedelta, timezone
+from pathlib import Path
+from urllib.parse import parse_qsl, urlencode, urljoin, urlparse, urlunparse
+
+import feedparser
+import requests
+import yaml
+from bs4 import BeautifulSoup
+
+ROOT = Path(__file__).resolve().parent
+CONFIG_PATH = Path(os.environ.get("RADAR_CONFIG", ROOT / "config.yaml"))
+DATA_PATH = ROOT / "docs" / "data.json"      # what the dashboard reads
+STATE_PATH = ROOT / "state" / "state.json"   # what the radar has already seen
+
+API_URL = "https://api.anthropic.com/v1/messages"
+DEFAULTS = {
+    "lookback_days": 45,
+    "max_briefs_per_run": 12,
+    "max_new_per_source": 20,
+    "max_article_chars": 60000,
+    "keep_briefs": 400,
+    "user_agent": "Mozilla/5.0 (compatible; StudyRadar/1.0; research digest bot)",
+    "models": {"triage": "claude-haiku-4-5-20251001", "brief": "claude-sonnet-5-5"},
+    "tags": [],
+}
+
+
+# ---------------------------------------------------------------- helpers
+
+def utcnow() -> datetime:
+    return datetime.now(timezone.utc)
+
+
+def iso(d: datetime | None) -> str | None:
+    return d.astimezone(timezone.utc).isoformat(timespec="seconds") if d else None
+
+
+def parse_iso(s: str | None) -> datetime | None:
+    if not s:
+        return None
+    try:
+        d = datetime.fromisoformat(s.replace("Z", "+00:00"))
+        return d if d.tzinfo else d.replace(tzinfo=timezone.utc)
+    except ValueError:
+        return None
+
+
+def log(msg: str) -> None:
+    print(msg, flush=True)
+
+
+def short_error(e: Exception) -> str:
+    if isinstance(e, requests.HTTPError) and e.response is not None:
+        code = e.response.status_code
+        hint = {403: "blocked by the site (403)", 404: "URL not found (404)",
+                429: "rate limited (429)"}.get(code, f"HTTP {code}")
+        return hint
+    if isinstance(e, requests.Timeout):
+        return "timed out"
+    if isinstance(e, requests.ConnectionError):
+        return "could not connect"
+    return str(e)[:200]
+
+
+TRACKING = re.compile(r"^(utm_|mc_|hsa_|_hs|fbclid|gclid|ref$|source$)", re.I)
+
+
+def normalize_url(u: str) -> str:
+    p = urlparse(u.strip())
+    query = urlencode([(k, v) for k, v in parse_qsl(p.query) if not TRACKING.match(k)])
+    return urlunparse((p.scheme.lower() or "https", p.netloc.lower(), p.path or "/", "", query, ""))
+
+
+def url_key(u: str) -> str:
+    """Identity for de-duplication: ignores scheme, www and trailing slash."""
+    p = urlparse(u)
+    host = p.netloc.lower().removeprefix("www.")
+    return f"{host}{p.path.rstrip('/')}" + (f"?{p.query}" if p.query else "")
+
+
+def slug_title(url: str) -> str:
+    seg = [s for s in urlparse(url).path.split("/") if s]
+    words = re.sub(r"[-_]+", " ", seg[-1] if seg else url)
+    words = re.sub(r"\.(html?|php|aspx?)$", "", words)
+    return words[:1].upper() + words[1:]
+
+
+def strip_html(s: str, limit: int = 400) -> str:
+    text = BeautifulSoup(s or "", "html.parser").get_text(" ", strip=True)
+    return re.sub(r"\s+", " ", text)[:limit]
+
+
+class Fetcher:
+    def __init__(self, user_agent: str):
+        self.s = requests.Session()
+        self.s.headers.update({
+            "User-Agent": user_agent,
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+            "Accept-Language": "en-US,en;q=0.9",
+        })
+
+    def get(self, url: str) -> requests.Response:
+        r = self.s.get(url, timeout=30, allow_redirects=True)
+        r.raise_for_status()
+        return r
+
+
+# ---------------------------------------------------------------- discovery
+# Each method returns items: {url, title, published (datetime|None), snippet}
+
+def discover_feed(src: dict, f: Fetcher) -> list[dict]:
+    r = f.get(src["feed"])
+    parsed = feedparser.parse(r.content)
+    if not parsed.entries:
+        raise ValueError("no entries: not a readable RSS/Atom feed")
+    items = []
+    for e in parsed.entries:
+        link = e.get("link")
+        if not link:
+            continue
+        t = e.get("published_parsed") or e.get("updated_parsed")
+        pub = datetime(*t[:6], tzinfo=timezone.utc) if t else None
+        items.append({
+            "url": normalize_url(urljoin(r.url, link)),
+            "title": strip_html(e.get("title", ""), 300) or slug_title(link),
+            "published": pub,
+            "snippet": strip_html(e.get("summary", "")),
+        })
+    return items
+
+
+def discover_page(src: dict, f: Fetcher) -> list[dict]:
+    r = f.get(src["page"])
+    soup = BeautifulSoup(r.text, "html.parser")
+    pattern = re.compile(src["link_pattern"])
+    listing = url_key(r.url)
+    found: dict[str, str] = {}
+    for a in soup.find_all("a", href=True):
+        url = normalize_url(urljoin(r.url, a["href"]))
+        if url_key(url) == listing or not pattern.search(url):
+            continue
+        text = a.get_text(" ", strip=True) or a.get("aria-label", "") or a.get("title", "")
+        # Cards often link twice (image + title): keep the most descriptive text.
+        if len(text) > len(found.get(url, "")):
+            found[url] = text
+        else:
+            found.setdefault(url, "")
+    return [{"url": u, "title": (t[:300] or slug_title(u)), "published": None, "snippet": ""}
+            for u, t in found.items()]
+
+
+def _xml_children(root: ET.Element, name: str):
+    return [el for el in root.iter() if el.tag.split("}")[-1] == name]
+
+
+def _xml_text(el: ET.Element, name: str) -> str | None:
+    for child in el:
+        if child.tag.split("}")[-1] == name:
+            return (child.text or "").strip()
+    return None
+
+
+def discover_sitemap(src: dict, f: Fetcher) -> list[dict]:
+    pattern = re.compile(src["link_pattern"]) if src.get("link_pattern") else None
+    to_fetch, entries = [src["sitemap"]], []
+    child_pat = re.compile(src["sitemap_pattern"]) if src.get("sitemap_pattern") else None
+    fetched = 0
+    while to_fetch and fetched < 12:
+        root = ET.fromstring(f.get(to_fetch.pop(0)).content)
+        fetched += 1
+        if root.tag.split("}")[-1] == "sitemapindex":
+            kids = [_xml_text(s, "loc") for s in _xml_children(root, "sitemap")]
+            to_fetch += [k for k in kids if k and (not child_pat or child_pat.search(k))]
+            continue
+        for u in _xml_children(root, "url"):
+            loc = _xml_text(u, "loc")
+            if not loc or (pattern and not pattern.search(loc)):
+                continue
+            entries.append({
+                "url": normalize_url(loc),
+                "title": slug_title(loc),
+                "published": parse_iso(_xml_text(u, "lastmod")),
+                "snippet": "",
+            })
+    entries.sort(key=lambda x: x["published"] or datetime.min.replace(tzinfo=timezone.utc),
+                 reverse=True)
+    return entries[:300]
+
+
+def discover(src: dict, f: Fetcher) -> tuple[str, list[dict]]:
+    if src.get("feed"):
+        method, items = "feed", discover_feed(src, f)
+    elif src.get("page"):
+        if not src.get("link_pattern"):
+            raise ValueError("'page' sources need a link_pattern")
+        method, items = "page", discover_page(src, f)
+    elif src.get("sitemap"):
+        method, items = "sitemap", discover_sitemap(src, f)
+    else:
+        raise ValueError("source needs one of: feed, page, sitemap")
+    if src.get("link_pattern") and method == "feed":
+        pat = re.compile(src["link_pattern"])
+        items = [i for i in items if pat.search(i["url"])]
+    if src.get("exclude_pattern"):
+        ex = re.compile(src["exclude_pattern"])
+        items = [i for i in items if not ex.search(i["url"])]
+    return method, items
+
+
+# ---------------------------------------------------------------- reading
+
+GATE_CUE = re.compile(
+    r"\b(download|get|access|read|request)\s+(the|our|your|a)?\s*(free\s+)?(full\s+)?"
+    r"(report|study|whitepaper|white paper|e-?book|guide|research)\b", re.I)
+
+
+def read_article(url: str, f: Fetcher, max_chars: int) -> dict:
+    r = f.get(url)
+    soup = BeautifulSoup(r.text, "html.parser")
+
+    def meta(*names):
+        for n in names:
+            tag = soup.find("meta", attrs={"property": n}) or soup.find("meta", attrs={"name": n})
+            if tag and tag.get("content"):
+                return tag["content"].strip()
+        return None
+
+    title = meta("og:title", "twitter:title") or (soup.title.string.strip() if soup.title and soup.title.string else None)
+    published = parse_iso(meta("article:published_time", "datePublished", "date"))
+    has_email_form = bool(soup.select("input[type=email], input[name*=email i]"))
+    pdf_links = [urljoin(r.url, a["href"]) for a in soup.find_all("a", href=True)
+                 if a["href"].lower().split("?")[0].endswith(".pdf")][:3]
+
+    for t in soup(["script", "style", "noscript", "svg", "iframe", "nav", "footer",
+                   "header", "aside", "form", "button"]):
+        t.decompose()
+    candidates = soup.find_all("article") + soup.find_all("main")
+    node = max(candidates, key=lambda n: len(n.get_text()), default=None) or soup.body or soup
+    text = node.get_text("\n", strip=True)
+    if len(text.split()) < 150 and soup.body:
+        text = soup.body.get_text("\n", strip=True)
+    text = re.sub(r"\n{3,}", "\n\n", text)
+    words = len(text.split())
+    gated = words < 900 and (has_email_form or bool(GATE_CUE.search(text)))
+    return {"title": title, "published": published, "text": text[:max_chars],
+            "words": words, "gated": gated, "pdf_links": pdf_links}
+
+
+# ---------------------------------------------------------------- Claude
+
+def call_claude(model: str, system: str, user: str, tool: dict, max_tokens: int = 1500) -> dict:
+    key = os.environ.get("ANTHROPIC_API_KEY", "")
+    body = {
+        "model": model, "max_tokens": max_tokens, "system": system,
+        "messages": [{"role": "user", "content": user}],
+        "tools": [tool], "tool_choice": {"type": "tool", "name": tool["name"]},
+    }
+    headers = {"x-api-key": key, "anthropic-version": "2023-06-01",
+               "content-type": "application/json"}
+    for attempt in range(5):
+        r = requests.post(API_URL, headers=headers, json=body, timeout=180)
+        if r.status_code in (429, 500, 502, 503, 529):
+            wait = int(r.headers.get("retry-after", 0)) or 10 * (attempt + 1)
+            log(f"    API busy ({r.status_code}), retrying in {wait}s")
+            time.sleep(wait)
+            continue
+        if r.status_code >= 400:
+            raise RuntimeError(f"Anthropic API {r.status_code}: {r.text[:300]}")
+        for block in r.json().get("content", []):
+            if block.get("type") == "tool_use":
+                return block["input"]
+        raise RuntimeError("model returned no structured output")
+    raise RuntimeError("Anthropic API kept failing, try again later")
+
+
+TRIAGE_TOOL = {
+    "name": "select_studies",
+    "description": "Return the indices of items that are original research.",
+    "input_schema": {
+        "type": "object",
+        "properties": {"studies": {"type": "array", "items": {"type": "integer"}}},
+        "required": ["studies"],
+    },
+}
+
+TRIAGE_SYSTEM = """You screen content for a research digest. From a list of article titles and snippets, pick the ones that are ORIGINAL RESEARCH: the publisher collected or analysed data itself and reports the findings.
+
+Include: surveys, analyses of a dataset (e.g. "we analysed 1M keywords / 10k sites / 13B searches"), controlled experiments or tests, benchmarks, indexes, annual "state of" reports with new numbers, studies with a specific measured finding in the title (e.g. "X cuts CTR by 23%").
+
+Exclude: how-to guides, tutorials, tool walkthroughs, product or feature announcements, funding/awards/company news, opinion or strategy essays without new data, roundups of other people's statistics, webinars, job posts.
+
+When a title states a specific measured result, include it. Otherwise, if unsure, exclude."""
+
+
+def triage(cands: list[dict], cfg: dict) -> set[int]:
+    lines = []
+    for i, c in enumerate(cands):
+        snip = f" | {c['snippet'][:280]}" if c.get("snippet") else ""
+        lines.append(f"[{i}] ({c['source']}) {c['title']}{snip}\n    {c['url']}")
+    user = (f"Niche: {cfg['niche']}\n\nItems:\n" + "\n".join(lines) +
+            "\n\nReturn the indices of the original-research items.")
+    out = call_claude(cfg["models"]["triage"], TRIAGE_SYSTEM, user, TRIAGE_TOOL, 600)
+    return {i for i in out.get("studies", []) if isinstance(i, int) and 0 <= i < len(cands)}
+
+
+def brief_tool(tags: list[str]) -> dict:
+    tag_schema = {"type": "string"}
+    if tags:
+        tag_schema["enum"] = tags
+    s = {"type": "string"}
+    return {
+        "name": "write_brief",
+        "description": "Write the review brief for one study.",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "is_study": {"type": "boolean", "description": "False if, on reading, this is not original research."},
+                "headline": {**s, "description": "The single most important finding in one sentence, with its number. Max 25 words."},
+                "study_type": {"type": "string", "enum": ["survey", "data analysis", "experiment", "benchmark", "industry report", "case study", "other"]},
+                "key_stats": {"type": "array", "items": s, "maxItems": 3,
+                              "description": "Up to 3 findings, each one short line with the exact number as published."},
+                "method": {
+                    "type": "object",
+                    "properties": {
+                        "sample": {**s, "description": "What was measured and how much, e.g. '1,200 marketers surveyed' or '300k keywords'. 'Not disclosed' if absent."},
+                        "data_source": {**s, "description": "Where the data came from, e.g. own tool data, panel survey, Search Console. 'Not disclosed' if absent."},
+                        "timeframe": {**s, "description": "When the data was collected. 'Not disclosed' if absent."},
+                        "conflict": {**s, "description": "Does the finding promote the publisher's own product or category? One short sentence."},
+                        "confidence": {"type": "string", "enum": ["high", "medium", "low"]},
+                        "caveat": {**s, "description": "The main reason to be careful with this finding. One sentence."},
+                    },
+                    "required": ["sample", "data_source", "timeframe", "conflict", "confidence", "caveat"],
+                },
+                "so_what": {**s, "description": "What this means for the audience. Two sentences, practical."},
+                "post_angle": {**s, "description": "One LinkedIn post angle: a sharp hook plus the take. Two sentences max. No hashtags or emojis."},
+                "tags": {"type": "array", "items": tag_schema, "maxItems": 3},
+            },
+            "required": ["is_study", "headline", "study_type", "key_stats", "method", "so_what", "post_angle", "tags"],
+        },
+    }
+
+
+BRIEF_SYSTEM = """You write briefs of industry studies for a busy professional who decides in 30 seconds whether a study is worth their time.
+
+Rules:
+- Use only what the text says. Never invent or round numbers. Quote figures exactly as published.
+- If a method detail is missing, write "Not disclosed". Missing methods are a finding, not a gap to fill.
+- Confidence: high = large sample, method explained, limits acknowledged. medium = reasonable sample but vendor data or partial method. low = small, self-selected or undisclosed sample, no method, or the study mainly sells the publisher's product.
+- If the page is a gated landing page, brief only what is visible and say so in the caveat.
+- Plain, direct language. No hype, no filler, no emojis."""
+
+
+def write_brief(item: dict, art: dict, cfg: dict) -> dict:
+    gated_note = ("\nNOTE: This looks like a gated landing page. The full report is behind a form, "
+                  "so only the visible summary is available.") if art["gated"] else ""
+    user = f"""Audience: {cfg['audience']}
+Niche: {cfg['niche']}
+
+Publisher: {item['source']}
+Title: {art.get('title') or item['title']}
+URL: {item['url']}
+Published: {iso(item.get('published')) or 'unknown'}{gated_note}
+
+--- ARTICLE TEXT ---
+{art['text']}
+--- END ---"""
+    return call_claude(cfg["models"]["brief"], BRIEF_SYSTEM, user, brief_tool(cfg.get("tags") or []), 1800)
+
+
+# ---------------------------------------------------------------- storage
+
+def load_json(path: Path, default: dict) -> dict:
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except (FileNotFoundError, json.JSONDecodeError):
+        return default
+
+
+def save_json(path: Path, obj: dict) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    tmp = path.with_suffix(".tmp")
+    tmp.write_text(json.dumps(obj, ensure_ascii=False, indent=1), encoding="utf-8")
+    tmp.replace(path)
+
+
+def load_config() -> dict:
+    cfg = yaml.safe_load(CONFIG_PATH.read_text(encoding="utf-8")) or {}
+    merged = {**DEFAULTS, **cfg}
+    merged["models"] = {**DEFAULTS["models"], **(cfg.get("models") or {})}
+    for k in ("niche", "audience", "sources"):
+        if not merged.get(k):
+            sys.exit(f"config.yaml is missing '{k}'")
+    names = [s.get("name") for s in merged["sources"]]
+    if len(set(names)) != len(names) or None in names:
+        sys.exit("Every source needs a unique 'name'")
+    return merged
+
+
+# ---------------------------------------------------------------- run
+
+def check_sources(cfg: dict) -> None:
+    f = Fetcher(cfg["user_agent"])
+    for src in cfg["sources"]:
+        try:
+            method, items = discover(src, f)
+            log(f"OK   {src['name']:<22} {method:<8} {len(items):>3} items")
+            for it in items[:3]:
+                d = it["published"].date().isoformat() if it["published"] else "no date   "
+                log(f"       {d}  {it['title'][:80]}")
+        except Exception as e:  # noqa: BLE001
+            log(f"FAIL {src['name']:<22} {short_error(e)}")
+
+
+def run(cfg: dict) -> dict:
+    if not os.environ.get("ANTHROPIC_API_KEY"):
+        sys.exit("Set ANTHROPIC_API_KEY (GitHub: Settings > Secrets and variables > Actions).")
+
+    f = Fetcher(cfg["user_agent"])
+    now = utcnow()
+    cutoff = now - timedelta(days=int(cfg["lookback_days"]))
+    state = load_json(STATE_PATH, {"seen": {}, "sources": {}})
+    data = load_json(DATA_PATH, {"briefs": []})
+    seen, src_state = state["seen"], state["sources"]
+    health, cands = [], []
+    batch_keys: set[str] = set()   # same study syndicated by two sources: brief once
+
+    def mark(url, source, status):
+        seen[url_key(url)] = {"source": source, "status": status, "at": iso(now)}
+
+    # 1. Discover
+    log("== Discover")
+    for src in cfg["sources"]:
+        name = src["name"]
+        h = {"name": name, "checked": iso(now), "ok": True, "found": 0, "new": 0, "error": None,
+             "url": src.get("feed") or src.get("page") or src.get("sitemap")}
+        try:
+            method, items = discover(src, f)
+        except Exception as e:  # noqa: BLE001
+            h.update(ok=False, error=short_error(e), method=None)
+            health.append(h)
+            log(f"  FAIL {name}: {h['error']}")
+            continue
+        h.update(method=method, found=len(items))
+        first_run = not src_state.get(name, {}).get("initialized")
+        undated_seen = 0
+        new = []
+        for it in items:
+            if url_key(it["url"]) in seen or url_key(it["url"]) in batch_keys:
+                continue
+            batch_keys.add(url_key(it["url"]))
+            if it["published"] and it["published"] < cutoff:
+                continue
+            if it["published"] is None and first_run:
+                # Undated listing on its first check: treat the top few as new,
+                # the rest as history so we don't brief a company's whole archive.
+                undated_seen += 1
+                if undated_seen > int(src.get("first_run_keep", 3)):
+                    mark(it["url"], name, "baseline")
+                    continue
+            new.append({**it, "source": name, "all_studies": bool(src.get("all_studies"))})
+        new = new[: int(cfg["max_new_per_source"])]
+        h["new"] = len(new)
+        cands += new
+        src_state[name] = {"initialized": True, "last_ok": iso(now)}
+        health.append(h)
+        log(f"  OK   {name}: {len(items)} found, {len(new)} new")
+
+    # 2. Triage (cheap model) — which new items are actual studies?
+    log(f"== Triage {len(cands)} new items")
+    studies = [c for c in cands if c["all_studies"]]
+    to_triage = [c for c in cands if not c["all_studies"]]
+    for start in range(0, len(to_triage), 30):
+        batch = to_triage[start:start + 30]
+        try:
+            picked = triage(batch, cfg)
+        except Exception as e:  # noqa: BLE001
+            log(f"  triage failed, will retry next run: {e}")
+            continue
+        for i, c in enumerate(batch):
+            if i in picked:
+                studies.append(c)
+            else:
+                mark(c["url"], c["source"], "not_study")
+    log(f"  {len(studies)} look like studies")
+
+    # 3. Brief (better model), newest first, capped per run
+    studies.sort(key=lambda c: c["published"] or now, reverse=True)
+    queue = studies[: int(cfg["max_briefs_per_run"])]
+    deferred = len(studies) - len(queue)
+    log(f"== Brief {len(queue)} studies" + (f" ({deferred} deferred to next run)" if deferred else ""))
+    briefs, counts = data.get("briefs", []), {"briefed": 0, "unreadable": 0, "rejected": 0}
+    for c in queue:
+        log(f"  {c['source']}: {c['title'][:70]}")
+        record = {"id": url_key(c["url"]), "url": c["url"], "source": c["source"], "title": c["title"],
+                  "published": iso(c["published"]), "found": iso(now),
+                  "gated": False, "unreadable": None, "pdf_links": [], "brief": None}
+        try:
+            art = read_article(c["url"], f, int(cfg["max_article_chars"]))
+        except Exception as e:  # noqa: BLE001
+            record["unreadable"] = short_error(e)
+            briefs.insert(0, record)
+            mark(c["url"], c["source"], "unreadable")
+            counts["unreadable"] += 1
+            log(f"    unreadable: {record['unreadable']}")
+            continue
+        if art["words"] < (25 if art["gated"] else 120):
+            record["unreadable"] = "page has almost no readable text (likely built with JavaScript)"
+            record["title"] = art["title"] or c["title"]
+            briefs.insert(0, record)
+            mark(c["url"], c["source"], "unreadable")
+            counts["unreadable"] += 1
+            log("    unreadable: no text")
+            continue
+        try:
+            b = write_brief(c, art, cfg)
+        except Exception as e:  # noqa: BLE001
+            log(f"    brief failed, will retry next run: {e}")
+            continue
+        if not b.get("is_study", True):
+            mark(c["url"], c["source"], "not_study")
+            counts["rejected"] += 1
+            log("    not a study on closer reading, skipped")
+            continue
+        record.update(title=art["title"] or c["title"],
+                      published=iso(c["published"] or art["published"]),
+                      gated=art["gated"], pdf_links=art["pdf_links"], words=art["words"], brief=b)
+        briefs.insert(0, record)
+        mark(c["url"], c["source"], "briefed")
+        counts["briefed"] += 1
+
+    # 4. Save
+    briefs.sort(key=lambda r: (r.get("found") or "", r.get("published") or ""), reverse=True)
+    data = {
+        "meta": {
+            "niche": cfg["niche"], "audience": cfg["audience"], "updated": iso(now),
+            "title": cfg.get("title", "Study Radar"),
+            "run": {"sources": len(cfg["sources"]), "new_items": len(cands),
+                    "studies": len(studies), "deferred": deferred, **counts},
+        },
+        "health": health,
+        "briefs": briefs[: int(cfg["keep_briefs"])],
+    }
+    save_json(DATA_PATH, data)
+    save_json(STATE_PATH, state)
+    summary(data)
+    return data
+
+
+def summary(data: dict) -> None:
+    run = data["meta"]["run"]
+    failed = [h for h in data["health"] if not h["ok"]]
+    lines = [
+        "## Study Radar run",
+        f"- New items checked: {run['new_items']}",
+        f"- Briefs written: {run['briefed']}",
+        f"- Unreadable pages: {run['unreadable']}",
+        f"- Deferred to next run: {run['deferred']}",
+    ]
+    if failed:
+        lines.append("\n**Sources that failed**")
+        lines += [f"- {h['name']}: {h['error']}" for h in failed]
+    text = "\n".join(lines)
+    log("\n" + text)
+    if os.environ.get("GITHUB_STEP_SUMMARY"):
+        with open(os.environ["GITHUB_STEP_SUMMARY"], "a", encoding="utf-8") as fh:
+            fh.write(text + "\n")
+
+
+def main() -> None:
+    ap = argparse.ArgumentParser(description="Study Radar")
+    ap.add_argument("--check", action="store_true", help="test sources only, no API calls or writes")
+    args = ap.parse_args()
+    cfg = load_config()
+    if args.check:
+        check_sources(cfg)
+    else:
+        run(cfg)
+
+
+if __name__ == "__main__":
+    main()
