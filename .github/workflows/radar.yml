@@ -17,22 +17,32 @@ jobs:
   radar:
     runs-on: ubuntu-latest
     timeout-minutes: 30
+    env:
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
     steps:
+      - name: Check setup
+        if: env.ANTHROPIC_API_KEY == ''
+        run: |
+          echo "No ANTHROPIC_API_KEY secret yet, so skipping this run. See README > Setup." | tee -a "$GITHUB_STEP_SUMMARY"
+
       - uses: actions/checkout@v4
+        if: env.ANTHROPIC_API_KEY != ''
 
       - uses: actions/setup-python@v5
+        if: env.ANTHROPIC_API_KEY != ''
         with:
           python-version: "3.12"
           cache: pip
 
       - run: pip install -r requirements.txt
+        if: env.ANTHROPIC_API_KEY != ''
 
       - name: Find and brief new studies
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        if: env.ANTHROPIC_API_KEY != ''
         run: python radar.py
 
       - name: Save results
+        if: env.ANTHROPIC_API_KEY != ''
         run: |
           git config user.name  "study-radar[bot]"
           git config user.email "study-radar@users.noreply.github.com"
