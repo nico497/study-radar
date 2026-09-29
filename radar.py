@@ -150,6 +150,8 @@ def discover_feed(src: dict, f: Fetcher) -> list[dict]:
             "title": strip_html(e.get("title", ""), 300) or slug_title(link),
             "published": pub,
             "snippet": strip_html(e.get("summary", ""), 1500),
+            # Full text when the feed carries it (Substack, WordPress): fallback if the page blocks us
+            "feed_text": strip_html((e.get("content") or [{}])[0].get("value", ""), 60000),
         })
     return items
 
@@ -678,6 +680,14 @@ def run(cfg: dict) -> dict:
         try:
             art = read_article(c["url"], f, int(cfg["max_article_chars"]))
         except Exception as e:  # noqa: BLE001
+            art = None
+            err = e
+        if c.get("feed_text") and len(c["feed_text"].split()) > 150 and (art is None or art["words"] < 150):
+            text = c["feed_text"][: int(cfg["max_article_chars"])]
+            art = {"title": (art or {}).get("title"), "published": None, "text": text,
+                   "words": len(text.split()), "gated": False, "pdf_links": (art or {}).get("pdf_links", [])}
+        if art is None:
+            e = err
             record["unreadable"] = short_error(e)
             briefs.insert(0, record)
             mark(c["url"], c["source"], "unreadable")
@@ -701,7 +711,7 @@ def run(cfg: dict) -> dict:
             log(f"    brief failed, will retry next run: {e}")
             errors.append(f"brief: {str(e)[:300]}")
             continue
-        if not b.get("is_study", True):
+        if not b.get("is_study", True) and not c.get("official"):
             mark(c["url"], c["source"], "not_study")
             counts["rejected"] += 1
             log("    not a study on closer reading, skipped")

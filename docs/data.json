@@ -407,55 +407,6 @@
    "words": 2561
   },
   {
-   "id": "openai.com/index/what-students-gain-from-chatgpt-critical-thinking-training",
-   "url": "https://openai.com/index/what-students-gain-from-chatgpt-critical-thinking-training",
-   "source": "OpenAI",
-   "title": "Better answers, broader thinking: What students gain from ChatGPT and critical-thinking training",
-   "published": "2026-08-27T09:00:00+00:00",
-   "found": "2026-09-29T09:25:24+00:00",
-   "gated": false,
-   "unreadable": null,
-   "pdf_links": [
-    "https://cdn.openai.com/pdf/novices-and-llm-august-2026.pdf"
-   ],
-   "brief": {
-    "is_study": true,
-    "headline": "In a randomized experiment with more than 1,000 students, ChatGPT access raised work quality by almost a full point on a five-point scale, and causal-reasoning training widened idea variety.",
-    "study_type": "official update",
-    "key_stats": [
-     "Students with ChatGPT (GPT-4o) scored almost a full point higher on the five-point scale",
-     "Causal-reasoning training did not raise rubric scores but produced a wider range of more distinct ideas",
-     "Students with both had idea variety matching training-only students and rubric scores similar to ChatGPT-only students"
-    ],
-    "method": {
-     "sample": "n/a (official announcement)",
-     "data_source": "n/a (official announcement)",
-     "timeframe": "No rollout or change. The experiment dates are not stated.",
-     "conflict": "OpenAI reports a favorable result for its own product. The post says nothing about search, GEO, B2B or content marketing, and it gives no experiment dates.",
-     "confidence": "medium",
-     "caveat": "The setting is first-year Bocconi students writing marketing recommendations for a university store, so it says little about B2B SaaS content or search. It is a summary from the publisher, and the full paper was not reviewed."
-    },
-    "why_it_matters": "Little direct impact on SEO or GEO. The one loosely transferable point is that AI-polished output looks alike, so original ideas may be what sets content apart.",
-    "importance": 1,
-    "tags": [
-     "content"
-    ]
-   },
-   "words": 928
-  },
-  {
-   "id": "growth-memo.com/p/has-google-demoted-listicles",
-   "url": "https://www.growth-memo.com/p/has-google-demoted-listicles",
-   "source": "Growth Memo",
-   "title": "Has Google demoted listicles?",
-   "published": "2026-08-24T19:18:49+00:00",
-   "found": "2026-09-29T09:25:24+00:00",
-   "gated": false,
-   "unreadable": "page has almost no readable text (likely built with JavaScript)",
-   "pdf_links": [],
-   "brief": null
-  },
-  {
    "id": "tryprofound.com/blog/claude-and-claude-code-are-distinct-answer-engines",
    "url": "https://www.tryprofound.com/blog/claude-and-claude-code-are-distinct-answer-engines",
    "source": "Profound",

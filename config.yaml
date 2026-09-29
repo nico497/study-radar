@@ -53,7 +53,7 @@ sources:
   - name: OpenAI
     feed: https://openai.com/news/rss.xml
     kind: official
-    focus: ChatGPT search, how ChatGPT finds and cites sources, OpenAI crawlers (OAI-SearchBot, GPTBot), shopping and ads in ChatGPT, publisher programs
+    focus: ChatGPT search features, how ChatGPT finds, ranks or cites web sources, OpenAI crawlers (OAI-SearchBot, GPTBot), shopping or ads in ChatGPT, publisher partnerships. NOT model launches, research papers, education, customer stories, policy or company news
 
   # --- Research: companies that publish their own data ---
   - name: Ahrefs
