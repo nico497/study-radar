@@ -163,25 +163,28 @@
  ],
  "pulses": [
   {
-   "date": "2026-09-29T10:13:52+00:00",
-   "summary": "Google's spam update is rolling out now, and AI search keeps reshaping results. Most AI studies came from vendors, so treat them as early signals.",
+   "date": "2026-09-29T10:16:23+00:00",
+   "summary": "Google's September spam update is rolling out, and AI results keep shifting by tool, persona and run. Most AI-visibility data is early and comes from vendors.",
    "points": [
     {
-     "text": "Google's spam update started 24 Sep and runs up to two weeks. Log traffic swings against those dates and hold big content changes.",
+     "text": "Google's spam update began 24 Sep and may swing rankings into early October. Log traffic by date and hold big content changes.",
      "ids": [
       "status.search.google.com/incidents/XhUDXP7A67iHCD2kmbVu"
      ]
     },
     {
-     "text": "AI answers often stay silent instead of wrong: 31.2% of prompts were declined, and comparison prompts got no answer 80.3% of the time. Build third-party coverage.",
+     "text": "AI answers vary a lot by tool, run and buyer type, and AI often stays silent. Test key prompts with buyer roles and build outside coverage.",
      "ids": [
-      "seerinteractive.com/insights/ai-brand-accuracy-study"
+      "tryprofound.com/blog/do-answer-engines-customize-responses-to-different-personas",
+      "seerinteractive.com/insights/ai-brand-accuracy-study",
+      "orbitmedia.com/blog/ai-citation-sources"
      ]
     },
     {
-     "text": "AI visitors are tiny but valuable: 0.5% of traffic, converting to leads 3x more than other organic visitors. Judge content by pipeline, not traffic.",
+     "text": "AI referrals convert to leads 3x better but are only 0.5% of traffic. Track them as high-intent, and keep investing in organic search.",
      "ids": [
-      "orbitmedia.com/blog/conversion-rates-ai-search"
+      "orbitmedia.com/blog/conversion-rates-ai-search",
+      "ahrefs.com/blog/ai-overviews-france-impact"
      ]
     }
    ]
@@ -250,7 +253,7 @@
     "study_type": "official update",
     "key_stats": [
      "Covers Lens, Circle to Search on Android, image uploads, and Chrome right-click \"Search this image\"",
-     "Filter shows in both the Search results report and the Generative AI features report",
+     "Filter shows in the Search results report and the Generative AI features report",
      "Rolls out globally from September 24, 2026; data can be exported"
     ],
     "method": {
@@ -259,9 +262,9 @@
      "timeframe": "Rolling out globally from 2026-09-24",
      "conflict": "Google runs Search and Search Console, but this update sells nothing.",
      "confidence": "high",
-     "caveat": "No traffic volumes, metric definitions or backfill details. Unclear if B2B SaaS sites will see much multimodal traffic."
+     "caveat": "No traffic numbers, metric definitions or past data details. B2B SaaS sites may see little image-search traffic."
     },
-    "why_it_matters": "You can now track visits from image-started searches. Check the filter for your site before spending on visual content.",
+    "why_it_matters": "You can now see traffic from image-started searches. Check the filter for your site before you spend on visual content.",
     "importance": 2,
     "tags": [
      "analytics",
@@ -295,7 +298,7 @@
    "pdf_links": [],
    "brief": {
     "is_study": true,
-    "headline": "OpenAI is bringing ChatGPT Ads to 31 European markets, with self-service now live in Ads Manager.",
+    "headline": "OpenAI is rolling out ChatGPT Ads to 31 European markets, with self-service now live in Ads Manager.",
     "study_type": "official update",
     "key_stats": [
      "Ads expand to 31 European markets, OpenAI's largest rollout so far",
@@ -306,11 +309,11 @@
      "sample": "Not disclosed",
      "data_source": "Not disclosed",
      "timeframe": "Not disclosed",
-     "conflict": "OpenAI does not publish any performance data (CTR, conversion, CPM/CPC pricing), ad formats, placement rules or how ads are matched to conversations. It also does not name all 31 markets, and its claim that ads do not influence answers is unverified.",
+     "conflict": "Yes. OpenAI sells the ads, and its claim that ads don't affect answers is unverified.",
      "confidence": "high",
-     "caveat": "The rollout facts are specific and dated, but the post gives no results, pricing, formats or targeting detail, so it cannot show whether the ads work for B2B SaaS."
+     "caveat": "No results, pricing, ad formats or targeting details, so it can't show if ads work for B2B SaaS."
     },
-    "why_it_matters": "Paid placement in ChatGPT is now open to self-service in Europe, so you can test it for software-comparison queries. Organic GEO work still cannot buy answer placement, since OpenAI says ads do not influence answers.",
+    "why_it_matters": "You can now test paid ChatGPT ads in Europe. Organic GEO work still can't buy answers, since OpenAI says ads don't shape them.",
     "importance": 2,
     "tags": []
    },
@@ -336,14 +339,14 @@
      "Clothing queries for people in their 50s and 70s were about 39 points more likely to contain \"women\""
     ],
     "method": {
-     "sample": "71,147 responses from ChatGPT, Claude and Gemini",
-     "data_source": "Their own prompt runs on three AI tools",
+     "sample": "71,147 responses from ChatGPT, Claude, Gemini",
+     "data_source": "their own prompt runs",
      "timeframe": "August 11–24, 2026",
-     "conflict": "Yes. Profound sells AI visibility tracking and ends with a pitch for persona-level tracking.",
+     "conflict": "Yes. Profound sells AI visibility tracking and pitches persona-level tracking.",
      "confidence": "medium",
-     "caveat": "Only consumer topics, blunt \"I am [attribute]\" prompts, two weeks, and no significance tests. Not B2B SaaS."
+     "caveat": "Consumer topics only, blunt \"I am [attribute]\" prompts, two weeks, no significance tests."
     },
-    "why_it_matters": "Overall AI visibility scores can hide gaps for your buyer. Test key prompts with role and budget added, but expect B2B results to differ.",
+    "why_it_matters": "One overall AI visibility score can hide gaps for your buyer. Test key prompts with role and budget added.",
     "importance": 2,
     "tags": [
      "ai search",
@@ -373,14 +376,14 @@
      "Only two domains, Vevor and Grainger, made both the top 15 most-mentioned and top 15 most-cited lists"
     ],
     "method": {
-     "sample": "458 keywords; US clickstream across ten categories",
+     "sample": "458 keywords; US clickstream, ten categories",
      "data_source": "Semrush's own datasets and tools",
      "timeframe": "January to July 2026",
-     "conflict": "Yes. It uses Semrush's own data, and Semrush sells AI visibility tools. Promotion is mild.",
+     "conflict": "Yes. Semrush sells AI visibility tools, though the promotion is mild.",
      "confidence": "medium",
-     "caveat": "Keywords came from Semrush's own rankings, and the authors call the results directional, not firm."
+     "caveat": "Keywords came from Semrush's own rankings, and the authors call results directional, not firm."
     },
-    "why_it_matters": "This covers manufacturing, so treat it as a rough guide. Track AI mentions, citations and referral traffic separately, since one doesn't predict the others.",
+    "why_it_matters": "It's manufacturing data, so use it as a rough guide. Track AI mentions, citations and referral traffic separately.",
     "importance": 2,
     "tags": [
      "ai search",
@@ -402,7 +405,7 @@
    "pdf_links": [],
    "brief": {
     "is_study": true,
-    "headline": "57.5% of AI users say a chatbot has talked them out of buying something, in a survey of 2,338 US adults.",
+    "headline": "57.5% of AI users say a chatbot talked them out of buying something, per a survey of 2,338 US adults.",
     "study_type": "survey",
     "key_stats": [
      "57.51% of AI users bought a product on an AI tip; 57.5% skipped a purchase because of chatbot info",
@@ -410,14 +413,14 @@
      "23.12% would think worse of a product after an AI chatbot ad; 20.36% would think better"
     ],
     "method": {
-     "sample": "2,338 US adults",
+     "sample": "2,338 US adults surveyed",
      "data_source": "Exploding Topics consumer survey",
      "timeframe": "July 2026",
-     "conflict": "Yes. Semrush ends by pushing its own GEO tools, Enterprise AIO and AI Visibility Toolkit.",
+     "conflict": "Yes. Semrush ends by promoting its own GEO tools, Enterprise AIO and AI Visibility Toolkit.",
      "confidence": "medium",
-     "caveat": "Answers are self-reported, from general US consumers rather than B2B software buyers, and many stats use small subsets."
+     "caveat": "People self-reported, they were general consumers not B2B buyers, and many stats use small subgroups."
     },
-    "why_it_matters": "What chatbots say about your brand, including bad reviews, can kill a sale. Check that now. AI ads may not suit B2B.",
+    "why_it_matters": "Chatbots can kill a sale by repeating bad reviews about your brand. Check what they say now. AI ads may not suit B2B.",
     "importance": 2,
     "tags": [
      "ai search",
@@ -439,22 +442,22 @@
    "pdf_links": [],
    "brief": {
     "is_study": true,
-    "headline": "ChatGPT Shopping moved from web search to product feeds on July 10th, jumping from 8.26% to 61.54% in a day.",
+    "headline": "ChatGPT Shopping switched from web search to product feeds on July 10th, jumping from 8.26% to 61.54% in a day.",
     "study_type": "data analysis",
     "key_stats": [
-     "Feed-based retrieval rose from 8.26% to 61.54% on July 10th",
+     "Feed-based answers rose from 8.26% to 61.54% on July 10th",
      "Top 10 merchants' share rose from 22.5% to 41.8%; unique merchants fell from 13,524 to 10,607",
-     "Shopify is about 35% of feed-based retrieval; one model explains 83% of swings in 517 customers"
+     "Shopify is about 35% of feed-based answers; one model explains 83% of swings in 517 customers"
     ],
     "method": {
      "sample": "687 customers analysed; 517 had big swings",
      "data_source": "Profound's own Shopping-mode prompt tracking",
      "timeframe": "July 1 to Aug 24, 2026",
-     "conflict": "Yes. Profound sells Shopping visibility tracking, and the advice to join feeds fits that.",
+     "conflict": "Yes. Profound sells Shopping tracking, and its advice to join feeds fits that.",
      "confidence": "medium",
-     "caveat": "GPT 5.6 is blamed only because of timing, and customers were chosen for big swings."
+     "caveat": "GPT 5.6 is blamed only because of timing, and customers were picked for big swings."
     },
-    "why_it_matters": "Only matters if you sell physical products. For B2B SaaS, it shows how fast AI tools can change their sources.",
+    "why_it_matters": "Matters mostly for physical products. For B2B SaaS, it shows how fast AI tools can change their sources.",
     "importance": 2,
     "tags": [
      "ai search",
@@ -480,18 +483,18 @@
     "study_type": "data analysis",
     "key_stats": [
      "Wrong answers averaged 2.8%. No-answer rate averaged 31.2%. Total accuracy was 66%.",
-     "Comparison prompts: 18.8% accurate, 80.3% no answer. Direct prompts 90.4% accurate.",
+     "Comparison prompts: 18.8% accurate, 80.3% no answer. Direct prompts: 90.4% accurate.",
      "Claude was 98% accurate when it answered, but gave no answer 46.3% of the time."
     ],
     "method": {
-     "sample": "1,562 prompts, 28,123 responses, 6 platforms, one brand",
+     "sample": "1,562 prompts, 28,123 responses, 6 platforms",
      "data_source": "Seer's own daily prompt tracking (Scrunch)",
      "timeframe": "May 1 to June 9, 2026",
-     "conflict": "Yes. Seer sells AI visibility and brand canon services, and the article ends with a sales pitch for both.",
+     "conflict": "Yes. Seer sells AI visibility services and ends with a pitch for them.",
      "confidence": "medium",
-     "caveat": "It covers one agency's brand, and Seer doesn't explain how it scored accuracy, so results may not transfer."
+     "caveat": "It covers one agency's brand, and Seer doesn't explain how it scored accuracy."
     },
-    "why_it_matters": "Silence hurts more than errors. Comparison prompts got no answer 80.3% of the time, so build third-party coverage.",
+    "why_it_matters": "AI staying silent hurts more than AI being wrong. Comparison prompts got no answer 80.3% of the time, so build outside coverage.",
     "importance": 2,
     "tags": [
      "ai search",
@@ -513,22 +516,22 @@
    "pdf_links": [],
    "brief": {
     "is_study": true,
-    "headline": "Reddit shows up in 83.9% of Google's \"Discussions and forums\" results worldwide; Reddit, Facebook and Quora hold 76.75% of links.",
+    "headline": "Reddit appears in 83.9% of Google's \"Discussions and forums\" results worldwide; Reddit, Facebook and Quora hold 76.75% of links.",
     "study_type": "data analysis",
     "key_stats": [
-     "Feature appears in 16.93M of 145M US results (11.7%); Reddit is in 87.8% of US ones",
+     "Feature shows in 16.93M of 145M US results (11.7%); Reddit is in 87.8%",
      "After Reddit: Facebook 38.3%, Quora 32%, JustAnswer 8.2%, Mayo Clinic 3.3%",
      "98.7% of appearances are informational intent; 43.2% are for queries of 5+ words"
     ],
     "method": {
      "sample": "145M US Google results; worldwide size not disclosed",
      "data_source": "Ahrefs' own SERP and keyword data",
-     "timeframe": "Not disclosed for main dataset",
-     "conflict": "Partly. Ahrefs promotes Keywords Explorer and Brand Radar, but the Reddit finding doesn't need them.",
+     "timeframe": "Not disclosed",
+     "conflict": "Partly. Ahrefs sells Keywords Explorer and Brand Radar, but this finding doesn't need them.",
      "confidence": "medium",
-     "caveat": "Vendor data with no method given, and Reddit's share shows as 83.9%, 84.71% and 87.8%."
+     "caveat": "Vendor data with no method given; Reddit's share appears as 83.9%, 84.71% and 87.8%."
     },
-    "why_it_matters": "The feature shows on about 1 in 9 US results. Take part in Reddit, Facebook and Quora; don't build your own forum.",
+    "why_it_matters": "The feature shows in about 1 in 9 US results. Join Reddit, Facebook and Quora; don't build your own forum.",
     "importance": 2,
     "tags": [
      "ctr & serps",
@@ -550,7 +553,7 @@
    "pdf_links": [],
    "brief": {
     "is_study": true,
-    "headline": "Claude Code searched the web in 13% of answers, while Claude did in 93%. They named the same brands 20% of the time.",
+    "headline": "Claude Code searched the web in 13% of answers; Claude did in 93%, and they named the same brands 20% of the time.",
     "study_type": "data analysis",
     "key_stats": [
      "Claude Code searched in 13% of responses vs 93% for Claude; brand overlap averaged 20%",
@@ -561,11 +564,11 @@
      "sample": "24,135 responses, 1,724 prompts, 11 categories",
      "data_source": "Their own prompt runs and tracked domains",
      "timeframe": "Prompts July 13–23, 2026; visits July 18–Aug 18",
-     "conflict": "Yes. Profound sells AI visibility tracking, and this finding supports tracking Claude Code separately.",
+     "conflict": "Yes. Profound sells AI visibility tracking, and this supports tracking Claude Code separately.",
      "confidence": "medium",
-     "caveat": "Visit data covers only Profound's undescribed tracked domains, and an LLM labeled page types."
+     "caveat": "Visit data covers only Profound's undescribed tracked sites, and an AI model labeled the page types."
     },
-    "why_it_matters": "If developers are your buyers, Claude Code may read your docs and pricing pages. Keep them current, and track it apart from Claude.",
+    "why_it_matters": "If developers buy your product, Claude Code may read your docs and pricing pages. Keep them current and track it separately from Claude.",
     "importance": 2,
     "tags": [
      "ai search",
@@ -587,22 +590,22 @@
    "pdf_links": [],
    "brief": {
     "is_study": true,
-    "headline": "Pricing and billing made up 12% of AI claims checked but 24% of the wrong ones.",
+    "headline": "Pricing and billing were 12% of AI claims checked but 24% of the wrong ones.",
     "study_type": "data analysis",
     "key_stats": [
-     "Next largest topic, eligibility and terms, was 4% of inaccurate claims",
-     "51% of brands had a wrong claim citing earned media (press, reviews); 54% had one citing their own content",
-     "Wrong-claim rates by AI tool run 4.3-6.8%; Claude is over 1.3 times more inaccurate than ChatGPT"
+     "Next biggest topic, eligibility and terms, was 4% of wrong claims",
+     "51% of brands had a wrong claim citing press or reviews; 54% had one citing their own content",
+     "Wrong-claim rates by AI tool run 4.3-6.8%; Claude is over 1.3 times more wrong than ChatGPT"
     ],
     "method": {
      "sample": "158,000+ AI claims; brand count not disclosed",
-     "data_source": "Profound's own FactCheck tool data",
-     "timeframe": "Latest FactCheck run, as of August 14, 2026",
+     "data_source": "Profound's own FactCheck tool",
+     "timeframe": "Latest run, as of August 14, 2026",
      "conflict": "Yes. Profound sells FactCheck, and this research promotes it.",
      "confidence": "low",
-     "caveat": "Vendor's own new tool; it doesn't explain how claims were verified, or how many brands were covered."
+     "caveat": "It's the vendor's new tool, and it doesn't say how claims were checked or how many brands."
     },
-    "why_it_matters": "Check your pricing and billing details first, on your site and on third-party pages. Treat this as a lead to test.",
+    "why_it_matters": "Check your pricing and billing details first, on your site and on outside pages. Treat this as a lead to test.",
     "importance": 2,
     "tags": [
      "ai search",
@@ -627,7 +630,7 @@
     "headline": "ChatGPT's GPT-5.6 Luna used site: searches in 76% of its extra queries, up from 21.6% on GPT-5.5.",
     "study_type": "data analysis",
     "key_stats": [
-     "site: searches: 554 of 729 queries (76%) for Luna vs 158 of 733 (21.6%) for GPT-5.5",
+     "site: searches (limited to one website): 554 of 729 queries (76%) for Luna vs 158 of 733 (21.6%) for GPT-5.5",
      "Consulted sources fell 43%, from 6,134 to 3,481; open searches fell from 575 to 175",
      "Inline citations fell 12.9%, from 2,054 to 1,790, across 346 matched prompts"
     ],
@@ -635,11 +638,11 @@
      "sample": "346 matched prompts, six industries",
      "data_source": "Seer's own ChatGPT prompt runs",
      "timeframe": "Not disclosed",
-     "conflict": "Seer sells AI search consulting, and its advice to track the full process favors that.",
+     "conflict": "Yes. Seer sells AI search consulting, and its advice to track the full process helps that.",
      "confidence": "medium",
-     "caveat": "One snapshot, modest sample, no repeat runs; the explanations for the shift are guesses."
+     "caveat": "One snapshot, small sample, no repeat runs; the reasons given for the shift are guesses."
     },
-    "why_it_matters": "If your citations dropped after the model switch, the platform may be the cause. Note the switch in reports and track site: searches for your domain.",
+    "why_it_matters": "If your citations dropped after the model switch, the platform may be why. Note the switch in reports and track site: searches for your domain.",
     "importance": 2,
     "tags": [
      "ai search",
@@ -661,7 +664,7 @@
    "pdf_links": [],
    "brief": {
     "is_study": true,
-    "headline": "Google began rolling out its September 2026 spam update on 24 Sep, worldwide and in all languages, over up to two weeks.",
+    "headline": "Google began rolling out its September 2026 spam update on 24 Sep, worldwide, in all languages.",
     "study_type": "official update",
     "key_stats": [
      "Released 24 Sep 2026, 09:15 PDT",
@@ -669,14 +672,14 @@
      "Rollout may take up to two weeks"
     ],
     "method": {
-     "sample": "Not applicable (official announcement)",
+     "sample": "Not applicable",
      "data_source": "Google Search Status Dashboard",
-     "timeframe": "Started 24 Sep 2026; up to two weeks",
-     "conflict": "Google runs the search engine it updates; it sells no SEO product tied to this.",
+     "timeframe": "From 24 Sep 2026; up to two weeks",
+     "conflict": "No. Google runs the search engine but sells no SEO product tied to this.",
      "confidence": "high",
-     "caveat": "Google gives only the date, scope and timing. It doesn't say which spam tactics it targets."
+     "caveat": "Google gives only the date, scope and timing, not which spam tactics it targets."
     },
-    "why_it_matters": "Expect rankings to swing into early October. Log traffic changes against the rollout dates, hold big content changes, and check Google's spam policies.",
+    "why_it_matters": "Expect ranking swings into early October. Log traffic changes by date, hold big content changes, and review Google's spam policies.",
     "importance": 3,
     "tags": [
      "ctr & serps",
@@ -698,22 +701,22 @@
    "pdf_links": [],
    "brief": {
     "is_study": true,
-    "headline": "French sites where over 20% of queries trigger AI Overviews lost 23.1% of median CTR in nine days.",
+    "headline": "French sites where over 20% of queries trigger AI Overviews lost 23.1% of median click rate in nine days.",
     "study_type": "data analysis",
     "key_stats": [
-     "Highly exposed domains: CTR down 23.1%; 82.2% of them lost CTR",
+     "Highly exposed sites: median CTR (click rate) fell 23.1%; 82.2% of them lost CTR",
      "Slope of -0.9 across 963 domains: about one point of CTR lost per point of exposure",
-     "All domains: median CTR down 5.7%; 48% lost over 10% of daily clicks"
+     "All sites: median CTR fell 5.7%; 48% lost over 10% of daily clicks"
     ],
     "method": {
      "sample": "963 top-click French domains",
-     "data_source": "Google Search Console data plus Ahrefs AI Overview rates",
+     "data_source": "Google Search Console plus Ahrefs AI Overview rates",
      "timeframe": "28 days before vs 9 days after July 22, 2026",
-     "conflict": "Ahrefs sells tools to track AI Overviews, but this finding doesn't directly sell them.",
+     "conflict": "Ahrefs sells AI Overview tracking tools, but this finding doesn't directly sell them.",
      "confidence": "medium",
      "caveat": "Only nine days of after-launch data, top-click sites only, and not a controlled test."
     },
-    "why_it_matters": "Check what share of your queries trigger AI Overviews, and expect similar CTR loss. Track clicks and CTR, not impressions.",
+    "why_it_matters": "Check what share of your queries show AI Overviews, and expect a similar CTR drop. Track clicks and CTR, not impressions.",
     "importance": 2,
     "tags": [
      "ai search",
@@ -746,11 +749,11 @@
      "sample": "1,042 content marketers surveyed",
      "data_source": "Orbit Media's annual blogger survey",
      "timeframe": "2026 survey; trends back to 2014",
-     "conflict": "Yes. Orbit is a content agency that sells a book and runs similar services.",
+     "conflict": "Yes. Orbit is a content agency that sells a book and similar services.",
      "confidence": "medium",
-     "caveat": "Self-reported, correlation only; \"strong results\" is undefined and the sample mix isn't described."
+     "caveat": "Self-reported and only shows links, not cause; \"strong results\" is undefined."
     },
-    "why_it_matters": "AI alone won't give you an edge. Keep effort-heavy tactics like original research and expert input, and judge content by pipeline, not traffic.",
+    "why_it_matters": "AI alone won't give you an edge. Keep the hard tactics, like original research and expert input, and track pipeline, not traffic.",
     "importance": 2,
     "tags": [
      "content",
@@ -776,18 +779,18 @@
     "study_type": "data analysis",
     "key_stats": [
      "10% to 30% of cited domains also ranked in Google's top 10",
-     "Repeat run two days later: Claude kept 30% of URLs, Perplexity 65%",
+     "Rerun two days later: Claude kept 30% of URLs, Perplexity 65%",
      "Mentioned vs cited: Claude 70% vs 40%, ChatGPT 56% vs 47%"
     ],
     "method": {
-     "sample": "13,184 citations from 72 prompts, 3 brands",
+     "sample": "13,184 citations, 72 prompts, 3 brands",
      "data_source": "Not disclosed",
      "timeframe": "Not disclosed",
-     "conflict": "No direct product push. The author sells AI visibility audits and links to his tracker, and one of the three tracked brands is his own site. Another is a client, Semrush.",
+     "conflict": "Author sells AI visibility audits, tracks his own site, and has Semrush as a client.",
      "confidence": "low",
-     "caveat": "Only three brands, two of them tiny and one of them Semrush. The author calls the prompt count \"directional, not statistical proof\". The Claude setup differs from claude.ai, Gemini often gives only the domain, and the Reddit and stability results rest on one or two weekly runs."
+     "caveat": "Only three brands and 72 prompts; the author calls it \"directional, not statistical proof.\""
     },
-    "why_it_matters": "Do not judge AI visibility from one run or one engine. The results support tracking mentions and citations over several weeks. They also suggest that third-party listicles and review sites matter more than Reddit for B2B, but the sample is too small to be sure.",
+    "why_it_matters": "Don't judge AI visibility from one run or one tool. Track mentions and citations over several weeks.",
     "importance": 2,
     "tags": []
    },
@@ -813,9 +816,9 @@
      "AI sources sent 140,000 of 29 million visits"
     ],
     "method": {
-     "sample": "97 B2B websites, 28.9 million sessions",
-     "data_source": "GA4 (Google Analytics) accounts",
-     "timeframe": "July 2025 to June 2026",
+     "sample": "Not disclosed",
+     "data_source": "Not disclosed",
+     "timeframe": "Not disclosed",
      "conflict": "Publisher is an agency that sells AI-readiness and content services, and the article ends with a sales pitch. The finding supports the case for optimizing for AI.",
      "confidence": "medium",
      "caveat": "Conversion tiering was manual and the authors call it the most judgment-dependent step. Sites need at least 100 AI sessions, and how the accounts were chosen isn't disclosed. AI traffic is undercounted because AI Overviews and AI Mode land in Organic Search and app visits land in Direct. The reasons given for the gap are hypotheses, not tested."
@@ -847,11 +850,11 @@
     ],
     "method": {
      "sample": "904 real brands, 5 assistants; 80 fictional name pairs",
-     "data_source": "Their own Brand Perception data plus a lab test",
-     "timeframe": "One week live; dates not disclosed",
-     "conflict": "Yes. Peec AI sells AI search tracking, and its Brand Perception feature produced the live data.",
+     "data_source": "Their own Brand Perception data plus lab test",
+     "timeframe": "One week live; lab dates not disclosed",
+     "conflict": "Yes. Peec AI sells AI search tracking, and its own feature produced the live data.",
      "confidence": "medium",
-     "caveat": "Real-world effect is small, the lab used fictional brands and four models, and the \"unknown brands\" reason is untested."
+     "caveat": "Real-world effect is small; lab used fictional brands and four models; the \"unknown brands\" reason is untested."
     },
     "why_it_matters": "If your name is a loaded English word and AI doesn't know you, check how it describes you. Build recognition before renaming.",
     "importance": 2,
@@ -877,10 +880,10 @@
    ],
    "brief": {
     "is_study": true,
-    "headline": "ChatGPT and Google AI Mode give different brand answers most often in healthcare (62%) and least in finance (39%).",
+    "headline": "ChatGPT and Google AI Mode name different brands most often in healthcare (62%) and least in finance (39%).",
     "study_type": "industry report",
     "key_stats": [
-     "Divergence: healthcare 62%, B2B tech 47%, education 45%, finance 39%",
+     "Different brand answers: healthcare 62%, B2B tech 47%, education 45%, finance 39%",
      "Comparison prompts: both agree, e.g. AWS and Azure for cloud platforms",
      "Action prompts: ChatGPT names tools like Kubernetes; Google links tutorials and Stack Overflow"
     ],
@@ -888,11 +891,11 @@
      "sample": "Thousands of prompts; exact count not disclosed",
      "data_source": "BrightEdge AI Catalyst, their own tool",
      "timeframe": "July 2025",
-     "conflict": "Yes. BrightEdge sells AI Catalyst and pitches it as the solution.",
+     "conflict": "Yes. BrightEdge sells AI Catalyst, the tool behind this data.",
      "confidence": "low",
-     "caveat": "\"Divergence\" is never defined, and the full report is gated, so the percentages can't be checked."
+     "caveat": "\"Divergence\" is never defined, and the report is gated, so the numbers can't be checked."
     },
-    "why_it_matters": "ChatGPT may favor tool mentions and Google AI Mode may favor guides. Cover both product and how-to content; this is a hint, not proof.",
+    "why_it_matters": "ChatGPT may lean on tool names, Google AI Mode on guides. Cover product and how-to content, but treat it as a hint.",
     "importance": 1,
     "tags": [
      "ai search",
@@ -921,18 +924,18 @@
     "study_type": "industry report",
     "key_stats": [
      "AI search is less than 1% of referral traffic",
-     "Grok grew 1279% in July from a tiny base; Claude grew 58% in July, 21% in August",
+     "Grok grew 1279% in July; Claude grew 58% in July, 21% in August",
      "34% of AI citations come from PR and media; nearly 10% from social sites like LinkedIn and Reddit"
     ],
     "method": {
      "sample": "Thousands of queries; exact counts not disclosed",
      "data_source": "BrightEdge platform (their own tool)",
      "timeframe": "January through August 2025",
-     "conflict": "Yes. BrightEdge sells enterprise SEO and AI search tools, and the page promotes them.",
+     "conflict": "Yes. BrightEdge sells enterprise SEO and AI search tools.",
      "confidence": "low",
-     "caveat": "This page summarizes a gated report, gives no sample sizes or conversion figures, and growth starts from tiny bases."
+     "caveat": "Summary of a gated report; no sample sizes or conversion figures, and growth starts from tiny bases."
     },
-    "why_it_matters": "Keep investing in SEO basics. Treat AI referrals as top-of-funnel, and try earning citations from media and forums.",
+    "why_it_matters": "Keep investing in SEO basics. Treat AI referrals as early-funnel, and try earning mentions on media and forum sites.",
     "importance": 1,
     "tags": [
      "ai search",
@@ -957,7 +960,7 @@
    ],
    "brief": {
     "is_study": true,
-    "headline": "BrightEdge surveyed over 1,000 enterprise marketers on AI agent and AEO readiness, but publishes no results.",
+    "headline": "BrightEdge surveyed over 1,000 enterprise marketers on AI agent and AEO readiness, but shares no results.",
     "study_type": "survey",
     "key_stats": [
      "More than 1,000 enterprise digital and search marketers surveyed",
@@ -966,9 +969,9 @@
     ],
     "method": {
      "sample": "1,000+ enterprise marketers surveyed",
-     "data_source": "BrightEdge's own survey; recruitment not disclosed",
+     "data_source": "Their own survey; recruitment not disclosed",
      "timeframe": "Three months; dates not disclosed",
-     "conflict": "Yes. BrightEdge sells an SEO and AEO platform, and this gated report generates leads.",
+     "conflict": "Yes. BrightEdge sells an SEO and AEO platform, and this gated report brings in leads.",
      "confidence": "low",
      "caveat": "Only a gated teaser is public, with no numbers or method, so claims can't be checked."
     },
