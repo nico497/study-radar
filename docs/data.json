@@ -2,16 +2,16 @@
  "meta": {
   "niche": "SEO and generative engine optimization (GEO) for B2B SaaS",
   "audience": "the content and SEO lead at a B2B SaaS company",
-  "updated": "2026-09-29T09:28:17+00:00",
+  "updated": "2026-09-29T09:29:37+00:00",
   "title": "Study Radar",
   "repo": "nico497/study-radar",
   "run": {
    "sources": 13,
-   "new_items": 20,
-   "studies": 3,
+   "new_items": 0,
+   "studies": 0,
    "deferred": 0,
-   "briefed": 2,
-   "unreadable": 1,
+   "briefed": 0,
+   "unreadable": 0,
    "rejected": 0,
    "errors": []
   }
@@ -19,18 +19,18 @@
  "health": [
   {
    "name": "Google Search Central",
-   "checked": "2026-09-29T09:28:17+00:00",
+   "checked": "2026-09-29T09:29:37+00:00",
    "ok": true,
    "found": 10,
    "new": 1,
    "error": null,
    "url": "https://developers.google.com/search/blog/feed.xml",
    "method": "feed",
-   "posts_new": 1
+   "posts_new": 0
   },
   {
    "name": "Google Search Status",
-   "checked": "2026-09-29T09:28:17+00:00",
+   "checked": "2026-09-29T09:29:37+00:00",
    "ok": true,
    "found": 1,
    "new": 1,
@@ -41,7 +41,7 @@
   },
   {
    "name": "Bing Webmaster",
-   "checked": "2026-09-29T09:28:17+00:00",
+   "checked": "2026-09-29T09:29:37+00:00",
    "ok": true,
    "found": 10,
    "new": 0,
@@ -52,18 +52,18 @@
   },
   {
    "name": "OpenAI",
-   "checked": "2026-09-29T09:28:17+00:00",
+   "checked": "2026-09-29T09:29:37+00:00",
    "ok": true,
    "found": 1235,
    "new": 1,
    "error": null,
    "url": "https://openai.com/news/rss.xml",
    "method": "feed",
-   "posts_new": 18
+   "posts_new": 0
   },
   {
    "name": "Ahrefs",
-   "checked": "2026-09-29T09:28:17+00:00",
+   "checked": "2026-09-29T09:29:37+00:00",
    "ok": true,
    "found": 10,
    "new": 2,
@@ -74,7 +74,7 @@
   },
   {
    "name": "Semrush",
-   "checked": "2026-09-29T09:28:17+00:00",
+   "checked": "2026-09-29T09:29:37+00:00",
    "ok": true,
    "found": 20,
    "new": 2,
@@ -85,18 +85,18 @@
   },
   {
    "name": "Growth Memo",
-   "checked": "2026-09-29T09:28:17+00:00",
+   "checked": "2026-09-29T09:29:37+00:00",
    "ok": true,
    "found": 20,
    "new": 0,
    "error": null,
    "url": "https://www.growth-memo.com/feed",
    "method": "feed",
-   "posts_new": 1
+   "posts_new": 0
   },
   {
    "name": "Seer Interactive",
-   "checked": "2026-09-29T09:28:17+00:00",
+   "checked": "2026-09-29T09:29:37+00:00",
    "ok": true,
    "found": 20,
    "new": 2,
@@ -107,7 +107,7 @@
   },
   {
    "name": "Profound",
-   "checked": "2026-09-29T09:28:17+00:00",
+   "checked": "2026-09-29T09:29:37+00:00",
    "ok": true,
    "found": 180,
    "new": 4,
@@ -118,7 +118,7 @@
   },
   {
    "name": "Orbit Media",
-   "checked": "2026-09-29T09:28:17+00:00",
+   "checked": "2026-09-29T09:29:37+00:00",
    "ok": true,
    "found": 26,
    "new": 3,
@@ -129,7 +129,7 @@
   },
   {
    "name": "Peec AI",
-   "checked": "2026-09-29T09:28:17+00:00",
+   "checked": "2026-09-29T09:29:37+00:00",
    "ok": true,
    "found": 42,
    "new": 1,
@@ -140,7 +140,7 @@
   },
   {
    "name": "AirOps",
-   "checked": "2026-09-29T09:28:17+00:00",
+   "checked": "2026-09-29T09:29:37+00:00",
    "ok": true,
    "found": 202,
    "new": 0,
@@ -151,7 +151,7 @@
   },
   {
    "name": "BrightEdge",
-   "checked": "2026-09-29T09:28:17+00:00",
+   "checked": "2026-09-29T09:29:37+00:00",
    "ok": true,
    "found": 31,
    "new": 3,
@@ -162,6 +162,33 @@
   }
  ],
  "pulses": [
+  {
+   "date": "2026-09-29T09:29:37+00:00",
+   "summary": "Mostly medium-confidence vendor data on AI search this week, little of it from B2B SaaS. The one firm, dated item is Google's September spam update, rolling out now.",
+   "points": [
+    {
+     "text": "Google's spam update began 24 Sep and may take two weeks. Expect volatility, log traffic changes against the window, and hold big content changes. Google hasn't said what it targets, so don't diagnose drops yet.",
+     "ids": [
+      "status.search.google.com/incidents/XhUDXP7A67iHCD2kmbVu"
+     ]
+    },
+    {
+     "text": "AI referrals are small but may convert well. About 0.5% of traffic, 3x lead conversion, though AI Overview traffic is undercounted. Track mentions, citations and traffic separately, since they don't predict each other.",
+     "ids": [
+      "orbitmedia.com/blog/conversion-rates-ai-search",
+      "semrush.com/blog/manufacturing-seo-ai-search",
+      "brightedge.com/resources/research-reports/ai-search-visits-in-surging-2025"
+     ]
+    },
+    {
+     "text": "Being absent from answers looks like a bigger risk than being wrong. Seer's data comes from one brand, and Profound's pricing-error finding is low confidence, so treat both as leads to test. Check comparative prompts and pricing pages.",
+     "ids": [
+      "seerinteractive.com/insights/ai-brand-accuracy-study",
+      "tryprofound.com/blog/where-do-inaccurate-ai-claims-come-from"
+     ]
+    }
+   ]
+  },
   {
    "date": "2026-09-29T09:28:17+00:00",
    "summary": "Mostly vendor studies of medium or low confidence, and few used B2B SaaS data. The only firm news is Google's September spam update (rolling out now) and ChatGPT Ads opening to self-service in Europe.",
