@@ -494,6 +494,13 @@ def run(cfg: dict) -> dict:
     cutoff = now - timedelta(days=int(cfg["lookback_days"]))
     state = load_json(STATE_PATH, {"seen": {}, "sources": {}})
     data = load_json(DATA_PATH, {"briefs": []})
+    repo = os.environ.get("GITHUB_REPOSITORY")
+    if repo and state.get("repo") and state["repo"] != repo:
+        # This is a fresh copy made from someone else's template: start clean.
+        log(f"New copy of {state['repo']}: clearing the original's briefs and history")
+        state, data = {"seen": {}, "sources": {}}, {"briefs": []}
+    if repo:
+        state["repo"] = repo
     seen, src_state = state["seen"], state["sources"]
     health, cands = [], []
     batch_keys: set[str] = set()   # same study syndicated by two sources: brief once
@@ -626,6 +633,7 @@ def run(cfg: dict) -> dict:
         "meta": {
             "niche": cfg["niche"], "audience": cfg["audience"], "updated": iso(now),
             "title": cfg.get("title", "Study Radar"),
+            "repo": repo,
             "run": {"sources": len(cfg["sources"]), "new_items": len(cands),
                     "studies": len(studies), "deferred": deferred, **counts},
         },

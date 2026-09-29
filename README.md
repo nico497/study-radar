@@ -40,6 +40,8 @@ It has three details that make the output trustworthy:
 4. **Pick your niche.** Edit `config.yaml`: set `niche`, `audience` and your `sources` (see below).
 5. **Run it.** Go to **Actions → Study Radar → Run workflow**. When it finishes (a few minutes), open `https://<you>.github.io/<repo>/`.
 
+Your copy starts clean: the template owner's briefs and history are cleared on your first run.
+
 After that it runs every Monday on its own. To change the day or time, edit the `cron` line in `.github/workflows/radar.yml`.
 
 ## Adding sources

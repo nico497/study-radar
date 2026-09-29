@@ -296,7 +296,19 @@ details.health summary .sub { font-weight: 400; color: var(--ink-3); margin-left
         <td class="num hide-sm">${x.found ?? ""}</td><td class="num">${x.new ?? ""}</td></tr>`).join("")}</tbody></table>`;
   }
 
+  // A fresh copy of the template still carries the original owner's data until
+  // its first run. On *.github.io, hide data that belongs to a different repo.
+  function belongsHere(m) {
+    const host = location.hostname.toLowerCase();
+    if (!m.repo || !host.endsWith(".github.io")) return true;
+    const owner = host.replace(/\.github\.io$/, "");
+    const first = location.pathname.split("/").filter(Boolean)[0] || "";
+    const here = first ? `${owner}/${first}` : `${owner}/${owner}.github.io`;
+    return here === m.repo.toLowerCase();
+  }
+
   function hydrate() {
+    if (!belongsHere(data.meta || {})) data = { meta: {}, briefs: [], health: [], pulses: [] };
     const m = data.meta || {};
     if (m.banner) { $("#banner").hidden = false; $("#banner").textContent = m.banner; }
     if (m.title) document.title = m.title;
