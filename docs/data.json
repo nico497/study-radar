@@ -2,34 +2,41 @@
  "meta": {
   "niche": "SEO and generative engine optimization (GEO) for B2B SaaS",
   "audience": "the content and SEO lead at a B2B SaaS company",
-  "updated": "2026-09-29T09:18:13+00:00",
+  "updated": "2026-09-29T09:19:43+00:00",
   "title": "Study Radar",
   "repo": "nico497/study-radar",
   "run": {
    "sources": 13,
-   "new_items": 114,
-   "studies": 25,
-   "deferred": 13,
+   "new_items": 45,
+   "studies": 24,
+   "deferred": 12,
    "briefed": 0,
    "unreadable": 0,
-   "rejected": 0
+   "rejected": 0,
+   "errors": [
+    "brief: Anthropic API 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"tool_choice: type \\\"tool\\\" and \\\"any\\\" are not supported for this model.\"},\"request_id\":\"req_011CfXUxLG3FgxTjAUMUNEkN\"}",
+    "brief: Anthropic API 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"tool_choice: type \\\"tool\\\" and \\\"any\\\" are not supported for this model.\"},\"request_id\":\"req_011CfXUxMxjNe7bmxZZGapdE\"}",
+    "brief: Anthropic API 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"tool_choice: type \\\"tool\\\" and \\\"any\\\" are not supported for this model.\"},\"request_id\":\"req_011CfXUxPWzuhoZTktcwbGj6\"}",
+    "brief: Anthropic API 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"tool_choice: type \\\"tool\\\" and \\\"any\\\" are not supported for this model.\"},\"request_id\":\"req_011CfXUxR7zDci3eVEpPYLVJ\"}",
+    "brief: Anthropic API 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"tool_choice: type \\\"tool\\\" and \\\"any\\\" are not supported for this model.\"},\"request_id\":\"req_011CfXUxUwg8SbHxehTXSLeL\"}"
+   ]
   }
  },
  "health": [
   {
    "name": "Google Search Central",
-   "checked": "2026-09-29T09:18:13+00:00",
+   "checked": "2026-09-29T09:19:43+00:00",
    "ok": true,
    "found": 10,
    "new": 0,
    "error": null,
    "url": "https://developers.google.com/search/blog/feed.xml",
    "method": "feed",
-   "posts_new": 5
+   "posts_new": 2
   },
   {
    "name": "Google Search Status",
-   "checked": "2026-09-29T09:18:13+00:00",
+   "checked": "2026-09-29T09:19:43+00:00",
    "ok": true,
    "found": 1,
    "new": 0,
@@ -40,7 +47,7 @@
   },
   {
    "name": "Bing Webmaster",
-   "checked": "2026-09-29T09:18:13+00:00",
+   "checked": "2026-09-29T09:19:43+00:00",
    "ok": true,
    "found": 10,
    "new": 0,
@@ -51,7 +58,7 @@
   },
   {
    "name": "OpenAI",
-   "checked": "2026-09-29T09:18:13+00:00",
+   "checked": "2026-09-29T09:19:43+00:00",
    "ok": true,
    "found": 1235,
    "new": 0,
@@ -62,95 +69,95 @@
   },
   {
    "name": "Ahrefs",
-   "checked": "2026-09-29T09:18:13+00:00",
+   "checked": "2026-09-29T09:19:43+00:00",
    "ok": true,
    "found": 10,
    "new": 0,
    "error": null,
    "url": "https://ahrefs.com/blog/feed/",
    "method": "feed",
-   "posts_new": 7
+   "posts_new": 2
   },
   {
    "name": "Semrush",
-   "checked": "2026-09-29T09:18:13+00:00",
+   "checked": "2026-09-29T09:19:43+00:00",
    "ok": true,
    "found": 20,
    "new": 0,
    "error": null,
    "url": "https://www.semrush.com/blog/feed/",
    "method": "feed",
-   "posts_new": 20
+   "posts_new": 3
   },
   {
    "name": "Growth Memo",
-   "checked": "2026-09-29T09:18:13+00:00",
+   "checked": "2026-09-29T09:19:43+00:00",
    "ok": true,
    "found": 20,
    "new": 0,
    "error": null,
    "url": "https://www.growth-memo.com/feed",
    "method": "feed",
-   "posts_new": 11
+   "posts_new": 2
   },
   {
    "name": "Seer Interactive",
-   "checked": "2026-09-29T09:18:13+00:00",
+   "checked": "2026-09-29T09:19:43+00:00",
    "ok": true,
    "found": 20,
    "new": 0,
    "error": null,
    "url": "https://www.seerinteractive.com/insights/rss.xml",
    "method": "feed",
-   "posts_new": 10
+   "posts_new": 3
   },
   {
    "name": "Profound",
-   "checked": "2026-09-29T09:18:13+00:00",
+   "checked": "2026-09-29T09:19:43+00:00",
    "ok": true,
    "found": 180,
    "new": 0,
    "error": null,
    "url": "https://www.tryprofound.com/rss/blog.xml",
    "method": "feed",
-   "posts_new": 17
+   "posts_new": 5
   },
   {
    "name": "Orbit Media",
-   "checked": "2026-09-29T09:18:13+00:00",
+   "checked": "2026-09-29T09:19:43+00:00",
    "ok": true,
    "found": 26,
    "new": 0,
    "error": null,
    "url": "https://www.orbitmedia.com/blog/",
    "method": "page",
-   "posts_new": 8
+   "posts_new": 3
   },
   {
    "name": "Peec AI",
-   "checked": "2026-09-29T09:18:13+00:00",
+   "checked": "2026-09-29T09:19:43+00:00",
    "ok": true,
    "found": 42,
    "new": 0,
    "error": null,
    "url": "https://peec.ai/blog",
    "method": "page",
-   "posts_new": 6
+   "posts_new": 1
   },
   {
    "name": "AirOps",
-   "checked": "2026-09-29T09:18:13+00:00",
+   "checked": "2026-09-29T09:19:43+00:00",
    "ok": true,
    "found": 202,
    "new": 0,
    "error": null,
    "url": "https://www.airops.com/blog",
    "method": "page",
-   "posts_new": 6
+   "posts_new": 0
   },
   {
    "name": "BrightEdge",
-   "checked": "2026-09-29T09:18:13+00:00",
+   "checked": "2026-09-29T09:19:43+00:00",
    "ok": true,
    "found": 31,
    "new": 0,
@@ -161,6 +168,11 @@
   }
  ],
  "pulses": [
+  {
+   "date": "2026-09-29T09:19:43+00:00",
+   "summary": "Found 24 new studies but couldn't brief them this run (brief: Anthropic API 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"tool_choice: type \\\"tool\\\" and \\\"any\\\" are not supported for this model.\"},\"request_id\":\"req_011CfXUxLG3FgxTjAUMUNEkN\"}). They'll be retried next run.",
+   "points": []
+  },
   {
    "date": "2026-09-29T09:18:13+00:00",
    "summary": "No new studies from your sources this week. Nothing you missed.",

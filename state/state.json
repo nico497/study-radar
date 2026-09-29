@@ -1834,60 +1834,165 @@
    "source": "OpenAI",
    "status": "not_study",
    "at": "2026-09-29T09:18:13+00:00"
+  },
+  "semrush.com/blog/seo-best-practices": {
+   "source": "Semrush",
+   "status": "not_study",
+   "at": "2026-09-29T09:19:43+00:00"
+  },
+  "tryprofound.com/blog/what-ai-agents-really-think-about-your-pricing": {
+   "source": "Profound",
+   "status": "not_study",
+   "at": "2026-09-29T09:19:43+00:00"
+  },
+  "openai.com/index/advisory-group-on-mathematics-and-ai": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-09-29T09:19:43+00:00"
+  },
+  "openai.com/index/higgsfield-from-prompt-to-production-with-astra": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-09-29T09:19:43+00:00"
+  },
+  "openai.com/index/building-standards-next-phase-ai": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-09-29T09:19:43+00:00"
+  },
+  "openai.com/index/expanding-openai-academy-with-new-learning-paths": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-09-29T09:19:43+00:00"
+  },
+  "openai.com/index/v7": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-09-29T09:19:43+00:00"
+  },
+  "openai.com/index/australian-youth-safety-blueprint": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-09-29T09:19:43+00:00"
+  },
+  "openai.com/index/cooley-gopublic": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-09-29T09:19:43+00:00"
+  },
+  "openai.com/index/astra-for-law": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-09-29T09:19:43+00:00"
+  },
+  "openai.com/index/helping-older-adults-use-ai-in-everyday-life": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-09-29T09:19:43+00:00"
+  },
+  "openai.com/index/hex-gpt-6-astra": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-09-29T09:19:43+00:00"
+  },
+  "openai.com/index/how-to-connect-ai-usage-to-business-value": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-09-29T09:19:43+00:00"
+  },
+  "openai.com/index/model-misalignment-reporting-framework": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-09-29T09:19:43+00:00"
+  },
+  "openai.com/index/unlocking-new-ways-of-working": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-09-29T09:19:43+00:00"
+  },
+  "openai.com/index/fyxer": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-09-29T09:19:43+00:00"
+  },
+  "openai.com/index/perplexity-improving-accuracy-with-astra": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-09-29T09:19:43+00:00"
+  },
+  "openai.com/index/scaling-storage-one-billion-users-part-one": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-09-29T09:19:43+00:00"
+  },
+  "openai.com/index/cognition-devin-testing-with-astra": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-09-29T09:19:43+00:00"
+  },
+  "openai.com/index/using-codex-chatgpt-to-search-for-new-antimicrobials": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-09-29T09:19:43+00:00"
+  },
+  "openai.com/index/put-data-to-work": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-09-29T09:19:43+00:00"
   }
  },
  "sources": {
   "Google Search Central": {
    "initialized": true,
-   "last_ok": "2026-09-29T09:18:13+00:00"
+   "last_ok": "2026-09-29T09:19:43+00:00"
   },
   "Google Search Status": {
    "initialized": true,
-   "last_ok": "2026-09-29T09:18:13+00:00"
+   "last_ok": "2026-09-29T09:19:43+00:00"
   },
   "Bing Webmaster": {
    "initialized": true,
-   "last_ok": "2026-09-29T09:18:13+00:00"
+   "last_ok": "2026-09-29T09:19:43+00:00"
   },
   "OpenAI": {
    "initialized": true,
-   "last_ok": "2026-09-29T09:18:13+00:00"
+   "last_ok": "2026-09-29T09:19:43+00:00"
   },
   "Ahrefs": {
    "initialized": true,
-   "last_ok": "2026-09-29T09:18:13+00:00"
+   "last_ok": "2026-09-29T09:19:43+00:00"
   },
   "Semrush": {
    "initialized": true,
-   "last_ok": "2026-09-29T09:18:13+00:00"
+   "last_ok": "2026-09-29T09:19:43+00:00"
   },
   "Growth Memo": {
    "initialized": true,
-   "last_ok": "2026-09-29T09:18:13+00:00"
+   "last_ok": "2026-09-29T09:19:43+00:00"
   },
   "Seer Interactive": {
    "initialized": true,
-   "last_ok": "2026-09-29T09:18:13+00:00"
+   "last_ok": "2026-09-29T09:19:43+00:00"
   },
   "Profound": {
    "initialized": true,
-   "last_ok": "2026-09-29T09:18:13+00:00"
+   "last_ok": "2026-09-29T09:19:43+00:00"
   },
   "Orbit Media": {
    "initialized": true,
-   "last_ok": "2026-09-29T09:18:13+00:00"
+   "last_ok": "2026-09-29T09:19:43+00:00"
   },
   "Peec AI": {
    "initialized": true,
-   "last_ok": "2026-09-29T09:18:13+00:00"
+   "last_ok": "2026-09-29T09:19:43+00:00"
   },
   "AirOps": {
    "initialized": true,
-   "last_ok": "2026-09-29T09:18:13+00:00"
+   "last_ok": "2026-09-29T09:19:43+00:00"
   },
   "BrightEdge": {
    "initialized": true,
-   "last_ok": "2026-09-29T09:18:13+00:00"
+   "last_ok": "2026-09-29T09:19:43+00:00"
   }
  },
  "repo": "nico497/study-radar"
