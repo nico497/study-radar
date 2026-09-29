@@ -356,21 +356,23 @@ def brief_tool(tags: list[str]) -> dict:
                     },
                     "required": ["sample", "data_source", "timeframe", "conflict", "confidence", "caveat"],
                 },
-                "so_what": {**s, "description": "What this means for the audience. Two sentences, practical."},
-                "post_angle": {**s, "description": "One LinkedIn post angle: a sharp hook plus the take. Two sentences max. No hashtags or emojis."},
+                "why_it_matters": {**s, "description": "One sentence: what this changes for the audience, or 'confirms what we knew' if nothing. Max 25 words."},
+                "importance": {"type": "integer", "enum": [1, 2, 3],
+                               "description": "3 = must know: changes how the audience should work or overturns a common belief, with credible evidence. 2 = useful data point. 1 = minor, incremental or weak."},
                 "tags": {"type": "array", "items": tag_schema, "maxItems": 3},
             },
-            "required": ["is_study", "headline", "study_type", "key_stats", "method", "so_what", "post_angle", "tags"],
+            "required": ["is_study", "headline", "study_type", "key_stats", "method", "why_it_matters", "importance", "tags"],
         },
     }
 
 
-BRIEF_SYSTEM = """You write briefs of industry studies for a busy professional who decides in 30 seconds whether a study is worth their time.
+BRIEF_SYSTEM = """You write briefs of industry studies for a busy professional who reviews the whole week's research in 60 seconds. They want to know what is actually important and how far to trust it.
 
 Rules:
 - Use only what the text says. Never invent or round numbers. Quote figures exactly as published.
 - If a method detail is missing, write "Not disclosed". Missing methods are a finding, not a gap to fill.
 - Confidence: high = large sample, method explained, limits acknowledged. medium = reasonable sample but vendor data or partial method. low = small, self-selected or undisclosed sample, no method, or the study mainly sells the publisher's product.
+- Importance: be stingy. Most studies are a 2. Reserve 3 for findings that should change what the audience does. A low-confidence study is rarely a 3.
 - If the page is a gated landing page, brief only what is visible and say so in the caveat.
 - Plain, direct language. No hype, no filler, no emojis."""
 
@@ -390,6 +392,53 @@ Published: {iso(item.get('published')) or 'unknown'}{gated_note}
 {art['text']}
 --- END ---"""
     return call_claude(cfg["models"]["brief"], BRIEF_SYSTEM, user, brief_tool(cfg.get("tags") or []), 1800)
+
+
+PULSE_TOOL = {
+    "name": "write_pulse",
+    "description": "Summarise what mattered in this week's studies.",
+    "input_schema": {
+        "type": "object",
+        "properties": {
+            "summary": {"type": "string", "description": "Two sentences max: the overall picture this week. Say plainly if little of note was published."},
+            "points": {
+                "type": "array", "maxItems": 3,
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "text": {"type": "string", "description": "One or two sentences: the takeaway and how far to trust it."},
+                        "ids": {"type": "array", "items": {"type": "integer"}, "description": "Numbers of the studies this point draws on."},
+                    },
+                    "required": ["text", "ids"],
+                },
+            },
+        },
+        "required": ["summary", "points"],
+    },
+}
+
+PULSE_SYSTEM = """You write the top-of-page summary for a weekly research digest. The reader has 60 seconds.
+
+Rules:
+- Use only the briefs provided. Don't add outside facts or numbers.
+- Pick at most 3 points, ranked by what matters most to the audience. Fewer is fine. Skip minor studies.
+- Weigh confidence: don't present a low-confidence finding as fact. If a widely-quotable number is weak, a point can be a warning not to rely on it.
+- Plain, direct language. No hype."""
+
+
+def write_pulse(new_briefs: list[dict], cfg: dict) -> dict:
+    lines = []
+    for i, r in enumerate(new_briefs):
+        b = r["brief"]
+        lines.append(f"[{i}] {r['source']} | importance {b.get('importance')} | confidence {b['method'].get('confidence')}\n"
+                     f"    {b['headline']}\n    Why: {b.get('why_it_matters')}\n    Caveat: {b['method'].get('caveat')}")
+    user = f"Audience: {cfg['audience']}\nNiche: {cfg['niche']}\n\nThis week's studies:\n" + "\n".join(lines)
+    out = call_claude(cfg["models"]["brief"], PULSE_SYSTEM, user, PULSE_TOOL, 900)
+    points = []
+    for pt in out.get("points", [])[:3]:
+        ids = [new_briefs[i]["id"] for i in pt.get("ids", []) if isinstance(i, int) and 0 <= i < len(new_briefs)]
+        points.append({"text": pt.get("text", ""), "ids": ids})
+    return {"summary": out.get("summary", ""), "points": points}
 
 
 # ---------------------------------------------------------------- storage
@@ -553,7 +602,25 @@ def run(cfg: dict) -> dict:
         mark(c["url"], c["source"], "briefed")
         counts["briefed"] += 1
 
-    # 4. Save
+    # 4. Weekly pulse: the 60-second summary at the top of the dashboard
+    this_run = [r for r in briefs if r.get("found") == iso(now) and r.get("brief")]
+    pulses = data.get("pulses", [])
+    if this_run:
+        try:
+            pulse = write_pulse(this_run, cfg)
+        except Exception as e:  # noqa: BLE001
+            log(f"  weekly summary failed: {e}")
+            pulse = {"summary": f"{len(this_run)} new studies this week. The summary couldn't be written this run, so see the cards below.", "points": []}
+    else:
+        failed = sum(1 for h in health if not h["ok"])
+        if failed:
+            pulse = {"summary": f"No new studies found, but {failed} of {len(health)} sources couldn't be checked, "
+                                "so something may have been missed. See Sources at the bottom.", "points": []}
+        else:
+            pulse = {"summary": "No new studies from your sources this week. Nothing you missed.", "points": []}
+    pulses.insert(0, {"date": iso(now), **pulse})
+
+    # 5. Save
     briefs.sort(key=lambda r: (r.get("found") or "", r.get("published") or ""), reverse=True)
     data = {
         "meta": {
@@ -563,8 +630,14 @@ def run(cfg: dict) -> dict:
                     "studies": len(studies), "deferred": deferred, **counts},
         },
         "health": health,
+        "pulses": pulses[:26],
         "briefs": briefs[: int(cfg["keep_briefs"])],
     }
+    per_src = {}
+    for r in this_run:
+        per_src[r["source"]] = per_src.get(r["source"], 0) + 1
+    for h in health:
+        h["posts_new"], h["new"] = h.get("new", 0), per_src.get(h["name"], 0)
     save_json(DATA_PATH, data)
     save_json(STATE_PATH, state)
     summary(data)

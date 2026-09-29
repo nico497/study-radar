@@ -1,16 +1,13 @@
 # Study Radar
 
-**Stop reading every blog in your niche. Read the studies, briefed.**
+**What mattered in your niche this week, in 60 seconds.**
 
-Study Radar watches the companies in your niche that publish original research. Each week it finds the new studies, surveys and data analyses, then writes a 30-second brief for each one:
+Study Radar watches the companies in your niche that publish original research. Each week it finds their new studies, surveys and data analyses, skips everything else, and gives you one page:
 
-- **Headline finding**, with the number
-- **3 key stats**, quoted exactly as published
-- **Method check**: sample, data source, timeframe, bias, and a high/medium/low confidence rating
-- **So what** for your audience
-- **A post angle** you can turn into a LinkedIn post
-
-You review everything on a private dashboard: save it, flag it as a post idea, or skip it.
+- **This week:** a two-sentence summary plus the 3 takeaways that matter, each with how far to trust it.
+- **One card per study:** the headline finding with its number, why it matters, and a confidence rating. Must-know studies sit at the top and minor ones are greyed out.
+- **Details on demand:** key numbers as published, plus a method check covering sample, data source, timeframe and bias.
+- **★ Save** anything worth keeping.
 
 It runs free on GitHub, with no server and nothing to host. You only pay for your own Claude API usage.
 
@@ -24,14 +21,15 @@ It runs free on GitHub, with no server and nothing to host. You only pay for you
 Every Monday (GitHub Actions)
   1. Discover   check each source's RSS feed, listing page or sitemap for new posts
   2. Triage     a cheap model separates studies from how-tos, news and product updates
-  3. Brief      a stronger model reads each study and writes the brief + method check
-  4. Publish    results are committed to the repo; the dashboard (GitHub Pages) updates
+  3. Brief      a stronger model reads each study: finding, importance, method check
+  4. Summarise  one short "this week" summary across the new studies
+  5. Publish    results are committed to the repo; the dashboard (GitHub Pages) updates
 ```
 
 It has three details that make the output trustworthy:
 
 - **It won't invent numbers.** If the method isn't disclosed, the brief says "Not disclosed". A missing method counts as a finding.
-- **It flags gated reports.** If the full report sits behind an email form, the card is marked "Gated: summary only" and links any PDFs it found.
+- **It flags gated reports.** If the full report sits behind an email form, the card is marked "Gated" and links any PDFs it found.
 - **It fails loudly.** When a site blocks it or a page won't render, the dashboard shows that in the source health table and on the card. Nothing gets dropped silently.
 
 ## Setup (about 10 minutes)
@@ -100,12 +98,11 @@ Each run makes one small triage call per 30 new posts, plus one brief call per s
 
 ## Using the dashboard
 
-- **Tabs:** Inbox → Post ideas / Saved / Skipped.
-- **Keyboard:** `j`/`k` move, `s` save, `i` post idea, `x` skip, `o` open, `c` copy brief.
-- **Copy these as Markdown** (on Post ideas and Saved) copies every brief in the tab, ready for a doc or a content calendar.
-- **Filter** by source, confidence or tag, or search everything.
+- **Tabs:** This week (the latest run) · ★ Saved · All studies (the archive, with search and filters).
+- **Keyboard:** `j`/`k` move, `enter` details, `s` save, `o` open source, `c` copy brief.
+- **Copy all** on the Saved tab copies every saved brief as Markdown.
 
-Review status is stored in your browser, so it doesn't sync between devices.
+Saves are stored in your browser. They don't sync between devices, and clearing browser data removes them. The briefs themselves live in the repo, so every device sees them.
 
 ## Limits
 
