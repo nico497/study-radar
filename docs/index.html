@@ -205,8 +205,7 @@ details.health summary .sub { font-weight: 400; color: var(--ink-3); margin-left
     el.innerHTML = `<div class="pulse-head"><span class="eyebrow">This week · ${esc(fmtDate(p.date))}</span><span class="ctx">${esc(ctx)}</span></div>
       <p class="summary">${esc(p.summary)}</p>
       ${p.points?.length ? `<ol class="points">${p.points.map((pt) => `<li><div>${esc(pt.text)}<br>${byId(pt.ids).map((b) => `<a class="chip" href="#${esc(b.id)}" data-jump="${esc(b.id)}">${esc(b.source)} ↓</a>`).join("")}</div></li>`).join("")}</ol>` : ""}
-      <div class="pulse-foot"><span><b>${data.briefs.filter((b) => isNew(b) && b.brief).length}</b> new studies</span><span><b>${must}</b> must-know</span>
-      <span><b>${run.new_items ?? 0}</b> posts screened</span><span><b>${(data.health || []).length}</b> sources</span>
+      <div class="pulse-foot"><span><b>${data.briefs.filter((b) => isNew(b) && b.brief).length}</b> new studies</span><span><b>${must}</b> must-know</span><span><b>${(data.health || []).length}</b> sources</span>
       ${failing ? `<span class="bad">${failing} source${failing > 1 ? "s" : ""} failing</span>` : ""}</div>`;
   }
 
@@ -224,7 +223,7 @@ details.health summary .sub { font-weight: 400; color: var(--ink-3); margin-left
       if (conf === "official" ? b.brief?.study_type !== "official update" : conf && b.brief?.method?.confidence !== conf) return false;
       if (q && !(b.title + " " + b.source + " " + JSON.stringify(b.brief || {})).toLowerCase().includes(q)) return false;
       return true;
-    }).sort((a, b) => (b.found || "").localeCompare(a.found || "") || imp(b) - imp(a) || (b.published || "").localeCompare(a.published || ""));
+    }).sort((a, b) => (isNew(b) - isNew(a)) || imp(b) - imp(a) || (b.published || b.found || "").localeCompare(a.published || a.found || ""));
   }
 
   function card(b, i) {
