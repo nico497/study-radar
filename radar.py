@@ -523,6 +523,7 @@ def run(cfg: dict) -> dict:
         state["repo"] = repo
     seen, src_state = state["seen"], state["sources"]
     health, cands = [], []
+    errors: list[str] = []   # surfaced in the dashboard so failures are never silent
     batch_keys: set[str] = set()   # same study syndicated by two sources: brief once
 
     def mark(url, source, status):
@@ -580,6 +581,7 @@ def run(cfg: dict) -> dict:
             picked = triage(batch, cfg, official)
         except Exception as e:  # noqa: BLE001
             log(f"  triage failed, will retry next run: {e}")
+            errors.append(f"triage: {str(e)[:300]}")
             continue
         for i, c in enumerate(batch):
             if i in picked:
@@ -623,6 +625,7 @@ def run(cfg: dict) -> dict:
             b = write_brief(c, art, cfg)
         except Exception as e:  # noqa: BLE001
             log(f"    brief failed, will retry next run: {e}")
+            errors.append(f"brief: {str(e)[:300]}")
             continue
         if not b.get("is_study", True):
             mark(c["url"], c["source"], "not_study")
@@ -644,10 +647,15 @@ def run(cfg: dict) -> dict:
             pulse = write_pulse(this_run, cfg)
         except Exception as e:  # noqa: BLE001
             log(f"  weekly summary failed: {e}")
+            errors.append(f"summary: {str(e)[:300]}")
             pulse = {"summary": f"{len(this_run)} new studies this week. The summary couldn't be written this run, so see the cards below.", "points": []}
     else:
         failed = sum(1 for h in health if not h["ok"])
-        if failed:
+        if studies and errors:
+            pulse = {"summary": f"Found {len(studies)} new studies but couldn't brief them this run "
+                                f"({errors[0] if errors else 'unknown error'}). They'll be retried next run.",
+                     "points": []}
+        elif failed:
             pulse = {"summary": f"No new studies found, but {failed} of {len(health)} sources couldn't be checked, "
                                 "so something may have been missed. See Sources at the bottom.", "points": []}
         else:
@@ -662,7 +670,8 @@ def run(cfg: dict) -> dict:
             "title": cfg.get("title", "Study Radar"),
             "repo": repo,
             "run": {"sources": len(cfg["sources"]), "new_items": len(cands),
-                    "studies": len(studies), "deferred": deferred, **counts},
+                    "studies": len(studies), "deferred": deferred, **counts,
+                    "errors": list(dict.fromkeys(errors))[:5]},
         },
         "health": health,
         "pulses": pulses[:26],
@@ -689,6 +698,9 @@ def summary(data: dict) -> None:
         f"- Unreadable pages: {run['unreadable']}",
         f"- Deferred to next run: {run['deferred']}",
     ]
+    if run.get("errors"):
+        lines.append("\n**Errors**")
+        lines += [f"- {e}" for e in run["errors"]]
     if failed:
         lines.append("\n**Sources that failed**")
         lines += [f"- {h['name']}: {h['error']}" for h in failed]
