@@ -149,7 +149,7 @@ def discover_feed(src: dict, f: Fetcher) -> list[dict]:
             "url": normalize_url(urljoin(r.url, link)),
             "title": strip_html(e.get("title", ""), 300) or slug_title(link),
             "published": pub,
-            "snippet": strip_html(e.get("summary", "")),
+            "snippet": strip_html(e.get("summary", ""), 1500),
         })
     return items
 
@@ -317,14 +317,24 @@ Exclude: how-to guides, tutorials, tool walkthroughs, product or feature announc
 When a title states a specific measured result, include it. Otherwise, if unsure, exclude."""
 
 
-def triage(cands: list[dict], cfg: dict) -> set[int]:
+OFFICIAL_TRIAGE_SYSTEM = """You screen posts from an official platform source (e.g. Google Search) for a digest read by practitioners. Pick the ones that announce or document a REAL CHANGE practitioners should know about.
+
+Include: ranking/core/spam updates, new or changed features and reports (e.g. in Search Console), documentation or guideline changes, policy changes, deprecations, new structured data or crawling behaviour, official data or explanations of how systems work.
+
+Exclude: events and conferences, community spotlights, recaps of talks, hiring, consumer tips and seasonal features, general marketing.
+
+If unsure, include it."""
+
+
+def triage(cands: list[dict], cfg: dict, official: bool = False) -> set[int]:
     lines = []
     for i, c in enumerate(cands):
         snip = f" | {c['snippet'][:280]}" if c.get("snippet") else ""
         lines.append(f"[{i}] ({c['source']}) {c['title']}{snip}\n    {c['url']}")
     user = (f"Niche: {cfg['niche']}\n\nItems:\n" + "\n".join(lines) +
             "\n\nReturn the indices of the original-research items.")
-    out = call_claude(cfg["models"]["triage"], TRIAGE_SYSTEM, user, TRIAGE_TOOL, 600)
+    system = OFFICIAL_TRIAGE_SYSTEM if official else TRIAGE_SYSTEM
+    out = call_claude(cfg["models"]["triage"], system, user, TRIAGE_TOOL, 600)
     return {i for i in out.get("studies", []) if isinstance(i, int) and 0 <= i < len(cands)}
 
 
@@ -341,7 +351,7 @@ def brief_tool(tags: list[str]) -> dict:
             "properties": {
                 "is_study": {"type": "boolean", "description": "False if, on reading, this is not original research."},
                 "headline": {**s, "description": "The single most important finding in one sentence, with its number. Max 25 words."},
-                "study_type": {"type": "string", "enum": ["survey", "data analysis", "experiment", "benchmark", "industry report", "case study", "other"]},
+                "study_type": {"type": "string", "enum": ["survey", "data analysis", "experiment", "benchmark", "industry report", "case study", "official update", "other"]},
                 "key_stats": {"type": "array", "items": s, "maxItems": 3,
                               "description": "Up to 3 findings, each one short line with the exact number as published."},
                 "method": {
@@ -380,6 +390,13 @@ Rules:
 def write_brief(item: dict, art: dict, cfg: dict) -> dict:
     gated_note = ("\nNOTE: This looks like a gated landing page. The full report is behind a form, "
                   "so only the visible summary is available.") if art["gated"] else ""
+    if item.get("official"):
+        gated_note += ("\nNOTE: This is an OFFICIAL announcement from the platform itself, not a study. "
+                       "Set is_study true unless it is an event, community or consumer post. Use study_type "
+                       "'official update'. For method: sample and data_source 'n/a (official announcement)', "
+                       "timeframe = when the change applies or rolls out, conflict = what the platform does not say. "
+                       "Confidence = how concrete it is: high = specific, dated change; medium = general guidance; "
+                       "low = vague hints. Importance 3 for ranking updates or changes practitioners must act on.")
     user = f"""Audience: {cfg['audience']}
 Niche: {cfg['niche']}
 
@@ -538,7 +555,8 @@ def run(cfg: dict) -> dict:
                 if undated_seen > int(src.get("first_run_keep", 3)):
                     mark(it["url"], name, "baseline")
                     continue
-            new.append({**it, "source": name, "all_studies": bool(src.get("all_studies"))})
+            new.append({**it, "source": name, "all_studies": bool(src.get("all_studies")),
+                        "official": src.get("kind") == "official"})
         new = new[: int(cfg["max_new_per_source"])]
         h["new"] = len(new)
         cands += new
@@ -550,10 +568,13 @@ def run(cfg: dict) -> dict:
     log(f"== Triage {len(cands)} new items")
     studies = [c for c in cands if c["all_studies"]]
     to_triage = [c for c in cands if not c["all_studies"]]
-    for start in range(0, len(to_triage), 30):
-        batch = to_triage[start:start + 30]
+    batches = []
+    for official in (False, True):
+        group = [c for c in to_triage if c["official"] == official]
+        batches += [(group[i:i + 30], official) for i in range(0, len(group), 30)]
+    for batch, official in batches:
         try:
-            picked = triage(batch, cfg)
+            picked = triage(batch, cfg, official)
         except Exception as e:  # noqa: BLE001
             log(f"  triage failed, will retry next run: {e}")
             continue
@@ -584,7 +605,10 @@ def run(cfg: dict) -> dict:
             counts["unreadable"] += 1
             log(f"    unreadable: {record['unreadable']}")
             continue
-        if art["words"] < (25 if art["gated"] else 120):
+        if art["words"] < 120 and c.get("snippet"):
+            art["text"] = f"Feed summary: {c['snippet']}\n\nPage text:\n{art['text']}"
+            art["words"] += len(c["snippet"].split())
+        if art["words"] < (8 if c.get("official") else 25 if art["gated"] else 120):
             record["unreadable"] = "page has almost no readable text (likely built with JavaScript)"
             record["title"] = art["title"] or c["title"]
             briefs.insert(0, record)

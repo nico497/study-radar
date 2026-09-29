@@ -92,7 +92,9 @@ FAIL SomeSite               blocked by the site (403)
 
 Pick companies that publish their **own data**: tool vendors with big datasets, agencies that run experiments, and analysts who survey. A blog that mixes studies with how-tos is fine, because triage filters out the how-tos. News sites are a poor fit because they mostly report other people's research.
 
-The starter list covers SEO and GEO: Ahrefs, Semrush, SparkToro, Growth Memo, iPullRank, Seer Interactive, Profound, Backlinko and BrightEdge. Swap them for your own niche.
+**Official sources** (like Google) announce changes rather than publish studies. Mark them `kind: official`: triage then keeps real changes (ranking updates, new features, documentation changes) and drops events and community posts, and the cards show "Official update" instead of a confidence rating.
+
+The starter list covers SEO and GEO. It has two official Google sources (Search Central blog, Search Status Dashboard) plus research from Ahrefs, Semrush, Growth Memo, Seer Interactive, Profound, Orbit Media and BrightEdge. Swap them for your own niche.
 
 ## Cost
 

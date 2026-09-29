@@ -27,26 +27,33 @@ models:
 #   page:    a listing page + link_pattern (a regex the post URLs match)
 #   sitemap: a sitemap URL + link_pattern
 # Optional per source:
-#   all_studies: true      everything here is research, skip triage
+#   kind: official         official announcements (e.g. Google): triage keeps real
+#                          changes, briefs are framed as updates, not studies
+#   all_studies: true      skip triage: brief everything from this source
 #   link_pattern: /x/      only keep URLs matching this regex
 #   exclude_pattern: /y/   drop URLs matching this regex
 #   first_run_keep: 3      for undated pages: how many to brief on the first run
 # ------------------------------------------------------------------
 sources:
+  # --- Official: changes straight from Google (kind: official) ---
+  - name: Google Search Central
+    feed: https://developers.google.com/search/blog/feed.xml
+    kind: official
+
+  - name: Google Search Status
+    feed: https://status.search.google.com/en/feed.atom
+    kind: official
+    all_studies: true    # every entry is a ranking/spam/core update
+
+  # --- Research: companies that publish their own data ---
   - name: Ahrefs
     feed: https://ahrefs.com/blog/feed/
 
   - name: Semrush
     feed: https://www.semrush.com/blog/feed/
 
-  - name: SparkToro
-    feed: https://sparktoro.com/blog/feed/
-
   - name: Growth Memo
     feed: https://www.growth-memo.com/feed
-
-  - name: iPullRank
-    feed: https://ipullrank.com/feed
 
   - name: Seer Interactive
     feed: https://www.seerinteractive.com/insights/rss.xml
@@ -54,8 +61,10 @@ sources:
   - name: Profound
     feed: https://www.tryprofound.com/rss/blog.xml
 
-  - name: Backlinko
-    feed: https://backlinko.com/feed
+  - name: Orbit Media
+    page: https://www.orbitmedia.com/blog/
+    link_pattern: orbitmedia\.com/blog/[a-z0-9-]+/?$
+    first_run_keep: 8
 
   - name: BrightEdge
     page: https://www.brightedge.com/resources/research-reports

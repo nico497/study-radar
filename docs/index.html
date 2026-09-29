@@ -81,6 +81,7 @@ main { padding: 14px 0 32px; display: flex; flex-direction: column; gap: 10px; }
 .row { display: flex; gap: 8px; align-items: center; justify-content: space-between; flex-wrap: wrap; margin-top: 10px; }
 .conf { font-size: 12.5px; color: var(--ink-2); display: inline-flex; align-items: center; gap: 6px; }
 .conf i { width: 8px; height: 8px; border-radius: 50%; display: inline-block; flex: none; }
+.conf.official i { background: var(--ink); border-radius: 2px; }
 .conf.high i { background: var(--hi); } .conf.medium i { background: var(--md); } .conf.low i { background: var(--lo); }
 .conf b { font-weight: 600; color: var(--ink); }
 .actions { display: flex; gap: 6px; }
@@ -140,7 +141,7 @@ details.health summary .sub { font-weight: 400; color: var(--ink-3); margin-left
       <select id="source" aria-label="Source"><option value="">All sources</option></select>
       <select id="conf" aria-label="Confidence">
         <option value="">Any confidence</option>
-        <option value="high">High</option><option value="medium">Medium</option><option value="low">Low</option>
+        <option value="high">High</option><option value="medium">Medium</option><option value="low">Low</option><option value="official">Official updates</option>
       </select>
       <button class="ghost" id="copyAll" hidden>Copy all</button>
     </div>
@@ -219,7 +220,7 @@ details.health summary .sub { font-weight: 400; color: var(--ink-3); margin-left
       if (tab === "week" && !isNew(b)) return false;
       if (tab === "saved" && !isSaved(b)) return false;
       if (src && b.source !== src) return false;
-      if (conf && b.brief?.method?.confidence !== conf) return false;
+      if (conf === "official" ? b.brief?.study_type !== "official update" : conf && b.brief?.method?.confidence !== conf) return false;
       if (q && !(b.title + " " + b.source + " " + JSON.stringify(b.brief || {})).toLowerCase().includes(q)) return false;
       return true;
     }).sort((a, b) => (b.found || "").localeCompare(a.found || "") || imp(b) - imp(a) || (b.published || "").localeCompare(a.published || ""));
@@ -244,17 +245,21 @@ details.health summary .sub { font-weight: 400; color: var(--ink-3); margin-left
         <div class="row"><div class="links"><a href="${esc(b.url)}" target="_blank" rel="noopener">Open source ↗</a></div>${actions}</div></article>`;
     }
     const row = (k, v) => v ? `<dt>${k}</dt><dd>${esc(v)}</dd>` : "";
+    const official = x.study_type === "official update";
     const sample = m.sample && m.sample !== "Not disclosed" ? ` · ${esc(m.sample)}` : " · sample not disclosed";
+    const confLine = official
+      ? `<span class="conf official" title="${esc(m.caveat)}"><i></i><span><b>Official update</b>${m.timeframe && !/not disclosed/i.test(m.timeframe) ? ` · ${esc(m.timeframe)}` : ""}</span></span>`
+      : `<span class="conf ${esc(m.confidence)}" title="${esc(m.caveat)}"><i></i><span><b>${esc(cap(m.confidence))} confidence</b>${sample}</span></span>`;
     return `<article class="card imp-${level}${on ? " saved" : ""}" id="${esc(b.id)}" data-i="${i}">${meta}
       <h2 class="headline">${esc(x.headline)}</h2>
       <p class="why">${esc(x.why_it_matters)}</p>
       <div class="row">
-        <span class="conf ${esc(m.confidence)}" title="${esc(m.caveat)}"><i></i><span><b>${esc(cap(m.confidence))} confidence</b>${sample}</span></span>
+        ${confLine}
         ${actions}
       </div>
       ${isOpen ? `<div class="details">
         ${(x.key_stats || []).length ? `<div><h4>Key numbers</h4><ul>${x.key_stats.map((t) => `<li>${esc(t)}</li>`).join("")}</ul></div>` : ""}
-        <div><h4>Method check</h4><dl class="mgrid">${row("Sample", m.sample)}${row("Data", m.data_source)}${row("When", m.timeframe)}${row("Bias", m.conflict)}</dl>
+        <div><h4>${official ? "What's confirmed" : "Method check"}</h4><dl class="mgrid">${official ? "" : row("Sample", m.sample) + row("Data", m.data_source)}${row("When", m.timeframe)}${row(official ? "Not said" : "Bias", m.conflict)}</dl>
           ${m.caveat ? `<p class="caveat">Careful: ${esc(m.caveat)}</p>` : ""}</div>
         <div class="links"><a href="${esc(b.url)}" target="_blank" rel="noopener">${esc(b.title)} ↗</a>
           ${(b.pdf_links || []).map((p, n) => `<a href="${esc(p)}" target="_blank" rel="noopener">PDF ${n + 1} ↗</a>`).join("")}
