@@ -78,6 +78,7 @@ main { padding: 14px 0 32px; display: flex; flex-direction: column; gap: 10px; }
 .tag.new { color: var(--accent); padding: 0; }
 .headline { font: 600 17.5px/1.35 var(--serif); margin: 5px 0 3px; letter-spacing: -.005em; }
 .why { margin: 0; color: var(--ink-2); font-size: 14.5px; }
+.why b { color: var(--ink); font-weight: 600; }
 .row { display: flex; gap: 8px; align-items: center; justify-content: space-between; flex-wrap: wrap; margin-top: 10px; }
 .conf { font-size: 12.5px; color: var(--ink-2); display: inline-flex; align-items: center; gap: 6px; }
 .conf i { width: 8px; height: 8px; border-radius: 50%; display: inline-block; flex: none; }
@@ -139,9 +140,9 @@ details.health summary .sub { font-weight: 400; color: var(--ink-3); margin-left
     <div class="filters">
       <input id="q" type="search" placeholder="Search" aria-label="Search">
       <select id="source" aria-label="Source"><option value="">All sources</option></select>
-      <select id="conf" aria-label="Confidence">
-        <option value="">Any confidence</option>
-        <option value="high">High</option><option value="medium">Medium</option><option value="low">Low</option><option value="official">Official updates</option>
+      <select id="conf" aria-label="Evidence">
+        <option value="">Any evidence</option>
+        <option value="high">Solid</option><option value="medium">Some doubts</option><option value="low">Weak</option><option value="official">Official updates</option>
       </select>
       <button class="ghost" id="copyAll" hidden>Copy all</button>
     </div>
@@ -184,8 +185,9 @@ details.health summary .sub { font-weight: 400; color: var(--ink-3); margin-left
     const x = b.brief;
     if (!x) return `${b.title} (${b.source}): couldn't be read. ${b.url}`;
     const m = x.method || {};
-    return [`**${x.headline}**`, x.why_it_matters, ...(x.key_stats || []).map((s) => `- ${s}`),
-      `Method: ${m.sample}; ${m.data_source}. Confidence: ${m.confidence}. ${m.caveat}`,
+    const trust = { high: "Solid evidence", medium: "Some doubts", low: "Weak evidence" }[m.confidence] || "";
+    return [`**${x.headline}**`, `**Why it matters:** ${x.why_it_matters}`, ...(x.key_stats || []).map((s) => `- ${s}`),
+      `**Evidence:** ${trust}. ${m.sample}. ${m.caveat}`,
       `Source: ${b.source}, ${b.title} ${b.url}`].join("\n");
   }
   function toggleSave(id) {
@@ -246,21 +248,22 @@ details.health summary .sub { font-weight: 400; color: var(--ink-3); margin-left
     }
     const row = (k, v) => v ? `<dt>${k}</dt><dd>${esc(v)}</dd>` : "";
     const official = x.study_type === "official update";
-    const sample = m.sample && m.sample !== "Not disclosed" ? ` · ${esc(m.sample)}` : " · sample not disclosed";
+    const sample = m.sample && m.sample !== "Not disclosed" ? ` · ${esc(m.sample)}` : " · size not shared";
+    const TRUST = { high: "Solid evidence", medium: "Some doubts", low: "Weak evidence" };
     const confLine = official
       ? `<span class="conf official" title="${esc(m.caveat)}"><i></i><span><b>Official update</b>${m.timeframe && !/not disclosed/i.test(m.timeframe) ? ` · ${esc(m.timeframe)}` : ""}</span></span>`
-      : `<span class="conf ${esc(m.confidence)}" title="${esc(m.caveat)}"><i></i><span><b>${esc(cap(m.confidence))} confidence</b>${sample}</span></span>`;
+      : `<span class="conf ${esc(m.confidence)}" title="${esc(m.caveat)}"><i></i><span><b>${esc(TRUST[m.confidence] || "Unclear evidence")}</b>${sample}</span></span>`;
     return `<article class="card imp-${level}${on ? " saved" : ""}" id="${esc(b.id)}" data-i="${i}">${meta}
       <h2 class="headline">${esc(x.headline)}</h2>
-      <p class="why">${esc(x.why_it_matters)}</p>
+      <p class="why"><b>Why it matters:</b> ${esc(x.why_it_matters)}</p>
       <div class="row">
         ${confLine}
         ${actions}
       </div>
       ${isOpen ? `<div class="details">
-        ${(x.key_stats || []).length ? `<div><h4>Key numbers</h4><ul>${x.key_stats.map((t) => `<li>${esc(t)}</li>`).join("")}</ul></div>` : ""}
-        <div><h4>${official ? "What's confirmed" : "Method check"}</h4><dl class="mgrid">${official ? "" : row("Sample", m.sample) + row("Data", m.data_source)}${row("When", m.timeframe)}${row(official ? "Not said" : "Bias", m.conflict)}</dl>
-          ${m.caveat ? `<p class="caveat">Careful: ${esc(m.caveat)}</p>` : ""}</div>
+        ${(x.key_stats || []).length ? `<div><h4>The numbers</h4><ul>${x.key_stats.map((t) => `<li>${esc(t)}</li>`).join("")}</ul></div>` : ""}
+        <div><h4>${official ? "What we know" : "How they did it"}</h4><dl class="mgrid">${official ? "" : row("Size", m.sample) + row("Source", m.data_source)}${row("When", m.timeframe)}${row(official ? "Not said" : "Selling?", m.conflict)}</dl>
+          ${m.caveat ? `<p class="caveat"><b>Watch out:</b> ${esc(m.caveat)}</p>` : ""}</div>
         <div class="links"><a href="${esc(b.url)}" target="_blank" rel="noopener">${esc(b.title)} ↗</a>
           ${(b.pdf_links || []).map((p, n) => `<a href="${esc(p)}" target="_blank" rel="noopener">PDF ${n + 1} ↗</a>`).join("")}
           <button data-act="copy" data-id="${esc(b.id)}">Copy brief</button></div>

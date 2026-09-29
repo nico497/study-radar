@@ -5,8 +5,8 @@
 Study Radar watches the companies in your niche that publish original research. Each week it finds their new studies, surveys and data analyses, skips everything else, and gives you one page:
 
 - **This week:** a two-sentence summary plus the 3 takeaways that matter, each with how far to trust it.
-- **One card per study:** the headline finding with its number, why it matters, and a confidence rating. Must-know studies sit at the top and minor ones are greyed out.
-- **Details on demand:** key numbers as published, plus a method check covering sample, data source, timeframe and bias.
+- **One card per study, in plain English (Smart Brevity style):** the finding, why it matters, and how solid the evidence is. Must-know studies sit at the top and minor ones are greyed out.
+- **Details on demand:** the key numbers, how the study was done (size, source, timing), whether the publisher is selling something, and what to watch out for.
 - **★ Save** anything worth keeping.
 
 It runs free on GitHub, with no server and nothing to host. You only pay for your own Claude API usage.
@@ -132,6 +132,8 @@ docs/data.json               briefs (written by the workflow)
 state/state.json             what's been seen, so nothing is briefed twice
 .github/workflows/radar.yml  weekly schedule
 ```
+
+**Changed the writing style?** Edit `STYLE_RULES` in `radar.py`, then go to **Actions → Study Radar → Run workflow → mode: restyle**. That rewrites your existing briefs without re-reading the articles.
 
 Run it locally: `ANTHROPIC_API_KEY=... python radar.py`, then `cd docs && python -m http.server` and open http://localhost:8000.
 

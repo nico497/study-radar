@@ -380,17 +380,17 @@ def brief_tool(tags: list[str]) -> dict:
             "type": "object",
             "properties": {
                 "is_study": {"type": "boolean", "description": "False if, on reading, this is not original research."},
-                "headline": {**s, "description": "The single most important finding in one sentence, with its number. Max 25 words."},
+                "headline": {**s, "description": "The finding. One plain sentence, max 18 words, with the key number. Start with who or what, not 'Study finds'."},
                 "study_type": {"type": "string", "enum": ["survey", "data analysis", "experiment", "benchmark", "industry report", "case study", "official update", "other"]},
                 "key_stats": {"type": "array", "items": s, "maxItems": 3,
-                              "description": "Up to 3 findings, each one short line with the exact number as published."},
-                "sample": {**s, "description": "Method check. What was measured and how much, e.g. '1,200 marketers surveyed' or '300k keywords'. 'Not disclosed' if absent."},
-                "data_source": {**s, "description": "Method check. Where the data came from, e.g. own tool data, panel survey, Search Console. 'Not disclosed' if absent."},
-                "timeframe": {**s, "description": "Method check. When the data was collected. 'Not disclosed' if absent."},
-                "conflict": {**s, "description": "Method check. Does the finding promote the publisher's own product or category? One short sentence."},
+                              "description": "Up to 3 numbers worth knowing. Each max 12 words, plain English, exact figures."},
+                "sample": {**s, "description": "How big the study was. Max 8 words, e.g. '1,042 marketers surveyed' or '300k keywords'. 'Not disclosed' if absent."},
+                "data_source": {**s, "description": "Where the data came from. Max 8 words, e.g. 'their own tool', 'online survey'. 'Not disclosed' if absent."},
+                "timeframe": {**s, "description": "When the data was collected. Max 6 words. 'Not disclosed' if absent."},
+                "conflict": {**s, "description": "Does the publisher sell something this finding helps? One plain sentence, max 15 words."},
                 "confidence": {"type": "string", "enum": ["high", "medium", "low"]},
-                "caveat": {**s, "description": "The main reason to be careful with this finding. One sentence."},
-                "why_it_matters": {**s, "description": "One sentence: what this changes for the audience, or 'confirms what we knew' if nothing. Max 25 words."},
+                "caveat": {**s, "description": "The main reason to be careful. One plain sentence, max 15 words."},
+                "why_it_matters": {**s, "description": "Why it matters to the reader. One plain sentence, max 18 words. Say what to do or watch. If nothing changes, say so."},
                 "importance": {"type": "integer", "enum": [1, 2, 3],
                                "description": "3 = must know: changes how the audience should work or overturns a common belief, with credible evidence. 2 = useful data point. 1 = minor, incremental or weak."},
                 "tags": {"type": "array", "items": tag_schema, "maxItems": 3},
@@ -401,15 +401,24 @@ def brief_tool(tags: list[str]) -> dict:
     }
 
 
-BRIEF_SYSTEM = """You write briefs of industry studies for a busy professional who reviews the whole week's research in 60 seconds. They want to know what is actually important and how far to trust it.
+STYLE_RULES = """Writing style: Smart Brevity, plain English.
+- Easy English. Short sentences. Everyday words. Write so a smart 15-year-old gets it on first read.
+- No jargon. If a technical term can't be avoided, explain it in a few words in brackets,
+  e.g. "fan-out queries (the extra searches AI tools run behind the scenes)".
+- Lead with the point. No warm-up, no "this study shows", no hedging words, no hype.
+- Keep numbers exactly as published, but at most two numbers per sentence.
+- Respect every word limit."""
 
-Rules:
-- Use only what the text says. Never invent or round numbers. Quote figures exactly as published.
-- If a method detail is missing, write "Not disclosed". Missing methods are a finding, not a gap to fill.
-- Confidence: high = large sample, method explained, limits acknowledged. medium = reasonable sample but vendor data or partial method. low = small, self-selected or undisclosed sample, no method, or the study mainly sells the publisher's product.
-- Importance: be stingy. Most studies are a 2. Reserve 3 for findings that should change what the audience does. A low-confidence study is rarely a 3.
-- If the page is a gated landing page, brief only what is visible and say so in the caveat.
-- Plain, direct language. No hype, no filler, no emojis."""
+BRIEF_SYSTEM = """You turn industry studies into short briefs for a busy reader who may not be an expert. They should get each one in 10 seconds: what was found, why it matters, and whether to trust it.
+
+""" + STYLE_RULES + """
+
+Accuracy rules:
+- Use only what the text says. Never invent or round numbers.
+- If a method detail is missing, write "Not disclosed". A hidden method is worth knowing.
+- Confidence: high = big sample, method explained, limits admitted. medium = decent sample but vendor data or thin method. low = small, self-picked or hidden sample, or mainly selling the publisher's product.
+- Importance: be stingy. Most studies are a 2. Give 3 only if the reader should change what they do. Low-confidence studies are rarely a 3.
+- Gated landing page: brief only what's visible, and say so in the caveat."""
 
 
 def write_brief(item: dict, art: dict, cfg: dict) -> dict:
@@ -418,8 +427,9 @@ def write_brief(item: dict, art: dict, cfg: dict) -> dict:
     if item.get("official"):
         gated_note += ("\nNOTE: This is an OFFICIAL announcement from the platform itself, not a study. "
                        "Set is_study true unless it is an event, community or consumer post. Use study_type "
-                       "'official update'. For method: sample and data_source 'n/a (official announcement)', "
-                       "timeframe = when the change applies or rolls out, conflict = what the platform does not say. "
+                       "'official update'. The headline says what changed, in plain words. For method: sample and "
+                       "data_source 'n/a (official announcement)', timeframe = when it applies or rolls out, "
+                       "conflict = what the platform doesn't say (max 15 words). "
                        "Confidence = how concrete it is: high = specific, dated change; medium = general guidance; "
                        "low = vague hints. Importance 3 for ranking updates or changes practitioners must act on.")
     user = f"""Audience: {cfg['audience']}
@@ -491,21 +501,23 @@ PULSE_TOOL = {
             "summary": {"type": "string", "description": "Two sentences max: the overall picture this week. Say plainly if little of note was published."},
             "points": {
                 "type": "array", "maxItems": 3, "items": {"type": "string"},
-                "description": "Up to 3 takeaways, max 35 words each, saying how far to trust it. End each with the numbers of the studies it draws on in square brackets, e.g. 'Zero-click keeps rising. [0, 3]'",
+                "description": "Up to 3 takeaways, one plain sentence each, max 22 words. End each with the numbers of the studies it draws on in square brackets, e.g. 'Zero-click keeps rising. [0, 3]'",
             },
         },
         "required": ["summary", "points"],
     },
 }
 
-PULSE_SYSTEM = """You write the top-of-page summary for a weekly research digest. The reader has 60 seconds.
+PULSE_SYSTEM = """You write the top-of-page summary for a weekly research digest. The reader has 60 seconds and may not be an expert.
+
+""" + STYLE_RULES + """
 
 Rules:
 - Use only the briefs provided. Don't add outside facts or numbers.
-- Pick at most 3 points, ranked by what matters most to the audience. Fewer is fine. Skip minor studies.
-- Each point: max 35 words, at most two short sentences. The summary: max 40 words. The reader can open the cards for detail.
-- Weigh confidence: don't present a low-confidence finding as fact. If a widely-quotable number is weak, a point can be a warning not to rely on it.
-- Plain, direct language. No hype."""
+- Summary: max 25 words, two short sentences: the big picture this week.
+- Up to 3 points, ranked by what matters most. Fewer is fine. Skip minor studies.
+- Each point: ONE sentence, max 22 words. The takeaway first, then what to do.
+- Weigh confidence. Don't state a weak finding as fact; say "early signal" or "one vendor's data" instead."""
 
 
 def write_pulse(new_briefs: list[dict], cfg: dict) -> dict:
@@ -568,6 +580,54 @@ def load_config() -> dict:
 
 
 # ---------------------------------------------------------------- run
+
+RESTYLE_SYSTEM = """You rewrite an existing study brief so anyone can read it in 10 seconds.
+
+""" + STYLE_RULES + """
+
+Rules:
+- Keep every fact and number. Don't add facts. Don't round numbers.
+- Keep study_type, confidence, importance and tags the same.
+- Respect the word limit on every field."""
+
+
+def restyle(cfg: dict) -> None:
+    """Rewrite existing briefs in the current style, from the brief itself (no re-fetching)."""
+    if not os.environ.get("ANTHROPIC_API_KEY"):
+        sys.exit("Set ANTHROPIC_API_KEY first.")
+    data = load_json(DATA_PATH, {"briefs": []})
+    now = utcnow()
+    done = failed = 0
+    for r in data.get("briefs", []):
+        if not r.get("brief"):
+            continue
+        log(f"  restyle: {r['source']}: {r['title'][:60]}")
+        user = (f"Audience: {cfg['audience']}\nNiche: {cfg['niche']}\nPublisher: {r['source']}\n"
+                f"Title: {r['title']}\n\nCurrent brief (JSON):\n{json.dumps(r['brief'], ensure_ascii=False)}")
+        try:
+            new = normalize_brief(call_claude(cfg["models"]["brief"], RESTYLE_SYSTEM, user,
+                                              brief_tool(cfg.get("tags") or []), 1500))
+        except Exception as e:  # noqa: BLE001
+            log(f"    failed, kept the old version: {e}")
+            failed += 1
+            continue
+        old = r["brief"]
+        new.update(is_study=True, study_type=old.get("study_type", new["study_type"]),
+                   importance=old.get("importance", new["importance"]))
+        new["method"]["confidence"] = old.get("method", {}).get("confidence", new["method"]["confidence"])
+        r["brief"] = new
+        done += 1
+    week_start = now - timedelta(days=6, hours=12)
+    week = [r for r in data["briefs"] if r.get("brief") and (parse_iso(r.get("found")) or now) >= week_start]
+    if week:
+        try:
+            pulse = {"date": iso(now), **write_pulse(week, cfg)}
+            data["pulses"] = [pulse] + data.get("pulses", [])[1:]
+        except Exception as e:  # noqa: BLE001
+            log(f"  summary failed, kept the old one: {e}")
+    save_json(DATA_PATH, data)
+    log(f"\nRestyled {done} briefs" + (f", {failed} failed (kept as they were)" if failed else ""))
+
 
 def check_sources(cfg: dict) -> None:
     f = Fetcher(cfg["user_agent"])
@@ -801,10 +861,13 @@ def summary(data: dict) -> None:
 def main() -> None:
     ap = argparse.ArgumentParser(description="Study Radar")
     ap.add_argument("--check", action="store_true", help="test sources only, no API calls or writes")
+    ap.add_argument("--restyle", action="store_true", help="rewrite existing briefs in the current writing style")
     args = ap.parse_args()
     cfg = load_config()
     if args.check:
         check_sources(cfg)
+    elif args.restyle:
+        restyle(cfg)
     else:
         run(cfg)
 
