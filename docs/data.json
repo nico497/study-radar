@@ -2,33 +2,29 @@
  "meta": {
   "niche": "SEO and generative engine optimization (GEO) for B2B SaaS",
   "audience": "the content and SEO lead at a B2B SaaS company",
-  "updated": "2026-09-29T09:19:43+00:00",
+  "updated": "2026-09-29T09:22:16+00:00",
   "title": "Study Radar",
   "repo": "nico497/study-radar",
   "run": {
    "sources": 13,
-   "new_items": 45,
-   "studies": 24,
-   "deferred": 12,
-   "briefed": 0,
+   "new_items": 43,
+   "studies": 22,
+   "deferred": 10,
+   "briefed": 12,
    "unreadable": 0,
    "rejected": 0,
    "errors": [
-    "brief: Anthropic API 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"tool_choice: type \\\"tool\\\" and \\\"any\\\" are not supported for this model.\"},\"request_id\":\"req_011CfXUxLG3FgxTjAUMUNEkN\"}",
-    "brief: Anthropic API 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"tool_choice: type \\\"tool\\\" and \\\"any\\\" are not supported for this model.\"},\"request_id\":\"req_011CfXUxMxjNe7bmxZZGapdE\"}",
-    "brief: Anthropic API 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"tool_choice: type \\\"tool\\\" and \\\"any\\\" are not supported for this model.\"},\"request_id\":\"req_011CfXUxPWzuhoZTktcwbGj6\"}",
-    "brief: Anthropic API 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"tool_choice: type \\\"tool\\\" and \\\"any\\\" are not supported for this model.\"},\"request_id\":\"req_011CfXUxR7zDci3eVEpPYLVJ\"}",
-    "brief: Anthropic API 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"tool_choice: type \\\"tool\\\" and \\\"any\\\" are not supported for this model.\"},\"request_id\":\"req_011CfXUxUwg8SbHxehTXSLeL\"}"
+    "summary: 'str' object has no attribute 'get'"
    ]
   }
  },
  "health": [
   {
    "name": "Google Search Central",
-   "checked": "2026-09-29T09:19:43+00:00",
+   "checked": "2026-09-29T09:22:16+00:00",
    "ok": true,
    "found": 10,
-   "new": 0,
+   "new": 1,
    "error": null,
    "url": "https://developers.google.com/search/blog/feed.xml",
    "method": "feed",
@@ -36,10 +32,10 @@
   },
   {
    "name": "Google Search Status",
-   "checked": "2026-09-29T09:19:43+00:00",
+   "checked": "2026-09-29T09:22:16+00:00",
    "ok": true,
    "found": 1,
-   "new": 0,
+   "new": 1,
    "error": null,
    "url": "https://status.search.google.com/en/feed.atom",
    "method": "feed",
@@ -47,7 +43,7 @@
   },
   {
    "name": "Bing Webmaster",
-   "checked": "2026-09-29T09:19:43+00:00",
+   "checked": "2026-09-29T09:22:16+00:00",
    "ok": true,
    "found": 10,
    "new": 0,
@@ -58,7 +54,7 @@
   },
   {
    "name": "OpenAI",
-   "checked": "2026-09-29T09:19:43+00:00",
+   "checked": "2026-09-29T09:22:16+00:00",
    "ok": true,
    "found": 1235,
    "new": 0,
@@ -69,10 +65,10 @@
   },
   {
    "name": "Ahrefs",
-   "checked": "2026-09-29T09:19:43+00:00",
+   "checked": "2026-09-29T09:22:16+00:00",
    "ok": true,
    "found": 10,
-   "new": 0,
+   "new": 1,
    "error": null,
    "url": "https://ahrefs.com/blog/feed/",
    "method": "feed",
@@ -80,18 +76,18 @@
   },
   {
    "name": "Semrush",
-   "checked": "2026-09-29T09:19:43+00:00",
+   "checked": "2026-09-29T09:22:16+00:00",
    "ok": true,
    "found": 20,
    "new": 0,
    "error": null,
    "url": "https://www.semrush.com/blog/feed/",
    "method": "feed",
-   "posts_new": 3
+   "posts_new": 2
   },
   {
    "name": "Growth Memo",
-   "checked": "2026-09-29T09:19:43+00:00",
+   "checked": "2026-09-29T09:22:16+00:00",
    "ok": true,
    "found": 20,
    "new": 0,
@@ -102,10 +98,10 @@
   },
   {
    "name": "Seer Interactive",
-   "checked": "2026-09-29T09:19:43+00:00",
+   "checked": "2026-09-29T09:22:16+00:00",
    "ok": true,
    "found": 20,
-   "new": 0,
+   "new": 1,
    "error": null,
    "url": "https://www.seerinteractive.com/insights/rss.xml",
    "method": "feed",
@@ -113,21 +109,21 @@
   },
   {
    "name": "Profound",
-   "checked": "2026-09-29T09:19:43+00:00",
+   "checked": "2026-09-29T09:22:16+00:00",
    "ok": true,
    "found": 180,
-   "new": 0,
+   "new": 1,
    "error": null,
    "url": "https://www.tryprofound.com/rss/blog.xml",
    "method": "feed",
-   "posts_new": 5
+   "posts_new": 4
   },
   {
    "name": "Orbit Media",
-   "checked": "2026-09-29T09:19:43+00:00",
+   "checked": "2026-09-29T09:22:16+00:00",
    "ok": true,
    "found": 26,
-   "new": 0,
+   "new": 3,
    "error": null,
    "url": "https://www.orbitmedia.com/blog/",
    "method": "page",
@@ -135,10 +131,10 @@
   },
   {
    "name": "Peec AI",
-   "checked": "2026-09-29T09:19:43+00:00",
+   "checked": "2026-09-29T09:22:16+00:00",
    "ok": true,
    "found": 42,
-   "new": 0,
+   "new": 1,
    "error": null,
    "url": "https://peec.ai/blog",
    "method": "page",
@@ -146,7 +142,7 @@
   },
   {
    "name": "AirOps",
-   "checked": "2026-09-29T09:19:43+00:00",
+   "checked": "2026-09-29T09:22:16+00:00",
    "ok": true,
    "found": 202,
    "new": 0,
@@ -157,10 +153,10 @@
   },
   {
    "name": "BrightEdge",
-   "checked": "2026-09-29T09:19:43+00:00",
+   "checked": "2026-09-29T09:22:16+00:00",
    "ok": true,
    "found": 31,
-   "new": 0,
+   "new": 3,
    "error": null,
    "url": "https://www.brightedge.com/resources/research-reports",
    "method": "page",
@@ -168,6 +164,11 @@
   }
  ],
  "pulses": [
+  {
+   "date": "2026-09-29T09:22:16+00:00",
+   "summary": "12 new studies this week. The summary couldn't be written this run, so see the cards below.",
+   "points": []
+  },
   {
    "date": "2026-09-29T09:19:43+00:00",
    "summary": "Found 24 new studies but couldn't brief them this run (brief: Anthropic API 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"tool_choice: type \\\"tool\\\" and \\\"any\\\" are not supported for this model.\"},\"request_id\":\"req_011CfXUxLG3FgxTjAUMUNEkN\"}). They'll be retried next run.",
@@ -179,5 +180,420 @@
    "points": []
   }
  ],
- "briefs": []
+ "briefs": [
+  {
+   "id": "seerinteractive.com/insights/gpt-5.5-vs-gpt-5.6-luna",
+   "url": "https://www.seerinteractive.com/insights/gpt-5.5-vs-gpt-5.6-luna",
+   "source": "Seer Interactive",
+   "title": "AI Citations Aren't Your Top KPI: ChatGPT-5.6 Luna Runs More Targeted Searches",
+   "published": "2026-09-24T19:36:11+00:00",
+   "found": "2026-09-29T09:22:16+00:00",
+   "gated": false,
+   "unreadable": null,
+   "pdf_links": [],
+   "brief": {
+    "is_study": true,
+    "headline": "GPT-5.6 Luna used site: operator in 76% of fan-out queries, up from 21.6% with GPT-5.5, while inline citations fell 12.9%.",
+    "study_type": "data analysis",
+    "key_stats": [
+     "site: searches: 554 of 729 fan-out queries (76%) for Luna vs 158 of 733 (21.6%) for GPT-5.5",
+     "Consulted sources fell 43%, from 6,134 to 3,481; open searches fell from 575 to 175",
+     "Inline citations fell 12.9%, from 2,054 to 1,790, across 346 matched prompts"
+    ],
+    "method": "\n<parameter name=\"sample\">346 matched prompts across six industries, run on both GPT-5.5 and GPT-5.6 Luna (733 vs 729 fan-out queries)",
+    "data_source": "Seer's own prompt runs on ChatGPT; collection method (interface vs API, runs per prompt, prompt list) not disclosed",
+    "timeframe": "Not disclosed. The article says Luna became the default on July 9, 2025, which looks inconsistent with the 2026 publish date.",
+    "conflict": "Seer sells AI search consulting and ends with a sales pitch, but the findings are not tied to one product. The advice to track the full retrieval process does favor its services.",
+    "confidence": "medium",
+    "caveat": "The sample is modest, with one snapshot and no variance or repeat runs. The explanations, such as Luna being \"better at finding information\", are hypotheses, and the article doesn't say how prompts were chosen or how many are branded vs non-brand.",
+    "why_it_matters": "If citations dropped after the default model switched, the cause may be the platform, not your tests. Annotate the switch in reporting and track fan-out queries and site: targeting for your domain, not just citations.",
+    "importance": 2,
+    "tags": [
+     "ai search",
+     "analytics",
+     "content"
+    ]
+   },
+   "words": 1415
+  },
+  {
+   "id": "status.search.google.com/incidents/XhUDXP7A67iHCD2kmbVu",
+   "url": "https://status.search.google.com/incidents/XhUDXP7A67iHCD2kmbVu",
+   "source": "Google Search Status",
+   "title": "Incident details | Google Search Status Dashboard",
+   "published": "2026-09-24T16:15:47+00:00",
+   "found": "2026-09-29T09:22:16+00:00",
+   "gated": false,
+   "unreadable": null,
+   "pdf_links": [],
+   "brief": {
+    "is_study": true,
+    "headline": "Google released the September 2026 spam update on 24 Sep 2026 at 09:15 PDT, global and all languages, with rollout taking up to two weeks.",
+    "study_type": "official update",
+    "key_stats": [
+     "Released 24 Sep 2026, 09:15 PDT",
+     "Applies globally and to all languages",
+     "Rollout may take up to two weeks to complete"
+    ],
+    "method": "\n<parameter name=\"sample\">n/a (official announcement)",
+    "data_source": "n/a (official announcement)",
+    "timeframe": "Rollout began 24 Sep 2026 09:15 PDT; may take up to two weeks to complete",
+    "conflict": "Google does not say which spam policies or tactics are targeted, how many sites are affected, or what recovery requires.",
+    "confidence": "high",
+    "caveat": "The entry gives only the date, scope and rollout window. It names no targeted spam types, so any diagnosis of a traffic drop is guesswork until Google or the wider industry says more.",
+    "why_it_matters": "Ranking volatility is likely through early October. Log any traffic changes against the rollout window and avoid big content changes until it finishes. Check your content and link practices against Google's spam policies.",
+    "importance": 3,
+    "tags": [
+     "ctr & serps",
+     "content",
+     "links"
+    ]
+   },
+   "words": 151
+  },
+  {
+   "id": "developers.google.com/search/blog/2026/09/web-multimodal-in-sc",
+   "url": "https://developers.google.com/search/blog/2026/09/web-multimodal-in-sc",
+   "source": "Google Search Central",
+   "title": "Announcing web multimodal Search performance reporting in Search Console  |  Google Search Central Blog  |  Google for Developers",
+   "published": "2026-09-24T00:00:00+00:00",
+   "found": "2026-09-29T09:22:16+00:00",
+   "gated": false,
+   "unreadable": null,
+   "pdf_links": [],
+   "brief": {
+    "is_study": true,
+    "headline": "Search Console now reports web multimodal search (Lens, Circle to Search, image uploads, Chrome \"Search this image\") via a new search type filter, rolling out globally from 2026-09-24.",
+    "study_type": "official update",
+    "key_stats": [
+     "Covers Lens, Circle to Search on Android, image uploads to Google Search, and Chrome right-click \"Search this image\"",
+     "Appears in both the Search results Performance report and the Generative AI features report",
+     "Rolling out globally starting today (September 24, 2026); data is exportable via \"Export\""
+    ],
+    "method": "\n<parameter name=\"sample\">n/a (official announcement)",
+    "data_source": "n/a (official announcement)",
+    "timeframe": "Rolling out globally starting 2026-09-24; visible only if the site receives traffic from these queries",
+    "conflict": "Google does not say how multimodal queries are counted, whether historical data is backfilled, how the Generative AI features report defines its data, or what volume to expect.",
+    "confidence": "high",
+    "caveat": "The change is specific and dated, but the post gives no metric definitions, no backfill information and no guidance on how to act on the data."
+   },
+   "words": 319
+  },
+  {
+   "id": "ahrefs.com/blog/ai-overviews-france-impact",
+   "url": "https://ahrefs.com/blog/ai-overviews-france-impact/",
+   "source": "Ahrefs",
+   "title": "AI Overviews Cut CTR by 23.1% in France",
+   "published": "2026-09-16T16:04:30+00:00",
+   "found": "2026-09-29T09:22:16+00:00",
+   "gated": false,
+   "unreadable": null,
+   "pdf_links": [],
+   "brief": {
+    "is_study": true,
+    "headline": "In France, domains with over 20% of queries triggering AI Overviews lost 23.1% median CTR in nine days; the panel median fell 5.7%.",
+    "study_type": "data analysis",
+    "key_stats": [
+     "Highly exposed domains: CTR -23.1% (raw; -24.8% after control adjustment); 82.2% of them lost CTR",
+     "Slope of -0.9 across 963 domains: about one point of CTR lost per point of AI Overview exposure",
+     "Full panel median: -5.7% CTR and -8.8% clicks; 48% of domains lost more than 10% of daily clicks, 5% lost more than 50%"
+    ],
+    "method": "\n<parameter name=\"sample\">963 of the 1,000 highest-click French domains (those with full history); 28 days before vs 9 days after July 22, 2026",
+    "data_source": "Aggregated Google Search Console data; AI Overview rate per domain (share of queries triggering one) from Ahrefs",
+    "timeframe": "Baseline 28 days before July 22, 2026, compared with 9 days after; domain selection based on April–July 2026",
+    "conflict": "Ahrefs sells the Site Explorer tool it recommends for measuring AI Overview exposure, and promotes its AI marketing platform. The finding of a large AI Overview impact does not directly sell the product.",
+    "confidence": "medium",
+    "caveat": "The post-launch window is only 9 days, the panel is limited to top-click domains (not typical B2B SaaS sites), and it is a group comparison, not a controlled test. The control group is the near-unexposed domains, and the −0.9 slope is described by the authors as crude and not a prediction.",
+    "why_it_matters": "Gives a rough way to size AI Overview risk: check the share of your queries that trigger one, expect similar CTR loss, and track clicks and CTR rather than impressions. The window is short, so treat it as an estimate.",
+    "importance": 2,
+    "tags": [
+     "ai search",
+     "ctr & serps",
+     "analytics"
+    ]
+   },
+   "words": 1657
+  },
+  {
+   "id": "tryprofound.com/blog/do-answer-engines-customize-responses-to-different-personas",
+   "url": "https://www.tryprofound.com/blog/do-answer-engines-customize-responses-to-different-personas",
+   "source": "Profound",
+   "title": "Do Answer Engines customize responses to different personas?",
+   "published": "2026-09-09T17:30:38+00:00",
+   "found": "2026-09-29T09:22:16+00:00",
+   "gated": false,
+   "unreadable": null,
+   "pdf_links": [],
+   "brief": {
+    "is_study": true,
+    "headline": "Different personas in the same prompt shared only about 1 in 4 brand mentions and 1 in 5 citations across ChatGPT, Claude and Gemini.",
+    "study_type": "data analysis",
+    "key_stats": [
+     "Same-persona repeat answers shared about 2 in 5 brands; different personas about 1 in 4 (15-point drop). Cited domains overlap: 34% vs 20%.",
+     "High-income personas averaged 7.5 brand mentions and 4.8 citations vs 5.8 and 4.1 for low-income.",
+     "Clothing queries for people in their 50s and 70s were about 39 percentage points more likely to contain \"women\" than queries for younger groups (ChatGPT and Claude)."
+    ],
+    "method": "\n<parameter name=\"sample\">71,147 responses from ChatGPT, Claude and Gemini, using base prompts from three Profound Index categories (credit card, clothing, furniture) plus a persona prefix (gender, age, income or occupation)",
+    "data_source": "Profound's own prompt runs; recorded search queries available for ChatGPT and Claude only, not Gemini",
+    "timeframe": "14 days, August 11–24, 2026",
+    "conflict": "Publisher sells AI visibility tracking, and the article ends with a demo pitch for persona-level tracking, which is the study's own recommendation.",
+    "confidence": "medium",
+    "caveat": "Personas were injected as a one-line prefix (\"I am in my 30s...\") to short generic prompts in only three consumer categories, with no B2B SaaS queries. Real users rarely state this, so the effect on B2B is unproven. Per-prompt counts, statistical tests and the number of base prompts are not disclosed."
+   },
+   "words": 1040
+  },
+  {
+   "id": "orbitmedia.com/blog/blogging-statistics",
+   "url": "https://www.orbitmedia.com/blog/blogging-statistics/",
+   "source": "Orbit Media",
+   "title": "2026 Blogging Statistics: Blogger Data Shows Trends and Insights Into Blogging",
+   "published": "2026-09-08T12:00:00+00:00",
+   "found": "2026-09-29T09:22:16+00:00",
+   "gated": false,
+   "unreadable": null,
+   "pdf_links": [],
+   "brief": {
+    "is_study": true,
+    "headline": "Only 14% of 1,042 content marketers report strong blog results, an all-time low; 92% use AI, and AI use shows no link to strong results.",
+    "study_type": "survey",
+    "key_stats": [
+     "13.9% report strong results (previously 20–30% for 12 years); 18% don't know if their blog delivers results",
+     "92.4% use AI for blogging; AI users and non-users are equally likely to report strong results, but non-users more often report disappointing results",
+     "Influencer collaboration beats the benchmark by 2.6x but fell from 25% of marketers in 2017 to 7%; using six or more of eight strategies makes strong results nearly three times as likely"
+    ],
+    "method": "\n<parameter name=\"sample\">1,042 content marketers responding to a 24-question survey",
+    "data_source": "Orbit Media's annual blogger survey (13th year); self-reported results, correlations between tactics and \"strong results\"",
+    "timeframe": "2026 survey wave; trend data back to 2014. Exact fieldwork dates not disclosed",
+    "conflict": "Orbit is a content marketing agency. It sells a book and describes its own program (research, visuals, events) as matching the tactics that correlate with success.",
+    "confidence": "medium",
+    "caveat": "Results are self-reported and correlational. The article attributes the drop to abandoned tactics, but the data cannot show cause. Recruitment method, respondent mix and statistical tests are not described, and \"strong results\" is undefined.",
+    "why_it_matters": "Don't expect AI to give you an edge. Keep the labor-heavy tactics (original research, human editing, keyword research, expert collaboration), and judge content by CRM outcomes, not traffic.",
+    "importance": 2,
+    "tags": [
+     "content",
+     "ai search",
+     "analytics"
+    ]
+   },
+   "words": 3120
+  },
+  {
+   "id": "orbitmedia.com/blog/ai-citation-sources",
+   "url": "https://www.orbitmedia.com/blog/ai-citation-sources/",
+   "source": "Orbit Media",
+   "title": "LLM Citation Study: 13,184 Citations Across 4 AI Tools | Orbit Media Studios",
+   "published": "2026-09-02T16:22:42+00:00",
+   "found": "2026-09-29T09:22:16+00:00",
+   "gated": false,
+   "unreadable": null,
+   "pdf_links": [],
+   "brief": {
+    "is_study": true,
+    "headline": "Across 1,792 query-domain combinations, all four LLMs cited the same domain for the same question only 30 times (1.7%).",
+    "study_type": "data analysis",
+    "key_stats": [
+     "Only 10% to 30% of domains cited by models also ranked in Google's top 10; exact-URL overlap roughly 1% to 5% for Gemini and ChatGPT",
+     "Two runs two days apart: Claude kept 30% of cited URLs, Gemini 38% of domains, Perplexity 65%",
+     "Mentioned vs cited: Claude 70% vs 40%, Gemini 72% vs 41%, Perplexity 67% vs 44%, ChatGPT 56% vs 47%"
+    ],
+    "method": "\n<parameter name=\"sample\">13,184 citations and 1,765 answers from 72 prompts (12-40 per brand) across three brands, run on ChatGPT, Claude, Gemini and Perplexity",
+    "data_source": "Author-built tracker (made with Claude Code) that runs weekly. Google top-10 results pulled for prompts that could be mapped to a keyword. ChatGPT run with web search forced on. Claude run through an agent-with-search setup, not the raw API.",
+    "timeframe": "About 3 months from the start of summer, with data through August 23, 2026",
+    "conflict": "No direct product push. The author sells AI visibility audits and links to his tracker, and one of the three tracked brands is his own site. Another is a client, Semrush.",
+    "confidence": "low",
+    "caveat": "Only three brands, two of them tiny and one of them Semrush. The author calls the prompt count \"directional, not statistical proof\". The Claude setup differs from claude.ai, Gemini often gives only the domain, and the Reddit and stability results rest on one or two weekly runs.",
+    "why_it_matters": "Do not judge AI visibility from one run or one engine. The results support tracking mentions and citations over several weeks. They also suggest that third-party listicles and review sites matter more than Reddit for B2B, but the sample is too small to be sure.",
+    "importance": 2,
+    "tags": [
+     "ai search",
+     "analytics",
+     "ctr & serps"
+    ]
+   },
+   "words": 2056
+  },
+  {
+   "id": "orbitmedia.com/blog/conversion-rates-ai-search",
+   "url": "https://www.orbitmedia.com/blog/conversion-rates-ai-search/",
+   "source": "Orbit Media",
+   "title": "AI Traffic Conversion Rates: New Research from 97 B2B Websites and 29M visits | Orbit Media Studios",
+   "published": "2026-07-22T16:01:57+00:00",
+   "found": "2026-09-29T09:22:16+00:00",
+   "gated": false,
+   "unreadable": null,
+   "pdf_links": [],
+   "brief": {
+    "is_study": true,
+    "headline": "Visitors from AI sources are 3x more likely to convert into leads than other organic traffic, but AI is only 0.5% of traffic across 29M visits.",
+    "study_type": "data analysis",
+    "key_stats": [
+     "AI visitors convert 3x more than other organic sources; per-site median gap is 7x; pattern holds on around two-thirds of sites",
+     "ChatGPT converts 2.1% of visitors into leads vs Google Search 0.5%, but Google drives 100x more traffic",
+     "140,000 of 29 million visits (0.5%) came from AI sources; AI visitors are also 2x as likely to do low-intent conversions like newsletter signups"
+    ],
+    "method": "\n<parameter name=\"sample\">97 B2B/lead-gen GA4 accounts, 28.9 million sessions (about 140,000 AI-referred); each site had at least 100 AI sessions",
+    "data_source": "GA4 accounts; AI sessions identified by source/medium pattern matching; key events manually tiered as high-intent, low-intent or excluded",
+    "timeframe": "July 1, 2025 to June 30, 2026",
+    "conflict": "Publisher is an agency that sells AI-readiness and content services, and the article ends with a sales pitch. The finding supports the case for optimizing for AI.",
+    "confidence": "medium",
+    "caveat": "Conversion tiering was manual and the authors call it the most judgment-dependent step. Sites need at least 100 AI sessions, and how the accounts were chosen isn't disclosed. AI traffic is undercounted because AI Overviews and AI Mode land in Organic Search and app visits land in Direct. The reasons given for the gap are hypotheses, not tested.",
+    "why_it_matters": "AI referrals are worth tracking and optimizing for as a high-intent channel, but at 0.5% of traffic and 100x less volume than Google, they don't replace organic search for lead volume.",
+    "importance": 2,
+    "tags": [
+     "ai search",
+     "analytics",
+     "content"
+    ]
+   },
+   "words": 2059
+  },
+  {
+   "id": "peec.ai/blog/ai-assistants-judge-your-company-by-its-name-i-measured-how-much",
+   "url": "https://peec.ai/blog/ai-assistants-judge-your-company-by-its-name-i-measured-how-much",
+   "source": "Peec AI",
+   "title": "AI assistants judge your company by its name - Peec AI",
+   "published": null,
+   "found": "2026-09-29T09:22:16+00:00",
+   "gated": false,
+   "unreadable": null,
+   "pdf_links": [],
+   "brief": {
+    "is_study": true,
+    "headline": "On GPT 5.6 Terra, one in twelve brand descriptions described the name's dictionary meaning instead of the company; the effect appears only for brands models don't recognize.",
+    "study_type": "experiment",
+    "key_stats": [
+     "Live data: a name scoring one point higher is described 0.07 points more positively (904 single-word brands, 5 assistants)",
+     "Lab: 80 matched name pairs, 640 samples per model; Terra showed the largest effect, roughly four times Gemma's; Gemini's estimate was not significant",
+     "Semantic takeover: one description in twelve on Terra; well-known brands like Discord, Riot and Slack were unaffected"
+    ],
+    "method": "\n<parameter name=\"sample\">904 real single-English-word brands across 5 assistants (live); 80 matched fictional name pairs x 4 descriptions = 640 samples per model across 4 models (lab)",
+    "data_source": "Peec AI's own Brand Perception data (live) plus a controlled lab test with web search off; attributes scored against Warriner et al. 2013 valence ratings",
+    "timeframe": "Live data: one observational week, dates not disclosed. Lab dates not disclosed. Article dated Aug 11, 2026.",
+    "conflict": "Yes. Peec AI sells AI search monitoring, and the article ends by pointing to its new Brand Perception feature, which produced the live data.",
+    "confidence": "medium",
+    "caveat": "Real-world effect is small (0.07 points per point), the lab used fictional brands with no web search and only four models, and the \"unknown brands only\" explanation is the author's interpretation, not tested directly.",
+    "why_it_matters": "If your SaaS name is a loaded English word and models don't know you yet, check how they describe you; building recognition matters more than renaming.",
+    "importance": 2,
+    "tags": [
+     "ai search",
+     "brand"
+    ]
+   },
+   "words": 1562
+  },
+  {
+   "id": "brightedge.com/resources/research-reports/brand-visibility-chatgpt-and-google-ai-approaches-industry",
+   "url": "https://www.brightedge.com/resources/research-reports/brand-visibility-chatgpt-and-google-ai-approaches-industry",
+   "source": "BrightEdge",
+   "title": "Brand Visibility | ChatGPT and Google AI Approaches by Industry",
+   "published": null,
+   "found": "2026-09-29T09:22:16+00:00",
+   "gated": false,
+   "unreadable": null,
+   "pdf_links": [
+    "https://videos.brightedge.com/assets/blog/brand-visibility/ChatGPTandGoogleAIResearchJuly2025BrightEdgeResearch.pdf",
+    "https://videos.brightedge.com/legal/230713%20BrightEdge-Anti-SlaveryHumanTraffickingStatement.pdf"
+   ],
+   "brief": {
+    "is_study": true,
+    "headline": "BrightEdge found ChatGPT and Google AI Mode diverge most on action-type prompts, from 39% divergence in finance to 62% in healthcare.",
+    "study_type": "industry report",
+    "key_stats": [
+     "Healthcare divergence 62%; B2B tech 47%; education 45%; finance 39%",
+     "Comparison prompts: both platforms agree (e.g. AWS and Azure for cloud platforms)",
+     "Action prompts: ChatGPT names tools (Kubernetes, AWS CLI for deploying); Google links tutorials and Stack Overflow"
+    ],
+    "method": "\n<parameter name=\"sample\">\"Thousands of real-world prompts\" across finance, healthcare, B2B technology and education; exact count and per-industry split not disclosed",
+    "data_source": "BrightEdge AI Catalyst platform; responses of ChatGPT and Google AI Mode to identical prompts, with brands mentioned and citation patterns extracted",
+    "timeframe": "July 2025",
+    "conflict": "Yes. BrightEdge sells AI Catalyst, and the report ends by pitching it as the \"comprehensive solution\" for optimizing across both platforms.",
+    "confidence": "low",
+    "caveat": "\"Divergence\" is never defined, and prompt selection, counts and the full report are not shown (the full report is gated). The tool-versus-content claim rests on a few hand-picked examples, so the percentages can't be checked.",
+    "why_it_matters": "For action-oriented queries, ChatGPT may favor product and tool mentions while Google AI Mode favors guides. That is directional support for having both product-led and educational content, not proof.",
+    "importance": 1,
+    "tags": [
+     "ai search",
+     "content",
+     "brand"
+    ]
+   },
+   "words": 1273
+  },
+  {
+   "id": "brightedge.com/resources/research-reports/ai-search-visits-in-surging-2025",
+   "url": "https://www.brightedge.com/resources/research-reports/ai-search-visits-in-surging-2025",
+   "source": "BrightEdge",
+   "title": "AI Search Visits Surging in 2025—But Organic Search Remains the Cornerstone of Digital Growth",
+   "published": null,
+   "found": "2026-09-29T09:22:16+00:00",
+   "gated": false,
+   "unreadable": null,
+   "pdf_links": [
+    "https://videos.brightedge.com/assets/blog/ai-search-visits-in-surging-2025/Industry%20Report%20Sep%202025.pdf",
+    "https://videos.brightedge.com/legal/230713%20BrightEdge-Anti-SlaveryHumanTraffickingStatement.pdf"
+   ],
+   "brief": {
+    "is_study": true,
+    "headline": "AI search drives under 1% of referral traffic and near-zero direct conversions, while organic remains the primary driver, despite double-digit monthly growth (Jan–Aug 2025).",
+    "study_type": "industry report",
+    "key_stats": [
+     "AI search accounts for less than 1% of referral traffic; organic delivers the majority of conversions",
+     "Grok grew 1279% in July from a small base; Claude grew 58% in July and 21% in August",
+     "34% of AI citations come from PR and media coverage; nearly 10% from social platforms such as LinkedIn and Reddit"
+    ],
+    "method": "\n<parameter name=\"sample\">\"Thousands of queries and top-performing websites, including many Fortune 100 brands\". Exact counts not disclosed.",
+    "data_source": "BrightEdge platform data (own tool). Referral, conversion and citation methods not explained on the page.",
+    "timeframe": "January through August 2025",
+    "conflict": "Yes. BrightEdge sells enterprise SEO and AI search tools, and the page promotes its AI Early Detection System and AI Catalyst.",
+    "confidence": "low",
+    "caveat": "This is a summary page for a gated report. It gives no sample sizes, no conversion figures and no definition of \"conversion\", and the growth percentages come from very small bases. Claims such as \"the efficiency gap is increasing\" have no numbers behind them.",
+    "why_it_matters": "It broadly confirms what we knew: keep investing in SEO fundamentals, treat AI referrals as top-of-funnel, and look at earning citations from media and forums. The evidence is thin, and the page also sells BrightEdge tools.",
+    "importance": 1,
+    "tags": [
+     "ai search",
+     "analytics",
+     "content"
+    ]
+   },
+   "words": 1485
+  },
+  {
+   "id": "brightedge.com/resources/research-reports/ai-agent-aeo-readiness-gap",
+   "url": "https://www.brightedge.com/resources/research-reports/ai-agent-aeo-readiness-gap",
+   "source": "BrightEdge",
+   "title": "The AI Agent and AEO Organizational Readiness Gap",
+   "published": null,
+   "found": "2026-09-29T09:22:16+00:00",
+   "gated": true,
+   "unreadable": null,
+   "pdf_links": [
+    "https://videos.brightedge.com/stagging-files/BrightEdge%20Research%20Survey%20The%20AI%20Agent%20And%20AEO%20Org%20Readiness%20Gap%20May%202026.pdf",
+    "https://videos.brightedge.com/legal/230713%20BrightEdge-Anti-SlaveryHumanTraffickingStatement.pdf"
+   ],
+   "brief": {
+    "is_study": true,
+    "headline": "BrightEdge surveyed more than 1,000 enterprise marketers on AI agent and AEO readiness, but the landing page publishes no actual results.",
+    "study_type": "survey",
+    "key_stats": [
+     "More than 1,000 enterprise digital and search marketers surveyed over three months",
+     "Claims a majority of cross-functional conversations with IT and security stall, get blocked, or get avoided (no figure given)",
+     "Teams say what they need most is not more strategy (no figure given)"
+    ],
+    "method": "\n<parameter name=\"sample\">More than 1,000 enterprise digital and search marketers surveyed; respondent mix and questions not disclosed",
+    "data_source": "Survey of enterprise digital and search marketers run by BrightEdge; recruitment method not disclosed",
+    "timeframe": "Three months; dates not disclosed",
+    "conflict": "BrightEdge sells an SEO and AEO platform, and the report is a gated lead-generation asset that frames readiness as a gap.",
+    "confidence": "low",
+    "caveat": "This is a gated landing page, so the brief covers only the teaser. It has no published numbers, method detail or limitations, and the headline claims can't be checked.",
+    "why_it_matters": "Nothing to act on yet. The teaser suggests ownership of AI agent access is unclear and that IT and security talks stall, but it gives no data to back that up.",
+    "importance": 1,
+    "tags": [
+     "ai search",
+     "technical seo",
+     "brand"
+    ]
+   },
+   "words": 348
+  }
+ ]
 }

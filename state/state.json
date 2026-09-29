@@ -1939,60 +1939,225 @@
    "source": "OpenAI",
    "status": "not_study",
    "at": "2026-09-29T09:19:43+00:00"
+  },
+  "growth-memo.com/p/what-makes-a-good-listicle": {
+   "source": "Growth Memo",
+   "status": "not_study",
+   "at": "2026-09-29T09:22:16+00:00"
+  },
+  "openai.com/index/reimagining-advertising-with-ai": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-09-29T09:22:16+00:00"
+  },
+  "openai.com/index/introducing-chatgpt-financial-services": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-09-29T09:22:16+00:00"
+  },
+  "openai.com/index/expanding-ai-access-us-government": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-09-29T09:22:16+00:00"
+  },
+  "openai.com/index/introducing-gpt-live-1-in-the-api": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-09-29T09:22:16+00:00"
+  },
+  "openai.com/index/introducing-the-agents-api": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-09-29T09:22:16+00:00"
+  },
+  "openai.com/index/ai-policy-window": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-09-29T09:22:16+00:00"
+  },
+  "openai.com/index/gpt-6-astra-next-generation-work": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-09-29T09:22:16+00:00"
+  },
+  "openai.com/index/paul-christiano-joins-openai-foundation-board": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-09-29T09:22:16+00:00"
+  },
+  "openai.com/index/codex-quantum-computing-experiments": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-09-29T09:22:16+00:00"
+  },
+  "openai.com/index/the-work-now-within-reach": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-09-29T09:22:16+00:00"
+  },
+  "openai.com/index/introducing-chatgpt-images-2-5": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-09-29T09:22:16+00:00"
+  },
+  "openai.com/index/supporting-journalism-from-classrooms-to-newsrooms": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-09-29T09:22:16+00:00"
+  },
+  "openai.com/index/navier-stokes-solution": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-09-29T09:22:16+00:00"
+  },
+  "openai.com/index/teen-development-research-grants": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-09-29T09:22:16+00:00"
+  },
+  "openai.com/index/1password": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-09-29T09:22:16+00:00"
+  },
+  "openai.com/index/supporting-independent-journalism-in-ukraine": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-09-29T09:22:16+00:00"
+  },
+  "openai.com/index/an-alien-mind": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-09-29T09:22:16+00:00"
+  },
+  "openai.com/index/research-acceleration-view-inside-openai": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-09-29T09:22:16+00:00"
+  },
+  "openai.com/index/daybreak-for-frontline-defenders": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-09-29T09:22:16+00:00"
+  },
+  "openai.com/index/legora-financial-statement-review-with-astra": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-09-29T09:22:16+00:00"
+  },
+  "brightedge.com/resources/research-reports/ai-agent-aeo-readiness-gap": {
+   "source": "BrightEdge",
+   "status": "briefed",
+   "at": "2026-09-29T09:22:16+00:00"
+  },
+  "brightedge.com/resources/research-reports/ai-search-visits-in-surging-2025": {
+   "source": "BrightEdge",
+   "status": "briefed",
+   "at": "2026-09-29T09:22:16+00:00"
+  },
+  "brightedge.com/resources/research-reports/brand-visibility-chatgpt-and-google-ai-approaches-industry": {
+   "source": "BrightEdge",
+   "status": "briefed",
+   "at": "2026-09-29T09:22:16+00:00"
+  },
+  "orbitmedia.com/blog/blogging-statistics": {
+   "source": "Orbit Media",
+   "status": "briefed",
+   "at": "2026-09-29T09:22:16+00:00"
+  },
+  "orbitmedia.com/blog/ai-citation-sources": {
+   "source": "Orbit Media",
+   "status": "briefed",
+   "at": "2026-09-29T09:22:16+00:00"
+  },
+  "orbitmedia.com/blog/conversion-rates-ai-search": {
+   "source": "Orbit Media",
+   "status": "briefed",
+   "at": "2026-09-29T09:22:16+00:00"
+  },
+  "peec.ai/blog/ai-assistants-judge-your-company-by-its-name-i-measured-how-much": {
+   "source": "Peec AI",
+   "status": "briefed",
+   "at": "2026-09-29T09:22:16+00:00"
+  },
+  "seerinteractive.com/insights/gpt-5.5-vs-gpt-5.6-luna": {
+   "source": "Seer Interactive",
+   "status": "briefed",
+   "at": "2026-09-29T09:22:16+00:00"
+  },
+  "status.search.google.com/incidents/XhUDXP7A67iHCD2kmbVu": {
+   "source": "Google Search Status",
+   "status": "briefed",
+   "at": "2026-09-29T09:22:16+00:00"
+  },
+  "developers.google.com/search/blog/2026/09/web-multimodal-in-sc": {
+   "source": "Google Search Central",
+   "status": "briefed",
+   "at": "2026-09-29T09:22:16+00:00"
+  },
+  "ahrefs.com/blog/ai-overviews-france-impact": {
+   "source": "Ahrefs",
+   "status": "briefed",
+   "at": "2026-09-29T09:22:16+00:00"
+  },
+  "tryprofound.com/blog/do-answer-engines-customize-responses-to-different-personas": {
+   "source": "Profound",
+   "status": "briefed",
+   "at": "2026-09-29T09:22:16+00:00"
   }
  },
  "sources": {
   "Google Search Central": {
    "initialized": true,
-   "last_ok": "2026-09-29T09:19:43+00:00"
+   "last_ok": "2026-09-29T09:22:16+00:00"
   },
   "Google Search Status": {
    "initialized": true,
-   "last_ok": "2026-09-29T09:19:43+00:00"
+   "last_ok": "2026-09-29T09:22:16+00:00"
   },
   "Bing Webmaster": {
    "initialized": true,
-   "last_ok": "2026-09-29T09:19:43+00:00"
+   "last_ok": "2026-09-29T09:22:16+00:00"
   },
   "OpenAI": {
    "initialized": true,
-   "last_ok": "2026-09-29T09:19:43+00:00"
+   "last_ok": "2026-09-29T09:22:16+00:00"
   },
   "Ahrefs": {
    "initialized": true,
-   "last_ok": "2026-09-29T09:19:43+00:00"
+   "last_ok": "2026-09-29T09:22:16+00:00"
   },
   "Semrush": {
    "initialized": true,
-   "last_ok": "2026-09-29T09:19:43+00:00"
+   "last_ok": "2026-09-29T09:22:16+00:00"
   },
   "Growth Memo": {
    "initialized": true,
-   "last_ok": "2026-09-29T09:19:43+00:00"
+   "last_ok": "2026-09-29T09:22:16+00:00"
   },
   "Seer Interactive": {
    "initialized": true,
-   "last_ok": "2026-09-29T09:19:43+00:00"
+   "last_ok": "2026-09-29T09:22:16+00:00"
   },
   "Profound": {
    "initialized": true,
-   "last_ok": "2026-09-29T09:19:43+00:00"
+   "last_ok": "2026-09-29T09:22:16+00:00"
   },
   "Orbit Media": {
    "initialized": true,
-   "last_ok": "2026-09-29T09:19:43+00:00"
+   "last_ok": "2026-09-29T09:22:16+00:00"
   },
   "Peec AI": {
    "initialized": true,
-   "last_ok": "2026-09-29T09:19:43+00:00"
+   "last_ok": "2026-09-29T09:22:16+00:00"
   },
   "AirOps": {
    "initialized": true,
-   "last_ok": "2026-09-29T09:19:43+00:00"
+   "last_ok": "2026-09-29T09:22:16+00:00"
   },
   "BrightEdge": {
    "initialized": true,
-   "last_ok": "2026-09-29T09:19:43+00:00"
+   "last_ok": "2026-09-29T09:22:16+00:00"
   }
  },
  "repo": "nico497/study-radar"
