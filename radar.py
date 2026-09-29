@@ -612,6 +612,12 @@ def restyle(cfg: dict) -> None:
             failed += 1
             continue
         old = r["brief"]
+        for k in ("headline", "why_it_matters", "key_stats", "tags"):   # never lose content
+            if not new.get(k):
+                new[k] = old.get(k, new.get(k))
+        for k, v in (old.get("method") or {}).items():
+            if not new["method"].get(k):
+                new["method"][k] = v
         new.update(is_study=True, study_type=old.get("study_type", new["study_type"]),
                    importance=old.get("importance", new["importance"]))
         new["method"]["confidence"] = old.get("method", {}).get("confidence", new["method"]["confidence"])

@@ -306,11 +306,11 @@
      "sample": "Not disclosed",
      "data_source": "Not disclosed",
      "timeframe": "Not disclosed",
-     "conflict": "",
+     "conflict": "OpenAI does not publish any performance data (CTR, conversion, CPM/CPC pricing), ad formats, placement rules or how ads are matched to conversations. It also does not name all 31 markets, and its claim that ads do not influence answers is unverified.",
      "confidence": "high",
-     "caveat": ""
+     "caveat": "The rollout facts are specific and dated, but the post gives no results, pricing, formats or targeting detail, so it cannot show whether the ads work for B2B SaaS."
     },
-    "why_it_matters": "",
+    "why_it_matters": "Paid placement in ChatGPT is now open to self-service in Europe, so you can test it for software-comparison queries. Organic GEO work still cannot buy answer placement, since OpenAI says ads do not influence answers.",
     "importance": 2,
     "tags": []
    },
@@ -783,11 +783,11 @@
      "sample": "13,184 citations from 72 prompts, 3 brands",
      "data_source": "Not disclosed",
      "timeframe": "Not disclosed",
-     "conflict": "",
+     "conflict": "No direct product push. The author sells AI visibility audits and links to his tracker, and one of the three tracked brands is his own site. Another is a client, Semrush.",
      "confidence": "low",
-     "caveat": ""
+     "caveat": "Only three brands, two of them tiny and one of them Semrush. The author calls the prompt count \"directional, not statistical proof\". The Claude setup differs from claude.ai, Gemini often gives only the domain, and the Reddit and stability results rest on one or two weekly runs."
     },
-    "why_it_matters": "",
+    "why_it_matters": "Do not judge AI visibility from one run or one engine. The results support tracking mentions and citations over several weeks. They also suggest that third-party listicles and review sites matter more than Reddit for B2B, but the sample is too small to be sure.",
     "importance": 2,
     "tags": []
    },
@@ -816,11 +816,11 @@
      "sample": "97 B2B websites, 28.9 million sessions",
      "data_source": "GA4 (Google Analytics) accounts",
      "timeframe": "July 2025 to June 2026",
-     "conflict": "",
+     "conflict": "Publisher is an agency that sells AI-readiness and content services, and the article ends with a sales pitch. The finding supports the case for optimizing for AI.",
      "confidence": "medium",
-     "caveat": ""
+     "caveat": "Conversion tiering was manual and the authors call it the most judgment-dependent step. Sites need at least 100 AI sessions, and how the accounts were chosen isn't disclosed. AI traffic is undercounted because AI Overviews and AI Mode land in Organic Search and app visits land in Direct. The reasons given for the gap are hypotheses, not tested."
     },
-    "why_it_matters": "",
+    "why_it_matters": "AI referrals are worth tracking and optimizing for as a high-intent channel, but at 0.5% of traffic and 100x less volume than Google, they don't replace organic search for lead volume.",
     "importance": 2,
     "tags": []
    },
