@@ -1,0 +1,171 @@
+{
+ "meta": {
+  "niche": "SEO and generative engine optimization (GEO) for B2B SaaS",
+  "audience": "the content and SEO lead at a B2B SaaS company",
+  "updated": "2026-09-29T09:18:13+00:00",
+  "title": "Study Radar",
+  "repo": "nico497/study-radar",
+  "run": {
+   "sources": 13,
+   "new_items": 114,
+   "studies": 25,
+   "deferred": 13,
+   "briefed": 0,
+   "unreadable": 0,
+   "rejected": 0
+  }
+ },
+ "health": [
+  {
+   "name": "Google Search Central",
+   "checked": "2026-09-29T09:18:13+00:00",
+   "ok": true,
+   "found": 10,
+   "new": 0,
+   "error": null,
+   "url": "https://developers.google.com/search/blog/feed.xml",
+   "method": "feed",
+   "posts_new": 5
+  },
+  {
+   "name": "Google Search Status",
+   "checked": "2026-09-29T09:18:13+00:00",
+   "ok": true,
+   "found": 1,
+   "new": 0,
+   "error": null,
+   "url": "https://status.search.google.com/en/feed.atom",
+   "method": "feed",
+   "posts_new": 1
+  },
+  {
+   "name": "Bing Webmaster",
+   "checked": "2026-09-29T09:18:13+00:00",
+   "ok": true,
+   "found": 10,
+   "new": 0,
+   "error": null,
+   "url": "https://blogs.bing.com/webmaster/feed",
+   "method": "feed",
+   "posts_new": 0
+  },
+  {
+   "name": "OpenAI",
+   "checked": "2026-09-29T09:18:13+00:00",
+   "ok": true,
+   "found": 1235,
+   "new": 0,
+   "error": null,
+   "url": "https://openai.com/news/rss.xml",
+   "method": "feed",
+   "posts_new": 20
+  },
+  {
+   "name": "Ahrefs",
+   "checked": "2026-09-29T09:18:13+00:00",
+   "ok": true,
+   "found": 10,
+   "new": 0,
+   "error": null,
+   "url": "https://ahrefs.com/blog/feed/",
+   "method": "feed",
+   "posts_new": 7
+  },
+  {
+   "name": "Semrush",
+   "checked": "2026-09-29T09:18:13+00:00",
+   "ok": true,
+   "found": 20,
+   "new": 0,
+   "error": null,
+   "url": "https://www.semrush.com/blog/feed/",
+   "method": "feed",
+   "posts_new": 20
+  },
+  {
+   "name": "Growth Memo",
+   "checked": "2026-09-29T09:18:13+00:00",
+   "ok": true,
+   "found": 20,
+   "new": 0,
+   "error": null,
+   "url": "https://www.growth-memo.com/feed",
+   "method": "feed",
+   "posts_new": 11
+  },
+  {
+   "name": "Seer Interactive",
+   "checked": "2026-09-29T09:18:13+00:00",
+   "ok": true,
+   "found": 20,
+   "new": 0,
+   "error": null,
+   "url": "https://www.seerinteractive.com/insights/rss.xml",
+   "method": "feed",
+   "posts_new": 10
+  },
+  {
+   "name": "Profound",
+   "checked": "2026-09-29T09:18:13+00:00",
+   "ok": true,
+   "found": 180,
+   "new": 0,
+   "error": null,
+   "url": "https://www.tryprofound.com/rss/blog.xml",
+   "method": "feed",
+   "posts_new": 17
+  },
+  {
+   "name": "Orbit Media",
+   "checked": "2026-09-29T09:18:13+00:00",
+   "ok": true,
+   "found": 26,
+   "new": 0,
+   "error": null,
+   "url": "https://www.orbitmedia.com/blog/",
+   "method": "page",
+   "posts_new": 8
+  },
+  {
+   "name": "Peec AI",
+   "checked": "2026-09-29T09:18:13+00:00",
+   "ok": true,
+   "found": 42,
+   "new": 0,
+   "error": null,
+   "url": "https://peec.ai/blog",
+   "method": "page",
+   "posts_new": 6
+  },
+  {
+   "name": "AirOps",
+   "checked": "2026-09-29T09:18:13+00:00",
+   "ok": true,
+   "found": 202,
+   "new": 0,
+   "error": null,
+   "url": "https://www.airops.com/blog",
+   "method": "page",
+   "posts_new": 6
+  },
+  {
+   "name": "BrightEdge",
+   "checked": "2026-09-29T09:18:13+00:00",
+   "ok": true,
+   "found": 31,
+   "new": 0,
+   "error": null,
+   "url": "https://www.brightedge.com/resources/research-reports",
+   "method": "page",
+   "posts_new": 3
+  }
+ ],
+ "pulses": [
+  {
+   "date": "2026-09-29T09:18:13+00:00",
+   "summary": "No new studies from your sources this week. Nothing you missed.",
+   "points": []
+  }
+ ],
+ "briefs": []
+}
