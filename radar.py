@@ -382,24 +382,19 @@ def brief_tool(tags: list[str]) -> dict:
                 "study_type": {"type": "string", "enum": ["survey", "data analysis", "experiment", "benchmark", "industry report", "case study", "official update", "other"]},
                 "key_stats": {"type": "array", "items": s, "maxItems": 3,
                               "description": "Up to 3 findings, each one short line with the exact number as published."},
-                "method": {
-                    "type": "object",
-                    "properties": {
-                        "sample": {**s, "description": "What was measured and how much, e.g. '1,200 marketers surveyed' or '300k keywords'. 'Not disclosed' if absent."},
-                        "data_source": {**s, "description": "Where the data came from, e.g. own tool data, panel survey, Search Console. 'Not disclosed' if absent."},
-                        "timeframe": {**s, "description": "When the data was collected. 'Not disclosed' if absent."},
-                        "conflict": {**s, "description": "Does the finding promote the publisher's own product or category? One short sentence."},
-                        "confidence": {"type": "string", "enum": ["high", "medium", "low"]},
-                        "caveat": {**s, "description": "The main reason to be careful with this finding. One sentence."},
-                    },
-                    "required": ["sample", "data_source", "timeframe", "conflict", "confidence", "caveat"],
-                },
+                "sample": {**s, "description": "Method check. What was measured and how much, e.g. '1,200 marketers surveyed' or '300k keywords'. 'Not disclosed' if absent."},
+                "data_source": {**s, "description": "Method check. Where the data came from, e.g. own tool data, panel survey, Search Console. 'Not disclosed' if absent."},
+                "timeframe": {**s, "description": "Method check. When the data was collected. 'Not disclosed' if absent."},
+                "conflict": {**s, "description": "Method check. Does the finding promote the publisher's own product or category? One short sentence."},
+                "confidence": {"type": "string", "enum": ["high", "medium", "low"]},
+                "caveat": {**s, "description": "The main reason to be careful with this finding. One sentence."},
                 "why_it_matters": {**s, "description": "One sentence: what this changes for the audience, or 'confirms what we knew' if nothing. Max 25 words."},
                 "importance": {"type": "integer", "enum": [1, 2, 3],
                                "description": "3 = must know: changes how the audience should work or overturns a common belief, with credible evidence. 2 = useful data point. 1 = minor, incremental or weak."},
                 "tags": {"type": "array", "items": tag_schema, "maxItems": 3},
             },
-            "required": ["is_study", "headline", "study_type", "key_stats", "method", "why_it_matters", "importance", "tags"],
+            "required": ["is_study", "headline", "study_type", "key_stats", "sample", "data_source", "timeframe",
+                         "conflict", "confidence", "caveat", "why_it_matters", "importance", "tags"],
         },
     }
 
@@ -436,7 +431,53 @@ Published: {iso(item.get('published')) or 'unknown'}{gated_note}
 --- ARTICLE TEXT ---
 {art['text']}
 --- END ---"""
-    return call_claude(cfg["models"]["brief"], BRIEF_SYSTEM, user, brief_tool(cfg.get("tags") or []), 1800)
+    raw = call_claude(cfg["models"]["brief"], BRIEF_SYSTEM, user, brief_tool(cfg.get("tags") or []), 1800)
+    return normalize_brief(raw)
+
+
+METHOD_KEYS = ("sample", "data_source", "timeframe", "conflict", "confidence", "caveat")
+
+
+def _clean(v) -> str:
+    """Strip stray tool-call markup a model sometimes leaves inside a string."""
+    v = re.sub(r"</?parameter[^>]*>", " ", str(v or ""))
+    return re.sub(r"\s+", " ", v).strip()
+
+
+def normalize_brief(b: dict) -> dict:
+    """Coerce model output into the shape the dashboard expects, whatever the model sent."""
+    method = b.get("method") if isinstance(b.get("method"), dict) else {}
+    if isinstance(b.get("method"), str):          # garbled nested output: '<parameter name="sample">...'
+        m = re.search(r'name="sample">(.*?)(?:</parameter>|$)', b["method"], re.S)
+        if m:
+            method.setdefault("sample", m.group(1))
+    for k in METHOD_KEYS:
+        if k in b and not isinstance(b[k], (dict, list)):
+            method[k] = b[k]
+    method = {k: _clean(method.get(k)) or ("Not disclosed" if k in ("sample", "data_source", "timeframe") else "")
+              for k in METHOD_KEYS}
+    if method["confidence"] not in ("high", "medium", "low"):
+        method["confidence"] = "medium"
+    stats = b.get("key_stats") or []
+    if isinstance(stats, str):
+        stats = [x for x in re.split(r"\n+|(?<=[.;])\s+(?=[A-Z0-9])", stats) if x.strip()]
+    tags = b.get("tags") or []
+    if isinstance(tags, str):
+        tags = [t.strip() for t in tags.split(",") if t.strip()]
+    try:
+        importance = int(b.get("importance", 2))
+    except (TypeError, ValueError):
+        importance = 2
+    return {
+        "is_study": b.get("is_study", True) not in (False, "false", "False"),
+        "headline": _clean(b.get("headline")),
+        "study_type": _clean(b.get("study_type")) or "other",
+        "key_stats": [_clean(x) for x in stats][:3],
+        "method": method,
+        "why_it_matters": _clean(b.get("why_it_matters")),
+        "importance": min(3, max(1, importance)),
+        "tags": [_clean(t) for t in tags][:3],
+    }
 
 
 PULSE_TOOL = {
@@ -447,15 +488,8 @@ PULSE_TOOL = {
         "properties": {
             "summary": {"type": "string", "description": "Two sentences max: the overall picture this week. Say plainly if little of note was published."},
             "points": {
-                "type": "array", "maxItems": 3,
-                "items": {
-                    "type": "object",
-                    "properties": {
-                        "text": {"type": "string", "description": "One or two sentences: the takeaway and how far to trust it."},
-                        "ids": {"type": "array", "items": {"type": "integer"}, "description": "Numbers of the studies this point draws on."},
-                    },
-                    "required": ["text", "ids"],
-                },
+                "type": "array", "maxItems": 3, "items": {"type": "string"},
+                "description": "Up to 3 takeaways, one or two sentences each, saying how far to trust it. End each with the numbers of the studies it draws on in square brackets, e.g. 'Zero-click keeps rising. [0, 3]'",
             },
         },
         "required": ["summary", "points"],
@@ -479,11 +513,26 @@ def write_pulse(new_briefs: list[dict], cfg: dict) -> dict:
                      f"    {b['headline']}\n    Why: {b.get('why_it_matters')}\n    Caveat: {b['method'].get('caveat')}")
     user = f"Audience: {cfg['audience']}\nNiche: {cfg['niche']}\n\nThis week's studies:\n" + "\n".join(lines)
     out = call_claude(cfg["models"]["brief"], PULSE_SYSTEM, user, PULSE_TOOL, 900)
+    raw_points = out.get("points") or []
+    if isinstance(raw_points, str):
+        try:
+            raw_points = json.loads(raw_points)
+        except json.JSONDecodeError:
+            raw_points = [x for x in raw_points.split("\n") if x.strip()]
     points = []
-    for pt in out.get("points", [])[:3]:
-        ids = [new_briefs[i]["id"] for i in pt.get("ids", []) if isinstance(i, int) and 0 <= i < len(new_briefs)]
-        points.append({"text": pt.get("text", ""), "ids": ids})
-    return {"summary": out.get("summary", ""), "points": points}
+    for pt in raw_points[:3]:
+        if isinstance(pt, dict):
+            text, nums = str(pt.get("text", "")), [n for n in pt.get("ids", []) if isinstance(n, int)]
+        else:
+            text = str(pt)
+            m = re.search(r"\[([\d,\s]+)\]\s*\.?\s*$", text)
+            nums = [int(n) for n in re.findall(r"\d+", m.group(1))] if m else []
+            text = text[: m.start()].rstrip() if m else text
+        text = re.sub(r"^\s*(?:[-*•]|\d+[.)])\s*", "", _clean(text))
+        ids = [new_briefs[i]["id"] for i in nums if 0 <= i < len(new_briefs)]
+        if text:
+            points.append({"text": text, "ids": ids})
+    return {"summary": _clean(out.get("summary")), "points": points}
 
 
 # ---------------------------------------------------------------- storage
@@ -665,7 +714,9 @@ def run(cfg: dict) -> dict:
         counts["briefed"] += 1
 
     # 4. Weekly pulse: the 60-second summary at the top of the dashboard
-    this_run = [r for r in briefs if r.get("found") == iso(now) and r.get("brief")]
+    # "This week" = briefs found in roughly the last 7 days, so manual re-runs add to the week.
+    week_start = now - timedelta(days=6, hours=12)
+    this_run = [r for r in briefs if r.get("brief") and (parse_iso(r.get("found")) or now) >= week_start]
     pulses = data.get("pulses", [])
     if this_run:
         try:

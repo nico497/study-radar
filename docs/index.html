@@ -170,7 +170,8 @@ details.health summary .sub { font-weight: 400; color: var(--ink-3); margin-left
   const persist = () => { try { localStorage.setItem(KEY, JSON.stringify(saved)); } catch (e) {} };
   const isSaved = (b) => !!saved[b.id];
   const imp = (b) => b.brief?.importance || 2;
-  const isNew = (b) => !!data.meta.updated && b.found === data.meta.updated;
+  const WEEK = 6.5 * 864e5;
+  const isNew = (b) => !!data.meta.updated && !!b.found && new Date(b.found) >= new Date(data.meta.updated) - WEEK;
 
   function toast(msg) {
     const t = $("#toast"); t.textContent = msg; t.classList.add("show");
@@ -204,7 +205,7 @@ details.health summary .sub { font-weight: 400; color: var(--ink-3); margin-left
     el.innerHTML = `<div class="pulse-head"><span class="eyebrow">This week · ${esc(fmtDate(p.date))}</span><span class="ctx">${esc(ctx)}</span></div>
       <p class="summary">${esc(p.summary)}</p>
       ${p.points?.length ? `<ol class="points">${p.points.map((pt) => `<li><div>${esc(pt.text)}<br>${byId(pt.ids).map((b) => `<a class="chip" href="#${esc(b.id)}" data-jump="${esc(b.id)}">${esc(b.source)} ↓</a>`).join("")}</div></li>`).join("")}</ol>` : ""}
-      <div class="pulse-foot"><span><b>${run.briefed ?? 0}</b> new studies</span><span><b>${must}</b> must-know</span>
+      <div class="pulse-foot"><span><b>${data.briefs.filter((b) => isNew(b) && b.brief).length}</b> new studies</span><span><b>${must}</b> must-know</span>
       <span><b>${run.new_items ?? 0}</b> posts screened</span><span><b>${(data.health || []).length}</b> sources</span>
       ${failing ? `<span class="bad">${failing} source${failing > 1 ? "s" : ""} failing</span>` : ""}</div>`;
   }
