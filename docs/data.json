@@ -2,29 +2,27 @@
  "meta": {
   "niche": "SEO and generative engine optimization (GEO) for B2B SaaS",
   "audience": "the content and SEO lead at a B2B SaaS company",
-  "updated": "2026-09-29T09:22:16+00:00",
+  "updated": "2026-09-29T09:25:24+00:00",
   "title": "Study Radar",
   "repo": "nico497/study-radar",
   "run": {
    "sources": 13,
-   "new_items": 43,
-   "studies": 22,
-   "deferred": 10,
-   "briefed": 12,
-   "unreadable": 0,
-   "rejected": 0,
-   "errors": [
-    "summary: 'str' object has no attribute 'get'"
-   ]
+   "new_items": 32,
+   "studies": 11,
+   "deferred": 0,
+   "briefed": 9,
+   "unreadable": 1,
+   "rejected": 1,
+   "errors": []
   }
  },
  "health": [
   {
    "name": "Google Search Central",
-   "checked": "2026-09-29T09:22:16+00:00",
+   "checked": "2026-09-29T09:25:24+00:00",
    "ok": true,
    "found": 10,
-   "new": 1,
+   "new": 0,
    "error": null,
    "url": "https://developers.google.com/search/blog/feed.xml",
    "method": "feed",
@@ -32,18 +30,18 @@
   },
   {
    "name": "Google Search Status",
-   "checked": "2026-09-29T09:22:16+00:00",
+   "checked": "2026-09-29T09:25:24+00:00",
    "ok": true,
    "found": 1,
    "new": 1,
    "error": null,
    "url": "https://status.search.google.com/en/feed.atom",
    "method": "feed",
-   "posts_new": 1
+   "posts_new": 0
   },
   {
    "name": "Bing Webmaster",
-   "checked": "2026-09-29T09:22:16+00:00",
+   "checked": "2026-09-29T09:25:24+00:00",
    "ok": true,
    "found": 10,
    "new": 0,
@@ -54,10 +52,10 @@
   },
   {
    "name": "OpenAI",
-   "checked": "2026-09-29T09:22:16+00:00",
+   "checked": "2026-09-29T09:25:24+00:00",
    "ok": true,
    "found": 1235,
-   "new": 0,
+   "new": 1,
    "error": null,
    "url": "https://openai.com/news/rss.xml",
    "method": "feed",
@@ -65,21 +63,21 @@
   },
   {
    "name": "Ahrefs",
-   "checked": "2026-09-29T09:22:16+00:00",
+   "checked": "2026-09-29T09:25:24+00:00",
    "ok": true,
    "found": 10,
-   "new": 1,
+   "new": 2,
    "error": null,
    "url": "https://ahrefs.com/blog/feed/",
    "method": "feed",
-   "posts_new": 2
+   "posts_new": 1
   },
   {
    "name": "Semrush",
-   "checked": "2026-09-29T09:22:16+00:00",
+   "checked": "2026-09-29T09:25:24+00:00",
    "ok": true,
    "found": 20,
-   "new": 0,
+   "new": 2,
    "error": null,
    "url": "https://www.semrush.com/blog/feed/",
    "method": "feed",
@@ -87,32 +85,32 @@
   },
   {
    "name": "Growth Memo",
-   "checked": "2026-09-29T09:22:16+00:00",
+   "checked": "2026-09-29T09:25:24+00:00",
    "ok": true,
    "found": 20,
    "new": 0,
    "error": null,
    "url": "https://www.growth-memo.com/feed",
    "method": "feed",
-   "posts_new": 2
+   "posts_new": 1
   },
   {
    "name": "Seer Interactive",
-   "checked": "2026-09-29T09:22:16+00:00",
+   "checked": "2026-09-29T09:25:24+00:00",
    "ok": true,
    "found": 20,
-   "new": 1,
+   "new": 2,
    "error": null,
    "url": "https://www.seerinteractive.com/insights/rss.xml",
    "method": "feed",
-   "posts_new": 3
+   "posts_new": 2
   },
   {
    "name": "Profound",
-   "checked": "2026-09-29T09:22:16+00:00",
+   "checked": "2026-09-29T09:25:24+00:00",
    "ok": true,
    "found": 180,
-   "new": 1,
+   "new": 4,
    "error": null,
    "url": "https://www.tryprofound.com/rss/blog.xml",
    "method": "feed",
@@ -120,29 +118,29 @@
   },
   {
    "name": "Orbit Media",
-   "checked": "2026-09-29T09:22:16+00:00",
+   "checked": "2026-09-29T09:25:24+00:00",
    "ok": true,
    "found": 26,
    "new": 3,
    "error": null,
    "url": "https://www.orbitmedia.com/blog/",
    "method": "page",
-   "posts_new": 3
+   "posts_new": 0
   },
   {
    "name": "Peec AI",
-   "checked": "2026-09-29T09:22:16+00:00",
+   "checked": "2026-09-29T09:25:24+00:00",
    "ok": true,
    "found": 42,
    "new": 1,
    "error": null,
    "url": "https://peec.ai/blog",
    "method": "page",
-   "posts_new": 1
+   "posts_new": 0
   },
   {
    "name": "AirOps",
-   "checked": "2026-09-29T09:22:16+00:00",
+   "checked": "2026-09-29T09:25:24+00:00",
    "ok": true,
    "found": 202,
    "new": 0,
@@ -153,17 +151,22 @@
   },
   {
    "name": "BrightEdge",
-   "checked": "2026-09-29T09:22:16+00:00",
+   "checked": "2026-09-29T09:25:24+00:00",
    "ok": true,
    "found": 31,
    "new": 3,
    "error": null,
    "url": "https://www.brightedge.com/resources/research-reports",
    "method": "page",
-   "posts_new": 3
+   "posts_new": 0
   }
  ],
  "pulses": [
+  {
+   "date": "2026-09-29T09:25:24+00:00",
+   "summary": "Google's September spam update is the one firm, time-sensitive item this week. The rest is mostly medium-confidence vendor data on AI search, and it says the same thing: AI visibility is unstable and still sends little traffic.",
+   "points": []
+  },
   {
    "date": "2026-09-29T09:22:16+00:00",
    "summary": "12 new studies this week. The summary couldn't be written this run, so see the cards below.",
@@ -181,6 +184,351 @@
   }
  ],
  "briefs": [
+  {
+   "id": "tryprofound.com/blog/do-answer-engines-customize-responses-to-different-personas",
+   "url": "https://www.tryprofound.com/blog/do-answer-engines-customize-responses-to-different-personas",
+   "source": "Profound",
+   "title": "Do Answer Engines customize responses to different personas?",
+   "published": "2026-09-09T17:30:38+00:00",
+   "found": "2026-09-29T09:25:24+00:00",
+   "gated": false,
+   "unreadable": null,
+   "pdf_links": [],
+   "brief": {
+    "is_study": true,
+    "headline": "Answer engines change brand recommendations by persona: different personas asking the same prompt shared about 1 in 4 brand mentions and 20% of cited domains, versus about 2 in 5 brands for repeat runs of one persona.",
+    "study_type": "data analysis",
+    "key_stats": [
+     "Brand overlap: same persona about 2 in 5, different personas about 1 in 4 (15-point drop); cited domain overlap 34% vs 20%",
+     "High-income personas averaged 7.5 brand mentions and 4.8 citations vs 5.8 and 4.1 for low-income",
+     "Clothing queries for people in their 50s and 70s were about 39 percentage points more likely to contain \"women\" than queries for younger age groups"
+    ],
+    "method": {
+     "sample": "71,147 responses from ChatGPT, Claude and Gemini, using base prompts from three Profound Index categories: credit card, clothing, furniture. Prompts were varied by gender, age, income or occupation.",
+     "data_source": "Profound's own prompt runs on ChatGPT, Claude and Gemini. Search queries were recorded for ChatGPT and Claude only.",
+     "timeframe": "14 days, August 11–24, 2026",
+     "conflict": "Yes. Profound sells AI visibility tracking, and the article ends with a demo pitch for persona-level tracking, which is the article's main recommendation.",
+     "confidence": "medium",
+     "caveat": "The tests covered only consumer categories (clothing, furniture, credit cards), used a one-line \"I am [attribute]\" prefix, and covered one two-week window. None of this is B2B SaaS, and real users rarely state their persona so bluntly. The article also gives no significance testing, no prompt counts per category and no per-engine breakdown for most results."
+    },
+    "why_it_matters": "Aggregate AI visibility scores can hide gaps for your target buyer. It is worth testing your key prompts with role and budget context, but these consumer results may not carry over to B2B software.",
+    "importance": 2,
+    "tags": [
+     "ai search",
+     "brand",
+     "content"
+    ]
+   },
+   "words": 1040
+  },
+  {
+   "id": "semrush.com/blog/manufacturing-seo-ai-search",
+   "url": "https://www.semrush.com/blog/manufacturing-seo-ai-search/",
+   "source": "Semrush",
+   "title": "AI search & manufacturing SEO: What the data shows [Study]",
+   "published": "2026-09-08T13:38:00+00:00",
+   "found": "2026-09-29T09:25:24+00:00",
+   "gated": false,
+   "unreadable": null,
+   "pdf_links": [],
+   "brief": {
+    "is_study": true,
+    "headline": "Google AI Overviews reached 57% of tracked manufacturing search volume in July 2026, up from 38% in January, while AI sources drove just 0.48% of sessions.",
+    "study_type": "data analysis",
+    "key_stats": [
+     "AI Overviews: 38% of search volume (Jan 2026) to 57% (July), across 458 manufacturing keywords",
+     "0.48% of all sessions to manufacturing sites come from AI search tools or assistants",
+     "Only two domains (Vevor, Grainger) appear on both the top 15 most-mentioned and top 15 most-cited lists"
+    ],
+    "method": {
+     "sample": "458 manufacturing keywords; US clickstream sessions across ten manufacturing categories; top 25 domains per month by mentions and by citations across four LLMs (ChatGPT, Gemini, AI Mode, AI Overviews). Number of domains in clickstream set not disclosed.",
+     "data_source": "Semrush's own datasets: keyword/SERP snapshots, clickstream, AI Visibility database, Traffic and Market Toolkit.",
+     "timeframe": "January to July 2026",
+     "conflict": "Yes, it is Semrush's own tools and data, and it recommends monitoring AI visibility, which its products sell. The promotion is mild.",
+     "confidence": "medium",
+     "caveat": "The keyword set was built from the top 20 domains in Semrush's own ranking, and the authors call the results directional. Explanations for the traffic gaps, such as engineerfix's generic content, are interpretation from a handful of domains, not tested."
+    },
+    "why_it_matters": "For a B2B SaaS lead, this is a manufacturing-sector study, so treat it as an analogue. Its main lesson carries over: mentions and citations are separate metrics that don't reliably predict AI referral traffic, so track them separately.",
+    "importance": 2,
+    "tags": [
+     "ai search",
+     "brand",
+     "analytics"
+    ]
+   },
+   "words": 2958
+  },
+  {
+   "id": "semrush.com/blog/ai-chatbots-talk-ai-users-out-of-buying",
+   "url": "https://www.semrush.com/blog/ai-chatbots-talk-ai-users-out-of-buying/",
+   "source": "Semrush",
+   "title": "AI chatbots talked 57.5% of AI users out of buying",
+   "published": "2026-09-07T08:48:00+00:00",
+   "found": "2026-09-29T09:25:24+00:00",
+   "gated": false,
+   "unreadable": null,
+   "pdf_links": [],
+   "brief": {
+    "is_study": true,
+    "headline": "In a survey of 2,338 US adults, 57.5% of AI users say an AI chatbot has led them to decide not to buy something.",
+    "study_type": "survey",
+    "key_stats": [
+     "57.51% of AI users have bought a product on an AI recommendation, and 57.5% have decided against a purchase on chatbot information",
+     "74.15% of all consumers would be at least somewhat less likely to buy if a chatbot flagged mixed or negative reviews",
+     "23.12% would think worse of a product after seeing an AI chatbot ad, against 20.36% who would think better"
+    ],
+    "method": {
+     "sample": "2,338 US adults, at least 300 per age band. Margin of error ±2 percentage points for the full sample, wider for filtered segments.",
+     "data_source": "Exploding Topics consumer survey, published on the Semrush blog. Panel provider and recruitment method not disclosed. Answers are self-reported.",
+     "timeframe": "July 2026",
+     "conflict": "Yes. The article ends by calling Semrush Enterprise AIO and the AI Visibility Toolkit the best GEO tools, and it frames the findings as proof that GEO is essential.",
+     "confidence": "medium",
+     "caveat": "The figures are self-reported consumer attitudes, not observed behavior. Many stats use different, smaller filtered subsets, and the sample is general US consumers rather than B2B software buyers."
+    },
+    "why_it_matters": "It adds survey evidence that what chatbots say about your brand, including negative reviews, can block a sale. It also suggests AI ads may not pay off for B2B, since ChatGPT Plus, Pro and business plans are ad-free.",
+    "importance": 2,
+    "tags": [
+     "ai search",
+     "brand",
+     "ctr & serps"
+    ]
+   },
+   "words": 3630
+  },
+  {
+   "id": "tryprofound.com/blog/chatgpt-5.6-shopping-transformation",
+   "url": "https://www.tryprofound.com/blog/chatgpt-5.6-shopping-transformation",
+   "source": "Profound",
+   "title": "ChatGPT 5.6 has transformed Shopping mode",
+   "published": "2026-09-03T14:10:57+00:00",
+   "found": "2026-09-29T09:25:24+00:00",
+   "gated": false,
+   "unreadable": null,
+   "pdf_links": [],
+   "brief": {
+    "is_study": true,
+    "headline": "Profound reports ChatGPT Shopping shifted from web search to feed-integrated retrieval on July 10th, rising from 8.26% to 61.54% in one day after GPT 5.6 launched.",
+    "study_type": "data analysis",
+    "key_stats": [
+     "Feed-integrated retrieval rose from 8.26% to 61.54% on July 10th; brands not integrated are excluded from ~65% of Shopping recommendations",
+     "Top 10 merchant share rose from 22.5% to 41.8%; unique merchants fell from 13,524 to 10,607 (Jul 7-9 vs Jul 10-12)",
+     "Shopify is ~35% of feed-integrated retrieval; 517 customers with ≥33% visibility swings, joint model explains 83% of the swings"
+    ],
+    "method": {
+     "sample": "687 Profound customers analysed, narrowed to 517 with ≥33% visibility swings. Prompt runs range from 33,167 to 1,757,723 depending on the section, with 10% to 100% sampling.",
+     "data_source": "Profound's own Shopping-mode prompt tracking data from its customers",
+     "timeframe": "July 1 to Aug 24, 2026 (the main swing analysis covers July 7-12)",
+     "conflict": "Yes. Profound sells Shopping visibility tracking, and the call to action (get feed-integrated) fits its product category. It does not name a Profound product in the recommendation.",
+     "confidence": "medium",
+     "caveat": "The GPT 5.6 cause is inferred from timing alone, and the customers were picked because they had big swings. The 83% figure is therefore not a general effect. The merchant consolidation comparison covers only two 3-day windows."
+    },
+    "why_it_matters": "This matters only if you sell physical products through ChatGPT Shopping. For a B2B SaaS team it has little direct use, though it shows how fast AI retrieval sources can change.",
+    "importance": 2,
+    "tags": [
+     "ai search",
+     "technical seo",
+     "analytics"
+    ]
+   },
+   "words": 1226
+  },
+  {
+   "id": "seerinteractive.com/insights/ai-brand-accuracy-study",
+   "url": "https://www.seerinteractive.com/insights/ai-brand-accuracy-study",
+   "source": "Seer Interactive",
+   "title": "Study: AI Declined to Answer Prompts About Our Brand 31% of the Time (But Got Our Info Mostly Right When It Answered)",
+   "published": "2026-08-27T18:59:59+00:00",
+   "found": "2026-09-29T09:25:24+00:00",
+   "gated": false,
+   "unreadable": null,
+   "pdf_links": [],
+   "brief": {
+    "is_study": true,
+    "headline": "Across six AI platforms, Seer Interactive got branded answers right 95.9% of the time when they answered, but they declined 31.2% of the time.",
+    "study_type": "data analysis",
+    "key_stats": [
+     "Average inaccurate response rate 2.8%; average no-answer rate 31.2%; total accurate rate 66%",
+     "Comparative prompts: 18.8% accurate, 80.3% no answer. Direct prompts 90.4% accurate, indirect 88.7%",
+     "Claude: 98% accurate when it answered, but 46.3% no-answer rate, so total accuracy was 52.6%"
+    ],
+    "method": {
+     "sample": "1,562 branded prompts, 28,123 AI responses, 87 brand attributes, 6 platforms (AI Mode, AI Overviews, ChatGPT, Claude, Gemini, Perplexity). One brand only: Seer Interactive.",
+     "data_source": "Seer's own daily prompt tracking, apparently through Scrunch (named as the data set). How responses were scored as accurate or inaccurate is not explained.",
+     "timeframe": "May 1 to June 9, 2026 (about 5 weeks)",
+     "conflict": "Yes. Seer sells AI visibility and brand canon services, and the article ends with a sales call to action for both.",
+     "confidence": "medium",
+     "caveat": "The data covers one agency's brand, and Seer graded accuracy against its own brand canon without explaining how, so the rates may not carry over to a B2B SaaS brand. The \"fix timelines\" are asserted without supporting data."
+    },
+    "why_it_matters": "Brand misinformation matters less than absence. Comparative prompts returned no answer 80.3% of the time, so third-party coverage is the bigger gap. The fact-versus-narrative and importance grid is a usable way to triage errors.",
+    "importance": 2,
+    "tags": [
+     "ai search",
+     "brand",
+     "content"
+    ]
+   },
+   "words": 3940
+  },
+  {
+   "id": "ahrefs.com/blog/discussions-and-forums-serps",
+   "url": "https://ahrefs.com/blog/discussions-and-forums-serps/",
+   "source": "Ahrefs",
+   "title": "Analysis: Reddit Appears in 83.9% of Google's Discussions and Forums Results",
+   "published": "2026-08-27T13:49:03+00:00",
+   "found": "2026-09-29T09:25:24+00:00",
+   "gated": false,
+   "unreadable": null,
+   "pdf_links": [],
+   "brief": {
+    "is_study": true,
+    "headline": "Reddit appears in 83.9% of Google's 'Discussions and forums' results worldwide, and Reddit, Facebook and Quora together take 76.75% of all links in the feature.",
+    "study_type": "data analysis",
+    "key_stats": [
+     "Feature present in 16.93M (11.7%) of 145M US Google results; Reddit in 87.8% of US SERPs (83.9% worldwide)",
+     "After Reddit: Facebook 38.3%, Quora 32%, JustAnswer 8.2%, Mayo Clinic 3.3%",
+     "98.7% of appearances are informational intent (40.9% commercial); 43.2% are for queries of 5+ words"
+    ],
+    "method": {
+     "sample": "145M US Google search results, with the feature in 16.93M of them. Also dozens of countries and the top 1,000 domains. The worldwide sample size is not disclosed.",
+     "data_source": "Ahrefs' own SERP and keyword data. The domain age checks used registration dates and archive.org.",
+     "timeframe": "Not disclosed for the main dataset. Reddit's 89.3% average inclusion rate covers the past two years, and August 2026 data was still being collected.",
+     "conflict": "Partly. The article ends by pointing readers to Ahrefs Keywords Explorer and Brand Radar. The core Reddit finding does not depend on the product.",
+     "confidence": "medium",
+     "caveat": "This is vendor data with no keyword-set or collection method explained. Reddit's share appears as 83.9%, 84.71% (table) and 87.8% (US), and the article does not explain the differences. It also claims Facebook's share is identical in every country, which is unusual and not explained."
+    },
+    "why_it_matters": "The feature shows on only about 1 in 9 US SERPs, and Reddit, Facebook and Quora dominate it. For B2B SaaS, the practical route in is participating in those communities, not building your own forum. Backlinks to individual threads showed no correlation with appearances.",
+    "importance": 2,
+    "tags": [
+     "ctr & serps",
+     "content",
+     "brand"
+    ]
+   },
+   "words": 2561
+  },
+  {
+   "id": "openai.com/index/what-students-gain-from-chatgpt-critical-thinking-training",
+   "url": "https://openai.com/index/what-students-gain-from-chatgpt-critical-thinking-training",
+   "source": "OpenAI",
+   "title": "Better answers, broader thinking: What students gain from ChatGPT and critical-thinking training",
+   "published": "2026-08-27T09:00:00+00:00",
+   "found": "2026-09-29T09:25:24+00:00",
+   "gated": false,
+   "unreadable": null,
+   "pdf_links": [
+    "https://cdn.openai.com/pdf/novices-and-llm-august-2026.pdf"
+   ],
+   "brief": {
+    "is_study": true,
+    "headline": "In a randomized experiment with more than 1,000 students, ChatGPT access raised work quality by almost a full point on a five-point scale, and causal-reasoning training widened idea variety.",
+    "study_type": "official update",
+    "key_stats": [
+     "Students with ChatGPT (GPT-4o) scored almost a full point higher on the five-point scale",
+     "Causal-reasoning training did not raise rubric scores but produced a wider range of more distinct ideas",
+     "Students with both had idea variety matching training-only students and rubric scores similar to ChatGPT-only students"
+    ],
+    "method": {
+     "sample": "n/a (official announcement)",
+     "data_source": "n/a (official announcement)",
+     "timeframe": "No rollout or change. The experiment dates are not stated.",
+     "conflict": "OpenAI reports a favorable result for its own product. The post says nothing about search, GEO, B2B or content marketing, and it gives no experiment dates.",
+     "confidence": "medium",
+     "caveat": "The setting is first-year Bocconi students writing marketing recommendations for a university store, so it says little about B2B SaaS content or search. It is a summary from the publisher, and the full paper was not reviewed."
+    },
+    "why_it_matters": "Little direct impact on SEO or GEO. The one loosely transferable point is that AI-polished output looks alike, so original ideas may be what sets content apart.",
+    "importance": 1,
+    "tags": [
+     "content"
+    ]
+   },
+   "words": 928
+  },
+  {
+   "id": "growth-memo.com/p/has-google-demoted-listicles",
+   "url": "https://www.growth-memo.com/p/has-google-demoted-listicles",
+   "source": "Growth Memo",
+   "title": "Has Google demoted listicles?",
+   "published": "2026-08-24T19:18:49+00:00",
+   "found": "2026-09-29T09:25:24+00:00",
+   "gated": false,
+   "unreadable": "page has almost no readable text (likely built with JavaScript)",
+   "pdf_links": [],
+   "brief": null
+  },
+  {
+   "id": "tryprofound.com/blog/claude-and-claude-code-are-distinct-answer-engines",
+   "url": "https://www.tryprofound.com/blog/claude-and-claude-code-are-distinct-answer-engines",
+   "source": "Profound",
+   "title": "Claude and Claude Code are distinct Answer Engines",
+   "published": "2026-08-24T16:39:00+00:00",
+   "found": "2026-09-29T09:25:24+00:00",
+   "gated": false,
+   "unreadable": null,
+   "pdf_links": [],
+   "brief": {
+    "is_study": true,
+    "headline": "Claude Code searched the web in 13% of responses versus 93% for Claude, and the two mentioned the same brands only 20% of the time on average.",
+    "study_type": "data analysis",
+    "key_stats": [
+     "Claude Code searches in 13% of responses vs Claude's 93%; brand overlap between the two averages 20%",
+     "Nearly three-quarters of Claude Code agent visits went to documentation, informational and pricing pages vs 5% for Claude's agent",
+     "60% of Claude agent visits went to robots.txt, sitemaps and home pages vs 4% for Claude Code's agent"
+    ],
+    "method": {
+     "sample": "24,135 responses across 1,724 prompts from 11 randomly sampled categories (coding subset: 2,800 responses, 200 prompts); plus the top 1,000 pages visited by each agent",
+     "data_source": "Profound's own prompt runs with web search enabled, and Profound's internally tracked domains for agent visits. Pages were scraped with Firecrawl and categorized by an LLM (gpt-4.1-mini).",
+     "timeframe": "Prompts run 07/13/2026 to 07/23/2026; agent page visits July 18 to August 18, 2026",
+     "conflict": "Yes. Profound sells AI answer-engine visibility tracking, and the article argues that Claude Code must be measured as a separate engine, then ends with a demo pitch.",
+     "confidence": "medium",
+     "caveat": "The agent-visit data covers only Profound's tracked domains, which aren't described. It counts visits to the top 1,000 pages, not real users, and an LLM classified the page types, so the \"optimize docs and pricing pages\" advice is an inference rather than a tested result."
+    },
+    "why_it_matters": "If your buyers are developers, Claude Code may read your docs and pricing pages rather than search the web. Keep those pages specific and current, and don't assume Claude results predict Claude Code results.",
+    "importance": 2,
+    "tags": [
+     "ai search",
+     "content",
+     "technical seo"
+    ]
+   },
+   "words": 1043
+  },
+  {
+   "id": "tryprofound.com/blog/where-do-inaccurate-ai-claims-come-from",
+   "url": "https://www.tryprofound.com/blog/where-do-inaccurate-ai-claims-come-from",
+   "source": "Profound",
+   "title": "Where do inaccurate AI claims come from?",
+   "published": "2026-08-17T22:16:55+00:00",
+   "found": "2026-09-29T09:25:24+00:00",
+   "gated": false,
+   "unreadable": null,
+   "pdf_links": [],
+   "brief": {
+    "is_study": true,
+    "headline": "In 158,000+ analyzed claims, inaccurate AI claims came mostly from competitor and earned media sources, and pricing and billing was 12% of evaluated claims but 24% of inaccurate ones.",
+    "study_type": "data analysis",
+    "key_stats": [
+     "Pricing and billing: 12% of evaluated claims but 24% of all inaccurate claims; next largest, eligibility and terms, 4%",
+     "51% of brands had at least one inaccurate claim citing earned media; 54% had one citing their own content",
+     "Inaccuracy rates by Answer Engine range from 4.3-6.8%; Claude is more than 1.3 times more inaccurate than ChatGPT"
+    ],
+    "method": {
+     "sample": "Over 158,000 claims in FactCheck data; number of brands, prompts and industries not disclosed",
+     "data_source": "Profound's own FactCheck product data, with claims judged accurate or inaccurate against brand records. How verdicts were reached is not explained.",
+     "timeframe": "Snapshot of the most recently completed FactCheck run as of August 14, 2026",
+     "conflict": "Yes. Profound sells FactCheck, and the research promotes it and the case for ongoing monitoring of AI claims.",
+     "confidence": "low",
+     "caveat": "The data comes from the vendor's own new tool, and the article does not say how claims were verified, how many brands were covered, or which models were tested. It admits the pricing result may partly reflect a selection effect, and the results are observational."
+    },
+    "why_it_matters": "It suggests checking pricing and billing details first, on your own site and on third-party pages. The evidence is vendor data, so treat it as a lead to test, not a proven ranking.",
+    "importance": 2,
+    "tags": [
+     "ai search",
+     "content",
+     "brand"
+    ]
+   },
+   "words": 995
+  },
   {
    "id": "seerinteractive.com/insights/gpt-5.5-vs-gpt-5.6-luna",
    "url": "https://www.seerinteractive.com/insights/gpt-5.5-vs-gpt-5.6-luna",
