@@ -312,7 +312,7 @@ details.health summary .sub { font-weight: 400; color: var(--ink-3); margin-left
     const owner = host.replace(/\.github\.io$/, "");
     const first = location.pathname.split("/").filter(Boolean)[0] || "";
     const here = first ? `${owner}/${first}` : `${owner}/${owner}.github.io`;
-    return here === m.repo.toLowerCase();
+    return here.toLowerCase() === m.repo.toLowerCase();
   }
 
   function hydrate() {
