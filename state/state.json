@@ -2344,60 +2344,200 @@
    "source": "OpenAI",
    "status": "briefed",
    "at": "2026-09-29T09:28:17+00:00"
+  },
+  "ahrefs.com/blog/seo-for-static-sites": {
+   "source": "Ahrefs",
+   "status": "not_study",
+   "at": "2026-10-05T14:36:25+00:00"
+  },
+  "ahrefs.com/blog/ai-visibility-workflow": {
+   "source": "Ahrefs",
+   "status": "not_study",
+   "at": "2026-10-05T14:36:25+00:00"
+  },
+  "ahrefs.com/blog/claude-code-for-seo": {
+   "source": "Ahrefs",
+   "status": "not_study",
+   "at": "2026-10-05T14:36:25+00:00"
+  },
+  "semrush.com/blog/what-is-local-seo": {
+   "source": "Semrush",
+   "status": "not_study",
+   "at": "2026-10-05T14:36:25+00:00"
+  },
+  "semrush.com/blog/seo-checklist": {
+   "source": "Semrush",
+   "status": "not_study",
+   "at": "2026-10-05T14:36:25+00:00"
+  },
+  "semrush.com/blog/aeo-vs-seo": {
+   "source": "Semrush",
+   "status": "not_study",
+   "at": "2026-10-05T14:36:25+00:00"
+  },
+  "semrush.com/blog/llm-positioning-lag": {
+   "source": "Semrush",
+   "status": "not_study",
+   "at": "2026-10-05T14:36:25+00:00"
+  },
+  "semrush.com/blog/google-spam-update-september-2026": {
+   "source": "Semrush",
+   "status": "not_study",
+   "at": "2026-10-05T14:36:25+00:00"
+  },
+  "seerinteractive.com/insights/ai-visibility-kpis": {
+   "source": "Seer Interactive",
+   "status": "not_study",
+   "at": "2026-10-05T14:36:25+00:00"
+  },
+  "peec.ai/blog/the-key-to-prompt-tracking": {
+   "source": "Peec AI",
+   "status": "not_study",
+   "at": "2026-10-05T14:36:25+00:00"
+  },
+  "airops.com/blog/the-new-rules-of-growth-webinar-recap": {
+   "source": "AirOps",
+   "status": "not_study",
+   "at": "2026-10-05T14:36:25+00:00"
+  },
+  "airops.com/blog/vibe-airops": {
+   "source": "AirOps",
+   "status": "not_study",
+   "at": "2026-10-05T14:36:25+00:00"
+  },
+  "openai.com/index/practical-guide-building-gpt-6": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-10-05T14:36:25+00:00"
+  },
+  "openai.com/index/chatham-financial": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-10-05T14:36:25+00:00"
+  },
+  "openai.com/index/the-eternal-complement": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-10-05T14:36:25+00:00"
+  },
+  "openai.com/index/albertsons-reimagining-retail": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-10-05T14:36:25+00:00"
+  },
+  "openai.com/index/the-den-family-social": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-10-05T14:36:25+00:00"
+  },
+  "openai.com/index/disrupting-a-coordinated-model-distillation-campaign": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-10-05T14:36:25+00:00"
+  },
+  "openai.com/index/helping-small-businesses-put-ai-to-work": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-10-05T14:36:25+00:00"
+  },
+  "openai.com/index/devday-2026-recap": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-10-05T14:36:25+00:00"
+  },
+  "openai.com/index/introducing-gpt-6-1-sol": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-10-05T14:36:25+00:00"
+  },
+  "openai.com/index/introducing-dots": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-10-05T14:36:25+00:00"
+  },
+  "openai.com/index/new-chatgpt-ads-format-and-measurement": {
+   "source": "OpenAI",
+   "status": "briefed",
+   "at": "2026-10-05T14:36:25+00:00"
+  },
+  "ahrefs.com/blog/ai-overviews-on-branded-searches": {
+   "source": "Ahrefs",
+   "status": "briefed",
+   "at": "2026-10-05T14:36:25+00:00"
+  },
+  "growth-memo.com/p/growth-intelligence-brief-25": {
+   "source": "Growth Memo",
+   "status": "briefed",
+   "at": "2026-10-05T14:36:25+00:00"
+  },
+  "tryprofound.com/blog/the-era-of-personal-agents-muse-and-instinct": {
+   "source": "Profound",
+   "status": "briefed",
+   "at": "2026-10-05T14:36:25+00:00"
+  },
+  "tryprofound.com/blog/the-half-life-of-an-ai-citation-is-11-days": {
+   "source": "Profound",
+   "status": "briefed",
+   "at": "2026-10-05T14:36:25+00:00"
+  },
+  "ahrefs.com/blog/marketers-ai-content-creation": {
+   "source": "Ahrefs",
+   "status": "briefed",
+   "at": "2026-10-05T14:36:25+00:00"
   }
  },
  "sources": {
   "Google Search Central": {
    "initialized": true,
-   "last_ok": "2026-09-29T09:29:37+00:00"
+   "last_ok": "2026-10-05T14:36:25+00:00"
   },
   "Google Search Status": {
    "initialized": true,
-   "last_ok": "2026-09-29T09:29:37+00:00"
+   "last_ok": "2026-10-05T14:36:25+00:00"
   },
   "Bing Webmaster": {
    "initialized": true,
-   "last_ok": "2026-09-29T09:29:37+00:00"
+   "last_ok": "2026-10-05T14:36:25+00:00"
   },
   "OpenAI": {
    "initialized": true,
-   "last_ok": "2026-09-29T09:29:37+00:00"
+   "last_ok": "2026-10-05T14:36:25+00:00"
   },
   "Ahrefs": {
    "initialized": true,
-   "last_ok": "2026-09-29T09:29:37+00:00"
+   "last_ok": "2026-10-05T14:36:25+00:00"
   },
   "Semrush": {
    "initialized": true,
-   "last_ok": "2026-09-29T09:29:37+00:00"
+   "last_ok": "2026-10-05T14:36:25+00:00"
   },
   "Growth Memo": {
    "initialized": true,
-   "last_ok": "2026-09-29T09:29:37+00:00"
+   "last_ok": "2026-10-05T14:36:25+00:00"
   },
   "Seer Interactive": {
    "initialized": true,
-   "last_ok": "2026-09-29T09:29:37+00:00"
+   "last_ok": "2026-10-05T14:36:25+00:00"
   },
   "Profound": {
    "initialized": true,
-   "last_ok": "2026-09-29T09:29:37+00:00"
+   "last_ok": "2026-10-05T14:36:25+00:00"
   },
   "Orbit Media": {
    "initialized": true,
-   "last_ok": "2026-09-29T09:29:37+00:00"
+   "last_ok": "2026-10-05T14:36:25+00:00"
   },
   "Peec AI": {
    "initialized": true,
-   "last_ok": "2026-09-29T09:29:37+00:00"
+   "last_ok": "2026-10-05T14:36:25+00:00"
   },
   "AirOps": {
    "initialized": true,
-   "last_ok": "2026-09-29T09:29:37+00:00"
+   "last_ok": "2026-10-05T14:36:25+00:00"
   },
   "BrightEdge": {
    "initialized": true,
-   "last_ok": "2026-09-29T09:29:37+00:00"
+   "last_ok": "2026-10-05T14:36:25+00:00"
   }
  },
  "repo": "nico497/study-radar"

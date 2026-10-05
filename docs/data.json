@@ -2,15 +2,15 @@
  "meta": {
   "niche": "SEO and generative engine optimization (GEO) for B2B SaaS",
   "audience": "the content and SEO lead at a B2B SaaS company",
-  "updated": "2026-09-29T09:29:37+00:00",
+  "updated": "2026-10-05T14:36:25+00:00",
   "title": "Study Radar",
   "repo": "nico497/study-radar",
   "run": {
    "sources": 13,
-   "new_items": 0,
-   "studies": 0,
+   "new_items": 28,
+   "studies": 6,
    "deferred": 0,
-   "briefed": 0,
+   "briefed": 6,
    "unreadable": 0,
    "rejected": 0,
    "errors": []
@@ -19,7 +19,7 @@
  "health": [
   {
    "name": "Google Search Central",
-   "checked": "2026-09-29T09:29:37+00:00",
+   "checked": "2026-10-05T14:36:25+00:00",
    "ok": true,
    "found": 10,
    "new": 1,
@@ -30,7 +30,7 @@
   },
   {
    "name": "Google Search Status",
-   "checked": "2026-09-29T09:29:37+00:00",
+   "checked": "2026-10-05T14:36:25+00:00",
    "ok": true,
    "found": 1,
    "new": 1,
@@ -41,7 +41,7 @@
   },
   {
    "name": "Bing Webmaster",
-   "checked": "2026-09-29T09:29:37+00:00",
+   "checked": "2026-10-05T14:36:25+00:00",
    "ok": true,
    "found": 10,
    "new": 0,
@@ -52,73 +52,73 @@
   },
   {
    "name": "OpenAI",
-   "checked": "2026-09-29T09:29:37+00:00",
+   "checked": "2026-10-05T14:36:25+00:00",
    "ok": true,
-   "found": 1235,
-   "new": 1,
+   "found": 1246,
+   "new": 2,
    "error": null,
    "url": "https://openai.com/news/rss.xml",
    "method": "feed",
-   "posts_new": 0
+   "posts_new": 11
   },
   {
    "name": "Ahrefs",
-   "checked": "2026-09-29T09:29:37+00:00",
+   "checked": "2026-10-05T14:36:25+00:00",
    "ok": true,
    "found": 10,
-   "new": 2,
+   "new": 4,
    "error": null,
    "url": "https://ahrefs.com/blog/feed/",
    "method": "feed",
-   "posts_new": 0
+   "posts_new": 5
   },
   {
    "name": "Semrush",
-   "checked": "2026-09-29T09:29:37+00:00",
+   "checked": "2026-10-05T14:36:25+00:00",
    "ok": true,
    "found": 20,
    "new": 2,
    "error": null,
    "url": "https://www.semrush.com/blog/feed/",
    "method": "feed",
-   "posts_new": 0
+   "posts_new": 5
   },
   {
    "name": "Growth Memo",
-   "checked": "2026-09-29T09:29:37+00:00",
+   "checked": "2026-10-05T14:36:25+00:00",
    "ok": true,
    "found": 20,
-   "new": 0,
+   "new": 1,
    "error": null,
    "url": "https://www.growth-memo.com/feed",
    "method": "feed",
-   "posts_new": 0
+   "posts_new": 1
   },
   {
    "name": "Seer Interactive",
-   "checked": "2026-09-29T09:29:37+00:00",
+   "checked": "2026-10-05T14:36:25+00:00",
    "ok": true,
    "found": 20,
    "new": 2,
    "error": null,
    "url": "https://www.seerinteractive.com/insights/rss.xml",
    "method": "feed",
-   "posts_new": 0
+   "posts_new": 1
   },
   {
    "name": "Profound",
-   "checked": "2026-09-29T09:29:37+00:00",
+   "checked": "2026-10-05T14:36:25+00:00",
    "ok": true,
-   "found": 180,
-   "new": 4,
+   "found": 182,
+   "new": 6,
    "error": null,
    "url": "https://www.tryprofound.com/rss/blog.xml",
    "method": "feed",
-   "posts_new": 0
+   "posts_new": 2
   },
   {
    "name": "Orbit Media",
-   "checked": "2026-09-29T09:29:37+00:00",
+   "checked": "2026-10-05T14:36:25+00:00",
    "ok": true,
    "found": 26,
    "new": 3,
@@ -129,29 +129,29 @@
   },
   {
    "name": "Peec AI",
-   "checked": "2026-09-29T09:29:37+00:00",
+   "checked": "2026-10-05T14:36:25+00:00",
    "ok": true,
-   "found": 42,
+   "found": 43,
    "new": 1,
    "error": null,
    "url": "https://peec.ai/blog",
    "method": "page",
-   "posts_new": 0
+   "posts_new": 1
   },
   {
    "name": "AirOps",
-   "checked": "2026-09-29T09:29:37+00:00",
+   "checked": "2026-10-05T14:36:25+00:00",
    "ok": true,
    "found": 202,
    "new": 0,
    "error": null,
    "url": "https://www.airops.com/blog",
    "method": "page",
-   "posts_new": 0
+   "posts_new": 2
   },
   {
    "name": "BrightEdge",
-   "checked": "2026-09-29T09:29:37+00:00",
+   "checked": "2026-10-05T14:36:25+00:00",
    "ok": true,
    "found": 31,
    "new": 3,
@@ -162,6 +162,32 @@
   }
  ],
  "pulses": [
+  {
+   "date": "2026-10-05T14:36:25+00:00",
+   "summary": "AI search keeps reshaping visibility, and Google began a spam update on 24 Sep. Most AI data is early, from vendors, and not B2B-specific.",
+   "points": [
+    {
+     "text": "Google's spam update began 24 Sep, so expect ranking swings into early October. Log traffic by date and hold big content changes.",
+     "ids": [
+      "status.search.google.com/incidents/XhUDXP7A67iHCD2kmbVu"
+     ]
+    },
+    {
+     "text": "AI Overviews are squeezing clicks: French sites with heavy exposure lost 23.1% of median click rate in nine days. Check your exposure and track clicks, not impressions.",
+     "ids": [
+      "ahrefs.com/blog/ai-overviews-france-impact",
+      "ahrefs.com/blog/ai-overviews-on-branded-searches"
+     ]
+    },
+    {
+     "text": "AI visibility is unstable: pages lose half their citation share in 11 days, and tools rarely agree. Track many engines over several weeks.",
+     "ids": [
+      "tryprofound.com/blog/the-half-life-of-an-ai-citation-is-11-days",
+      "orbitmedia.com/blog/ai-citation-sources"
+     ]
+    }
+   ]
+  },
   {
    "date": "2026-09-29T10:16:23+00:00",
    "summary": "Google's September spam update is rolling out, and AI results keep shifting by tool, persona and run. Most AI-visibility data is early and comes from vendors.",
@@ -237,6 +263,226 @@
   }
  ],
  "briefs": [
+  {
+   "id": "openai.com/index/new-chatgpt-ads-format-and-measurement",
+   "url": "https://openai.com/index/new-chatgpt-ads-format-and-measurement",
+   "source": "OpenAI",
+   "title": "Building advertising for the way people use AI",
+   "published": "2026-10-05T10:00:00+00:00",
+   "found": "2026-10-05T14:36:25+00:00",
+   "gated": false,
+   "unreadable": null,
+   "pdf_links": [],
+   "brief": {
+    "is_study": true,
+    "headline": "OpenAI adds a visual ad format to ChatGPT and expands ad measurement tools, with US testing starting this month.",
+    "study_type": "official update",
+    "key_stats": [
+     "ChatGPT reaches 1.2 billion people each week (OpenAI's figure)",
+     "WeightWatchers: cost per acquisition 15.3% below blended paid search",
+     "93% of Portland Leather's ChatGPT Ads visitors were new"
+    ],
+    "method": {
+     "sample": "n/a (official announcement)",
+     "data_source": "n/a (official announcement)",
+     "timeframe": "US test starts later in October 2026",
+     "conflict": "Doesn't say ad pricing, test size or how ads are picked. Results come from partners.",
+     "confidence": "medium",
+     "caveat": "Ad results are early, partner-reported and from consumer brands, not B2B SaaS; the image ad test is small."
+    },
+    "why_it_matters": "Paid ChatGPT ads are growing, but OpenAI says ads don't change answers. Organic GEO work stays separate.",
+    "importance": 2,
+    "tags": [
+     "ai search",
+     "analytics",
+     "brand"
+    ]
+   },
+   "words": 1185
+  },
+  {
+   "id": "ahrefs.com/blog/ai-overviews-on-branded-searches",
+   "url": "https://ahrefs.com/blog/ai-overviews-on-branded-searches/",
+   "source": "Ahrefs",
+   "title": "AI Overviews Currently Appear for 83% of Branded Searches",
+   "published": "2026-10-02T11:33:46+00:00",
+   "found": "2026-10-05T14:36:25+00:00",
+   "gated": false,
+   "unreadable": null,
+   "pdf_links": [],
+   "brief": {
+    "is_study": true,
+    "headline": "AI Overviews showed on 82.91% of US desktop branded Google searches as of September 29, 2026.",
+    "study_type": "data analysis",
+    "key_stats": [
+     "Branded keywords with an AI Overview: 61.3% in July to 73.3% in September (monthly averages)",
+     "63 of 100 top brand-name queries showed an AI Overview; 48 in position one (76.2%)",
+     "Wikipedia cited in 71.9% of external citations; YouTube 38.6%, LinkedIn 22.8%"
+    ],
+    "method": {
+     "sample": "232.8M Google crawls; 100 brands for deep dive",
+     "data_source": "Ahrefs' own SERP crawl data",
+     "timeframe": "July to September 2026",
+     "conflict": "Yes. Ahrefs sells Site Explorer and Brand Radar, which the article promotes for tracking.",
+     "confidence": "medium",
+     "caveat": "Citation and position findings rest on only 100 big global brands, not B2B SaaS."
+    },
+    "why_it_matters": "Check which of your brand searches show AI Overviews, and see which outside sites they cite about you.",
+    "importance": 2,
+    "tags": [
+     "ai search",
+     "brand",
+     "ctr & serps"
+    ]
+   },
+   "words": 1614
+  },
+  {
+   "id": "growth-memo.com/p/growth-intelligence-brief-25",
+   "url": "https://www.growth-memo.com/p/growth-intelligence-brief-25",
+   "source": "Growth Memo",
+   "title": "Growth Intelligence Brief #25",
+   "published": "2026-10-02T07:56:14+00:00",
+   "found": "2026-10-05T14:36:25+00:00",
+   "gated": false,
+   "unreadable": null,
+   "pdf_links": [],
+   "brief": {
+    "is_study": true,
+    "headline": "SaaS sites lost a third of their Google visibility in a year, per Growth Memo's brief.",
+    "study_type": "data analysis",
+    "key_stats": [
+     "SaaS lost about a third of Google visibility in a year",
+     "X jumped 33%",
+     "Realtor.com and Amazon hit record lows"
+    ],
+    "method": {
+     "sample": "Not disclosed",
+     "data_source": "Not disclosed",
+     "timeframe": "Not disclosed",
+     "conflict": "Not clear; the newsletter is a paid subscription, but the visible text shows no product tie.",
+     "confidence": "low",
+     "caveat": "Paywalled page: only the headline is visible, with no method, sample, data source or dates."
+    },
+    "why_it_matters": "If true, SaaS organic traffic is under pressure. Check your own visibility trend before trusting this.",
+    "importance": 2,
+    "tags": [
+     "ctr & serps",
+     "analytics"
+    ]
+   },
+   "words": 156
+  },
+  {
+   "id": "tryprofound.com/blog/the-era-of-personal-agents-muse-and-instinct",
+   "url": "https://www.tryprofound.com/blog/the-era-of-personal-agents-muse-and-instinct",
+   "source": "Profound",
+   "title": "The era of personal agents: Muse and Instinct",
+   "published": "2026-10-02T06:32:02+00:00",
+   "found": "2026-10-05T14:36:25+00:00",
+   "gated": false,
+   "unreadable": null,
+   "pdf_links": [],
+   "brief": {
+    "is_study": true,
+    "headline": "Meta's Muse agent showed 4 browser-found products and 2 catalog products per 6-card shopping answer; traffic proxy grew 1.6x faster in US/Canada.",
+    "study_type": "data analysis",
+    "key_stats": [
+     "Typical Muse answer: 6 product cards, 4 from browser, 2 from Meta catalog",
+     "Meta catalog returned about 60 products from 30 merchant sites per prompt",
+     "Meta-webindexer request rise was 1.6x larger in US/Canada (1,313% vs 827%)"
+    ],
+    "method": {
+     "sample": "50 prompts, one Muse instance; 280 hostnames",
+     "data_source": "Manual Muse tests; Profound-tracked retail site traffic",
+     "timeframe": "Aug 19 to Sep 27, 2026",
+     "conflict": "Yes. Profound sells AI visibility and agent-tracking tools, and ends with a demo pitch.",
+     "confidence": "low",
+     "caveat": "Tiny one-category test; traffic is an unverified proxy, and Profound calls the patterns illustrative."
+    },
+    "why_it_matters": "Mostly for e-commerce: B2B SaaS needs no change yet, but keep sites clean, readable and easy to navigate.",
+    "importance": 1,
+    "tags": [
+     "ai search",
+     "technical seo",
+     "analytics"
+    ]
+   },
+   "words": 1574
+  },
+  {
+   "id": "tryprofound.com/blog/the-half-life-of-an-ai-citation-is-11-days",
+   "url": "https://www.tryprofound.com/blog/the-half-life-of-an-ai-citation-is-11-days",
+   "source": "Profound",
+   "title": "The half-life of an AI citation is 11 days",
+   "published": "2026-09-30T18:49:47+00:00",
+   "found": "2026-10-05T14:36:25+00:00",
+   "gated": false,
+   "unreadable": null,
+   "pdf_links": [],
+   "brief": {
+    "is_study": true,
+    "headline": "Median page loses half its AI citation share within 11 days of peaking, across seven engines.",
+    "study_type": "data analysis",
+    "key_stats": [
+     "78% of cited pages fall to half their peak within two weeks",
+     "Pages cited by 5+ engines are 5.5 times likelier to hold at week eight",
+     "Claude citations are 2.8 times likelier than ChatGPT's to last eight weeks"
+    ],
+    "method": {
+     "sample": "883,000 pages; 1.19 million page-engine pairs",
+     "data_source": "Profound's own platform citation data",
+     "timeframe": "Sept 2025 to Sept 2026",
+     "conflict": "Yes. Profound sells Citation Decay tracking, which this finding promotes.",
+     "confidence": "medium",
+     "caveat": "Most decay is one-off bursts, measured by Profound's own metric with a 14-day smoothing window."
+    },
+    "why_it_matters": "Plan a steady publishing cadence, aim for citations across many engines, and track each engine separately.",
+    "importance": 2,
+    "tags": [
+     "ai search",
+     "content",
+     "analytics"
+    ]
+   },
+   "words": 1875
+  },
+  {
+   "id": "ahrefs.com/blog/marketers-ai-content-creation",
+   "url": "https://ahrefs.com/blog/marketers-ai-content-creation/",
+   "source": "Ahrefs",
+   "title": "69% of Marketers Are Publishing More AI Content Than Last Year (New Research Report)",
+   "published": "2026-09-30T15:56:21+00:00",
+   "found": "2026-10-05T14:36:25+00:00",
+   "gated": false,
+   "unreadable": null,
+   "pdf_links": [],
+   "brief": {
+    "is_study": true,
+    "headline": "69% of surveyed marketers publish a bigger share of AI content than a year ago; 93% use AI.",
+    "study_type": "survey",
+    "key_stats": [
+     "85% of AI users say they produce content faster; 2.5% say slower",
+     "Only 2.7% trust AI content with no human review",
+     "7% publish mostly pure AI content, up from 4% in 2025"
+    ],
+    "method": {
+     "sample": "301 marketers surveyed",
+     "data_source": "Ahrefs online survey of marketers",
+     "timeframe": "Not disclosed",
+     "conflict": "Yes. Ahrefs sells an AI marketing platform (Letaido) and promotes it in the article.",
+     "confidence": "medium",
+     "caveat": "Small, self-reported sample with unexplained recruitment; smaller than last year's, so year-on-year comparisons are rough."
+    },
+    "why_it_matters": "Use it as a rough benchmark: AI is standard, but most teams still review output by hand.",
+    "importance": 2,
+    "tags": [
+     "content",
+     "analytics"
+    ]
+   },
+   "words": 2264
+  },
   {
    "id": "developers.google.com/search/blog/2026/09/web-multimodal-in-sc",
    "url": "https://developers.google.com/search/blog/2026/09/web-multimodal-in-sc",
