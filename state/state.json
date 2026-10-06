@@ -2484,60 +2484,234 @@
    "source": "Ahrefs",
    "status": "briefed",
    "at": "2026-10-05T14:36:25+00:00"
+  },
+  "tollbit.com/state-of-the-bots/q4-2024": {
+   "source": "TollBit",
+   "status": "baseline",
+   "at": "2026-10-06T08:28:47+00:00"
+  },
+  "growth-memo.com/p/how-to-plan-2027-when-traffic-is": {
+   "source": "Growth Memo",
+   "status": "not_study",
+   "at": "2026-10-06T08:28:47+00:00"
+  },
+  "sparktoro.com/blog/algorithms-dont-just-happen-to-us-we-train-them": {
+   "source": "SparkToro",
+   "status": "not_study",
+   "at": "2026-10-06T08:28:47+00:00"
+  },
+  "sparktoro.com/blog/how-wed-market-a-400-skincare-device-before-black-friday": {
+   "source": "SparkToro",
+   "status": "not_study",
+   "at": "2026-10-06T08:28:47+00:00"
+  },
+  "amsive.com/insights/digital-media/beyond-keywords-how-chatgpt-ads-fit-into-the-modern-marketing-ecosystem": {
+   "source": "Amsive",
+   "status": "not_study",
+   "at": "2026-10-06T08:28:47+00:00"
+  },
+  "amsive.com/insights/seo/earn-trust-in-ai-discovery-with-search-social-and-media": {
+   "source": "Amsive",
+   "status": "not_study",
+   "at": "2026-10-06T08:28:47+00:00"
+  },
+  "amsive.com/insights/seo/answer-engine-optimization-aeo-evolving-your-seo-strategy-in-the-age-of-ai-search": {
+   "source": "Amsive",
+   "status": "not_study",
+   "at": "2026-10-06T08:28:47+00:00"
+  },
+  "blog.cloudflare.com/monetization-gateway-beta": {
+   "source": "Cloudflare",
+   "status": "not_study",
+   "at": "2026-10-06T08:28:47+00:00"
+  },
+  "blog.cloudflare.com/pay-per-use": {
+   "source": "Cloudflare",
+   "status": "not_study",
+   "at": "2026-10-06T08:28:47+00:00"
+  },
+  "blog.cloudflare.com/accountable-mixed-use-ai-crawlers": {
+   "source": "Cloudflare",
+   "status": "not_study",
+   "at": "2026-10-06T08:28:47+00:00"
+  },
+  "blog.cloudflare.com/botbase-for-operators": {
+   "source": "Cloudflare",
+   "status": "not_study",
+   "at": "2026-10-06T08:28:47+00:00"
+  },
+  "openai.com/index/eu-text-provenance": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-10-06T08:28:47+00:00"
+  },
+  "openai.com/index/wayfair": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-10-06T08:28:47+00:00"
+  },
+  "blog.google/products-and-platforms/products/search/holiday-travel-trends-2026": {
+   "source": "Google Keyword (Search)",
+   "status": "not_study",
+   "at": "2026-10-06T08:28:47+00:00"
+  },
+  "blog.google/products-and-platforms/products/search/coffee-tips-google-search": {
+   "source": "Google Keyword (Search)",
+   "status": "not_study",
+   "at": "2026-10-06T08:28:47+00:00"
+  },
+  "blog.google/products-and-platforms/products/translate/international-translation-day-2026": {
+   "source": "Google Keyword (Search)",
+   "status": "not_study",
+   "at": "2026-10-06T08:28:47+00:00"
+  },
+  "blog.google/products-and-platforms/products/search/running-race-training-tips": {
+   "source": "Google Keyword (Search)",
+   "status": "not_study",
+   "at": "2026-10-06T08:28:47+00:00"
+  },
+  "blog.google/products-and-platforms/products/search/football-features-google-search": {
+   "source": "Google Keyword (Search)",
+   "status": "not_study",
+   "at": "2026-10-06T08:28:47+00:00"
+  },
+  "blog.google/products-and-platforms/products/search/book-travel-ai-mode": {
+   "source": "Google Keyword (Search)",
+   "status": "not_study",
+   "at": "2026-10-06T08:28:47+00:00"
+  },
+  "blog.google/products-and-platforms/products/search/home-decor-tips": {
+   "source": "Google Keyword (Search)",
+   "status": "not_study",
+   "at": "2026-10-06T08:28:47+00:00"
+  },
+  "searchpilot.com/resources/case-studies/removing-meta-descriptions": {
+   "source": "SearchPilot",
+   "status": "briefed",
+   "at": "2026-10-06T08:28:47+00:00"
+  },
+  "searchpilot.com/resources/case-studies/removing-self-referential-breadcrumb": {
+   "source": "SearchPilot",
+   "status": "briefed",
+   "at": "2026-10-06T08:28:47+00:00"
+  },
+  "searchpilot.com/resources/case-studies/removing-seo-text-2024": {
+   "source": "SearchPilot",
+   "status": "briefed",
+   "at": "2026-10-06T08:28:47+00:00"
+  },
+  "searchpilot.com/resources/case-studies/does-changing-an-h2-to-an-h1-improve-organic-traffic": {
+   "source": "SearchPilot",
+   "status": "briefed",
+   "at": "2026-10-06T08:28:47+00:00"
+  },
+  "tollbit.com/state-of-the-bots/q2-2025": {
+   "source": "TollBit",
+   "status": "unreadable",
+   "at": "2026-10-06T08:28:47+00:00"
+  },
+  "tollbit.com/state-of-the-bots/q1-2025": {
+   "source": "TollBit",
+   "status": "unreadable",
+   "at": "2026-10-06T08:28:47+00:00"
+  },
+  "blog.cloudflare.com/agentic-web": {
+   "source": "Cloudflare",
+   "status": "briefed",
+   "at": "2026-10-06T08:28:47+00:00"
+  },
+  "blog.google/products-and-platforms/products/search/3-new-ways-were-improving-search-profiles-for-publishers": {
+   "source": "Google Keyword (Search)",
+   "status": "briefed",
+   "at": "2026-10-06T08:28:47+00:00"
+  },
+  "amsive.com/insights/digital-media/two-weeks-into-googles-tcpa-and-troas-change-is-performance-getting-more-predictable": {
+   "source": "Amsive",
+   "status": "briefed",
+   "at": "2026-10-06T08:28:47+00:00"
+  },
+  "amsive.com/insights/digital-media/google-changed-the-rules-on-tcpa-and-troas-the-auction-is-still-catching-up": {
+   "source": "Amsive",
+   "status": "briefed",
+   "at": "2026-10-06T08:28:47+00:00"
   }
  },
  "sources": {
   "Google Search Central": {
    "initialized": true,
-   "last_ok": "2026-10-05T14:36:25+00:00"
+   "last_ok": "2026-10-06T08:28:47+00:00"
   },
   "Google Search Status": {
    "initialized": true,
-   "last_ok": "2026-10-05T14:36:25+00:00"
+   "last_ok": "2026-10-06T08:28:47+00:00"
   },
   "Bing Webmaster": {
    "initialized": true,
-   "last_ok": "2026-10-05T14:36:25+00:00"
+   "last_ok": "2026-10-06T08:28:47+00:00"
   },
   "OpenAI": {
    "initialized": true,
-   "last_ok": "2026-10-05T14:36:25+00:00"
+   "last_ok": "2026-10-06T08:28:47+00:00"
   },
   "Ahrefs": {
    "initialized": true,
-   "last_ok": "2026-10-05T14:36:25+00:00"
+   "last_ok": "2026-10-06T08:28:47+00:00"
   },
   "Semrush": {
    "initialized": true,
-   "last_ok": "2026-10-05T14:36:25+00:00"
+   "last_ok": "2026-10-06T08:28:47+00:00"
   },
   "Growth Memo": {
    "initialized": true,
-   "last_ok": "2026-10-05T14:36:25+00:00"
+   "last_ok": "2026-10-06T08:28:47+00:00"
   },
   "Seer Interactive": {
    "initialized": true,
-   "last_ok": "2026-10-05T14:36:25+00:00"
+   "last_ok": "2026-10-06T08:28:47+00:00"
   },
   "Profound": {
    "initialized": true,
-   "last_ok": "2026-10-05T14:36:25+00:00"
+   "last_ok": "2026-10-06T08:28:47+00:00"
   },
   "Orbit Media": {
    "initialized": true,
-   "last_ok": "2026-10-05T14:36:25+00:00"
+   "last_ok": "2026-10-06T08:28:47+00:00"
   },
   "Peec AI": {
    "initialized": true,
-   "last_ok": "2026-10-05T14:36:25+00:00"
+   "last_ok": "2026-10-06T08:28:47+00:00"
   },
   "AirOps": {
    "initialized": true,
-   "last_ok": "2026-10-05T14:36:25+00:00"
+   "last_ok": "2026-10-06T08:28:47+00:00"
   },
   "BrightEdge": {
    "initialized": true,
-   "last_ok": "2026-10-05T14:36:25+00:00"
+   "last_ok": "2026-10-06T08:28:47+00:00"
+  },
+  "Google Keyword (Search)": {
+   "initialized": true,
+   "last_ok": "2026-10-06T08:28:47+00:00"
+  },
+  "SearchPilot": {
+   "initialized": true,
+   "last_ok": "2026-10-06T08:28:47+00:00"
+  },
+  "SparkToro": {
+   "initialized": true,
+   "last_ok": "2026-10-06T08:28:47+00:00"
+  },
+  "Amsive": {
+   "initialized": true,
+   "last_ok": "2026-10-06T08:28:47+00:00"
+  },
+  "Cloudflare": {
+   "initialized": true,
+   "last_ok": "2026-10-06T08:28:47+00:00"
+  },
+  "TollBit": {
+   "initialized": true,
+   "last_ok": "2026-10-06T08:28:47+00:00"
   }
  },
  "repo": "nico497/study-radar"

@@ -2,16 +2,16 @@
  "meta": {
   "niche": "SEO and generative engine optimization (GEO) for B2B SaaS",
   "audience": "the content and SEO lead at a B2B SaaS company",
-  "updated": "2026-10-05T14:36:25+00:00",
+  "updated": "2026-10-06T08:28:47+00:00",
   "title": "Study Radar",
   "repo": "nico497/study-radar",
   "run": {
-   "sources": 13,
-   "new_items": 28,
-   "studies": 6,
+   "sources": 19,
+   "new_items": 29,
+   "studies": 10,
    "deferred": 0,
-   "briefed": 6,
-   "unreadable": 0,
+   "briefed": 8,
+   "unreadable": 2,
    "rejected": 0,
    "errors": []
   }
@@ -19,10 +19,10 @@
  "health": [
   {
    "name": "Google Search Central",
-   "checked": "2026-10-05T14:36:25+00:00",
+   "checked": "2026-10-06T08:28:47+00:00",
    "ok": true,
    "found": 10,
-   "new": 1,
+   "new": 0,
    "error": null,
    "url": "https://developers.google.com/search/blog/feed.xml",
    "method": "feed",
@@ -30,10 +30,10 @@
   },
   {
    "name": "Google Search Status",
-   "checked": "2026-10-05T14:36:25+00:00",
+   "checked": "2026-10-06T08:28:47+00:00",
    "ok": true,
    "found": 1,
-   "new": 1,
+   "new": 0,
    "error": null,
    "url": "https://status.search.google.com/en/feed.atom",
    "method": "feed",
@@ -41,7 +41,7 @@
   },
   {
    "name": "Bing Webmaster",
-   "checked": "2026-10-05T14:36:25+00:00",
+   "checked": "2026-10-06T08:28:47+00:00",
    "ok": true,
    "found": 10,
    "new": 0,
@@ -52,40 +52,51 @@
   },
   {
    "name": "OpenAI",
-   "checked": "2026-10-05T14:36:25+00:00",
+   "checked": "2026-10-06T08:28:47+00:00",
    "ok": true,
-   "found": 1246,
-   "new": 2,
+   "found": 1247,
+   "new": 1,
    "error": null,
    "url": "https://openai.com/news/rss.xml",
    "method": "feed",
-   "posts_new": 11
+   "posts_new": 2
+  },
+  {
+   "name": "Google Keyword (Search)",
+   "checked": "2026-10-06T08:28:47+00:00",
+   "ok": true,
+   "found": 20,
+   "new": 1,
+   "error": null,
+   "url": "https://blog.google/products-and-platforms/products/search/rss/",
+   "method": "feed",
+   "posts_new": 8
   },
   {
    "name": "Ahrefs",
-   "checked": "2026-10-05T14:36:25+00:00",
+   "checked": "2026-10-06T08:28:47+00:00",
    "ok": true,
    "found": 10,
-   "new": 4,
+   "new": 2,
    "error": null,
    "url": "https://ahrefs.com/blog/feed/",
    "method": "feed",
-   "posts_new": 5
+   "posts_new": 0
   },
   {
    "name": "Semrush",
-   "checked": "2026-10-05T14:36:25+00:00",
+   "checked": "2026-10-06T08:28:47+00:00",
    "ok": true,
    "found": 20,
-   "new": 2,
+   "new": 0,
    "error": null,
    "url": "https://www.semrush.com/blog/feed/",
    "method": "feed",
-   "posts_new": 5
+   "posts_new": 0
   },
   {
    "name": "Growth Memo",
-   "checked": "2026-10-05T14:36:25+00:00",
+   "checked": "2026-10-06T08:28:47+00:00",
    "ok": true,
    "found": 20,
    "new": 1,
@@ -96,32 +107,32 @@
   },
   {
    "name": "Seer Interactive",
-   "checked": "2026-10-05T14:36:25+00:00",
+   "checked": "2026-10-06T08:28:47+00:00",
    "ok": true,
    "found": 20,
-   "new": 2,
+   "new": 0,
    "error": null,
    "url": "https://www.seerinteractive.com/insights/rss.xml",
    "method": "feed",
-   "posts_new": 1
+   "posts_new": 0
   },
   {
    "name": "Profound",
-   "checked": "2026-10-05T14:36:25+00:00",
+   "checked": "2026-10-06T08:28:47+00:00",
    "ok": true,
    "found": 182,
-   "new": 6,
+   "new": 2,
    "error": null,
    "url": "https://www.tryprofound.com/rss/blog.xml",
    "method": "feed",
-   "posts_new": 2
+   "posts_new": 0
   },
   {
    "name": "Orbit Media",
-   "checked": "2026-10-05T14:36:25+00:00",
+   "checked": "2026-10-06T08:28:47+00:00",
    "ok": true,
    "found": 26,
-   "new": 3,
+   "new": 0,
    "error": null,
    "url": "https://www.orbitmedia.com/blog/",
    "method": "page",
@@ -129,39 +140,118 @@
   },
   {
    "name": "Peec AI",
-   "checked": "2026-10-05T14:36:25+00:00",
+   "checked": "2026-10-06T08:28:47+00:00",
    "ok": true,
    "found": 43,
-   "new": 1,
+   "new": 0,
    "error": null,
    "url": "https://peec.ai/blog",
    "method": "page",
-   "posts_new": 1
+   "posts_new": 0
   },
   {
    "name": "AirOps",
-   "checked": "2026-10-05T14:36:25+00:00",
+   "checked": "2026-10-06T08:28:47+00:00",
    "ok": true,
    "found": 202,
    "new": 0,
    "error": null,
    "url": "https://www.airops.com/blog",
    "method": "page",
-   "posts_new": 2
+   "posts_new": 0
   },
   {
    "name": "BrightEdge",
-   "checked": "2026-10-05T14:36:25+00:00",
+   "checked": "2026-10-06T08:28:47+00:00",
    "ok": true,
    "found": 31,
-   "new": 3,
+   "new": 0,
    "error": null,
    "url": "https://www.brightedge.com/resources/research-reports",
    "method": "page",
    "posts_new": 0
+  },
+  {
+   "name": "SearchPilot",
+   "checked": "2026-10-06T08:28:47+00:00",
+   "ok": true,
+   "found": 4,
+   "new": 4,
+   "error": null,
+   "url": "https://www.searchpilot.com/resources?content_type__in=Tests&sort=-published_date&offset=0",
+   "method": "page",
+   "posts_new": 4
+  },
+  {
+   "name": "SparkToro",
+   "checked": "2026-10-06T08:28:47+00:00",
+   "ok": true,
+   "found": 10,
+   "new": 0,
+   "error": null,
+   "url": "https://sparktoro.com/blog/feed/",
+   "method": "feed",
+   "posts_new": 2
+  },
+  {
+   "name": "Amsive",
+   "checked": "2026-10-06T08:28:47+00:00",
+   "ok": true,
+   "found": 9,
+   "new": 2,
+   "error": null,
+   "url": "https://www.amsive.com/feed/",
+   "method": "feed",
+   "posts_new": 5
+  },
+  {
+   "name": "Cloudflare",
+   "checked": "2026-10-06T08:28:47+00:00",
+   "ok": true,
+   "found": 20,
+   "new": 1,
+   "error": null,
+   "url": "https://blog.cloudflare.com/tag/ai-bots/rss/",
+   "method": "feed",
+   "posts_new": 5
+  },
+  {
+   "name": "TollBit",
+   "checked": "2026-10-06T08:28:47+00:00",
+   "ok": true,
+   "found": 3,
+   "new": 0,
+   "error": null,
+   "url": "https://tollbit.com/state-of-the-bots/",
+   "method": "page",
+   "posts_new": 2
   }
  ],
  "pulses": [
+  {
+   "date": "2026-10-06T08:28:47+00:00",
+   "summary": "AI is reshaping search traffic and visibility, but most evidence this week is early or narrow. The SEO tests are single-site results, so test before you copy them.",
+   "points": [
+    {
+     "text": "AI Overviews showed on 82.91% of US desktop branded searches, so check which of your brand searches trigger them and which outside sites they cite.",
+     "ids": [
+      "ahrefs.com/blog/ai-overviews-on-branded-searches"
+     ]
+    },
+    {
+     "text": "AI citations fade fast: the median page loses half its share within 11 days of peaking, so publish steadily and track each AI engine separately.",
+     "ids": [
+      "tryprofound.com/blog/the-half-life-of-an-ai-citation-is-11-days"
+     ]
+    },
+    {
+     "text": "Bots and AI agents now make up over half of traffic, per Cloudflare (a product pitch), so check your logs and decide what to allow or block.",
+     "ids": [
+      "blog.cloudflare.com/agentic-web"
+     ]
+    }
+   ]
+  },
   {
    "date": "2026-10-05T14:36:25+00:00",
    "summary": "AI search keeps reshaping visibility, and Google began a spam update on 24 Sep. Most AI data is early, from vendors, and not B2B-specific.",
@@ -263,6 +353,320 @@
   }
  ],
  "briefs": [
+  {
+   "id": "blog.cloudflare.com/agentic-web",
+   "url": "https://blog.cloudflare.com/agentic-web/",
+   "source": "Cloudflare",
+   "title": "The Internet has a second audience",
+   "published": "2026-09-30T12:58:00+00:00",
+   "found": "2026-10-06T08:28:47+00:00",
+   "gated": false,
+   "unreadable": null,
+   "pdf_links": [],
+   "brief": {
+    "is_study": true,
+    "headline": "Cloudflare says over half of Internet traffic is now non-human, and AI agent requests grew more than 1,700% in a year.",
+    "study_type": "industry report",
+    "key_stats": [
+     "AI agent daily requests up more than 1,700% in one year",
+     "Human traffic down as much as 40% in under a year in heavily crawled sectors, including software",
+     "AI training share of crawler requests rose from 22% (Spring 2025) to 52% (June 2026)"
+    ],
+    "method": {
+     "sample": "Cloudflare network traffic; size not disclosed",
+     "data_source": "Cloudflare's own network data",
+     "timeframe": "End of 2024 to June 2026",
+     "conflict": "Yes. Cloudflare sells the bot controls, pay-per-use and agent payment tools it promotes here.",
+     "confidence": "medium",
+     "caveat": "Mostly a product pitch; methods, definitions of \"agent\" and the 40% decline lack detail."
+    },
+    "why_it_matters": "Check your logs for agent traffic and decide which content to allow, block or price; software sites saw human visits drop.",
+    "importance": 2,
+    "tags": [
+     "ai search",
+     "analytics",
+     "technical seo"
+    ]
+   },
+   "words": 2210
+  },
+  {
+   "id": "blog.google/products-and-platforms/products/search/3-new-ways-were-improving-search-profiles-for-publishers",
+   "url": "https://blog.google/products-and-platforms/products/search/3-new-ways-were-improving-search-profiles-for-publishers/",
+   "source": "Google Keyword (Search)",
+   "title": "3 new ways we're improving Search profiles for publishers",
+   "published": "2026-09-16T16:00:00+00:00",
+   "found": "2026-10-06T08:28:47+00:00",
+   "gated": false,
+   "unreadable": null,
+   "pdf_links": [],
+   "brief": {
+    "is_study": true,
+    "headline": "Google Search profiles now support multi-brand accounts, longer article headlines, and a lower 10,000-follower bar for U.S. publishers.",
+    "study_type": "official update",
+    "key_stats": [
+     "Eligibility threshold lowered to 10,000 followers",
+     "Followers count across YouTube, Instagram, X, or TikTok",
+     "One login can manage all sub-brand profiles"
+    ],
+    "method": {
+     "sample": "n/a (official announcement)",
+     "data_source": "n/a (official announcement)",
+     "timeframe": "Available from Sep 16, 2026",
+     "conflict": "No data on traffic impact, ranking effect, or how profiles are shown in results.",
+     "confidence": "high",
+     "caveat": "Aimed at publishers and creators in the U.S.; B2B SaaS blogs may not qualify or benefit."
+    },
+    "why_it_matters": "If your brand has 10,000+ followers, claim a profile to get a verified Google home base. Expect no ranking boost.",
+    "importance": 1,
+    "tags": [
+     "ctr & serps",
+     "brand"
+    ]
+   },
+   "words": 369
+  },
+  {
+   "id": "amsive.com/insights/digital-media/two-weeks-into-googles-tcpa-and-troas-change-is-performance-getting-more-predictable",
+   "url": "https://www.amsive.com/insights/digital-media/two-weeks-into-googles-tcpa-and-troas-change-is-performance-getting-more-predictable/",
+   "source": "Amsive",
+   "title": "Two Weeks Into Google's tCPA and tROAS Change: Is Performance Getting More Predictable?",
+   "published": "2026-09-09T16:19:53+00:00",
+   "found": "2026-10-06T08:28:47+00:00",
+   "gated": false,
+   "unreadable": null,
+   "pdf_links": [],
+   "brief": {
+    "is_study": true,
+    "headline": "Amsive's tCPA campaigns ran 62% above target CPA in week two after Google's August 17 change, with no clear tightening.",
+    "study_type": "data analysis",
+    "key_stats": [
+     "Actual CPA vs target: 4% below pre-change, 14% above week one, 62% above week two",
+     "Week two: tCPA conversion rate 8% below baseline; tROAS 29% below",
+     "tCPA campaigns with 30+ weekly conversions: 27% above target in week one, 8% in week two"
+    ],
+    "method": {
+     "sample": "Not disclosed",
+     "data_source": "Amsive's client Google Ads campaigns",
+     "timeframe": "Jul. 27 to Aug. 30, 2026",
+     "conflict": "Amsive sells paid search management services, but this finding doesn't directly sell them.",
+     "confidence": "medium",
+     "caveat": "Campaign count isn't disclosed, the data is only two weeks old, and Amsive admits Maximize Conversions isn't a clean control."
+    },
+    "why_it_matters": "If paid search CPA rises, check conversion rate and landing pages first, not bids, and avoid changing targets repeatedly.",
+    "importance": 1,
+    "tags": [
+     "analytics"
+    ]
+   },
+   "words": 1613
+  },
+  {
+   "id": "amsive.com/insights/digital-media/google-changed-the-rules-on-tcpa-and-troas-the-auction-is-still-catching-up",
+   "url": "https://www.amsive.com/insights/digital-media/google-changed-the-rules-on-tcpa-and-troas-the-auction-is-still-catching-up/",
+   "source": "Amsive",
+   "title": "Google Changed the Rules on tCPA and tROAS. The Auction Is Still Catching Up.",
+   "published": "2026-08-28T17:51:27+00:00",
+   "found": "2026-10-06T08:28:47+00:00",
+   "gated": false,
+   "unreadable": null,
+   "pdf_links": [],
+   "brief": {
+    "is_study": true,
+    "headline": "Google Search CPA rose 21% after the August 17 bidding change, as conversion rate fell 15%.",
+    "study_type": "data analysis",
+    "key_stats": [
+     "Search CPC rose 4%; conversion rate fell 15%; CPA rose 21%",
+     "Target ROAS campaigns: ROAS fell 32%",
+     "B2B technology CPA rose roughly 28% to 34%"
+    ],
+    "method": {
+     "sample": "Dozens of advertisers, hundreds of campaigns",
+     "data_source": "Amsive's Google Ads account data",
+     "timeframe": "Aug 17–23, 2026 vs. prior weeks",
+     "conflict": "Yes. Amsive is an agency selling paid media services and its Audience Science approach.",
+     "confidence": "medium",
+     "caveat": "Only one week of observational data; it doesn't prove the update caused the changes."
+    },
+    "why_it_matters": "This is paid search, not SEO. If you run Google Ads, judge lead quality, not just CPA.",
+    "importance": 1,
+    "tags": [
+     "analytics",
+     "ctr & serps"
+    ]
+   },
+   "words": 2761
+  },
+  {
+   "id": "tollbit.com/state-of-the-bots/q1-2025",
+   "url": "https://tollbit.com/state-of-the-bots/q1-2025/",
+   "source": "TollBit",
+   "title": "TollBit - Your complete web stack for the agentic internet",
+   "published": null,
+   "found": "2026-10-06T08:28:47+00:00",
+   "gated": false,
+   "unreadable": "page has almost no readable text (paywalled, blocked, or built with JavaScript)",
+   "pdf_links": [],
+   "brief": null
+  },
+  {
+   "id": "tollbit.com/state-of-the-bots/q2-2025",
+   "url": "https://tollbit.com/state-of-the-bots/q2-2025/",
+   "source": "TollBit",
+   "title": "TollBit - Your complete web stack for the agentic internet",
+   "published": null,
+   "found": "2026-10-06T08:28:47+00:00",
+   "gated": false,
+   "unreadable": "page has almost no readable text (paywalled, blocked, or built with JavaScript)",
+   "pdf_links": [],
+   "brief": null
+  },
+  {
+   "id": "searchpilot.com/resources/case-studies/does-changing-an-h2-to-an-h1-improve-organic-traffic",
+   "url": "https://www.searchpilot.com/resources/case-studies/does-changing-an-h2-to-an-h1-improve-organic-traffic",
+   "source": "SearchPilot",
+   "title": "Does Changing an H2 to an H1 Improve Organic Traffic?",
+   "published": null,
+   "found": "2026-10-06T08:28:47+00:00",
+   "gated": false,
+   "unreadable": null,
+   "pdf_links": [],
+   "brief": {
+    "is_study": true,
+    "headline": "A travel site's pages gained 4.5% organic traffic after the first H2 became an H1 on pages with no H1.",
+    "study_type": "experiment",
+    "key_stats": [
+     "4.5% organic traffic increase in the variant group",
+     "Estimated 3,000 extra sessions a month if rolled out to the full section",
+     "Earlier test on a quarter of the pages was inconclusive"
+    ],
+    "method": {
+     "sample": "One travel customer's listing page template; page count not disclosed",
+     "data_source": "their own SEO split-testing platform",
+     "timeframe": "Not disclosed",
+     "conflict": "Yes, SearchPilot sells SEO split-testing software, and this result promotes it.",
+     "confidence": "medium",
+     "caveat": "One site, no test length or page count, and the 'why' is a guess."
+    },
+    "why_it_matters": "If your key pages have no H1, add one. Test it first, as this is one site's result.",
+    "importance": 2,
+    "tags": [
+     "technical seo",
+     "content",
+     "ctr & serps"
+    ]
+   },
+   "words": 806
+  },
+  {
+   "id": "searchpilot.com/resources/case-studies/removing-seo-text-2024",
+   "url": "https://www.searchpilot.com/resources/case-studies/removing-seo-text-2024",
+   "source": "SearchPilot",
+   "title": "How does removing SEO text impact SEO performance?",
+   "published": null,
+   "found": "2026-10-06T08:28:47+00:00",
+   "gated": false,
+   "unreadable": null,
+   "pdf_links": [],
+   "brief": {
+    "is_study": true,
+    "headline": "Removing SEO text from one retailer's category pages raised mobile organic traffic; desktop traffic did not change.",
+    "study_type": "experiment",
+    "key_stats": [
+     "Mobile organic traffic: statistically significant increase (size not disclosed)",
+     "Desktop organic traffic: negligible change",
+     "A second test on another site section also lifted mobile traffic"
+    ],
+    "method": {
+     "sample": "One retail customer's category pages; page count not disclosed",
+     "data_source": "SearchPilot controlled split test on a customer site",
+     "timeframe": "Not disclosed",
+     "conflict": "Yes. SearchPilot sells SEO A/B testing software, and this result promotes testing.",
+     "confidence": "medium",
+     "caveat": "No uplift size, page counts or dates are shown, and it covers one retail site."
+    },
+    "why_it_matters": "Don't assume bottom-of-page SEO text helps. Test removing it on a few B2B category or feature pages first.",
+    "importance": 2,
+    "tags": [
+     "content",
+     "technical seo",
+     "ctr & serps"
+    ]
+   },
+   "words": 752
+  },
+  {
+   "id": "searchpilot.com/resources/case-studies/removing-self-referential-breadcrumb",
+   "url": "https://www.searchpilot.com/resources/case-studies/removing-self-referential-breadcrumb",
+   "source": "SearchPilot",
+   "title": "Will removing self-referential breadcrumb links improve organic traffic?",
+   "published": null,
+   "found": "2026-10-06T08:28:47+00:00",
+   "gated": false,
+   "unreadable": null,
+   "pdf_links": [],
+   "brief": {
+    "is_study": true,
+    "headline": "Removing the self-linking last breadcrumb on retail product listing pages cut organic traffic by 5.5% in a SearchPilot test.",
+    "study_type": "experiment",
+    "key_stats": [
+     "5.5% drop in organic traffic, statistically significant",
+     "Their Google Search Console tool tied the drop to ranking changes",
+     "Visible breadcrumb changed, but schema (page markup for search engines) did not"
+    ],
+    "method": {
+     "sample": "One e-commerce customer's product listing pages",
+     "data_source": "Their own SEO split-testing platform",
+     "timeframe": "Not disclosed",
+     "conflict": "Yes, SearchPilot sells SEO split-testing software, and this post promotes it.",
+     "confidence": "medium",
+     "caveat": "The schema mismatch is a guess; page count, test length and confidence interval are not shared."
+    },
+    "why_it_matters": "If you edit breadcrumbs, update the schema to match. Don't expect a gain from removing the last link.",
+    "importance": 2,
+    "tags": [
+     "technical seo",
+     "ctr & serps"
+    ]
+   },
+   "words": 778
+  },
+  {
+   "id": "searchpilot.com/resources/case-studies/removing-meta-descriptions",
+   "url": "https://www.searchpilot.com/resources/case-studies/removing-meta-descriptions",
+   "source": "SearchPilot",
+   "title": "Does removing meta descriptions improve click-through rates?",
+   "published": null,
+   "found": "2026-10-06T08:28:47+00:00",
+   "gated": false,
+   "unreadable": null,
+   "pdf_links": [],
+   "brief": {
+    "is_study": true,
+    "headline": "Removing too-long meta descriptions on one retailer's listing pages lifted monthly organic sessions an estimated 4.2%.",
+    "study_type": "experiment",
+    "key_stats": [
+     "Estimated +4.2% monthly organic sessions",
+     "Not significant at 95% confidence",
+     "Positive at 90% confidence"
+    ],
+    "method": {
+     "sample": "One ecommerce site's listing pages",
+     "data_source": "their own split-testing platform, one customer",
+     "timeframe": "Not disclosed",
+     "conflict": "Yes, SearchPilot sells SEO split-testing software, and this post promotes it.",
+     "confidence": "low",
+     "caveat": "One retail site, no page count or dates, and the result missed the usual 95% bar."
+    },
+    "why_it_matters": "Don't mass-delete meta descriptions on this evidence. If you test it, use a controlled test on long ones only.",
+    "importance": 1,
+    "tags": [
+     "ctr & serps",
+     "technical seo"
+    ]
+   },
+   "words": 709
+  },
   {
    "id": "openai.com/index/new-chatgpt-ads-format-and-measurement",
    "url": "https://openai.com/index/new-chatgpt-ads-format-and-measurement",
