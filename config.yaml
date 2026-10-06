@@ -55,6 +55,11 @@ sources:
     kind: official
     focus: ChatGPT search features, how ChatGPT finds, ranks or cites web sources, OpenAI crawlers (OAI-SearchBot, GPTBot), shopping or ads in ChatGPT, publisher partnerships. NOT model launches, research papers, education, customer stories, policy or company news
 
+  - name: Google Keyword (Search)
+    feed: https://blog.google/products-and-platforms/products/search/rss/
+    kind: official
+    focus: AI Mode, AI Overviews, ranking or Search feature changes that affect publishers and site owners, Search data releases. NOT consumer tips, seasonal trends, Translate, policy or company news
+
   # --- Research: companies that publish their own data ---
   - name: Ahrefs
     feed: https://ahrefs.com/blog/feed/
@@ -90,3 +95,25 @@ sources:
     page: https://www.brightedge.com/resources/research-reports
     link_pattern: /resources/research-reports/[a-z0-9-]+/?$
     all_studies: true
+
+  - name: SearchPilot
+    page: https://www.searchpilot.com/resources?content_type__in=Tests&sort=-published_date&offset=0
+    link_pattern: /resources/case-studies/[a-z0-9-]+/?$
+    all_studies: true
+    first_run_keep: 6
+
+  - name: SparkToro
+    feed: https://sparktoro.com/blog/feed/
+
+  - name: Amsive
+    feed: https://www.amsive.com/feed/
+    exclude_pattern: /webinar
+
+  - name: Cloudflare
+    feed: https://blog.cloudflare.com/tag/ai-bots/rss/
+
+  - name: TollBit
+    page: https://tollbit.com/state-of-the-bots/
+    link_pattern: tollbit\.com/state-of-the-bots/[a-z0-9-]+/?$
+    all_studies: true
+    first_run_keep: 2
