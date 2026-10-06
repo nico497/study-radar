@@ -6,12 +6,12 @@
   "title": "Study Radar",
   "repo": "nico497/study-radar",
   "run": {
-   "sources": 19,
+   "sources": 18,
    "new_items": 29,
    "studies": 10,
    "deferred": 0,
    "briefed": 8,
-   "unreadable": 2,
+   "unreadable": 0,
    "rejected": 0,
    "errors": []
   }
@@ -214,17 +214,6 @@
    "url": "https://blog.cloudflare.com/tag/ai-bots/rss/",
    "method": "feed",
    "posts_new": 5
-  },
-  {
-   "name": "TollBit",
-   "checked": "2026-10-06T08:28:47+00:00",
-   "ok": true,
-   "found": 3,
-   "new": 0,
-   "error": null,
-   "url": "https://tollbit.com/state-of-the-bots/",
-   "method": "page",
-   "posts_new": 2
   }
  ],
  "pulses": [
@@ -496,30 +485,6 @@
     ]
    },
    "words": 2761
-  },
-  {
-   "id": "tollbit.com/state-of-the-bots/q1-2025",
-   "url": "https://tollbit.com/state-of-the-bots/q1-2025/",
-   "source": "TollBit",
-   "title": "TollBit - Your complete web stack for the agentic internet",
-   "published": null,
-   "found": "2026-10-06T08:28:47+00:00",
-   "gated": false,
-   "unreadable": "page has almost no readable text (paywalled, blocked, or built with JavaScript)",
-   "pdf_links": [],
-   "brief": null
-  },
-  {
-   "id": "tollbit.com/state-of-the-bots/q2-2025",
-   "url": "https://tollbit.com/state-of-the-bots/q2-2025/",
-   "source": "TollBit",
-   "title": "TollBit - Your complete web stack for the agentic internet",
-   "published": null,
-   "found": "2026-10-06T08:28:47+00:00",
-   "gated": false,
-   "unreadable": "page has almost no readable text (paywalled, blocked, or built with JavaScript)",
-   "pdf_links": [],
-   "brief": null
   },
   {
    "id": "searchpilot.com/resources/case-studies/does-changing-an-h2-to-an-h1-improve-organic-traffic",

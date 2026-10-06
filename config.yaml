@@ -111,9 +111,3 @@ sources:
 
   - name: Cloudflare
     feed: https://blog.cloudflare.com/tag/ai-bots/rss/
-
-  - name: TollBit
-    page: https://tollbit.com/state-of-the-bots/
-    link_pattern: tollbit\.com/state-of-the-bots/[a-z0-9-]+/?$
-    all_studies: true
-    first_run_keep: 2
