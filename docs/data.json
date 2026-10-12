@@ -2,35 +2,35 @@
  "meta": {
   "niche": "SEO and generative engine optimization (GEO) for B2B SaaS",
   "audience": "the content and SEO lead at a B2B SaaS company",
-  "updated": "2026-10-06T08:28:47+00:00",
+  "updated": "2026-10-12T15:22:59+00:00",
   "title": "Study Radar",
   "repo": "nico497/study-radar",
   "run": {
    "sources": 18,
-   "new_items": 29,
-   "studies": 10,
+   "new_items": 37,
+   "studies": 7,
    "deferred": 0,
-   "briefed": 8,
+   "briefed": 4,
    "unreadable": 0,
-   "rejected": 0,
+   "rejected": 3,
    "errors": []
   }
  },
  "health": [
   {
    "name": "Google Search Central",
-   "checked": "2026-10-06T08:28:47+00:00",
+   "checked": "2026-10-12T15:22:59+00:00",
    "ok": true,
    "found": 10,
-   "new": 0,
+   "new": 1,
    "error": null,
    "url": "https://developers.google.com/search/blog/feed.xml",
    "method": "feed",
-   "posts_new": 0
+   "posts_new": 1
   },
   {
    "name": "Google Search Status",
-   "checked": "2026-10-06T08:28:47+00:00",
+   "checked": "2026-10-12T15:22:59+00:00",
    "ok": true,
    "found": 1,
    "new": 0,
@@ -41,65 +41,65 @@
   },
   {
    "name": "Bing Webmaster",
-   "checked": "2026-10-06T08:28:47+00:00",
-   "ok": true,
-   "found": 10,
+   "checked": "2026-10-12T15:22:59+00:00",
+   "ok": false,
+   "found": 0,
    "new": 0,
-   "error": null,
+   "error": "Exceeded 30 redirects.",
    "url": "https://blogs.bing.com/webmaster/feed",
-   "method": "feed",
+   "method": null,
    "posts_new": 0
   },
   {
    "name": "OpenAI",
-   "checked": "2026-10-06T08:28:47+00:00",
+   "checked": "2026-10-12T15:22:59+00:00",
    "ok": true,
-   "found": 1247,
-   "new": 1,
+   "found": 1287,
+   "new": 0,
    "error": null,
    "url": "https://openai.com/news/rss.xml",
    "method": "feed",
-   "posts_new": 2
+   "posts_new": 14
   },
   {
    "name": "Google Keyword (Search)",
-   "checked": "2026-10-06T08:28:47+00:00",
+   "checked": "2026-10-12T15:22:59+00:00",
    "ok": true,
    "found": 20,
    "new": 1,
    "error": null,
    "url": "https://blog.google/products-and-platforms/products/search/rss/",
    "method": "feed",
-   "posts_new": 8
-  },
-  {
-   "name": "Ahrefs",
-   "checked": "2026-10-06T08:28:47+00:00",
-   "ok": true,
-   "found": 10,
-   "new": 2,
-   "error": null,
-   "url": "https://ahrefs.com/blog/feed/",
-   "method": "feed",
    "posts_new": 0
   },
   {
+   "name": "Ahrefs",
+   "checked": "2026-10-12T15:22:59+00:00",
+   "ok": true,
+   "found": 10,
+   "new": 1,
+   "error": null,
+   "url": "https://ahrefs.com/blog/feed/",
+   "method": "feed",
+   "posts_new": 3
+  },
+  {
    "name": "Semrush",
-   "checked": "2026-10-06T08:28:47+00:00",
+   "checked": "2026-10-12T15:22:59+00:00",
    "ok": true,
    "found": 20,
    "new": 0,
    "error": null,
    "url": "https://www.semrush.com/blog/feed/",
    "method": "feed",
-   "posts_new": 0
+   "posts_new": 5
   },
   {
    "name": "Growth Memo",
-   "checked": "2026-10-06T08:28:47+00:00",
+   "checked": "2026-10-12T15:22:59+00:00",
    "ok": true,
    "found": 20,
-   "new": 1,
+   "new": 0,
    "error": null,
    "url": "https://www.growth-memo.com/feed",
    "method": "feed",
@@ -107,62 +107,62 @@
   },
   {
    "name": "Seer Interactive",
-   "checked": "2026-10-06T08:28:47+00:00",
+   "checked": "2026-10-12T15:22:59+00:00",
    "ok": true,
    "found": 20,
    "new": 0,
    "error": null,
    "url": "https://www.seerinteractive.com/insights/rss.xml",
    "method": "feed",
-   "posts_new": 0
+   "posts_new": 1
   },
   {
    "name": "Profound",
-   "checked": "2026-10-06T08:28:47+00:00",
+   "checked": "2026-10-12T15:22:59+00:00",
    "ok": true,
-   "found": 182,
-   "new": 2,
+   "found": 184,
+   "new": 0,
    "error": null,
    "url": "https://www.tryprofound.com/rss/blog.xml",
    "method": "feed",
-   "posts_new": 0
+   "posts_new": 2
   },
   {
    "name": "Orbit Media",
-   "checked": "2026-10-06T08:28:47+00:00",
+   "checked": "2026-10-12T15:22:59+00:00",
    "ok": true,
    "found": 26,
-   "new": 0,
+   "new": 1,
    "error": null,
    "url": "https://www.orbitmedia.com/blog/",
    "method": "page",
-   "posts_new": 0
+   "posts_new": 1
   },
   {
    "name": "Peec AI",
-   "checked": "2026-10-06T08:28:47+00:00",
+   "checked": "2026-10-12T15:22:59+00:00",
    "ok": true,
-   "found": 43,
-   "new": 0,
+   "found": 44,
+   "new": 1,
    "error": null,
    "url": "https://peec.ai/blog",
    "method": "page",
-   "posts_new": 0
+   "posts_new": 1
   },
   {
    "name": "AirOps",
-   "checked": "2026-10-06T08:28:47+00:00",
+   "checked": "2026-10-12T15:22:59+00:00",
    "ok": true,
-   "found": 202,
+   "found": 14,
    "new": 0,
    "error": null,
    "url": "https://www.airops.com/blog",
    "method": "page",
-   "posts_new": 0
+   "posts_new": 7
   },
   {
    "name": "BrightEdge",
-   "checked": "2026-10-06T08:28:47+00:00",
+   "checked": "2026-10-12T15:22:59+00:00",
    "ok": true,
    "found": 31,
    "new": 0,
@@ -173,50 +173,74 @@
   },
   {
    "name": "SearchPilot",
-   "checked": "2026-10-06T08:28:47+00:00",
+   "checked": "2026-10-12T15:22:59+00:00",
    "ok": true,
    "found": 4,
    "new": 4,
    "error": null,
    "url": "https://www.searchpilot.com/resources?content_type__in=Tests&sort=-published_date&offset=0",
    "method": "page",
-   "posts_new": 4
+   "posts_new": 0
   },
   {
    "name": "SparkToro",
-   "checked": "2026-10-06T08:28:47+00:00",
+   "checked": "2026-10-12T15:22:59+00:00",
    "ok": true,
    "found": 10,
    "new": 0,
    "error": null,
    "url": "https://sparktoro.com/blog/feed/",
    "method": "feed",
-   "posts_new": 2
+   "posts_new": 1
   },
   {
    "name": "Amsive",
-   "checked": "2026-10-06T08:28:47+00:00",
+   "checked": "2026-10-12T15:22:59+00:00",
    "ok": true,
-   "found": 9,
+   "found": 8,
    "new": 2,
    "error": null,
    "url": "https://www.amsive.com/feed/",
    "method": "feed",
-   "posts_new": 5
+   "posts_new": 0
   },
   {
    "name": "Cloudflare",
-   "checked": "2026-10-06T08:28:47+00:00",
+   "checked": "2026-10-12T15:22:59+00:00",
    "ok": true,
    "found": 20,
    "new": 1,
    "error": null,
    "url": "https://blog.cloudflare.com/tag/ai-bots/rss/",
    "method": "feed",
-   "posts_new": 5
+   "posts_new": 0
   }
  ],
  "pulses": [
+  {
+   "date": "2026-10-12T15:22:59+00:00",
+   "summary": "Little changed in Google guidance this week. The useful news is about AI search: what gets cited, how often ChatGPT searches, and rising bot traffic.",
+   "points": [
+    {
+     "text": "Original data is the AI search tactic that works best, yet most marketers pick easier ones; 24% of those publishing it report strong results (self-reported survey).",
+     "ids": [
+      "orbitmedia.com/blog/ai-search-marketing"
+     ]
+    },
+    {
+     "text": "ChatGPT's free model searched the web in only 14.4% of responses, so be cautious; publish original research and your own product facts.",
+     "ids": [
+      "ahrefs.com/blog/query-fan-out-chatgpt"
+     ]
+    },
+    {
+     "text": "AI agent requests grew over 1,700% in a year, per Cloudflare (a product pitch); check your logs and decide what to allow or block.",
+     "ids": [
+      "blog.cloudflare.com/agentic-web"
+     ]
+    }
+   ]
+  },
   {
    "date": "2026-10-06T08:28:47+00:00",
    "summary": "AI is reshaping search traffic and visibility, but most evidence this week is early or narrow. The SEO tests are single-site results, so test before you copy them.",
@@ -342,6 +366,153 @@
   }
  ],
  "briefs": [
+  {
+   "id": "ahrefs.com/blog/query-fan-out-chatgpt",
+   "url": "https://ahrefs.com/blog/query-fan-out-chatgpt/",
+   "source": "Ahrefs",
+   "title": "How ChatGPT Does Query Fan-Out (15 Million Queries Studied)",
+   "published": "2026-10-12T08:55:12+00:00",
+   "found": "2026-10-12T15:22:59+00:00",
+   "gated": false,
+   "unreadable": null,
+   "pdf_links": [],
+   "brief": {
+    "is_study": true,
+    "headline": "ChatGPT's free model searched the web for only 14.4% of 66.6 million responses, averaging 1.6 fan-out queries.",
+    "study_type": "data analysis",
+    "key_stats": [
+     "14.4% of 66.6M responses triggered a web search",
+     "75.9% of top site: searches targeted brand sites",
+     "Reddit citations fell 88% in six months"
+    ],
+    "method": {
+     "sample": "66.6M responses, 15M fan-out queries",
+     "data_source": "Ahrefs Brand Radar, free logged-out ChatGPT",
+     "timeframe": "August–September 2026 (citations: March–September)",
+     "conflict": "Yes. Ahrefs sells Brand Radar and Ask Ahrefs, both promoted as the way to track this.",
+     "confidence": "medium",
+     "caveat": "One free model over two months; other studies found far more fan-outs and site: searches."
+    },
+    "why_it_matters": "Publish original research and your own product facts, and watch whether summary-style pages keep losing ChatGPT citations.",
+    "importance": 2,
+    "tags": [
+     "ai search",
+     "content",
+     "brand"
+    ]
+   },
+   "words": 3282
+  },
+  {
+   "id": "orbitmedia.com/blog/ai-search-marketing",
+   "url": "https://www.orbitmedia.com/blog/ai-search-marketing/",
+   "source": "Orbit Media",
+   "title": "What 1000+ Marketers (and 100 tools) Are Doing about AI Search | Orbit Media Studios",
+   "published": "2026-10-07T16:56:23+00:00",
+   "found": "2026-10-12T15:22:59+00:00",
+   "gated": false,
+   "unreadable": null,
+   "pdf_links": [],
+   "brief": {
+    "is_study": true,
+    "headline": "Marketers favor the easiest AI search tactics, yet publishing original data works best: 24% of those doing it report strong results.",
+    "study_type": "survey",
+    "key_stats": [
+     "Only 36% of marketers have an AI search strategy, and only they beat the benchmark",
+     "Original data: 24% report strong results, but only 26% do it",
+     "40% of 100 free AI audit tools never ask an AI a question"
+    ],
+    "method": {
+     "sample": "1,042 content marketers; 100 audit tools; 150 articles",
+     "data_source": "Own survey, article review, and tool review",
+     "timeframe": "2026 (direct traffic data: Jan 2023–Jul 2026)",
+     "conflict": "No direct product tie; Orbit sells a book and agency services, and promotes its own research.",
+     "confidence": "medium",
+     "caveat": "Self-reported survey showing links, not cause; audit tools were reviewed by their claims, not run."
+    },
+    "why_it_matters": "Put effort into original data and a real AI search strategy, not just FAQs and schema.",
+    "importance": 2,
+    "tags": [
+     "ai search",
+     "content",
+     "analytics"
+    ]
+   },
+   "words": 1447
+  },
+  {
+   "id": "developers.google.com/search/blog/2026/10/seo-learning-paths",
+   "url": "https://developers.google.com/search/blog/2026/10/seo-learning-paths",
+   "source": "Google Search Central",
+   "title": "New learning paths: curated YouTube playlists for Search fundamentals and Technical SEO  |  Google Search Central Blog  |  Google for Developers",
+   "published": "2026-10-06T00:00:00+00:00",
+   "found": "2026-10-12T15:22:59+00:00",
+   "gated": false,
+   "unreadable": null,
+   "pdf_links": [],
+   "brief": {
+    "is_study": true,
+    "headline": "Google Search Central launched two curated YouTube playlists: Search fundamentals for beginners and Technical SEO fundamentals.",
+    "study_type": "official update",
+    "key_stats": [
+     "Two playlists, both live as of October 6, 2026",
+     "Beginner list: crawling, indexing, Search Console, Google Trends",
+     "Technical list: crawl budget, robots.txt, rendering, bulk data exports and APIs"
+    ],
+    "method": {
+     "sample": "n/a (official announcement)",
+     "data_source": "n/a (official announcement)",
+     "timeframe": "Live from October 6, 2026",
+     "conflict": "Doesn't say if the videos are new or updated, or cover AI search.",
+     "confidence": "high",
+     "caveat": "It repackages existing videos. No ranking change, new guidance or GEO content is announced."
+    },
+    "why_it_matters": "Nothing to fix. Use the playlists to onboard new hires, and send developers to the technical list.",
+    "importance": 1,
+    "tags": [
+     "technical seo",
+     "content"
+    ]
+   },
+   "words": 413
+  },
+  {
+   "id": "peec.ai/blog/publish-stats-get-cited-the-tactic-that-put-my-data-all-over-the-web",
+   "url": "https://peec.ai/blog/publish-stats-get-cited-the-tactic-that-put-my-data-all-over-the-web",
+   "source": "Peec AI",
+   "title": "Publish stats, get cited: The tactic that put my data all over the web - Peec AI",
+   "published": null,
+   "found": "2026-10-12T15:22:59+00:00",
+   "gated": false,
+   "unreadable": null,
+   "pdf_links": [],
+   "brief": {
+    "is_study": true,
+    "headline": "A fake 50,000-stat site kept getting pulled by ChatGPT for 7 months, though Google dropped it.",
+    "study_type": "experiment",
+    "key_stats": [
+     "10,000+ ChatGPT sessions in GA4 since March",
+     "330+ referring domains, including Shopify, DHL and Bluehost",
+     "About 72,000 ChatGPT-User requests in the last 30 days"
+    ],
+    "method": {
+     "sample": "One fake site; one real-data test page",
+     "data_source": "their own test site (GA4, Cloudflare, Ahrefs, Semrush)",
+     "timeframe": "March to October 2026 (about 7 months)",
+     "conflict": "Yes. Peec sells AI search tracking, and the post promotes its tool and stats page.",
+     "confidence": "low",
+     "caveat": "One site, no control group, and the real-data test has no published results."
+    },
+    "why_it_matters": "Stats pages with clear sources and years can earn AI citations and links. Check that AI bots can fetch your pages.",
+    "importance": 2,
+    "tags": [
+     "ai search",
+     "content",
+     "links"
+    ]
+   },
+   "words": 2926
+  },
   {
    "id": "blog.cloudflare.com/agentic-web",
    "url": "https://blog.cloudflare.com/agentic-web/",
