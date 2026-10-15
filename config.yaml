@@ -111,3 +111,6 @@ sources:
 
   - name: Cloudflare
     feed: https://blog.cloudflare.com/tag/ai-bots/rss/
+
+  - name: Lily Ray
+    feed: https://lilyraynyc.substack.com/feed
