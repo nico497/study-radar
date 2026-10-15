@@ -29,6 +29,9 @@ models:
 # Optional per source:
 #   kind: official         official announcements (e.g. Google): triage keeps real
 #                          changes, briefs are framed as updates, not studies
+#   kind: commentary       independent expert opinion/analysis, not a data study: triage
+#                          uses a high bar (specific prediction or non-obvious analysis,
+#                          not generic takes), briefs are framed as a take, not a study
 #   all_studies: true      skip triage: brief everything from this source
 #   link_pattern: /x/      only keep URLs matching this regex
 #   exclude_pattern: /y/   drop URLs matching this regex
@@ -114,3 +117,4 @@ sources:
 
   - name: Lily Ray
     feed: https://lilyraynyc.substack.com/feed
+    kind: commentary

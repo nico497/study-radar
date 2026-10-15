@@ -96,9 +96,12 @@ Pick companies that publish their **own data**: tool vendors with big datasets, 
 
 Busy official sources can take a `focus` so only posts on that topic get through. For example, the OpenAI source only keeps posts about ChatGPT search, crawlers and citations, not model launches or customer stories.
 
+**Independent commentators** (an expert's blog or newsletter) rarely publish data, but can still be worth watching for genuinely sharp takes. Mark them `kind: commentary`: triage uses a high bar and only lets through a specific prediction or non-obvious analysis — generic tips, roundups and personal updates are dropped. Most posts from a commentary source should *not* get briefed; only the standout ones.
+
 The starter list covers SEO and GEO:
 - **Official:** Google Search Central, Google Search Status, Bing Webmaster, OpenAI (search-related only)
 - **Research:** Ahrefs, Semrush, Growth Memo, Seer Interactive, Profound, Orbit Media, Peec AI, AirOps, BrightEdge
+- **Commentary:** Lily Ray
 
 Swap them for your own niche.
 

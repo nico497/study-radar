@@ -355,7 +355,18 @@ If an item says [only keep: ...], keep it only if it fits that focus.
 If unsure, include it."""
 
 
-def triage(cands: list[dict], cfg: dict, official: bool = False) -> set[int]:
+COMMENTARY_TRIAGE_SYSTEM = """You screen posts from an independent expert commentator (not a data study, not an official source) for a digest read by practitioners. Pick only the posts with a genuinely useful, substantive take: a specific prediction, a non-obvious analysis of a real change, or a first-hand observation that would change how a practitioner thinks or acts.
+
+Include: informed predictions about where the industry or a platform is heading, analysis of a real change with the author's own interpretation, a specific contrarian or non-obvious argument, first-hand findings from the author's own work.
+
+Exclude: generic tips or advice, roundups of other people's news, event or talk recaps, personal or career updates, promotional posts, vague or low-substance takes.
+
+If an item says [only keep: ...], keep it only if it fits that focus.
+
+This is a higher bar than "on topic" — most posts from a commentator should be excluded. If unsure, exclude."""
+
+
+def triage(cands: list[dict], cfg: dict, kind: str = "study") -> set[int]:
     lines = []
     for i, c in enumerate(cands):
         snip = f" | {c['snippet'][:280]}" if c.get("snippet") else ""
@@ -363,7 +374,7 @@ def triage(cands: list[dict], cfg: dict, official: bool = False) -> set[int]:
         lines.append(f"[{i}] ({c['source']}){focus} {c['title']}{snip}\n    {c['url']}")
     user = (f"Niche: {cfg['niche']}\n\nItems:\n" + "\n".join(lines) +
             "\n\nReturn the indices of the original-research items.")
-    system = OFFICIAL_TRIAGE_SYSTEM if official else TRIAGE_SYSTEM
+    system = {"official": OFFICIAL_TRIAGE_SYSTEM, "commentary": COMMENTARY_TRIAGE_SYSTEM}.get(kind, TRIAGE_SYSTEM)
     out = call_claude(cfg["models"]["triage"], system, user, TRIAGE_TOOL, 600)
     return {i for i in out.get("studies", []) if isinstance(i, int) and 0 <= i < len(cands)}
 
@@ -432,6 +443,16 @@ def write_brief(item: dict, art: dict, cfg: dict) -> dict:
                        "conflict = what the platform doesn't say (max 15 words). "
                        "Confidence = how concrete it is: high = specific, dated change; medium = general guidance; "
                        "low = vague hints. Importance 3 for ranking updates or changes practitioners must act on.")
+    elif item.get("commentary"):
+        gated_note += ("\nNOTE: This is commentary/opinion from an independent expert, not a data study. "
+                       "Set is_study true only if it has a specific, substantive claim, prediction or analysis "
+                       "worth telling the reader — a real point of view, not generic advice. Otherwise set it "
+                       "false. Use study_type 'other'. The headline states the claim or prediction itself. "
+                       "For method: sample and data_source 'n/a (commentary)', timeframe = when it applies. "
+                       "conflict = any personal or business stake in the take (max 15 words). "
+                       "Confidence = how well-supported the reasoning is: high = concrete evidence or reasoning; "
+                       "medium = plausible but speculative; low = vague or unsupported. Importance 3 only if it "
+                       "should change what the reader does or watches.")
     user = f"""Audience: {cfg['audience']}
 Niche: {cfg['niche']}
 
@@ -703,7 +724,8 @@ def run(cfg: dict) -> dict:
                     mark(it["url"], name, "baseline")
                     continue
             new.append({**it, "source": name, "all_studies": bool(src.get("all_studies")),
-                        "official": src.get("kind") == "official", "focus": src.get("focus", "")})
+                        "official": src.get("kind") == "official",
+                        "commentary": src.get("kind") == "commentary", "focus": src.get("focus", "")})
         new = new[: int(cfg["max_new_per_source"])]
         h["new"] = len(new)
         cands += new
@@ -715,13 +737,17 @@ def run(cfg: dict) -> dict:
     log(f"== Triage {len(cands)} new items")
     studies = [c for c in cands if c["all_studies"]]
     to_triage = [c for c in cands if not c["all_studies"]]
+
+    def item_kind(c: dict) -> str:
+        return "official" if c["official"] else "commentary" if c.get("commentary") else "study"
+
     batches = []
-    for official in (False, True):
-        group = [c for c in to_triage if c["official"] == official]
-        batches += [(group[i:i + 30], official) for i in range(0, len(group), 30)]
-    for batch, official in batches:
+    for kind in ("study", "official", "commentary"):
+        group = [c for c in to_triage if item_kind(c) == kind]
+        batches += [(group[i:i + 30], kind) for i in range(0, len(group), 30)]
+    for batch, kind in batches:
         try:
-            picked = triage(batch, cfg, official)
+            picked = triage(batch, cfg, kind)
         except Exception as e:  # noqa: BLE001
             log(f"  triage failed, will retry next run: {e}")
             errors.append(f"triage: {str(e)[:300]}")
