@@ -2,35 +2,35 @@
  "meta": {
   "niche": "SEO and generative engine optimization (GEO) for B2B SaaS",
   "audience": "the content and SEO lead at a B2B SaaS company",
-  "updated": "2026-10-12T15:22:59+00:00",
+  "updated": "2026-10-19T13:12:53+00:00",
   "title": "Study Radar",
   "repo": "nico497/study-radar",
   "run": {
-   "sources": 18,
-   "new_items": 37,
-   "studies": 7,
+   "sources": 19,
+   "new_items": 35,
+   "studies": 8,
    "deferred": 0,
-   "briefed": 4,
+   "briefed": 8,
    "unreadable": 0,
-   "rejected": 3,
+   "rejected": 0,
    "errors": []
   }
  },
  "health": [
   {
    "name": "Google Search Central",
-   "checked": "2026-10-12T15:22:59+00:00",
+   "checked": "2026-10-19T13:12:53+00:00",
    "ok": true,
    "found": 10,
-   "new": 1,
+   "new": 0,
    "error": null,
    "url": "https://developers.google.com/search/blog/feed.xml",
    "method": "feed",
-   "posts_new": 1
+   "posts_new": 0
   },
   {
    "name": "Google Search Status",
-   "checked": "2026-10-12T15:22:59+00:00",
+   "checked": "2026-10-19T13:12:53+00:00",
    "ok": true,
    "found": 1,
    "new": 0,
@@ -41,128 +41,128 @@
   },
   {
    "name": "Bing Webmaster",
-   "checked": "2026-10-12T15:22:59+00:00",
-   "ok": false,
-   "found": 0,
-   "new": 0,
-   "error": "Exceeded 30 redirects.",
-   "url": "https://blogs.bing.com/webmaster/feed",
-   "method": null,
-   "posts_new": 0
-  },
-  {
-   "name": "OpenAI",
-   "checked": "2026-10-12T15:22:59+00:00",
-   "ok": true,
-   "found": 1287,
-   "new": 0,
-   "error": null,
-   "url": "https://openai.com/news/rss.xml",
-   "method": "feed",
-   "posts_new": 14
-  },
-  {
-   "name": "Google Keyword (Search)",
-   "checked": "2026-10-12T15:22:59+00:00",
-   "ok": true,
-   "found": 20,
-   "new": 1,
-   "error": null,
-   "url": "https://blog.google/products-and-platforms/products/search/rss/",
-   "method": "feed",
-   "posts_new": 0
-  },
-  {
-   "name": "Ahrefs",
-   "checked": "2026-10-12T15:22:59+00:00",
+   "checked": "2026-10-19T13:12:53+00:00",
    "ok": true,
    "found": 10,
    "new": 1,
    "error": null,
+   "url": "https://blogs.bing.com/webmaster/feed",
+   "method": "feed",
+   "posts_new": 1
+  },
+  {
+   "name": "OpenAI",
+   "checked": "2026-10-19T13:12:53+00:00",
+   "ok": true,
+   "found": 1299,
+   "new": 0,
+   "error": null,
+   "url": "https://openai.com/news/rss.xml",
+   "method": "feed",
+   "posts_new": 12
+  },
+  {
+   "name": "Google Keyword (Search)",
+   "checked": "2026-10-19T13:12:53+00:00",
+   "ok": true,
+   "found": 20,
+   "new": 2,
+   "error": null,
+   "url": "https://blog.google/products-and-platforms/products/search/rss/",
+   "method": "feed",
+   "posts_new": 5
+  },
+  {
+   "name": "Ahrefs",
+   "checked": "2026-10-19T13:12:53+00:00",
+   "ok": true,
+   "found": 10,
+   "new": 0,
+   "error": null,
    "url": "https://ahrefs.com/blog/feed/",
    "method": "feed",
-   "posts_new": 3
+   "posts_new": 1
   },
   {
    "name": "Semrush",
-   "checked": "2026-10-12T15:22:59+00:00",
+   "checked": "2026-10-19T13:12:53+00:00",
    "ok": true,
    "found": 20,
    "new": 0,
    "error": null,
    "url": "https://www.semrush.com/blog/feed/",
    "method": "feed",
-   "posts_new": 5
-  },
-  {
-   "name": "Growth Memo",
-   "checked": "2026-10-12T15:22:59+00:00",
-   "ok": true,
-   "found": 20,
-   "new": 0,
-   "error": null,
-   "url": "https://www.growth-memo.com/feed",
-   "method": "feed",
    "posts_new": 1
   },
   {
+   "name": "Growth Memo",
+   "checked": "2026-10-19T13:12:53+00:00",
+   "ok": true,
+   "found": 20,
+   "new": 1,
+   "error": null,
+   "url": "https://www.growth-memo.com/feed",
+   "method": "feed",
+   "posts_new": 2
+  },
+  {
    "name": "Seer Interactive",
-   "checked": "2026-10-12T15:22:59+00:00",
+   "checked": "2026-10-19T13:12:53+00:00",
    "ok": true,
    "found": 20,
    "new": 0,
    "error": null,
    "url": "https://www.seerinteractive.com/insights/rss.xml",
    "method": "feed",
-   "posts_new": 1
+   "posts_new": 0
   },
   {
    "name": "Profound",
-   "checked": "2026-10-12T15:22:59+00:00",
+   "checked": "2026-10-19T13:12:53+00:00",
    "ok": true,
-   "found": 184,
-   "new": 0,
+   "found": 187,
+   "new": 2,
    "error": null,
    "url": "https://www.tryprofound.com/rss/blog.xml",
    "method": "feed",
-   "posts_new": 2
+   "posts_new": 4
   },
   {
    "name": "Orbit Media",
-   "checked": "2026-10-12T15:22:59+00:00",
+   "checked": "2026-10-19T13:12:53+00:00",
    "ok": true,
    "found": 26,
-   "new": 1,
+   "new": 0,
    "error": null,
    "url": "https://www.orbitmedia.com/blog/",
    "method": "page",
-   "posts_new": 1
+   "posts_new": 0
   },
   {
    "name": "Peec AI",
-   "checked": "2026-10-12T15:22:59+00:00",
+   "checked": "2026-10-19T13:12:53+00:00",
    "ok": true,
-   "found": 44,
-   "new": 1,
+   "found": 49,
+   "new": 2,
    "error": null,
    "url": "https://peec.ai/blog",
    "method": "page",
-   "posts_new": 1
+   "posts_new": 5
   },
   {
    "name": "AirOps",
-   "checked": "2026-10-12T15:22:59+00:00",
+   "checked": "2026-10-19T13:12:53+00:00",
    "ok": true,
-   "found": 14,
+   "found": 15,
    "new": 0,
    "error": null,
    "url": "https://www.airops.com/blog",
    "method": "page",
-   "posts_new": 7
+   "posts_new": 3
   },
   {
    "name": "BrightEdge",
-   "checked": "2026-10-12T15:22:59+00:00",
+   "checked": "2026-10-19T13:12:53+00:00",
    "ok": true,
    "found": 31,
    "new": 0,
@@ -173,10 +173,10 @@
   },
   {
    "name": "SearchPilot",
-   "checked": "2026-10-12T15:22:59+00:00",
+   "checked": "2026-10-19T13:12:53+00:00",
    "ok": true,
    "found": 4,
-   "new": 4,
+   "new": 0,
    "error": null,
    "url": "https://www.searchpilot.com/resources?content_type__in=Tests&sort=-published_date&offset=0",
    "method": "page",
@@ -184,39 +184,74 @@
   },
   {
    "name": "SparkToro",
-   "checked": "2026-10-12T15:22:59+00:00",
+   "checked": "2026-10-19T13:12:53+00:00",
    "ok": true,
    "found": 10,
    "new": 0,
    "error": null,
    "url": "https://sparktoro.com/blog/feed/",
    "method": "feed",
-   "posts_new": 1
-  },
-  {
-   "name": "Amsive",
-   "checked": "2026-10-12T15:22:59+00:00",
-   "ok": true,
-   "found": 8,
-   "new": 2,
-   "error": null,
-   "url": "https://www.amsive.com/feed/",
-   "method": "feed",
    "posts_new": 0
   },
   {
+   "name": "Amsive",
+   "checked": "2026-10-19T13:12:53+00:00",
+   "ok": true,
+   "found": 8,
+   "new": 0,
+   "error": null,
+   "url": "https://www.amsive.com/feed/",
+   "method": "feed",
+   "posts_new": 1
+  },
+  {
    "name": "Cloudflare",
-   "checked": "2026-10-12T15:22:59+00:00",
+   "checked": "2026-10-19T13:12:53+00:00",
    "ok": true,
    "found": 20,
-   "new": 1,
+   "new": 0,
    "error": null,
    "url": "https://blog.cloudflare.com/tag/ai-bots/rss/",
    "method": "feed",
    "posts_new": 0
+  },
+  {
+   "name": "Lily Ray",
+   "checked": "2026-10-19T13:12:53+00:00",
+   "ok": false,
+   "found": 0,
+   "new": 0,
+   "error": "blocked by the site (403)",
+   "url": "https://lilyraynyc.substack.com/feed",
+   "method": null,
+   "posts_new": 0
   }
  ],
  "pulses": [
+  {
+   "date": "2026-10-19T13:12:53+00:00",
+   "summary": "Mostly small updates this week. Bing added a topic-gap tool, and Google is tweaking how AI answers link out. Several findings are early or narrow.",
+   "points": [
+    {
+     "text": "Bing's new Topics Portfolio (beta) groups your AI citation queries into themes. Check it for content gaps, but treat the numbers as rough.",
+     "ids": [
+      "blogs.bing.com/webmaster/2026/10/introducing-topics-portfolio-beta-in-ai-performance"
+     ]
+    },
+    {
+     "text": "ChatGPT's tagged source links dropped from about 99% to about 5% on October 14, then recovered. Annotate Oct 8–16 in GA4 and don't read referral swings as demand.",
+     "ids": [
+      "tryprofound.com/blog/chatgpt-missing-utm-tags"
+     ]
+    },
+    {
+     "text": "Direct traffic didn't hide AI visits in a 12-site test, so don't use it to measure AI impact. Ask new leads how they found you.",
+     "ids": [
+      "growth-memo.com/p/does-ai-drive-more-direct-traffic"
+     ]
+    }
+   ]
+  },
   {
    "date": "2026-10-12T15:22:59+00:00",
    "summary": "Little changed in Google guidance this week. The useful news is about AI search: what gets cited, how often ChatGPT searches, and rising bot traffic.",
@@ -366,6 +401,297 @@
   }
  ],
  "briefs": [
+  {
+   "id": "growth-memo.com/p/does-ai-drive-more-direct-traffic",
+   "url": "https://www.growth-memo.com/p/does-ai-drive-more-direct-traffic",
+   "source": "Growth Memo",
+   "title": "Does AI drive more direct traffic?",
+   "published": "2026-10-19T12:29:03+00:00",
+   "found": "2026-10-19T13:12:53+00:00",
+   "gated": false,
+   "unreadable": null,
+   "pdf_links": [],
+   "brief": {
+    "is_study": true,
+    "headline": "Kevin Indig found no detectable hidden AI traffic in Direct: engaged Direct sessions were flat (−1.0%) while total Direct rose 140.9%.",
+    "study_type": "data analysis",
+    "key_stats": [
+     "Total Direct rose 140.9% Jan–Sep; engaged Direct changed −1.0%",
+     "Direct sessions with AI traces: 0.003% of total Direct",
+     "632 tests found no reliable link between AI visibility and Direct or branded search"
+    ],
+    "method": {
+     "sample": "12 GA4 sites; 4 brands in correlation tests",
+     "data_source": "Google Analytics 4 and AI visibility tracking",
+     "timeframe": "Jan–Sep 2026; Aug–Sep comparison",
+     "conflict": "No. Growth Memo sells Premium tools, and a sponsor (Semrush) is promoted, but neither depends on this finding.",
+     "confidence": "medium",
+     "caveat": "Small, B2B-skewed sample of 12 sites; correlation tests had only 17 and 35 weekly data points."
+    },
+    "why_it_matters": "Don't expect Direct traffic to reveal AI impact. Filter out bots, and ask new leads how they found you.",
+    "importance": 2,
+    "tags": [
+     "ai search",
+     "analytics",
+     "brand"
+    ]
+   },
+   "words": 1644
+  },
+  {
+   "id": "blog.google/products-and-platforms/products/search/updates-ai-mode-overviews-explore-web",
+   "url": "https://blog.google/products-and-platforms/products/search/updates-ai-mode-overviews-explore-web/",
+   "source": "Google Keyword (Search)",
+   "title": "More ways to connect with the web from Search",
+   "published": "2026-10-15T16:00:00+00:00",
+   "found": "2026-10-19T13:12:53+00:00",
+   "gated": false,
+   "unreadable": null,
+   "pdf_links": [],
+   "brief": {
+    "is_study": true,
+    "headline": "Google is adding more inline links, an official-site section, wider news carousels and creator profiles to AI Mode and AI Overviews.",
+    "study_type": "official update",
+    "key_stats": [
+     "Preferred Sources users up more than 7x since start of year",
+     "Inline links will show higher up in AI responses more often",
+     "Official-site section at top of AI answers is a test only"
+    ],
+    "method": {
+     "sample": "n/a (official announcement)",
+     "data_source": "n/a (official announcement)",
+     "timeframe": "Rolling out from Oct 15, 2026; some parts in testing",
+     "conflict": "No click or traffic data, no rollout dates, and no word on how sources are picked.",
+     "confidence": "medium",
+     "caveat": "Most changes are vague or only tests, and Google gives no numbers on clicks."
+    },
+    "why_it_matters": "AI answers may send more clicks to sources. Check your brand's visibility in them, and claim your official-page and Search profile eligibility.",
+    "importance": 2,
+    "tags": [
+     "ai search",
+     "ctr & serps",
+     "brand"
+    ]
+   },
+   "words": 900
+  },
+  {
+   "id": "blog.google/products-and-platforms/products/news/news-ai-pilot-update-publishers",
+   "url": "https://blog.google/products-and-platforms/products/news/news-ai-pilot-update-publishers/",
+   "source": "Google Keyword (Search)",
+   "title": "400 publications are now partnering with us on our News AI pilot program.",
+   "published": "2026-10-15T16:00:00+00:00",
+   "found": "2026-10-19T13:12:53+00:00",
+   "gated": false,
+   "unreadable": null,
+   "pdf_links": [],
+   "brief": {
+    "is_study": true,
+    "headline": "Google's News AI pilot now includes 400+ publications, paid to supply content for AI article overviews and audio briefings.",
+    "study_type": "official update",
+    "key_stats": [
+     "More than 400 publications now take part worldwide",
+     "Partners include Axios, CNN, The Financial Times and Forbes",
+     "Features: article overviews on Google News publisher pages, audio briefings"
+    ],
+    "method": {
+     "sample": "n/a (official announcement)",
+     "data_source": "n/a (official announcement)",
+     "timeframe": "Pilot launched last year; update dated Oct 15, 2026",
+     "conflict": "Doesn't say payment amounts, how publishers join, or any effect on Search rankings or traffic.",
+     "confidence": "medium",
+     "caveat": "Covers news publishers only; no details on traffic impact, terms, or any rollout beyond Google News."
+    },
+    "why_it_matters": "Google is paying news outlets for AI content. B2B SaaS sites aren't included, so nothing changes in your plans yet.",
+    "importance": 1,
+    "tags": [
+     "ai search",
+     "content"
+    ]
+   },
+   "words": 242
+  },
+  {
+   "id": "tryprofound.com/blog/chatgpt-missing-utm-tags",
+   "url": "https://www.tryprofound.com/blog/chatgpt-missing-utm-tags",
+   "source": "Profound",
+   "title": "ChatGPT’s missing UTM tags: what happened from October 8 to October 16",
+   "published": "2026-10-14T21:09:08+00:00",
+   "found": "2026-10-19T13:12:53+00:00",
+   "gated": false,
+   "unreadable": null,
+   "pdf_links": [],
+   "brief": {
+    "is_study": true,
+    "headline": "ChatGPT answers with a tagged source link fell from about 99% to about 5% on October 14, then recovered by October 16.",
+    "study_type": "data analysis",
+    "key_stats": [
+     "Tagged answers hit about 5% at 19:30 UTC on Oct 14, with Intelligent UI at 96%",
+     "Tagged answers stayed around 5–12% for roughly 27 hours",
+     "Back to about 99% by 06:30 UTC on Oct 16"
+    ],
+    "method": {
+     "sample": "Not disclosed",
+     "data_source": "Profound's collected ChatGPT answers with cited links",
+     "timeframe": "Oct 8–16, 2026, in 30-minute intervals",
+     "conflict": "Yes. Profound sells AI visibility and citation tracking, which the post recommends.",
+     "confidence": "medium",
+     "caveat": "Answer count and collection method are not disclosed, and rates don't convert into traffic corrections."
+    },
+    "why_it_matters": "Annotate Oct 8–16 in GA4. Don't read ChatGPT referral swings in that window as real demand changes.",
+    "importance": 2,
+    "tags": [
+     "ai search",
+     "analytics"
+    ]
+   },
+   "words": 1760
+  },
+  {
+   "id": "tryprofound.com/blog/what-s-changed-with-sonnet-5-5",
+   "url": "https://www.tryprofound.com/blog/what-s-changed-with-sonnet-5-5",
+   "source": "Profound",
+   "title": "What’s changed with Sonnet 5.5",
+   "published": "2026-10-13T17:57:26+00:00",
+   "found": "2026-10-19T13:12:53+00:00",
+   "gated": false,
+   "unreadable": null,
+   "pdf_links": [],
+   "brief": {
+    "is_study": true,
+    "headline": "Sonnet 5.5 runs fewer searches per answer (1.17 vs 1.83) and puts \"2026\" in 59% of its queries.",
+    "study_type": "data analysis",
+    "key_stats": [
+     "Asks reader for more context in 60.6% of answers, up from 12.5%",
+     "Candidate pool of pages shrinks 36%; top-cited pages' median age 107 days vs 164",
+     "Bullets and lists make up 71.6% of answer text, up from 35.9%"
+    ],
+    "method": {
+     "sample": "711 prompts, 20 runs each, 28,440 answers",
+     "data_source": "Profound's own API tests, web search on",
+     "timeframe": "October 2026 (model released September 28)",
+     "conflict": "Yes. Profound sells AI answer tracking and ends the post with a demo pitch.",
+     "confidence": "medium",
+     "caveat": "Raw API tests with random general prompts, not B2B SaaS buyer questions; the Claude app may behave differently."
+    },
+    "why_it_matters": "Keep key pages visibly current, and write them to say who your product fits, so the model can narrow its picks.",
+    "importance": 2,
+    "tags": [
+     "ai search",
+     "content"
+    ]
+   },
+   "words": 1125
+  },
+  {
+   "id": "blogs.bing.com/webmaster/2026/10/introducing-topics-portfolio-beta-in-ai-performance",
+   "url": "https://blogs.bing.com/webmaster/2026/10/introducing-topics-portfolio-beta-in-ai-performance/",
+   "source": "Bing Webmaster",
+   "title": "Introducing Topics Portfolio (Beta) in AI Performance",
+   "published": "2026-10-13T15:16:06+00:00",
+   "found": "2026-10-19T13:12:53+00:00",
+   "gated": false,
+   "unreadable": null,
+   "pdf_links": [],
+   "brief": {
+    "is_study": true,
+    "headline": "Bing Webmaster Tools added Topics Portfolio (beta), grouping your AI Search citation queries into themes with demand and competition data.",
+    "study_type": "official update",
+    "key_stats": [
+     "Shows Topic Size, Sites Cited and Queries for each topic",
+     "Lists opportunity queries where rivals are cited and you aren't",
+     "Choose a one-, two- or three-month window"
+    ],
+    "method": {
+     "sample": "n/a (official announcement)",
+     "data_source": "n/a (official announcement)",
+     "timeframe": "Beta live from 13 Oct 2026; sites with enough data",
+     "conflict": "Doesn't say how topics are scored, or how Bing citations relate to other AI tools.",
+     "confidence": "high",
+     "caveat": "Beta: AI-sorted topics can be wrong, numbers are approximate, and smaller sites may not see it."
+    },
+    "why_it_matters": "Check the new tab for topic gaps to plan content. Treat the numbers as rough, and ignore branded rival queries.",
+    "importance": 2,
+    "tags": [
+     "ai search",
+     "analytics",
+     "content"
+    ]
+   },
+   "words": 977
+  },
+  {
+   "id": "peec.ai/blog/how-two-teams-run-their-own-geo-experiments",
+   "url": "https://peec.ai/blog/how-two-teams-run-their-own-geo-experiments",
+   "source": "Peec AI",
+   "title": "How two teams run their own GEO experiments - Peec AI",
+   "published": null,
+   "found": "2026-10-19T13:12:53+00:00",
+   "gated": false,
+   "unreadable": null,
+   "pdf_links": [],
+   "brief": {
+    "is_study": true,
+    "headline": "OnBoard's Key Takeaways section lifted one page's citation rate 61% in 6 weeks; the control page rose about 7%.",
+    "study_type": "case study",
+    "key_stats": [
+     "OnBoard test page citation rate: 1.45 to 2.33 (+61%) over 6 weeks",
+     "Bricx's exact-match domain: 91% of retrievals from ChatGPT; under 5% on buyer-style prompts",
+     "Bricx's domain: 67 days, 6 referring domains, authority 0, average position 68.6"
+    ],
+    "method": {
+     "sample": "Two companies; one test page and one control",
+     "data_source": "Peec AI tracking; Google Search Console",
+     "timeframe": "6 weeks (OnBoard); 67 days (Bricx)",
+     "conflict": "Yes. Peec sells AI search tracking, and both tests used its tool.",
+     "confidence": "low",
+     "caveat": "Each test used one page or domain, with no stats testing. Retrieval and visibility fell on OnBoard's test page."
+    },
+    "why_it_matters": "Try a one-page test with a control and a metric picked in advance. Don't treat either tactic as proven.",
+    "importance": 2,
+    "tags": [
+     "ai search",
+     "content"
+    ]
+   },
+   "words": 1945
+  },
+  {
+   "id": "peec.ai/blog/chatgpt-shopping-optimization-in-2026-us-vs.-europe",
+   "url": "https://peec.ai/blog/chatgpt-shopping-optimization-in-2026-us-vs.-europe",
+   "source": "Peec AI",
+   "title": "ChatGPT Shopping optimization in 2026: US vs. Europe - Peec AI",
+   "published": null,
+   "found": "2026-10-19T13:12:53+00:00",
+   "gated": false,
+   "unreadable": null,
+   "pdf_links": [],
+   "brief": {
+    "is_study": true,
+    "headline": "ChatGPT Shopping uses OpenAI's own product index in the US but still pulls from Google Shopping in Europe.",
+    "study_type": "data analysis",
+    "key_stats": [
+     "US shopping drew on 669 feeds, 606 of them active",
+     "Product descriptions are cut at 50 tokens (about 40 words)",
+     "Unverified seller had 25 of 32 candidates but zero final results"
+    ],
+    "method": {
+     "sample": "One main test prompt (running shoes) per region",
+     "data_source": "ChatGPT debug API retrieval data",
+     "timeframe": "Around October 2026",
+     "conflict": "Yes. Peec AI sells AI shopping analytics and promotes it at the end.",
+     "confidence": "low",
+     "caveat": "Findings rest on one test prompt per region; the debug API is unexplained and unverified."
+    },
+    "why_it_matters": "Only matters if you sell physical products; B2B SaaS can skip it, but it shows how ChatGPT retrieves results.",
+    "importance": 1,
+    "tags": [
+     "ai search",
+     "technical seo"
+    ]
+   },
+   "words": 1873
+  },
   {
    "id": "ahrefs.com/blog/query-fan-out-chatgpt",
    "url": "https://ahrefs.com/blog/query-fan-out-chatgpt/",

@@ -2819,80 +2819,255 @@
    "source": "Google Search Central",
    "status": "briefed",
    "at": "2026-10-12T15:22:59+00:00"
+  },
+  "ahrefs.com/blog/automated-content-creation": {
+   "source": "Ahrefs",
+   "status": "not_study",
+   "at": "2026-10-19T13:12:53+00:00"
+  },
+  "semrush.com/blog/semrush-seo-audit-with-claude": {
+   "source": "Semrush",
+   "status": "not_study",
+   "at": "2026-10-19T13:12:53+00:00"
+  },
+  "growth-memo.com/p/2027-seo-planning-workbook": {
+   "source": "Growth Memo",
+   "status": "not_study",
+   "at": "2026-10-19T13:12:53+00:00"
+  },
+  "tryprofound.com/blog/linkedin-top-startups-2026": {
+   "source": "Profound",
+   "status": "not_study",
+   "at": "2026-10-19T13:12:53+00:00"
+  },
+  "tryprofound.com/blog/introducing-the-next-generation-of-marketing-agents": {
+   "source": "Profound",
+   "status": "not_study",
+   "at": "2026-10-19T13:12:53+00:00"
+  },
+  "peec.ai/blog/introducing-views-a-custom-dashboards-ready-to-share": {
+   "source": "Peec AI",
+   "status": "not_study",
+   "at": "2026-10-19T13:12:53+00:00"
+  },
+  "peec.ai/blog/ai-shopping-analytics": {
+   "source": "Peec AI",
+   "status": "not_study",
+   "at": "2026-10-19T13:12:53+00:00"
+  },
+  "peec.ai/blog/how-ecommerce-managers-can-optimize-chatgpt-product-rankings-step-by-step": {
+   "source": "Peec AI",
+   "status": "not_study",
+   "at": "2026-10-19T13:12:53+00:00"
+  },
+  "airops.com/blog/ai-ads-paid-search-webinar": {
+   "source": "AirOps",
+   "status": "not_study",
+   "at": "2026-10-19T13:12:53+00:00"
+  },
+  "airops.com/blog/webinar-takeaways-eli-schwartz-kevin-indig-and-ross-simmonds": {
+   "source": "AirOps",
+   "status": "not_study",
+   "at": "2026-10-19T13:12:53+00:00"
+  },
+  "airops.com/blog/airops-review": {
+   "source": "AirOps",
+   "status": "not_study",
+   "at": "2026-10-19T13:12:53+00:00"
+  },
+  "amsive.com/insights/data-intelligence/next-best-action-in-banking-how-to-make-every-offer-relevant": {
+   "source": "Amsive",
+   "status": "not_study",
+   "at": "2026-10-19T13:12:53+00:00"
+  },
+  "openai.com/index/itau-generative-ai": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-10-19T13:12:53+00:00"
+  },
+  "openai.com/index/benefit-street-partners": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-10-19T13:12:53+00:00"
+  },
+  "openai.com/index/stack-overflow-chatgpt-plugin": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-10-19T13:12:53+00:00"
+  },
+  "openai.com/index/introducing-the-rosalind-academic-plan": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-10-19T13:12:53+00:00"
+  },
+  "openai.com/index/teaching-students-to-think-and-learn-through-questions": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-10-19T13:12:53+00:00"
+  },
+  "openai.com/index/sullivan-cromwell": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-10-19T13:12:53+00:00"
+  },
+  "openai.com/index/amp-beyond-coding": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-10-19T13:12:53+00:00"
+  },
+  "openai.com/index/sentinelone": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-10-19T13:12:53+00:00"
+  },
+  "openai.com/index/third-moment-research": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-10-19T13:12:53+00:00"
+  },
+  "openai.com/index/block-ai-powered-security": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-10-19T13:12:53+00:00"
+  },
+  "openai.com/index/the-eus-next-chapter-in-ai-is-agentic": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-10-19T13:12:53+00:00"
+  },
+  "openai.com/index/higgsfield-longer-videos-voice": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-10-19T13:12:53+00:00"
+  },
+  "blog.google/products-and-platforms/products/shopping/universal-cart-launch": {
+   "source": "Google Keyword (Search)",
+   "status": "not_study",
+   "at": "2026-10-19T13:12:53+00:00"
+  },
+  "blog.google/products-and-platforms/products/search/frightgeist-halloween-trends-2026": {
+   "source": "Google Keyword (Search)",
+   "status": "not_study",
+   "at": "2026-10-19T13:12:53+00:00"
+  },
+  "blog.google/products-and-platforms/products/search/halloween-tips-2026": {
+   "source": "Google Keyword (Search)",
+   "status": "not_study",
+   "at": "2026-10-19T13:12:53+00:00"
+  },
+  "peec.ai/blog/chatgpt-shopping-optimization-in-2026-us-vs.-europe": {
+   "source": "Peec AI",
+   "status": "briefed",
+   "at": "2026-10-19T13:12:53+00:00"
+  },
+  "peec.ai/blog/how-two-teams-run-their-own-geo-experiments": {
+   "source": "Peec AI",
+   "status": "briefed",
+   "at": "2026-10-19T13:12:53+00:00"
+  },
+  "growth-memo.com/p/does-ai-drive-more-direct-traffic": {
+   "source": "Growth Memo",
+   "status": "briefed",
+   "at": "2026-10-19T13:12:53+00:00"
+  },
+  "blog.google/products-and-platforms/products/news/news-ai-pilot-update-publishers": {
+   "source": "Google Keyword (Search)",
+   "status": "briefed",
+   "at": "2026-10-19T13:12:53+00:00"
+  },
+  "blog.google/products-and-platforms/products/search/updates-ai-mode-overviews-explore-web": {
+   "source": "Google Keyword (Search)",
+   "status": "briefed",
+   "at": "2026-10-19T13:12:53+00:00"
+  },
+  "tryprofound.com/blog/chatgpt-missing-utm-tags": {
+   "source": "Profound",
+   "status": "briefed",
+   "at": "2026-10-19T13:12:53+00:00"
+  },
+  "tryprofound.com/blog/what-s-changed-with-sonnet-5-5": {
+   "source": "Profound",
+   "status": "briefed",
+   "at": "2026-10-19T13:12:53+00:00"
+  },
+  "blogs.bing.com/webmaster/2026/10/introducing-topics-portfolio-beta-in-ai-performance": {
+   "source": "Bing Webmaster",
+   "status": "briefed",
+   "at": "2026-10-19T13:12:53+00:00"
   }
  },
  "sources": {
   "Google Search Central": {
    "initialized": true,
-   "last_ok": "2026-10-12T15:22:59+00:00"
+   "last_ok": "2026-10-19T13:12:53+00:00"
   },
   "Google Search Status": {
    "initialized": true,
-   "last_ok": "2026-10-12T15:22:59+00:00"
+   "last_ok": "2026-10-19T13:12:53+00:00"
   },
   "Bing Webmaster": {
    "initialized": true,
-   "last_ok": "2026-10-06T08:28:47+00:00"
+   "last_ok": "2026-10-19T13:12:53+00:00"
   },
   "OpenAI": {
    "initialized": true,
-   "last_ok": "2026-10-12T15:22:59+00:00"
+   "last_ok": "2026-10-19T13:12:53+00:00"
   },
   "Ahrefs": {
    "initialized": true,
-   "last_ok": "2026-10-12T15:22:59+00:00"
+   "last_ok": "2026-10-19T13:12:53+00:00"
   },
   "Semrush": {
    "initialized": true,
-   "last_ok": "2026-10-12T15:22:59+00:00"
+   "last_ok": "2026-10-19T13:12:53+00:00"
   },
   "Growth Memo": {
    "initialized": true,
-   "last_ok": "2026-10-12T15:22:59+00:00"
+   "last_ok": "2026-10-19T13:12:53+00:00"
   },
   "Seer Interactive": {
    "initialized": true,
-   "last_ok": "2026-10-12T15:22:59+00:00"
+   "last_ok": "2026-10-19T13:12:53+00:00"
   },
   "Profound": {
    "initialized": true,
-   "last_ok": "2026-10-12T15:22:59+00:00"
+   "last_ok": "2026-10-19T13:12:53+00:00"
   },
   "Orbit Media": {
    "initialized": true,
-   "last_ok": "2026-10-12T15:22:59+00:00"
+   "last_ok": "2026-10-19T13:12:53+00:00"
   },
   "Peec AI": {
    "initialized": true,
-   "last_ok": "2026-10-12T15:22:59+00:00"
+   "last_ok": "2026-10-19T13:12:53+00:00"
   },
   "AirOps": {
    "initialized": true,
-   "last_ok": "2026-10-12T15:22:59+00:00"
+   "last_ok": "2026-10-19T13:12:53+00:00"
   },
   "BrightEdge": {
    "initialized": true,
-   "last_ok": "2026-10-12T15:22:59+00:00"
+   "last_ok": "2026-10-19T13:12:53+00:00"
   },
   "Google Keyword (Search)": {
    "initialized": true,
-   "last_ok": "2026-10-12T15:22:59+00:00"
+   "last_ok": "2026-10-19T13:12:53+00:00"
   },
   "SearchPilot": {
    "initialized": true,
-   "last_ok": "2026-10-12T15:22:59+00:00"
+   "last_ok": "2026-10-19T13:12:53+00:00"
   },
   "SparkToro": {
    "initialized": true,
-   "last_ok": "2026-10-12T15:22:59+00:00"
+   "last_ok": "2026-10-19T13:12:53+00:00"
   },
   "Amsive": {
    "initialized": true,
-   "last_ok": "2026-10-12T15:22:59+00:00"
+   "last_ok": "2026-10-19T13:12:53+00:00"
   },
   "Cloudflare": {
    "initialized": true,
-   "last_ok": "2026-10-12T15:22:59+00:00"
+   "last_ok": "2026-10-19T13:12:53+00:00"
   },
   "TollBit": {
    "initialized": true,
