@@ -2994,80 +2994,295 @@
    "source": "Bing Webmaster",
    "status": "briefed",
    "at": "2026-10-19T13:12:53+00:00"
+  },
+  "ahrefs.com/blog/affiliate-marketing": {
+   "source": "Ahrefs",
+   "status": "not_study",
+   "at": "2026-10-26T13:00:42+00:00"
+  },
+  "ahrefs.com/blog/headless-content-marketing": {
+   "source": "Ahrefs",
+   "status": "not_study",
+   "at": "2026-10-26T13:00:42+00:00"
+  },
+  "ahrefs.com/blog/ai-share-of-voice": {
+   "source": "Ahrefs",
+   "status": "not_study",
+   "at": "2026-10-26T13:00:42+00:00"
+  },
+  "semrush.com/blog/google-my-business": {
+   "source": "Semrush",
+   "status": "not_study",
+   "at": "2026-10-26T13:00:42+00:00"
+  },
+  "semrush.com/blog/ai-search-strategy": {
+   "source": "Semrush",
+   "status": "not_study",
+   "at": "2026-10-26T13:00:42+00:00"
+  },
+  "semrush.com/blog/google-adds-information-agents-and-universal-cart": {
+   "source": "Semrush",
+   "status": "not_study",
+   "at": "2026-10-26T13:00:42+00:00"
+  },
+  "semrush.com/blog/seo-at-scale": {
+   "source": "Semrush",
+   "status": "not_study",
+   "at": "2026-10-26T13:00:42+00:00"
+  },
+  "semrush.com/blog/starter-vs-pro-plus-plan-comparison": {
+   "source": "Semrush",
+   "status": "not_study",
+   "at": "2026-10-26T13:00:42+00:00"
+  },
+  "semrush.com/blog/semrush-vs-moz": {
+   "source": "Semrush",
+   "status": "not_study",
+   "at": "2026-10-26T13:00:42+00:00"
+  },
+  "tryprofound.com/blog/introducing-search-visibility-in-pages": {
+   "source": "Profound",
+   "status": "not_study",
+   "at": "2026-10-26T13:00:42+00:00"
+  },
+  "peec.ai/blog/turn-opportunities-into-impact-with-peec-agent-and-actions": {
+   "source": "Peec AI",
+   "status": "not_study",
+   "at": "2026-10-26T13:00:42+00:00"
+  },
+  "airops.com/blog/announcing-emea": {
+   "source": "AirOps",
+   "status": "not_study",
+   "at": "2026-10-26T13:00:42+00:00"
+  },
+  "airops.com/blog/webinar-recap-perfect-ai-search-measurement": {
+   "source": "AirOps",
+   "status": "not_study",
+   "at": "2026-10-26T13:00:42+00:00"
+  },
+  "airops.com/blog/cmo-guide-ai-search-discovery": {
+   "source": "AirOps",
+   "status": "not_study",
+   "at": "2026-10-26T13:00:42+00:00"
+  },
+  "airops.com/blog/does-chatgpt-have-ads": {
+   "source": "AirOps",
+   "status": "not_study",
+   "at": "2026-10-26T13:00:42+00:00"
+  },
+  "sparktoro.com/blog/is-ai-visibility-a-marketing-boondoggle": {
+   "source": "SparkToro",
+   "status": "not_study",
+   "at": "2026-10-26T13:00:42+00:00"
+  },
+  "openai.com/index/scaling-storage-one-billion-users-part-two": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-10-26T13:00:42+00:00"
+  },
+  "openai.com/index/securing-our-frontier-model-training-environment": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-10-26T13:00:42+00:00"
+  },
+  "openai.com/index/openai-nask-ai-safety-security-partnership": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-10-26T13:00:42+00:00"
+  },
+  "openai.com/index/decisions-api": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-10-26T13:00:42+00:00"
+  },
+  "openai.com/index/forward-deployed-engineering-means": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-10-26T13:00:42+00:00"
+  },
+  "openai.com/index/uber-chatgpt-work-rollout": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-10-26T13:00:42+00:00"
+  },
+  "openai.com/index/att-legal": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-10-26T13:00:42+00:00"
+  },
+  "openai.com/index/broad-access-through-consistent-standards": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-10-26T13:00:42+00:00"
+  },
+  "openai.com/index/openai-models-google-cloud": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-10-26T13:00:42+00:00"
+  },
+  "openai.com/index/coordinated-disclosure-of-critical-vulnerabilities": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-10-26T13:00:42+00:00"
+  },
+  "openai.com/index/scaling-ai-research-for-complex-biological-data": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-10-26T13:00:42+00:00"
+  },
+  "openai.com/index/cloudflare-cyber": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-10-26T13:00:42+00:00"
+  },
+  "openai.com/index/empowering-cyber-defenders": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-10-26T13:00:42+00:00"
+  },
+  "openai.com/index/ted-taylor-restaurant": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-10-26T13:00:42+00:00"
+  },
+  "openai.com/index/terminal-x": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-10-26T13:00:42+00:00"
+  },
+  "openai.com/index/openai-to-acquire-orchestra-bio": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-10-26T13:00:42+00:00"
+  },
+  "openai.com/index/low-resource-programming-languages": {
+   "source": "OpenAI",
+   "status": "not_study",
+   "at": "2026-10-26T13:00:42+00:00"
+  },
+  "blog.google/products-and-platforms/products/search/fashion-capital-style-searches": {
+   "source": "Google Keyword (Search)",
+   "status": "not_study",
+   "at": "2026-10-26T13:00:42+00:00"
+  },
+  "brightedge.com/resources/research-reports/holiday-travel-ai-search": {
+   "source": "BrightEdge",
+   "status": "briefed",
+   "at": "2026-10-26T13:00:42+00:00"
+  },
+  "orbitmedia.com/blog/ai-visibility-audits": {
+   "source": "Orbit Media",
+   "status": "briefed",
+   "at": "2026-10-26T13:00:42+00:00"
+  },
+  "growth-memo.com/p/organic-traffic-is-down-but-its-not": {
+   "source": "Growth Memo",
+   "status": "briefed",
+   "at": "2026-10-26T13:00:42+00:00"
+  },
+  "seerinteractive.com/insights/chatgpt-data-structure": {
+   "source": "Seer Interactive",
+   "status": "briefed",
+   "at": "2026-10-26T13:00:42+00:00"
+  },
+  "growth-memo.com/p/growth-intelligence-brief-26": {
+   "source": "Growth Memo",
+   "status": "briefed",
+   "at": "2026-10-26T13:00:42+00:00"
+  },
+  "semrush.com/blog/how-feature-upvote-fixed-its-google-ai-overview-answer": {
+   "source": "Semrush",
+   "status": "briefed",
+   "at": "2026-10-26T13:00:42+00:00"
+  },
+  "openai.com/index/chatgpt-ads-expands-26-new-countries": {
+   "source": "OpenAI",
+   "status": "unreadable",
+   "at": "2026-10-26T13:00:42+00:00"
+  },
+  "semrush.com/blog/ai-overviews-commercial-modifiers-study": {
+   "source": "Semrush",
+   "status": "briefed",
+   "at": "2026-10-26T13:00:42+00:00"
+  },
+  "openai.com/index/building-chatgpt-ad-stack": {
+   "source": "OpenAI",
+   "status": "unreadable",
+   "at": "2026-10-26T13:00:42+00:00"
   }
  },
  "sources": {
   "Google Search Central": {
    "initialized": true,
-   "last_ok": "2026-10-19T13:12:53+00:00"
+   "last_ok": "2026-10-26T13:00:42+00:00"
   },
   "Google Search Status": {
    "initialized": true,
-   "last_ok": "2026-10-19T13:12:53+00:00"
+   "last_ok": "2026-10-26T13:00:42+00:00"
   },
   "Bing Webmaster": {
    "initialized": true,
-   "last_ok": "2026-10-19T13:12:53+00:00"
+   "last_ok": "2026-10-26T13:00:42+00:00"
   },
   "OpenAI": {
    "initialized": true,
-   "last_ok": "2026-10-19T13:12:53+00:00"
+   "last_ok": "2026-10-26T13:00:42+00:00"
   },
   "Ahrefs": {
    "initialized": true,
-   "last_ok": "2026-10-19T13:12:53+00:00"
+   "last_ok": "2026-10-26T13:00:42+00:00"
   },
   "Semrush": {
    "initialized": true,
-   "last_ok": "2026-10-19T13:12:53+00:00"
+   "last_ok": "2026-10-26T13:00:42+00:00"
   },
   "Growth Memo": {
    "initialized": true,
-   "last_ok": "2026-10-19T13:12:53+00:00"
+   "last_ok": "2026-10-26T13:00:42+00:00"
   },
   "Seer Interactive": {
    "initialized": true,
-   "last_ok": "2026-10-19T13:12:53+00:00"
+   "last_ok": "2026-10-26T13:00:42+00:00"
   },
   "Profound": {
    "initialized": true,
-   "last_ok": "2026-10-19T13:12:53+00:00"
+   "last_ok": "2026-10-26T13:00:42+00:00"
   },
   "Orbit Media": {
    "initialized": true,
-   "last_ok": "2026-10-19T13:12:53+00:00"
+   "last_ok": "2026-10-26T13:00:42+00:00"
   },
   "Peec AI": {
    "initialized": true,
-   "last_ok": "2026-10-19T13:12:53+00:00"
+   "last_ok": "2026-10-26T13:00:42+00:00"
   },
   "AirOps": {
    "initialized": true,
-   "last_ok": "2026-10-19T13:12:53+00:00"
+   "last_ok": "2026-10-26T13:00:42+00:00"
   },
   "BrightEdge": {
    "initialized": true,
-   "last_ok": "2026-10-19T13:12:53+00:00"
+   "last_ok": "2026-10-26T13:00:42+00:00"
   },
   "Google Keyword (Search)": {
    "initialized": true,
-   "last_ok": "2026-10-19T13:12:53+00:00"
+   "last_ok": "2026-10-26T13:00:42+00:00"
   },
   "SearchPilot": {
    "initialized": true,
-   "last_ok": "2026-10-19T13:12:53+00:00"
+   "last_ok": "2026-10-26T13:00:42+00:00"
   },
   "SparkToro": {
    "initialized": true,
-   "last_ok": "2026-10-19T13:12:53+00:00"
+   "last_ok": "2026-10-26T13:00:42+00:00"
   },
   "Amsive": {
    "initialized": true,
-   "last_ok": "2026-10-19T13:12:53+00:00"
+   "last_ok": "2026-10-26T13:00:42+00:00"
   },
   "Cloudflare": {
    "initialized": true,
-   "last_ok": "2026-10-19T13:12:53+00:00"
+   "last_ok": "2026-10-26T13:00:42+00:00"
   },
   "TollBit": {
    "initialized": true,
