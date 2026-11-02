@@ -2,35 +2,38 @@
  "meta": {
   "niche": "SEO and generative engine optimization (GEO) for B2B SaaS",
   "audience": "the content and SEO lead at a B2B SaaS company",
-  "updated": "2026-10-26T13:00:42+00:00",
+  "updated": "2026-11-02T15:48:47+00:00",
   "title": "Study Radar",
   "repo": "nico497/study-radar",
   "run": {
    "sources": 19,
-   "new_items": 43,
-   "studies": 9,
+   "new_items": 49,
+   "studies": 8,
    "deferred": 0,
-   "briefed": 7,
-   "unreadable": 2,
+   "briefed": 0,
+   "unreadable": 0,
    "rejected": 0,
-   "errors": []
+   "errors": [
+    "triage: Anthropic API 401: invalid x-api-key",
+    "brief: Anthropic API 401: invalid x-api-key"
+   ]
   }
  },
  "health": [
   {
    "name": "Google Search Central",
-   "checked": "2026-10-26T13:00:42+00:00",
+   "checked": "2026-11-02T15:48:47+00:00",
    "ok": true,
    "found": 10,
    "new": 0,
    "error": null,
    "url": "https://developers.google.com/search/blog/feed.xml",
    "method": "feed",
-   "posts_new": 0
+   "posts_new": 1
   },
   {
    "name": "Google Search Status",
-   "checked": "2026-10-26T13:00:42+00:00",
+   "checked": "2026-11-02T15:48:47+00:00",
    "ok": true,
    "found": 1,
    "new": 0,
@@ -41,7 +44,7 @@
   },
   {
    "name": "Bing Webmaster",
-   "checked": "2026-10-26T13:00:42+00:00",
+   "checked": "2026-11-02T15:48:47+00:00",
    "ok": true,
    "found": 10,
    "new": 0,
@@ -52,18 +55,18 @@
   },
   {
    "name": "OpenAI",
-   "checked": "2026-10-26T13:00:42+00:00",
+   "checked": "2026-11-02T15:48:47+00:00",
    "ok": true,
-   "found": 1318,
+   "found": 1342,
    "new": 0,
    "error": null,
    "url": "https://openai.com/news/rss.xml",
    "method": "feed",
-   "posts_new": 19
+   "posts_new": 20
   },
   {
    "name": "Google Keyword (Search)",
-   "checked": "2026-10-26T13:00:42+00:00",
+   "checked": "2026-11-02T15:48:47+00:00",
    "ok": true,
    "found": 20,
    "new": 0,
@@ -74,106 +77,106 @@
   },
   {
    "name": "Ahrefs",
-   "checked": "2026-10-26T13:00:42+00:00",
+   "checked": "2026-11-02T15:48:47+00:00",
    "ok": true,
    "found": 10,
    "new": 0,
    "error": null,
    "url": "https://ahrefs.com/blog/feed/",
    "method": "feed",
-   "posts_new": 3
+   "posts_new": 4
   },
   {
    "name": "Semrush",
-   "checked": "2026-10-26T13:00:42+00:00",
+   "checked": "2026-11-02T15:48:47+00:00",
    "ok": true,
    "found": 20,
-   "new": 2,
+   "new": 0,
    "error": null,
    "url": "https://www.semrush.com/blog/feed/",
-   "method": "feed",
-   "posts_new": 8
-  },
-  {
-   "name": "Growth Memo",
-   "checked": "2026-10-26T13:00:42+00:00",
-   "ok": true,
-   "found": 20,
-   "new": 2,
-   "error": null,
-   "url": "https://www.growth-memo.com/feed",
    "method": "feed",
    "posts_new": 2
   },
   {
-   "name": "Seer Interactive",
-   "checked": "2026-10-26T13:00:42+00:00",
+   "name": "Growth Memo",
+   "checked": "2026-11-02T15:48:47+00:00",
    "ok": true,
    "found": 20,
-   "new": 1,
+   "new": 0,
    "error": null,
-   "url": "https://www.seerinteractive.com/insights/rss.xml",
+   "url": "https://www.growth-memo.com/feed",
    "method": "feed",
    "posts_new": 1
   },
   {
-   "name": "Profound",
-   "checked": "2026-10-26T13:00:42+00:00",
+   "name": "Seer Interactive",
+   "checked": "2026-11-02T15:48:47+00:00",
    "ok": true,
-   "found": 188,
+   "found": 20,
+   "new": 0,
+   "error": null,
+   "url": "https://www.seerinteractive.com/insights/rss.xml",
+   "method": "feed",
+   "posts_new": 2
+  },
+  {
+   "name": "Profound",
+   "checked": "2026-11-02T15:48:47+00:00",
+   "ok": true,
+   "found": 190,
    "new": 0,
    "error": null,
    "url": "https://www.tryprofound.com/rss/blog.xml",
    "method": "feed",
-   "posts_new": 1
+   "posts_new": 2
   },
   {
    "name": "Orbit Media",
-   "checked": "2026-10-26T13:00:42+00:00",
+   "checked": "2026-11-02T15:48:47+00:00",
    "ok": true,
    "found": 26,
-   "new": 1,
+   "new": 0,
    "error": null,
    "url": "https://www.orbitmedia.com/blog/",
    "method": "page",
-   "posts_new": 1
+   "posts_new": 0
   },
   {
    "name": "Peec AI",
-   "checked": "2026-10-26T13:00:42+00:00",
+   "checked": "2026-11-02T15:48:47+00:00",
    "ok": true,
-   "found": 50,
+   "found": 52,
    "new": 0,
    "error": null,
    "url": "https://peec.ai/blog",
    "method": "page",
-   "posts_new": 1
+   "posts_new": 2
   },
   {
    "name": "AirOps",
-   "checked": "2026-10-26T13:00:42+00:00",
+   "checked": "2026-11-02T15:48:47+00:00",
    "ok": true,
-   "found": 15,
+   "found": 17,
    "new": 0,
    "error": null,
    "url": "https://www.airops.com/blog",
    "method": "page",
-   "posts_new": 4
+   "posts_new": 5
   },
   {
    "name": "BrightEdge",
-   "checked": "2026-10-26T13:00:42+00:00",
+   "checked": "2026-11-02T15:48:47+00:00",
    "ok": true,
-   "found": 32,
-   "new": 1,
+   "found": 40,
+   "new": 0,
    "error": null,
    "url": "https://www.brightedge.com/resources/research-reports",
    "method": "page",
-   "posts_new": 1
+   "posts_new": 8
   },
   {
    "name": "SearchPilot",
-   "checked": "2026-10-26T13:00:42+00:00",
+   "checked": "2026-11-02T15:48:47+00:00",
    "ok": true,
    "found": 4,
    "new": 0,
@@ -184,7 +187,7 @@
   },
   {
    "name": "SparkToro",
-   "checked": "2026-10-26T13:00:42+00:00",
+   "checked": "2026-11-02T15:48:47+00:00",
    "ok": true,
    "found": 10,
    "new": 0,
@@ -195,7 +198,7 @@
   },
   {
    "name": "Amsive",
-   "checked": "2026-10-26T13:00:42+00:00",
+   "checked": "2026-11-02T15:48:47+00:00",
    "ok": true,
    "found": 8,
    "new": 0,
@@ -206,7 +209,7 @@
   },
   {
    "name": "Cloudflare",
-   "checked": "2026-10-26T13:00:42+00:00",
+   "checked": "2026-11-02T15:48:47+00:00",
    "ok": true,
    "found": 20,
    "new": 0,
@@ -217,7 +220,7 @@
   },
   {
    "name": "Lily Ray",
-   "checked": "2026-10-26T13:00:42+00:00",
+   "checked": "2026-11-02T15:48:47+00:00",
    "ok": false,
    "found": 0,
    "new": 0,
@@ -228,6 +231,11 @@
   }
  ],
  "pulses": [
+  {
+   "date": "2026-11-02T15:48:47+00:00",
+   "summary": "Found 8 new studies but couldn't brief them this run (triage: Anthropic API 401: invalid x-api-key). They'll be retried next run.",
+   "points": []
+  },
   {
    "date": "2026-10-26T13:00:42+00:00",
    "summary": "AI answers are spreading fast on commercial searches, and the tools that measure them are shaky. Most evidence this week is thin, so test before you act.",
