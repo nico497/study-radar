@@ -2,13 +2,13 @@
  "meta": {
   "niche": "SEO and generative engine optimization (GEO) for B2B SaaS",
   "audience": "the content and SEO lead at a B2B SaaS company",
-  "updated": "2026-11-16T15:43:36+00:00",
+  "updated": "2026-11-23T18:05:30+00:00",
   "title": "Study Radar",
   "repo": "nico497/study-radar",
   "run": {
    "sources": 19,
-   "new_items": 100,
-   "studies": 9,
+   "new_items": 111,
+   "studies": 10,
    "deferred": 0,
    "briefed": 0,
    "unreadable": 0,
@@ -22,7 +22,7 @@
  "health": [
   {
    "name": "Google Search Central",
-   "checked": "2026-11-16T15:43:36+00:00",
+   "checked": "2026-11-23T18:05:30+00:00",
    "ok": true,
    "found": 10,
    "new": 0,
@@ -33,7 +33,7 @@
   },
   {
    "name": "Google Search Status",
-   "checked": "2026-11-16T15:43:36+00:00",
+   "checked": "2026-11-23T18:05:30+00:00",
    "ok": true,
    "found": 1,
    "new": 0,
@@ -44,7 +44,7 @@
   },
   {
    "name": "Bing Webmaster",
-   "checked": "2026-11-16T15:43:36+00:00",
+   "checked": "2026-11-23T18:05:30+00:00",
    "ok": true,
    "found": 10,
    "new": 0,
@@ -55,9 +55,9 @@
   },
   {
    "name": "OpenAI",
-   "checked": "2026-11-16T15:43:36+00:00",
+   "checked": "2026-11-23T18:05:30+00:00",
    "ok": true,
-   "found": 1393,
+   "found": 1422,
    "new": 0,
    "error": null,
    "url": "https://openai.com/news/rss.xml",
@@ -66,18 +66,18 @@
   },
   {
    "name": "Google Keyword (Search)",
-   "checked": "2026-11-16T15:43:36+00:00",
+   "checked": "2026-11-23T18:05:30+00:00",
    "ok": true,
    "found": 20,
    "new": 0,
    "error": null,
    "url": "https://blog.google/products-and-platforms/products/search/rss/",
    "method": "feed",
-   "posts_new": 3
+   "posts_new": 6
   },
   {
    "name": "Ahrefs",
-   "checked": "2026-11-16T15:43:36+00:00",
+   "checked": "2026-11-23T18:05:30+00:00",
    "ok": true,
    "found": 10,
    "new": 0,
@@ -88,7 +88,7 @@
   },
   {
    "name": "Semrush",
-   "checked": "2026-11-16T15:43:36+00:00",
+   "checked": "2026-11-23T18:05:30+00:00",
    "ok": true,
    "found": 20,
    "new": 0,
@@ -99,62 +99,62 @@
   },
   {
    "name": "Growth Memo",
-   "checked": "2026-11-16T15:43:36+00:00",
+   "checked": "2026-11-23T18:05:30+00:00",
    "ok": true,
    "found": 20,
    "new": 0,
    "error": null,
    "url": "https://www.growth-memo.com/feed",
    "method": "feed",
-   "posts_new": 5
+   "posts_new": 6
   },
   {
    "name": "Seer Interactive",
-   "checked": "2026-11-16T15:43:36+00:00",
+   "checked": "2026-11-23T18:05:30+00:00",
    "ok": true,
    "found": 20,
    "new": 0,
    "error": null,
    "url": "https://www.seerinteractive.com/insights/rss.xml",
    "method": "feed",
-   "posts_new": 5
+   "posts_new": 6
   },
   {
    "name": "Profound",
-   "checked": "2026-11-16T15:43:36+00:00",
+   "checked": "2026-11-23T18:05:30+00:00",
    "ok": true,
-   "found": 199,
+   "found": 201,
    "new": 0,
    "error": null,
    "url": "https://www.tryprofound.com/rss/blog.xml",
    "method": "feed",
-   "posts_new": 11
+   "posts_new": 12
   },
   {
    "name": "Orbit Media",
-   "checked": "2026-11-16T15:43:36+00:00",
+   "checked": "2026-11-23T18:05:30+00:00",
    "ok": true,
    "found": 26,
    "new": 0,
    "error": null,
    "url": "https://www.orbitmedia.com/blog/",
    "method": "page",
-   "posts_new": 1
+   "posts_new": 2
   },
   {
    "name": "Peec AI",
-   "checked": "2026-11-16T15:43:36+00:00",
+   "checked": "2026-11-23T18:05:30+00:00",
    "ok": true,
-   "found": 53,
+   "found": 50,
    "new": 0,
    "error": null,
    "url": "https://peec.ai/blog",
    "method": "page",
-   "posts_new": 4
+   "posts_new": 5
   },
   {
    "name": "AirOps",
-   "checked": "2026-11-16T15:43:36+00:00",
+   "checked": "2026-11-23T18:05:30+00:00",
    "ok": true,
    "found": 17,
    "new": 0,
@@ -165,18 +165,18 @@
   },
   {
    "name": "BrightEdge",
-   "checked": "2026-11-16T15:43:36+00:00",
+   "checked": "2026-11-23T18:05:30+00:00",
    "ok": true,
-   "found": 40,
+   "found": 41,
    "new": 0,
    "error": null,
    "url": "https://www.brightedge.com/resources/research-reports",
    "method": "page",
-   "posts_new": 8
+   "posts_new": 9
   },
   {
    "name": "SearchPilot",
-   "checked": "2026-11-16T15:43:36+00:00",
+   "checked": "2026-11-23T18:05:30+00:00",
    "ok": true,
    "found": 4,
    "new": 0,
@@ -187,29 +187,29 @@
   },
   {
    "name": "SparkToro",
-   "checked": "2026-11-16T15:43:36+00:00",
+   "checked": "2026-11-23T18:05:30+00:00",
    "ok": true,
    "found": 10,
    "new": 0,
    "error": null,
    "url": "https://sparktoro.com/blog/feed/",
    "method": "feed",
-   "posts_new": 2
+   "posts_new": 3
   },
   {
    "name": "Amsive",
-   "checked": "2026-11-16T15:43:36+00:00",
+   "checked": "2026-11-23T18:05:30+00:00",
    "ok": true,
    "found": 9,
    "new": 0,
    "error": null,
    "url": "https://www.amsive.com/feed/",
    "method": "feed",
-   "posts_new": 1
+   "posts_new": 2
   },
   {
    "name": "Cloudflare",
-   "checked": "2026-11-16T15:43:36+00:00",
+   "checked": "2026-11-23T18:05:30+00:00",
    "ok": true,
    "found": 20,
    "new": 0,
@@ -220,7 +220,7 @@
   },
   {
    "name": "Lily Ray",
-   "checked": "2026-11-16T15:43:36+00:00",
+   "checked": "2026-11-23T18:05:30+00:00",
    "ok": false,
    "found": 0,
    "new": 0,
@@ -231,6 +231,11 @@
   }
  ],
  "pulses": [
+  {
+   "date": "2026-11-23T18:05:30+00:00",
+   "summary": "Found 10 new studies but couldn't brief them this run (triage: Anthropic API 401: invalid x-api-key). They'll be retried next run.",
+   "points": []
+  },
   {
    "date": "2026-11-16T15:43:36+00:00",
    "summary": "Found 9 new studies but couldn't brief them this run (triage: Anthropic API 401: invalid x-api-key). They'll be retried next run.",
